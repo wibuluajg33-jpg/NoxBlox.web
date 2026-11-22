@@ -368,6 +368,19 @@ a.hello{color:inherit;text-decoration:none;cursor:pointer;transition:border-colo
 .rrow{display:flex;gap:8px}.rrow input{flex:1;min-width:0;height:40px;border-radius:8px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.45);color:#fff;padding:0 10px;font:600 14px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em;text-transform:uppercase}
 .rrow input::placeholder{text-transform:none;letter-spacing:0;font-family:inherit;color:#7d8590}.rrow .btn{min-height:40px;padding:0 14px;white-space:nowrap}
 .room .small{margin:0}
+.frgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+.frcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.frmain{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;border-radius:8px;padding:4px}.frmain:focus-visible{outline:2px solid var(--blue)}.frmain:hover b{text-decoration:underline}
+.frmain .cav{width:84px;height:84px;border-radius:50%;overflow:hidden;background:var(--panel2);border:3px solid transparent}.frmain .cav.on{border-color:#2e9e58}.frmain .cav svg{width:100%;height:100%;display:block}
+.frmain b{overflow-wrap:anywhere;max-width:100%}
+.frstrip{display:flex;gap:12px;overflow-x:auto;padding:4px 0 8px}.frmini{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;width:72px;flex:none;text-align:center}.frmini:focus-visible{outline:2px solid var(--blue);border-radius:8px}
+.frmini .cav{width:64px;height:64px;border-radius:50%;overflow:hidden;background:var(--panel2)}.frmini .cav svg{width:100%;height:100%;display:block}.frmini .small{max-width:72px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.frmodal{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:16px}
+.frbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;width:min(440px,100%);max-height:calc(100dvh - 32px);overflow:auto;padding:0 0 18px}
+.frban{height:80px;background:linear-gradient(135deg,#1d3fa8,#2f7bff 60%,#7ec3ff)}
+.frhead{display:flex;gap:14px;align-items:flex-end;padding:0 18px;margin-top:-40px}.frhead .cav.big{width:96px;height:96px;border-radius:50%;overflow:hidden;background:var(--panel2);border:4px solid var(--panel);flex:none}.frhead .cav.big.on{border-color:#2e9e58}.frhead .cav svg{width:100%;height:100%;display:block}
+.frhead .frinfo h2{margin:0;font-size:20px}.frbox .bio{padding:12px 18px 0;margin:0}.frbox .pstats{margin:14px 18px 0}.frbox .fract{padding:0 18px}
+.myid{font:800 24px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.12em;color:#ffc83d;user-select:all;margin:2px 0 0}
 .frlist{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
 .frrow{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;flex-wrap:wrap}
 .frrow .cav{width:46px;height:46px;border-radius:50%;overflow:hidden;background:var(--panel2);flex:none;border:2px solid transparent}.frrow .cav.on{border-color:#2e9e58}
@@ -398,7 +411,7 @@ Object.keys(S.users).forEach(function(k){var uu=S.users[k],a=uu.avatar;if(a&&a.b
   if(!uu.votes)uu.votes={baseplate:uu.vote|0};if(!uu.gp)uu.gp={baseplate:uu.plays|0}});
 var DELU={};
 function save(){try{var o0=JSON.parse(lsGet('noxblox.v1')||'null');if(o0&&o0.users&&typeof o0.users==='object')Object.keys(o0.users).forEach(function(k){if(k!==S.cur&&!DELU[k])S.users[k]=o0.users[k]})}catch(e){}lsSet('noxblox.v1',JSON.stringify(S))}
-function cur(){return S.cur&&S.users[S.cur]||null}
+function cur(){var u0=S.cur&&S.users[S.cur]||null;if(u0){var want=String(u0.name||'').toLowerCase()==='noxblox'?'9999999999':'';if(want){if(u0.uid!==want)u0.uid=want}else if(!/^[0-9]{10}$/.test(u0.uid||'')||u0.uid==='9999999999')u0.uid=genUid()}return u0}
 function isOwner(u){return !!u&&u.name.toLowerCase()==='noxblox'}
 /* ===== Stok terbatas: [bulan awal, tanggal awal, bulan akhir, tanggal akhir] setiap tahun ===== */
 var STOCK={horseman:[10,30,11,30,'30 Okt sampai 30 Nov'],ghost:[1,1,2,1,'1 Jan sampai 1 Feb']};
@@ -952,7 +965,7 @@ function pProfile(u){
   return '<section class="card pcard"><div class="banner"></div><div class="phead"><div class="pav">'+avSVG(u.avatar,{bust:1})+'</div><div class="pname"><h1>'+nameHTML(u,26)+'</h1><p class="muted">@'+esc(u.name)+'</p>'+(o?'<span class="role">'+badge(16)+' Owner</span>':'')+'</div><a class="btn" href="#pengaturan">Edit profil</a></div>'+
     '<p class="bio">'+(u.bio?esc(u.bio):'<span class="muted">Belum ada bio.</span>')+'</p>'+
     '<div class="pstats"><div><b>'+frCount(u)+'</b><span>Teman</span></div><div><b>0</b><span>Pengikut</span></div><div><b>0</b><span>Mengikuti</span></div><div><b>'+(isOwner(u)?'<span class="rnd5">'+rnd5()+'</span>':(u.nox|0))+'</b><span>Noxbux</span></div></div></section>'+
-    '<section><h2>Tentang</h2><dl class="card kv"><dt>Nama pengguna</dt><dd>@'+esc(u.name)+'</dd><dt>Peran</dt><dd>'+(o?badge(16)+' Owner NoxBlox':(nxTag(u)?badge(16)+' Pemain terverifikasi':'Pemain'))+'</dd><dt>Bergabung</dt><dd>'+fmtDate(u.joined)+'</dd></dl></section>'+
+    '<section><h2>Teman ('+frCount(u)+')</h2>'+frStrip(u)+'</section><section><h2>Tentang</h2><dl class="card kv"><dt>Nama pengguna</dt><dd>@'+esc(u.name)+'</dd><dt>ID pemain</dt><dd>'+esc(u.uid||'')+'</dd><dt>Peran</dt><dd>'+(o?badge(16)+' Owner NoxBlox':(nxTag(u)?badge(16)+' Pemain terverifikasi':'Pemain'))+'</dd><dt>Bergabung</dt><dd>'+fmtDate(u.joined)+'</dd></dl></section>'+
     '<section><h2>Game buatan</h2>'+(o?'<div class="games">'+GAMES.filter(function(g){return !g.hidden}).map(function(g){return gameCard(u,g)}).join('')+'</div>':'<p class="empty">Belum ada game. Hanya Owner yang dapat menerbitkan game di NoxBlox.</p>')+'</section>';
 }
 function pSettings(u){
@@ -1005,17 +1018,39 @@ function frSay(m){try{if(G&&G.toast)G.toast(m);else toast(m)}catch(e){}}
 function frAdd(arr,v){if(arr.indexOf(v)<0)arr.push(v)}
 function frDel(arr,v){var i=arr.indexOf(v);if(i>=0)arr.splice(i,1)}
 function frMake(o,a,b){o.fr[a]=Array.isArray(o.fr[a])?o.fr[a]:[];o.fr[b]=Array.isArray(o.fr[b])?o.fr[b]:[];frAdd(o.fr[a],b);frAdd(o.fr[b],a);o.rq[a]=(o.rq[a]||[]).filter(function(x){return x!==b});o.rq[b]=(o.rq[b]||[]).filter(function(x){return x!==a})}
-function frRequest(u,raw){
-  var k=String(raw||'').trim().replace(/^@/,'').toLowerCase(),me=u.name.toLowerCase();
-  if(!k){frSay('Ketik nama pengguna temanmu');return false}
-  if(k===me){frSay('Kamu tidak bisa berteman dengan diri sendiri');return false}
-  var tu=frUser(k);if(!tu){frSay('Pengguna "'+k+'" tidak ditemukan');return false}
+function frFindId(id){
+  var all=frUsers(),k;
+  for(k in S.users)if(S.users[k]&&S.users[k].uid===id)return k;
+  for(k in all)if(all[k]&&all[k].uid===id)return k;
+  return null;
+}
+function frReqName(u,k){
+  var me=u.name.toLowerCase();
+  if(!k){frSay('Pemain tidak ditemukan');return false}
+  if(k===me){frSay('Itu ID kamu sendiri');return false}
+  var tu=frUser(k);if(!tu){frSay('Pemain tidak ditemukan');return false}
   var rel=frRel(u,k);
   if(rel==='friend'){frSay('Kamu sudah berteman dengan '+tu.display);return false}
   if(rel==='sent'){frSay('Permintaan ke '+tu.display+' sudah terkirim');return false}
   var o=soc();
   if(rel==='got'){frMake(o,me,k);socSave(o);frSay('Kamu berteman dengan '+tu.display);return true}
   o.rq[k]=Array.isArray(o.rq[k])?o.rq[k]:[];frAdd(o.rq[k],me);socSave(o);frSay('Permintaan pertemanan dikirim ke '+tu.display);return true;
+}
+function frRequest(u,raw){
+  var id=String(raw||'').replace(/[^0-9]/g,'');
+  if(id.length!==10){frSay('ID pemain terdiri dari 10 angka');return false}
+  var k=frFindId(id);
+  if(!k){frSay('Tidak ada pemain dengan ID '+id);return false}
+  return frReqName(u,k);
+}
+function genUid(){
+  for(var n=0;n<50;n++){
+    var a=new Uint32Array(2),s='',i;try{crypto.getRandomValues(a)}catch(e){a[0]=Math.random()*4294967296;a[1]=Math.random()*4294967296}
+    s=String(a[0]%100000).padStart(5,'0')+String(a[1]%100000).padStart(5,'0');
+    if(s==='9999999999'||s==='0000000000')continue;
+    if(!frFindId(s))return s;
+  }
+  return String(Date.now()).slice(-10);
 }
 function frAct(u,act,k){
   var o=soc(),me=u.name.toLowerCase();
@@ -1044,18 +1079,18 @@ function frJoin(u,k){
 function frBody(u){
   var o=soc(),inc=frIn(u,o),fl=frList(u,o),h='';
   if(inc.length){h+='<h2>Permintaan pertemanan</h2><div class="frlist">'+inc.map(function(k){var t=frUser(k);if(!t)return '';
-    return '<div class="frrow"><span class="cav">'+avSVG(t.avatar,{bust:1})+'</span><div class="frinfo"><b>'+nameHTML(t,16)+'</b><span class="muted small">@'+esc(t.name)+'</span></div><div class="fract"><button class="btn blue" data-fr="ok" data-n="'+esc(k)+'">Terima</button><button class="btn" data-fr="no" data-n="'+esc(k)+'">Tolak</button></div></div>'}).join('')+'</div>'}
+    return '<div class="frrow"><span class="cav">'+avSVG(t.avatar,{bust:1})+'</span><div class="frinfo"><b>'+nameHTML(t,16)+'</b><span class="muted small">ID '+esc(t.uid||'-')+'</span></div><div class="fract"><button class="btn blue" data-fr="ok" data-n="'+esc(k)+'">Terima</button><button class="btn" data-fr="no" data-n="'+esc(k)+'">Tolak</button></div></div>'}).join('')+'</div>'}
   var rows=fl.map(function(k){var t=frUser(k);if(!t)return null;var pr=frPres(k);return {k:k,t:t,pr:pr,st:frStatus(pr)}}).filter(Boolean);
   rows.sort(function(a,b){return (b.st.on?1:0)-(a.st.on?1:0)||a.t.name.localeCompare(b.t.name)});
   h+='<h2>Teman ('+rows.length+')</h2>';
-  if(!rows.length)h+='<p class="empty">Belum ada teman. Tambahkan lewat nama pengguna di atas, atau lewat Menu saat bermain bersama.</p>';
-  else h+='<div class="frlist">'+rows.map(function(r){
+  if(!rows.length)h+='<p class="empty">Belum ada teman. Cari pemain dengan ID di atas, atau tambahkan lewat Menu saat bermain bersama.</p>';
+  else h+='<div class="frgrid">'+rows.map(function(r){
     var j=frJoinable(r.pr);
-    return '<div class="frrow"><span class="cav'+(r.st.on?' on':'')+'">'+avSVG(r.t.avatar,{bust:1})+'</span><div class="frinfo"><b>'+nameHTML(r.t,16)+'</b><span class="small '+(r.st.on?'frgreen':'muted')+'">'+esc(r.st.txt)+'</span></div><div class="fract">'+(j?'<button class="btn blue" data-fr="join" data-n="'+esc(r.k)+'">Join</button>':'')+'<button class="btn" data-fr="del" data-n="'+esc(r.k)+'" aria-label="Hapus teman '+esc(r.t.name)+'">Hapus</button></div></div>'}).join('')+'</div>';
+    return '<div class="frcard"><button class="frmain" data-fr="prof" data-n="'+esc(r.k)+'" aria-label="Buka profil '+esc(r.t.name)+'"><span class="cav'+(r.st.on?' on':'')+'">'+avSVG(r.t.avatar,{bust:1})+'</span><b>'+nameHTML(r.t,15)+'</b><span class="small '+(r.st.on?'frgreen':'muted')+'">'+esc(r.st.txt)+'</span></button>'+(j?'<button class="btn blue" data-fr="join" data-n="'+esc(r.k)+'">Join</button>':'')+'</div>'}).join('')+'</div>';
   return h;
 }
 function pFriends(u){
-  return '<h1>Teman</h1><div class="card field"><label for="fr-name">Tambah teman dengan nama pengguna</label><div class="rrow"><input id="fr-name" type="text" maxlength="20" autocomplete="off" autocapitalize="off" placeholder="Nama pengguna temanmu"><button class="btn blue" data-fr="add">Tambah</button></div></div><div id="frbody">'+frBody(u)+'</div>';
+  return '<h1>Teman</h1><div class="card field"><p class="small muted">ID kamu</p><p class="myid">'+esc(u.uid||'')+'</p><label for="fr-name" style="margin-top:12px">Cari pemain dengan ID</label><div class="rrow"><input id="fr-name" type="text" inputmode="numeric" maxlength="10" autocomplete="off" placeholder="Ketik ID lengkap (10 angka)"></div><div id="frres" aria-live="polite"></div></div><div id="frbody">'+frBody(u)+'</div>';
 }
 function socBeat(){
   var u=cur();if(!u)return;
@@ -1069,11 +1104,53 @@ setInterval(socBeat,2000);
 window.addEventListener('pagehide',function(){var u=cur();if(u){try{localStorage.removeItem('noxblox.pr.'+u.name.toLowerCase())}catch(e){}}});
 app.addEventListener('click',function(e){
   var b=e.target.closest('[data-fr]');if(!b)return;var u=cur();if(!u)return;var a=b.dataset.fr,k=b.dataset.n;
-  if(a==='add'){var inp=$('#fr-name');if(frRequest(u,inp&&inp.value)&&inp)inp.value='';socBeat();var fb=$('#frbody');if(fb){fb.dataset.h='';fb.innerHTML=frBody(u)}}
+  if(a==='addid'){frReqName(u,k);frShowRes();var fb=$('#frbody');if(fb){fb.dataset.h='';fb.innerHTML=frBody(u)}}
   else if(a==='join')frJoin(u,k);
   else{frAct(u,a,k);var fb2=$('#frbody');if(fb2){fb2.dataset.h='';fb2.innerHTML=frBody(u)}}
 });
-document.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target&&e.target.id==='fr-name'){e.preventDefault();var b=document.querySelector('[data-fr=add]');if(b)b.click()}});
+function frResult(u,raw){
+  var id=String(raw||'').replace(/[^0-9]/g,'');
+  if(id.length<10)return id.length?'<p class="small muted">Ketik '+(10-id.length)+' angka lagi...</p>':'';
+  var k=frFindId(id);
+  if(!k)return '<p class="small muted">Tidak ada pemain dengan ID '+esc(id)+'.</p>';
+  var t=frUser(k),me=u.name.toLowerCase(),rel=k===me?'me':frRel(u,k),pr=frStatus(frPres(k));
+  var bt=rel==='me'?'<span class="muted small">Ini kamu</span>':rel==='friend'?'<span class="muted small">Sudah berteman</span>':rel==='sent'?'<span class="muted small">Permintaan terkirim</span>':'<button class="btn blue" data-fr="addid" data-n="'+esc(k)+'">'+(rel==='got'?'Terima teman':'Tambah teman')+'</button>';
+  return '<div class="frrow" style="margin-top:12px"><span class="cav'+(pr.on?' on':'')+'">'+avSVG(t.avatar,{bust:1})+'</span><div class="frinfo"><b>'+nameHTML(t,16)+'</b><span class="muted small">@'+esc(t.name)+' · ID '+esc(t.uid||id)+'</span><span class="small '+(pr.on?'frgreen':'muted')+'">'+esc(pr.txt)+'</span></div><div class="fract">'+bt+'</div></div>';
+}
+function frShowRes(){var u=cur(),i=$('#fr-name'),r=$('#frres');if(!u||!i||!r)return;i.value=i.value.replace(/[^0-9]/g,'').slice(0,10);r.innerHTML=frResult(u,i.value)}
+document.addEventListener('input',function(e){if(e.target&&e.target.id==='fr-name')frShowRes()});
+
+var FR_OPEN=null;
+function frProfHTML(u,k){
+  var t=frUser(k);if(!t)return '';var pr=frPres(k),st=frStatus(pr),j=frJoinable(pr),n=Array.isArray(soc().fr[k])?soc().fr[k].length:0;
+  return '<div class="frbox" role="dialog" aria-modal="true" aria-label="Profil '+esc(t.name)+'"><div class="frban"></div><div class="frhead"><span class="cav big'+(st.on?' on':'')+'">'+avSVG(t.avatar,{bust:1})+'</span><div class="frinfo"><h2>'+nameHTML(t,22)+'</h2><span class="muted small">@'+esc(t.name)+' · ID '+esc(t.uid||'-')+'</span><span class="small '+(st.on?'frgreen':'muted')+'">'+esc(st.txt)+'</span></div></div>'+
+   '<p class="bio">'+(t.bio?esc(t.bio):'<span class="muted">Belum ada bio.</span>')+'</p>'+
+   '<div class="pstats"><div><b>'+n+'</b><span>Teman</span></div><div><b>'+esc(fmtDate(t.joined))+'</b><span>Bergabung</span></div></div>'+
+   '<div class="fract" style="margin-top:14px">'+(j?'<button class="btn blue" data-fr="join" data-n="'+esc(k)+'">Join</button>':'')+'<button class="btn" data-fr="del" data-n="'+esc(k)+'">Hapus teman</button><button class="btn" data-fr="close">Tutup</button></div></div>';
+}
+function frProfRender(){
+  var u=cur(),m=document.getElementById('frprof');
+  if(!FR_OPEN||!u||frRel(u,FR_OPEN)!=='friend'){FR_OPEN=null;if(m)m.remove();return}
+  var h=frProfHTML(u,FR_OPEN);if(!h){FR_OPEN=null;if(m)m.remove();return}
+  if(!m){m=document.createElement('div');m.id='frprof';m.className='frmodal';document.body.appendChild(m)}
+  if(m.dataset.h!==h){m.dataset.h=h;m.innerHTML=h}
+}
+document.addEventListener('click',function(e){
+  var b=e.target.closest&&e.target.closest('[data-fr]'),u=cur();if(!u)return;
+  if(e.target.id==='frprof'){FR_OPEN=null;frProfRender();return}
+  if(!b)return;var a=b.dataset.fr,k=b.dataset.n;
+  if(a==='prof'){FR_OPEN=k;frProfRender()}
+  else if(a==='close'){FR_OPEN=null;frProfRender()}
+  else if(FR_OPEN&&b.closest('#frprof')&&a==='join'){FR_OPEN=null;frProfRender();frJoin(u,k)}
+  else if(FR_OPEN&&b.closest('#frprof')&&a==='del'){FR_OPEN=null;frProfRender();frAct(u,'del',k);var fb3=$('#frbody');if(fb3){fb3.dataset.h='';fb3.innerHTML=frBody(u)}}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&FR_OPEN){FR_OPEN=null;frProfRender();e.stopPropagation()}},true);
+setInterval(function(){if(FR_OPEN&&!G)frProfRender()},2000);
+function frStrip(u){
+  var l=frList(u).map(function(k){return {k:k,t:frUser(k)}}).filter(function(x){return x.t});
+  if(!l.length)return '<p class="empty">Belum ada teman.</p>';
+  return '<div class="frstrip">'+l.map(function(x){return '<button class="frmini" data-fr="prof" data-n="'+esc(x.k)+'" aria-label="Profil '+esc(x.t.name)+'"><span class="cav">'+avSVG(x.t.avatar,{bust:1})+'</span><span class="small">'+esc(x.t.display)+'</span></button>'}).join('')+'</div>';
+}
 
 /* ---------- events ---------- */
 var delT,buyT;
@@ -1243,7 +1320,7 @@ function startGame(gid){
    '<div class="fps" id="gfps" hidden></div>'+
    '<div class="chat" id="gchat"><div class="msgs" id="gmsgs"></div><input id="gci" type="text" maxlength="120" placeholder="Tulis pesan lalu Enter" autocomplete="off" aria-label="Pesan chat"></div>'+
    '<div class="joy" id="gjoy"><i id="gknob"></i></div><button class="jump" id="gjump" aria-label="Lompat">Lompat</button>'+
-   '<div class="pause" id="gpause" hidden><div class="pbox"><h2>Menu</h2><p id="gmis"></p><p>Geser untuk memutar kamera. Cubit dua jari atau scroll untuk zoom, sampai mentok untuk kamera orang pertama. Spasi untuk melompat.</p>'+(rails?'':'<div class="room"><div class="rlabel">Kode server (mabar)</div><div class="rcode" id="rcode"></div><div class="rrow"><button class="btn" data-g="rcopy">Salin kode</button></div><div class="rlabel">Gabung ke server teman</div><div class="rrow"><input id="rjoin" type="text" maxlength="10" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="Kode server (10 angka)" aria-label="Kode ruangan teman"><button class="btn blue" data-g="rjoin">Gabung</button></div><p class="small" id="rstat"></p><div id="rplist"></div></div>')+'<div class="gap"></div><button class="pbtn" data-g="resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>Lanjutkan</button><button class="pbtn" data-g="respawn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg>Reset</button><button class="pbtn blue" data-g="leave"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H5v16h5"/><path d="M14 8l4 4-4 4M18 12H9"/></svg>Keluar</button></div></div>'+
+   '<div class="pause" id="gpause" hidden><div class="pbox"><h2>Menu</h2><p id="gmis"></p><p>Geser untuk memutar kamera. Cubit dua jari atau scroll untuk zoom, sampai mentok untuk kamera orang pertama. Spasi untuk melompat.</p>'+(rails?'':'<div class="room"><div class="rlabel" id="rlabel">Server</div><div class="rcode" id="rcode" hidden></div><p class="small" id="rstat"></p><div id="rplist"></div></div>')+'<div class="gap"></div><button class="pbtn" data-g="resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>Lanjutkan</button><button class="pbtn" data-g="respawn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg>Reset</button><button class="pbtn blue" data-g="leave"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H5v16h5"/><path d="M14 8l4 4-4 4M18 12H9"/></svg>Keluar</button></div></div>'+
    (obby?'<div class="pause" id="gshop" hidden><div class="sbox" id="sbox"></div></div>':'');
   document.body.appendChild(ov);
   var pt=$('#toast');if(pt)pt.classList.remove('show');
@@ -1279,7 +1356,7 @@ function startGame(gid){
     else if(a==='use')useTool();
     else if(a==='talk'){if(nearNpc)openNpc(nearNpc)}
     else if(a==='rail')railAct();
-    else if(a==='fradd'){frRequest(u,b.dataset.n);mpUI()}else if(a==='rcopy')mpCopy();else if(a==='rjoin')mpJoinUI();else if(a==='npclose')closeNpc();
+    else if(a==='fradd'){frReqName(u,String(b.dataset.n||'').toLowerCase());mpUI()}else if(a==='npclose')closeNpc();
     else if(a==='np')npcAct(b.dataset.k,b.dataset.v);
 
   },sig);
@@ -2591,11 +2668,11 @@ function startGame(gid){
     }
   }
   function mpUI(){
-    var c=$('#rcode',ov);if(!c)return;
-    c.textContent=MP.code;
+    var c=$('#rcode',ov),lb=$('#rlabel',ov);if(!c)return;
+    c.textContent=MP.code;c.hidden=!MP.byUser;if(lb)lb.textContent=MP.byUser?'Server Mabar':'Server';
     var names=[];Object.keys(MP.peers).forEach(function(k){var q=MP.peers[k];if(q.m)names.push(q.disp)});
     var st=$('#rstat',ov),pl=$('#rplist',ov);
-    if(st)st.textContent='Server '+MP.code+' · '+(names.length+1)+'/'+MP_MAX+' pemain'+(names.length?'':' (kamu sendirian, bagikan kode ke temanmu)');
+    if(st)st.textContent=(MP.byUser?'Server Mabar':'Server publik')+' · '+(names.length+1)+'/'+MP_MAX+' pemain'+(names.length?'':' (kamu sendirian)');
     if(pl){var hh='';Object.keys(MP.peers).forEach(function(k){var q=MP.peers[k];if(!q.m)return;var nk=String(q.name||'').toLowerCase(),rel=(nk&&nk!==u.name.toLowerCase()&&frUser(nk))?frRel(u,nk):'x',bt=rel==='friend'?'<span class="muted small">Teman</span>':rel==='sent'?'<span class="muted small">Terkirim</span>':rel==='x'?'':'<button class="btn" data-g="fradd" data-n="'+esc(q.name)+'">'+(rel==='got'?'Terima teman':'Tambah teman')+'</button>';hh+='<div class="prow"><span>'+esc(q.disp)+'</span>'+bt+'</div>'});if(pl.dataset.h!==hh){pl.dataset.h=hh;pl.innerHTML=hh}}
   }
   function mpClose(){
