@@ -180,9 +180,14 @@ kbd{font-family:var(--display);font-size:12px;background:var(--panel2);border:1p
 .joy i{position:absolute;left:50%;top:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:rgba(255,255,255,.65)}
 .jump{right:calc(28px + env(safe-area-inset-right,0px));bottom:calc(44px + env(safe-area-inset-bottom,0px));width:84px;height:84px;background:rgba(255,255,255,.25);border:2px solid rgba(255,255,255,.45);color:#fff;font-weight:700;font-size:13px}
 .touch .joy,.touch .jump{display:block}
-.pause{position:absolute;inset:0;background:rgba(5,7,12,.65);display:flex;align-items:center;justify-content:center;z-index:6;padding:16px}
-.pbox{width:100%;max-width:320px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;color:var(--fg)}
-.pbox p{font-size:13px;color:var(--muted)}
+.pause{position:absolute;inset:0;background:transparent;display:flex;align-items:stretch;justify-content:flex-start;z-index:6}
+.pbox{width:min(32.6vw,626px);min-width:min(86vw,300px);background:rgba(0,0,0,.72);border-radius:0 clamp(28px,6.5vw,125px) clamp(28px,6.5vw,125px) 0;padding:clamp(16px,2vw,24px);padding-bottom:clamp(16px,2.2vw,28px);display:flex;flex-direction:column;gap:clamp(12px,2.2vh,20px);color:#fff;overflow:auto}
+.pbox h2{margin:0 0 4px}
+.pbox .gap{flex:1 1 auto;min-height:8px}
+.pbtn{width:100%;height:clamp(54px,12vh,130px);border-radius:999px;font:700 clamp(17px,2.6vh,26px) var(--display,inherit);color:#fff;cursor:pointer;background:#000;border:3px solid #fff;flex:0 0 auto}
+.pbtn:hover,.pbtn:focus-visible{filter:brightness(1.25);outline:none}
+.pbtn.blue{background:#0a76cc;border-color:#0a76cc}
+.pbox p{font-size:13px;color:#c9c9c9}
 /* aksesori kepala */
 .mlist{display:flex;flex-direction:column;gap:14px}
 .hgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
@@ -236,7 +241,16 @@ kbd{font-family:var(--display);font-size:12px;background:var(--panel2);border:1p
 .btn.claim[disabled]{background:var(--panel2);border-color:var(--line);color:var(--muted);cursor:default}
 .mteaser{display:flex;flex-direction:column;gap:12px;text-decoration:none}
 .mteaser:hover{border-color:var(--gold)}
-.hbal{display:inline-flex;align-items:center;height:38px;padding:0 12px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(10,12,17,.6)}
+.hbal{display:inline-flex;align-items:center;gap:.35em;height:var(--hs);padding:0 calc(var(--hs)*.4);border-radius:999px;color:#fff;font:700 calc(var(--hs)*.4) var(--display,inherit);white-space:nowrap;background:rgba(18,18,21,.6);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.hbal span:first-child{color:#ffc83d}
+.hud-tl{--hs:clamp(38px,5.2vh,50px);align-items:center;gap:calc(var(--hs)*.2)}
+.hcirc,.hchat{flex:0 0 auto;width:var(--hs);height:var(--hs);border-radius:50%;color:#fff;cursor:pointer;display:grid;place-items:center;padding:0;background:rgba(18,18,21,.6);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.hcirc{font:800 calc(var(--hs)*.5)/1 var(--display,inherit)}
+.hchat svg{width:56%;height:56%;display:block}
+.hcirc:hover,.hchat:hover{background:rgba(60,64,78,.72)}
+.hud-tl .hbtn:hover{filter:brightness(1.3)}
+.hcirc:focus-visible,.hchat:focus-visible,.hud-tl .hbtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.hud-tl .hbtn{height:var(--hs);border-radius:999px;background:rgba(18,18,21,.6);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .gtoast{position:absolute;left:50%;bottom:calc(205px + env(safe-area-inset-bottom,0px));transform:translate(-50%,40px);opacity:0;background:#e9eefb;color:#0a0c11;font-weight:600;padding:9px 16px;border-radius:8px;z-index:7;transition:.25s;width:max-content;max-width:calc(100% - 32px);text-align:center;pointer-events:none}
 .gtoast.show{transform:translate(-50%,0);opacity:1}
 /* hud tambahan: zoom, tahap, toko */
@@ -260,7 +274,7 @@ a.hello{color:inherit;text-decoration:none;cursor:pointer;transition:border-colo
 .avcats .btn{flex:1 1 auto}
 .talkb{position:absolute;left:50%;bottom:calc(150px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:4;height:44px;padding:0 20px;border-radius:22px;border:2px solid #ffc83d;background:rgba(10,12,17,.82);color:#fff;font-weight:700;cursor:pointer}
 .talkb[hidden]{display:none}
-.qhud{position:absolute;top:calc(58px + env(safe-area-inset-top,0px));right:calc(10px + env(safe-area-inset-right,0px));z-index:2;max-width:190px;background:rgba(10,12,17,.62);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:7px 10px;font-size:11px;line-height:1.5;color:#e9eefb;pointer-events:none}
+.qhud{position:absolute;top:calc(70px + env(safe-area-inset-top,0px));right:calc(10px + env(safe-area-inset-right,0px));z-index:2;max-width:190px;background:rgba(10,12,17,.62);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:7px 10px;font-size:11px;line-height:1.5;color:#e9eefb;pointer-events:none}
 .qhud b{display:block;color:#ffc83d;margin-bottom:2px}.qhud .ok{color:#5be394}
 .npcbox{max-width:440px;max-height:88vh;overflow:auto}
 .npcbox h2{margin:0}.npcbox .sub{color:var(--muted);font-size:12px;margin:-6px 0 0}
@@ -294,13 +308,73 @@ a.hello{color:inherit;text-decoration:none;cursor:pointer;transition:border-colo
 .buyd-act .btn{flex:1 1 0;justify-content:center}
 @media(max-width:420px){.buyd-body{grid-template-columns:80px minmax(0,1fr)}.buyd-img{width:80px;height:80px}}
 
-.rhud{position:absolute;top:calc(58px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;width:min(94vw,640px);pointer-events:none}
+.rhud{position:absolute;top:calc(70px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;width:min(94vw,640px);pointer-events:none}
 .rch{background:rgba(10,12,17,.74);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:6px 10px;color:#fff;font:600 12px var(--display);min-width:116px;flex:1 1 116px}
 .rch b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.8;margin-bottom:3px}
 .rbar{height:7px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden;margin-bottom:3px}
 .rbar i{display:block;height:100%}
 .rch.two{display:flex;flex-direction:column;gap:2px}
 .rwarn{width:100%;text-align:center;color:#ffb84d;font:700 13px var(--display);text-shadow:0 1px 3px #000}
+/* ---- tombol bergaya Roblox: datar, sudut 8px, warna solid ---- */
+.btn,.hbtn,.pbtn,.talkb,.hcirc,.hchat,.slot{transition:background-color .12s ease,border-color .12s ease,transform .08s ease;-webkit-tap-highlight-color:transparent}
+.btn{border-radius:8px;background:#393b3d;border:0;color:#fff;font-weight:700;box-shadow:none;letter-spacing:0}
+.btn:hover{background:#4a4d50;transform:none;box-shadow:none;border:0}
+.btn:active{background:#2d2f31;transform:scale(.98);box-shadow:none}
+.btn:focus-visible,.hbtn:focus-visible,.pbtn:focus-visible,.talkb:focus-visible,.slot:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.btn[disabled]{background:#2a2c2e;color:#7d8085;opacity:1;cursor:not-allowed;transform:none}
+.btn.blue,.btn.on{background:#335fff;color:#fff;box-shadow:none}
+.btn.blue:hover,.btn.on:hover{background:#4d74ff;box-shadow:none}
+.btn.blue:active,.btn.on:active{background:#2a4fd9}
+.btn.play{background:#00b06f;color:#fff;border:0;border-radius:8px;box-shadow:none}
+.btn.play:hover{background:#00c77d;box-shadow:none}.btn.play:active{background:#009a60}
+.btn.danger{background:#393b3d;color:#ff6b6b;border:0}
+.btn.danger:hover{background:#d64545;color:#fff;border:0}
+.btn.claim{background:#00b06f;color:#fff;border:0;box-shadow:none}.btn.claim .nox{color:#fff}
+.btn.claim:hover{background:#00c77d;box-shadow:none}.btn.claim:active{background:#009a60}
+.btn.claim[disabled]{background:#2a2c2e;color:#7d8085;box-shadow:none}
+.hbtn{border-radius:8px;box-shadow:none;font-weight:700}.hbtn:hover{filter:none;transform:none}.hbtn:active{transform:scale(.96)}
+.hcirc:active,.hchat:active{transform:scale(.92)}.hcirc:hover{box-shadow:none}
+.talkb{box-shadow:none;border:0;background:#fff;color:#111;border-radius:8px;font-weight:700}.talkb:hover{transform:translateX(-50%);background:#e6e6e6}.talkb:active{transform:translateX(-50%) scale(.96)}
+.slot:hover{background:rgba(255,255,255,.18);transform:none}.slot:active{transform:scale(.94)}
+.pbtn{display:flex;align-items:center;justify-content:center;gap:14px;background:#000;box-shadow:none}
+.pbtn svg{width:1.15em;height:1.15em;flex:0 0 auto}
+.pbtn:hover{filter:none;transform:none;background:#2b2b2b;box-shadow:none}
+.pbtn:active{transform:scale(.97);background:#111;box-shadow:none}
+.pbtn.blue{background:#0a76cc;box-shadow:none}
+.pbtn.blue:hover{background:#1a8cf0;box-shadow:none}.pbtn.blue:active{background:#075fa8}
+.pbox{padding-top:calc(82px + env(safe-area-inset-top,0px))}
+@media(prefers-reduced-motion:reduce){.btn,.hbtn,.pbtn,.talkb,.hcirc,.hchat,.slot{transition:none}}
+.cbub{position:absolute;left:0;top:0;z-index:3;pointer-events:none;max-width:min(240px,70vw);background:#fff;color:#111;padding:7px 13px;border-radius:14px;font:600 14px/1.3 system-ui,sans-serif;text-align:center;overflow-wrap:anywhere;box-shadow:0 3px 10px rgba(0,0,0,.35);will-change:transform}
+.cbub::after{content:'';position:absolute;left:50%;bottom:-7px;margin-left:-7px;border:7px solid transparent;border-bottom:0;border-top-color:#fff}
+/* ---- dialog NPC ---- */
+#gnpc{align-items:flex-end;background:transparent}
+#gnpc .npcbox{width:100%;max-width:none;min-width:0;height:25vh;min-height:200px;max-height:48vh;box-sizing:border-box;border-radius:20px 20px 0 0;background:rgba(10,12,17,.93);border-top:2px solid rgba(255,255,255,.18);box-shadow:0 -10px 34px rgba(0,0,0,.45);padding:clamp(12px,1.8vh,20px) max(clamp(14px,3vw,36px),env(safe-area-inset-right,0px)) calc(clamp(12px,1.8vh,20px) + env(safe-area-inset-bottom,0px)) max(clamp(14px,3vw,36px),env(safe-area-inset-left,0px));flex-direction:row;align-items:stretch;gap:clamp(12px,2.4vw,28px);overflow:hidden;animation:npcup .22s ease-out}
+@keyframes npcup{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.npc-side{flex:0 0 clamp(120px,16vw,200px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center}
+.npc-ava{width:clamp(56px,9vh,84px);height:clamp(56px,9vh,84px);border-radius:50%;background:#1b2233;border:2px solid #ffc83d;overflow:hidden;display:grid;place-items:center}
+.npc-ava svg{width:100%;height:100%;display:block}
+.npc-side h2{font:700 clamp(16px,2.6vh,22px) var(--display);margin:0;color:#ffc83d}.npc-side .sub{margin:0;font-size:12px;color:#aab4c8}
+.npc-b{flex:1 1 auto;min-width:0;overflow:auto;font-size:clamp(14px,2.2vh,17px);line-height:1.5;color:#f2f5fb;padding-right:6px}
+.npc-b p{margin:0 0 8px;color:inherit;font-size:inherit}.npc-b .small{font-size:13px}
+.npc-x{flex:0 0 auto;align-self:flex-end}
+@media(max-width:640px){#gnpc .npcbox{flex-wrap:wrap;height:auto;min-height:25vh;max-height:60vh;overflow:auto}.npc-side{flex:1 1 100%;flex-direction:row;justify-content:flex-start;text-align:left}.npc-b{flex:1 1 100%;overflow:visible}.npc-x{flex:1 1 100%}.npc-x .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){#gnpc .npcbox{animation:none}}
+.buyd.dock{align-items:flex-end;justify-content:stretch;padding:0;background:transparent}
+.buyd.dock .buyd-box{width:100%;max-width:none;min-height:25vh;max-height:50vh;border-radius:20px 20px 0 0;background:rgba(10,12,17,.93);border:0;border-top:2px solid rgba(255,255,255,.18);padding-bottom:env(safe-area-inset-bottom,0px);animation:npcup .22s ease-out}
+.buyd.dock .buyd-act{padding:8px 16px}
+.room{background:rgba(255,255,255,.07);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;flex:0 0 auto}
+.rlabel{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#aab4c8}
+.rcode{font:800 clamp(18px,3vh,28px) ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;color:#ffc83d;user-select:all;word-break:break-all}
+.rrow{display:flex;gap:8px}.rrow input{flex:1;min-width:0;height:40px;border-radius:8px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.45);color:#fff;padding:0 10px;font:600 14px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em;text-transform:uppercase}
+.rrow input::placeholder{text-transform:none;letter-spacing:0;font-family:inherit;color:#7d8590}.rrow .btn{min-height:40px;padding:0 14px;white-space:nowrap}
+.room .small{margin:0}
+.frlist{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.frrow{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;flex-wrap:wrap}
+.frrow .cav{width:46px;height:46px;border-radius:50%;overflow:hidden;background:var(--panel2);flex:none;border:2px solid transparent}.frrow .cav.on{border-color:#2e9e58}
+.frrow .cav svg{width:100%;height:100%;display:block}
+.frinfo{flex:1 1 140px;min-width:0;display:flex;flex-direction:column}.frinfo b{overflow-wrap:anywhere}.frgreen{color:#3fbf72}
+.fract{display:flex;gap:8px;flex-wrap:wrap}.fract .btn{min-height:38px}
+.prow{display:flex;align-items:center;gap:8px;justify-content:space-between;padding:4px 0}.prow span{overflow-wrap:anywhere;font-size:14px}.prow .btn{min-height:32px;padding:0 10px;font-size:13px}
 </style>
 
 <div id="app"></div>
@@ -322,9 +396,35 @@ try{S=JSON.parse(lsGet('noxblox.v1')||'null')}catch(e){S=null}
 if(!S||typeof S!=='object'||!S.users)S={users:{},cur:null};
 Object.keys(S.users).forEach(function(k){var uu=S.users[k],a=uu.avatar;if(a&&a.bundle){a.slots={head:a.bundle,torso:a.bundle,arms:a.bundle,legs:a.bundle};delete a.bundle}
   if(!uu.votes)uu.votes={baseplate:uu.vote|0};if(!uu.gp)uu.gp={baseplate:uu.plays|0}});
-function save(){lsSet('noxblox.v1',JSON.stringify(S))}
+var DELU={};
+function save(){try{var o0=JSON.parse(lsGet('noxblox.v1')||'null');if(o0&&o0.users&&typeof o0.users==='object')Object.keys(o0.users).forEach(function(k){if(k!==S.cur&&!DELU[k])S.users[k]=o0.users[k]})}catch(e){}lsSet('noxblox.v1',JSON.stringify(S))}
 function cur(){return S.cur&&S.users[S.cur]||null}
 function isOwner(u){return !!u&&u.name.toLowerCase()==='noxblox'}
+/* ===== Stok terbatas: [bulan awal, tanggal awal, bulan akhir, tanggal akhir] setiap tahun ===== */
+var STOCK={horseman:[10,30,11,30,'30 Okt sampai 30 Nov'],ghost:[1,1,2,1,'1 Jan sampai 1 Feb']};
+function stockOpen(it,u){var w=STOCK[it&&it.id];if(!w)return true;if(isOwner(u))return true;var d=new Date(),n=(d.getMonth()+1)*100+d.getDate();return n>=w[0]*100+w[1]&&n<=w[2]*100+w[3]}
+/* ===== Sandi akun Owner (NoxBlox) ===== */
+var OWNER_PW='nb0512';
+/* Mabar antar perangkat: isi dengan alamat relay.js yang kamu jalankan, misal 'http://192.168.1.5:8787'. Kosong = hanya antar tab di browser yang sama. */
+var MP_RELAY='';
+/* ===== Daftar ban: tulis nama pemain di dalam tanda kutip, misal ['Test'] atau ['Test','Budi'] ===== */
+var BAN_PLAY=[];     /* Ban Play: pemain tidak bisa bermain game, hanya bisa di lobi */
+var BAN_ACCOUNT=[];  /* Ban Account: akun tidak bisa masuk sama sekali */
+function banSet(){var b=S.bans;if(!b||typeof b!=='object')b=S.bans={play:{},acc:{}};if(!b.play)b.play={};if(!b.acc)b.acc={};return b}
+function inCode(list,k){for(var i=0;i<list.length;i++)if(String(list[i]).trim().toLowerCase()===k)return true;return false}
+function isBanned(u,t){if(!u||isOwner(u))return false;var k=u.name.toLowerCase(),b=banSet();if(inCode(BAN_ACCOUNT,k)||b.acc[k])return true;if(t==='play')return inCode(BAN_PLAY,k)||!!b.play[k];return false}
+function banDo(kind,raw){
+  var me=cur();if(!me||!isOwner(me))return 'Perintah ban hanya untuk Owner.';
+  var n=String(raw||'').trim();if(!/^[A-Za-z0-9_]{3,20}$/.test(n))return 'Tulis nama pengguna yang valid, contoh: /'+kind+' Test';
+  var k=n.toLowerCase();if(k===me.name.toLowerCase()||k==='noxblox')return 'Owner tidak bisa memban diri sendiri.';
+  var b=banSet();
+  if(kind==='unban'){var was=!!(b.play[k]||b.acc[k]);delete b.play[k];delete b.acc[k];save();var cd=inCode(BAN_PLAY,k)||inCode(BAN_ACCOUNT,k);return was?(n+' dibuka bannya'+(cd?' (tapi namanya masih ada di daftar BAN di kode)':'')):(cd?(n+' diban lewat kode. Hapus namanya dari BAN_PLAY atau BAN_ACCOUNT di kode.'):(n+' tidak sedang diban.'))}
+  if(kind==='banplay'){b.play[k]=1;save();return 'Ban Play: '+n+' tidak bisa bermain game, hanya bisa di lobi.'}
+  if(kind==='banacc'){b.acc[k]=1;save();return 'Ban Account: akun '+n+' tidak bisa masuk.'}
+  return 'Perintah tidak dikenal.';
+}
+function banListHTML(){var b=banSet(),rows=[];Object.keys(b.play).forEach(function(k){rows.push('<li><b>'+esc(k)+'</b> <span class="muted small">Ban Play</span></li>')});Object.keys(b.acc).forEach(function(k){rows.push('<li><b>'+esc(k)+'</b> <span class="muted small">Ban Account</span></li>')});BAN_PLAY.forEach(function(k){rows.push('<li><b>'+esc(String(k))+'</b> <span class="muted small">Ban Play (kode)</span></li>')});BAN_ACCOUNT.forEach(function(k){rows.push('<li><b>'+esc(String(k))+'</b> <span class="muted small">Ban Account (kode)</span></li>')});return rows.length?'<ul class="parts" style="margin-top:10px">'+rows.join('')+'</ul>':'<p class="muted small" style="margin-top:10px">Belum ada pemain yang diban.</p>'}
+
 
 function newUser(name){
   var o=name.toLowerCase()==='noxblox';if(o)name='NoxBlox';
@@ -339,7 +439,8 @@ function badge(s){
   s=s||18;
   return '<svg class="vbadge" width="'+s+'" height="'+s+'" viewBox="0 0 24 24" role="img" aria-label="Terverifikasi"><rect x="5" y="5" width="14" height="14" rx="3.4" transform="rotate(45 12 12)" fill="#0a84ff"/><path d="M8.2 12.4l2.7 2.7 5-5.3" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 }
-function nameHTML(u,bs){return esc(u.display)+(isOwner(u)?badge(bs||18):'')}
+function nxTag(u){return !!u&&/nx$/i.test(String(u.name||''))}
+function nameHTML(u,bs){return esc(u.display)+((isOwner(u)||nxTag(u))?badge(bs||18):'')}
 var COLORS=['#f5cd30','#ffd9b0','#f2b988','#d08b5b','#a1673d','#6b4226','#ffffff','#d4d4d4','#7a7a7a','#1b1b1f','#e53935','#ff7043','#fbc02d','#9ccc65','#2e9e58','#26c6da','#2f7bff','#0d3b8e','#7e57c2','#ab47bc','#ec407a','#ff8fab','#8d6e63','#37474f'];
 var FACES=[['smile','Senyum'],['cool','Keren'],['wow','Terkejut'],['wink','Kedip']];
 var ACCS=[['none','Tanpa'],['cap','Topi'],['crown','Mahkota'],['glasses','Kacamata']];
@@ -351,7 +452,7 @@ function slotsOf(av){
   if(s.legs){s.legL=s.legL||s.legs;s.legR=s.legR||s.legs;delete s.legs}
   if(!av.armL){av.armL=av.arms||'#f5cd30';av.armR=av.arms||'#f5cd30'}
   if(!av.legL){av.legL=av.legs||'#4b974b';av.legR=av.legs||'#4b974b'}
-  return {head:s.head||null,torso:s.torso||null,armL:s.armL||null,armR:s.armR||null,legL:s.legL||null,legR:s.legR||null,hat:s.hat||null};
+  return {head:s.head||null,torso:s.torso||null,armL:s.armL||null,armR:s.armR||null,legL:s.legL||null,legR:s.legR||null,hat:(s.hat==='ownercrown'&&!isOwner(cur()))?null:(s.hat||null)};
 }
 var DEFAV={head:'#f5cd30',torso:'#0d69ac',arms:'#f5cd30',legs:'#4b974b',face:'smile',acc:'none'};
 function dressed(slots){var a={},k;for(k in DEFAV)a[k]=DEFAV[k];a.slots=slots;return a}
@@ -368,6 +469,7 @@ function hatSVG(id){
     case 'whitemask':return '<rect x="43" y="7" width="34" height="34" rx="9" fill="#f2f2f2" stroke="#9a9a9a" stroke-width="1.5"/><path d="M48 21 Q52 17.5 57 21" fill="none" stroke="#222" stroke-width="2.4" stroke-linecap="round"/><path d="M63 21 Q68 17.5 72 21" fill="none" stroke="#222" stroke-width="2.4" stroke-linecap="round"/><path d="M53 32 Q60 36 67 32" fill="none" stroke="#222" stroke-width="2.4" stroke-linecap="round"/><circle cx="49" cy="28" r="2.6" fill="#e53935" opacity=".85"/><circle cx="71" cy="28" r="2.6" fill="#e53935" opacity=".85"/>';
     case 'knight':return '<path d="M41 28 L41 6 Q41 -12 60 -12 Q79 -12 79 6 L79 28 L72 28 L72 22 L48 22 L48 28 Z" fill="#9aa4b2" stroke="#5b6573" stroke-width="1.5" stroke-linejoin="round"/><rect x="47" y="12" width="26" height="4.5" rx="1" fill="#1a1a1a"/><path d="M60 -12 Q64 -26 78 -22 Q70 -16 66 -10 Z" fill="#d93f3f"/>';
     case 'goldcrown':return '<path d="M41 10 L41 -9 L50 0 L60 -15 L70 0 L79 -9 L79 10 Z" fill="#ffc83d" stroke="#b8860b" stroke-width="1.5" stroke-linejoin="round"/><rect x="41" y="5" width="38" height="6" fill="#e0a800"/><circle cx="50" cy="8" r="2" fill="#e53935"/><circle cx="60" cy="8" r="2.2" fill="#2f7bff"/><circle cx="70" cy="8" r="2" fill="#e53935"/>';
+    case 'ownercrown':return '<path d="M39 10 L38 -14 L49 -3 L60 -28 L71 -3 L82 -14 L81 10 Z" fill="#ffd21f" stroke="#a87400" stroke-width="1.5" stroke-linejoin="round"/><rect x="39" y="4" width="42" height="7" fill="#e0a800"/><circle cx="38" cy="-14" r="2.6" fill="#fff6b0"/><circle cx="82" cy="-14" r="2.6" fill="#fff6b0"/><circle cx="60" cy="-28" r="3" fill="#fff6b0"/><text x="60" y="-3" text-anchor="middle" font-size="13" font-weight="800" font-family="Arial,sans-serif" fill="#7a5200">N</text>';
     case 'bloxcrown':return '<path d="M41 10 L41 -12 L50 -2 L60 -24 L70 -2 L79 -12 L79 10 Z" fill="#2f7bff" stroke="#0a3c99" stroke-width="1.5" stroke-linejoin="round"/><rect x="41" y="5" width="38" height="6" fill="#1a56c8"/><path d="M60 -6 L65 1 L60 8 L55 1 Z" fill="#fff"/>';
   }
   return '';
@@ -378,6 +480,7 @@ function avSVG(av,o){
   var st=' stroke="rgba(0,0,0,.3)" stroke-width="1.5"',OR='#e8742a',BK='#0b0a0f';
   var s='<svg class="avsvg" viewBox="'+vb+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar">';
   if(S.head==='horseman')s+='<defs><radialGradient id="hmg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff9a3c" stop-opacity=".45"/><stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="24" r="28" fill="url(#hmg)"/>';
+  if(S.hat==='ownercrown')s+='<circle cx="28" cy="166" r="7" fill="#ffd21f" opacity=".75"/><circle cx="20" cy="154" r="5" fill="#ffd21f" opacity=".5"/><circle cx="94" cy="168" r="6" fill="#ffd21f" opacity=".65"/><circle cx="102" cy="158" r="4" fill="#ffd21f" opacity=".4"/>';
   if(S.hat==='bloxcrown')s+='<circle cx="30" cy="166" r="8" fill="#4aa8ff" opacity=".5"/><circle cx="20" cy="156" r="5.5" fill="#4aa8ff" opacity=".35"/><circle cx="92" cy="168" r="6" fill="#4aa8ff" opacity=".45"/><circle cx="102" cy="160" r="4" fill="#4aa8ff" opacity=".3"/>';
   /* kaki */
   [['legL',37],['legR',61]].forEach(function(q){var x=q[1],v=S[q[0]];
@@ -430,7 +533,8 @@ var HATS=[
   {id:'headphones',name:'Headphone Biru',price:250,desc:'Headphone besar untuk menemani petualangan.'},
   {id:'knight',name:'Helm Ksatria',price:350,desc:'Helm baja dengan jambul merah.'},
   {id:'goldcrown',name:'Mahkota Emas',price:500,desc:'Mahkota emas bertatahkan permata.'},
-  {id:'bloxcrown',name:'Mahkota Blox',price:1000,fx:'Asap biru di setiap langkah',desc:'Mahkota biru langka. Setiap kamu berjalan, ia meninggalkan jejak asap biru.'}
+  {id:'bloxcrown',name:'Mahkota Blox',price:1000,fx:'Asap biru di setiap langkah',desc:'Mahkota biru langka. Setiap kamu berjalan, ia meninggalkan jejak asap biru.'},
+  {id:'ownercrown',name:'Mahkota Owner',price:0,owner:true,fx:'Jejak koin Noxbux di setiap langkah',desc:'Mahkota kuning khusus Owner NoxBlox. Setiap kamu berjalan, koin Noxbux berjatuhan dan tertinggal di belakangmu seperti jejak.'}
 ].map(function(h){h.kind='hat';return h});
 var ITEMS=[{id:'horseman',name:'Headless Horseman',price:31000,
   desc:'Paket penunggang kuda tanpa kepala: mantel gelap bertepi oranye, tangan bermanset, sepatu bot, dan leher yang mengepulkan bara. Setelah dibeli, tiap bagiannya bisa dipakai terpisah di kategori Pakaian di Kustom Avatar.',
@@ -441,7 +545,7 @@ var ITEMS=[{id:'horseman',name:'Headless Horseman',price:31000,
     {slot:'armR',label:'Tangan kanan',name:'Tangan Kanan Horseman',desc:'Lengan bermanset oranye'},
     {slot:'legL',label:'Kaki kiri',name:'Celana Kiri Horseman',desc:'Celana gelap dan sepatu bot'},
     {slot:'legR',label:'Kaki kanan',name:'Celana Kanan Horseman',desc:'Celana gelap dan sepatu bot'}]},
-  {id:'ghost',name:'Ghost Legless',price:10100,fx:'Asap tebal di bawah badan dan jejak putih di setiap langkah',desc:'Hantu bertubuh sedikit transparan tanpa kaki sama sekali. Asap tebal mengepul di bawah badannya, dan setiap kamu berjalan ia meninggalkan jejak putih. Setelah dibeli, tiap bagiannya bisa dipakai terpisah di kategori Pakaian di Kustom Avatar.',
+  {id:'ghost',name:'Ghost Legless',price:10100,fx:'Asap tebal di bawah badan dan jejak asap putih saat berjalan (hanya jika memakai Tubuh Hantu)',desc:'Hantu bertubuh sedikit transparan tanpa kaki sama sekali. Asap tebal mengepul di bawah badannya, dan saat berjalan badannya meninggalkan jejak asap putih. Kakinya sendiri tidak meninggalkan jejak. Setelah dibeli, tiap bagiannya bisa dipakai terpisah di kategori Pakaian di Kustom Avatar.',
   parts:[
     {slot:'head',label:'Kepala',name:'Kepala Hantu',desc:'Kepala putih tembus pandang'},
     {slot:'torso',label:'Baju',name:'Tubuh Hantu',desc:'Tubuh putih agak transparan'},
@@ -472,8 +576,9 @@ var ICON={
   profil:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 18.5a6 6 0 0 1 11 0"/>',
   pengaturan:'<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>'
 };
+ICON.teman='<circle cx="9" cy="8" r="3.2"/><path d="M3 19a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2A5 5 0 0 1 21 19"/>';
 ICON.misi='<path d="M9 6h11M9 12h11M9 18h11"/><path d="M3.5 6l1.5 1.5L7 5M3.5 12l1.5 1.5L7 11M3.5 18l1.5 1.5L7 17"/>';
-var NAV=[['beranda','Beranda'],['misi','Misi'],['avatar','Avatar'],['profil','Profil'],['pengaturan','Pengaturan']];
+var NAV=[['beranda','Beranda'],['misi','Misi'],['avatar','Avatar'],['teman','Teman'],['profil','Profil'],['pengaturan','Pengaturan']];
 var tt;
 function openBuy(o){
   var u=cur(),owner=isOwner(u),have=balOf(u),short=owner?0:o.price-have;
@@ -533,9 +638,9 @@ function fmtDate(ms){return new Date(ms).toLocaleDateString('id-ID',{day:'numeri
 
 /* ---------- Noxbux dan misi harian ---------- */
 function nox(s){s=s||18;return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#ffc83d" stroke="#b8860b" stroke-width="1.5"/><circle cx="12" cy="12" r="7.6" fill="none" stroke="#b8860b" stroke-width="1" opacity=".6"/><path d="M8.6 16.2V7.8l6.8 8.4V7.8" fill="none" stroke="#5a3f00" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>'}
-function rnd5(){return String(10000+Math.floor(Math.random()*90000))}
+function rnd5(){return 'Noxbux'}
 function noxAmt(n,s){return '<span class="nox">'+nox(s)+(n===Infinity?'<span class="rnd5">'+rnd5()+'</span>':Number(n).toLocaleString('id-ID'))+'</span>'}
-(function tick(){var e=document.getElementsByClassName('rnd5');for(var i=0;i<e.length;i++)e[i].textContent=rnd5();requestAnimationFrame(tick)})();
+
 function balOf(u){return isOwner(u)?Infinity:(u.nox|0)}
 var REWARD=10;
 var MISSIONS=[
@@ -555,7 +660,7 @@ function daily(u){u.nox=u.nox|0;var t=today();if(!u.daily||u.daily.date!==t)u.da
 var saveT=0;
 function saveSoon(){if(!saveT)saveT=setTimeout(function(){saveT=0;save()},2000)}
 function notify(msg){if(G&&G.toast)G.toast(msg);else toast(msg)}
-function balUpd(){var u=cur();if(!u)return;var b=$('#bal');if(b)b.innerHTML=noxAmt(balOf(u),18);var h=$('#hbal');if(h)h.innerHTML=noxAmt(balOf(u),16)}
+function balUpd(){var u=cur();if(!u)return;var b=$('#bal');if(b)b.innerHTML=noxAmt(balOf(u),18);var h=$('#hbal');if(h)h.innerHTML='<span>N:</span><span>'+(isOwner(u)?'Noxbux':Number(balOf(u)).toLocaleString('id-ID'))+'</span>'}
 function track(id,amt){
   var u=cur();if(!u)return;
   var m=MISSIONS.filter(function(x){return x.id===id})[0];if(!m)return;
@@ -825,27 +930,29 @@ function pMarket(u){
   var cards=bundles.map(function(it){
     var own=!!inv[it.id],short=it.price-have,sl={};
     it.parts.forEach(function(p){sl[p.slot]=it.id});
-    var act=own?'<span class="owned">Dimiliki</span>':'<button class="btn claim" data-act="buy" data-id="'+it.id+'"'+(short>0?' disabled':'')+'>Beli '+noxAmt(it.price,16)+'</button>';
-    var hint=(!own&&short>0)?'<p class="small muted">Noxbux kamu kurang '+short+'. Kumpulkan lewat <a href="#misi">misi harian</a>.</p>':'';
+    var open=stockOpen(it,u),lim=STOCK[it.id];
+    var act=own?'<span class="owned">Dimiliki</span>':(open?'<button class="btn claim" data-act="buy" data-id="'+it.id+'"'+(short>0?' disabled':'')+'>Beli '+noxAmt(it.price,16)+'</button>':'<button class="btn" disabled>Stok habis</button>');
+    var stk=lim?'<p class="fx">'+(owner?'Stok terbatas '+lim[4]+' (Owner: selalu tersedia)':(open?'Stok terbatas, dijual '+lim[4]:'Stok habis. Dijual lagi '+lim[4]+' tahun depan'))+'</p>':'';
+    var hint=(!own&&open&&short>0)?'<p class="small muted">Noxbux kamu kurang '+short+'. Kumpulkan lewat <a href="#misi">misi harian</a>.</p>':'';
     var parts=it.parts.map(function(p){return '<li><b>'+esc(p.label)+'</b><span>'+esc(p.desc)+'</span></li>'}).join('');
-    return '<article class="item"><div class="iprev">'+avSVG(dressed(sl))+'</div><div class="iinfo"><p class="eyebrow">Paket avatar'+(own?' · dimiliki':'')+'</p><h2>'+esc(it.name)+'</h2><p class="by">Oleh NoxBlox '+badge(14)+'</p><p>'+esc(it.desc)+'</p>'+(it.fx?'<p class="fx">Efek: '+esc(it.fx)+'</p>':'')+'<ul class="parts">'+parts+'</ul><div class="row">'+act+'</div>'+hint+'</div></article>';
+    return '<article class="item"><div class="iprev">'+avSVG(dressed(sl))+'</div><div class="iinfo"><p class="eyebrow">Paket avatar'+(own?' · dimiliki':'')+'</p><h2>'+esc(it.name)+'</h2><p class="by">Oleh NoxBlox '+badge(14)+'</p><p>'+esc(it.desc)+'</p>'+(it.fx?'<p class="fx">Efek: '+esc(it.fx)+'</p>':'')+'<ul class="parts">'+parts+'</ul>'+stk+'<div class="row">'+act+'</div>'+hint+'</div></article>';
   }).join('');
-  var hats=HATS.map(function(h){
+  var hats=HATS.filter(function(h){return !h.owner||owner}).map(function(h){
     var own=!!inv[h.id],short=h.price-have;
     var act=own?'<span class="owned">Dimiliki</span>':'<button class="btn claim" data-act="buy" data-id="'+h.id+'"'+(short>0?' disabled':'')+'>Beli '+noxAmt(h.price,16)+'</button>';
     return '<article class="hcard"><div class="hprev">'+avSVG(dressed({hat:h.id}),{vb:VIEWS.hat})+'</div><div class="hinfo"><h3>'+esc(h.name)+(own?' <span class="small muted">· dimiliki</span>':'')+'</h3><p class="small muted">'+esc(h.desc)+'</p>'+(h.fx?'<p class="fx">Efek: '+esc(h.fx)+'</p>':'')+((!own&&short>0)?'<p class="small muted">Kurang '+short+' Noxbux</p>':'')+'</div>'+act+'</article>';
   }).join('');
   return '<div class="row" style="justify-content:space-between"><div><h2>Marketplace</h2><p class="muted small">Hanya item resmi dari Owner NoxBlox.'+(owner?' Sebagai Owner, kamu punya Noxbux tak terbatas.':'')+'</p></div><span class="row" style="gap:8px"><span class="muted small">Saldo</span>'+noxAmt(have,20)+'</span></div>'+
     '<section><h2>Paket avatar</h2><div class="mlist">'+cards+'</div></section>'+
-    '<section><h2>Aksesori kepala <small>'+HATS.length+' item</small></h2><div class="hgrid">'+hats+'</div></section>'+
+    '<section><h2>Aksesori kepala <small>'+HATS.filter(function(h){return !h.owner||owner}).length+' item</small></h2><div class="hgrid">'+hats+'</div></section>'+
     '<section><h2>Tool <small>'+TOOLS_ALL.filter(function(t){return !t.obby&&!t.rails}).length+' item</small></h2><p class="muted small">Tool yang kamu beli muncul di hotbar saat bermain.</p><div class="hgrid">'+TOOLS_ALL.filter(function(t){return !t.obby&&!t.rails}).map(function(t){var own=!!(u.tools&&u.tools[t.id]),short=t.price-have;return '<article class="hcard"><div class="hprev">'+t.svg+'</div><div class="hinfo"><h3>'+esc(t.name)+(own?' <span class="small muted">· dimiliki</span>':'')+'</h3><p class="small muted">'+esc(t.desc)+'</p>'+((!own&&short>0)?'<p class="small muted">Kurang '+short+' Noxbux</p>':'')+'</div>'+(own?'<span class="small muted">Ada di hotbar</span>':'<button class="btn claim" data-act="buytool" data-id="'+t.id+'"'+(short>0?' disabled':'')+'>Beli '+noxAmt(t.price,16)+'</button>')+'</article>'}).join('')+'</div></section>';
 }
 function pProfile(u){
   var o=isOwner(u);
   return '<section class="card pcard"><div class="banner"></div><div class="phead"><div class="pav">'+avSVG(u.avatar,{bust:1})+'</div><div class="pname"><h1>'+nameHTML(u,26)+'</h1><p class="muted">@'+esc(u.name)+'</p>'+(o?'<span class="role">'+badge(16)+' Owner</span>':'')+'</div><a class="btn" href="#pengaturan">Edit profil</a></div>'+
     '<p class="bio">'+(u.bio?esc(u.bio):'<span class="muted">Belum ada bio.</span>')+'</p>'+
-    '<div class="pstats"><div><b>0</b><span>Teman</span></div><div><b>0</b><span>Pengikut</span></div><div><b>0</b><span>Mengikuti</span></div><div><b>'+(isOwner(u)?'<span class="rnd5">'+rnd5()+'</span>':(u.nox|0))+'</b><span>Noxbux</span></div></div></section>'+
-    '<section><h2>Tentang</h2><dl class="card kv"><dt>Nama pengguna</dt><dd>@'+esc(u.name)+'</dd><dt>Peran</dt><dd>'+(o?badge(16)+' Owner NoxBlox':'Pemain')+'</dd><dt>Bergabung</dt><dd>'+fmtDate(u.joined)+'</dd></dl></section>'+
+    '<div class="pstats"><div><b>'+frCount(u)+'</b><span>Teman</span></div><div><b>0</b><span>Pengikut</span></div><div><b>0</b><span>Mengikuti</span></div><div><b>'+(isOwner(u)?'<span class="rnd5">'+rnd5()+'</span>':(u.nox|0))+'</b><span>Noxbux</span></div></div></section>'+
+    '<section><h2>Tentang</h2><dl class="card kv"><dt>Nama pengguna</dt><dd>@'+esc(u.name)+'</dd><dt>Peran</dt><dd>'+(o?badge(16)+' Owner NoxBlox':(nxTag(u)?badge(16)+' Pemain terverifikasi':'Pemain'))+'</dd><dt>Bergabung</dt><dd>'+fmtDate(u.joined)+'</dd></dl></section>'+
     '<section><h2>Game buatan</h2>'+(o?'<div class="games">'+GAMES.filter(function(g){return !g.hidden}).map(function(g){return gameCard(u,g)}).join('')+'</div>':'<p class="empty">Belum ada game. Hanya Owner yang dapat menerbitkan game di NoxBlox.</p>')+'</section>';
 }
 function pSettings(u){
@@ -859,9 +966,10 @@ function pSettings(u){
    '<div class="trow"><label for="set-fps"><b>Tampilkan FPS</b></label><input type="checkbox" id="set-fps"'+(s.fps?' checked':'')+'></div></div>'+
    '<div class="card field"><h2>Kontrol</h2><label for="set-sens">Sensitivitas kamera <span id="sens-v" class="muted">'+s.sens+'</span></label><input type="range" id="set-sens" min="0.3" max="2.5" step="0.1" value="'+s.sens+'"></div>'+
    '<form class="card field" id="pwf" novalidate><h2>'+(u.pass?'Ubah sandi':'Buat sandi')+'</h2>'+(u.pass?'<label for="s-old">Sandi lama</label><input id="s-old" type="password" data-pw="1" autocomplete="current-password">':'<input id="s-old" type="hidden">')+'<label for="s-new" style="margin-top:8px">Sandi baru</label><input id="s-new" type="password" data-pw="1" autocomplete="new-password" placeholder="Minimal 6 karakter"><label for="s-new2" style="margin-top:8px">Ulangi sandi baru</label><input id="s-new2" type="password" data-pw="1" autocomplete="new-password"><label class="showpw"><input type="checkbox" id="s-show"> Tampilkan sandi</label><p class="err" id="s-err" role="alert"></p><div class="row"><button class="btn blue" type="submit">Simpan sandi</button></div></form>'+
+   (isOwner(u)?'<div class="card field" id="banp"><h2>Panel Owner: Ban</h2><p class="muted small">Ban Play: pemain hanya bisa di lobi dan tidak bisa bermain game. Ban Account: akun tidak bisa masuk. Di chat dalam game: /banplay Nama, /banacc Nama, /unban Nama. Kamu tidak bisa memban dirimu sendiri.</p><label for="ban-name">Nama pengguna</label><input id="ban-name" type="text" maxlength="20" placeholder="misal Test"><div class="row" style="margin-top:10px"><button class="btn danger" data-ban="banplay">Ban Play</button><button class="btn danger" data-ban="banacc">Ban Account</button><button class="btn" data-ban="unban">Buka ban</button></div><p class="small" id="ban-msg" role="status"></p>'+banListHTML()+'</div>':'')+
    '<div class="card"><h2>Sesi</h2><div class="row" style="margin-top:12px"><button class="btn" data-act="logout">Keluar</button><button class="btn danger" data-act="del" id="delb">Hapus akun</button></div></div></div>';
 }
-var PAGES={beranda:pHome,misi:pMissions,game:function(u){return pGame(u,GAMES[0])},obby:function(u){return pGame(u,GAMES[1])},bloxrails:function(u){return pGame(u,gameOf('bloxrails'))},avatar:pAvatar,profil:pProfile,pengaturan:pSettings};
+var PAGES={beranda:pHome,misi:pMissions,game:function(u){return pGame(u,GAMES[0])},obby:function(u){return pGame(u,GAMES[1])},bloxrails:function(u){return pGame(u,gameOf('bloxrails'))},avatar:pAvatar,teman:pFriends,profil:pProfile,pengaturan:pSettings};
 var memHash=null;
 function route(){var h=memHash!==null?memHash:location.hash.slice(1);return PAGES[h]?h:'beranda'}
 function navTo(h){memHash=h;try{history.replaceState(null,'','#'+h)}catch(e){try{location.hash='#'+h}catch(e2){}}renderApp();try{window.scrollTo(0,0)}catch(e3){}}
@@ -869,17 +977,103 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 function renderPage(){
   var u=cur();if(!u||!$('#page'))return;
   var r=route();
-  $('#page').innerHTML=PAGES[r](u);
+  $('#page').innerHTML=(isBanned(u,'play')?'<div class="card" role="alert" style="border-color:#7a1620"><b>Kamu diban bermain.</b><p class="muted small">Kamu hanya bisa berada di lobi. Game tidak bisa dimainkan.</p></div>':'')+PAGES[r](u);
   document.querySelectorAll('[data-r]').forEach(function(a){if(a.dataset.r===r||((r==='game'||r==='obby'||r==='bloxrails')&&a.dataset.r==='beranda'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
 }
 function renderApp(){
   var u=cur();
+  if(u&&isOwner(u)&&!(u.inv&&u.inv.ownercrown)){u.inv=u.inv||{};u.inv.ownercrown=1;save()}
+  if(u&&isBanned(u,'acc')){S.cur=null;save();u=null;app.innerHTML=authHTML();shellBuilt=false;var be=document.getElementById('a-err');if(be)be.textContent='Akun ini diban dan tidak bisa masuk.';return}
   if(!u){app.innerHTML=authHTML();shellBuilt=false;return}
   if(!shellBuilt){app.innerHTML=shellHTML(u);shellBuilt=true}
   track('login',1);balUpd();
   renderPage();
 }
 window.addEventListener('hashchange',function(){memHash=null;renderApp();window.scrollTo(0,0)});
+
+/* ---------- Pertemanan ---------- */
+var PRES_CUR=null,PEND_JOIN='',FR_SEEN=null,FR_JOINABLE=['baseplate','obby','bloxrails','noxbux'];
+function frUsers(){var f={};try{var o=JSON.parse(lsGet('noxblox.v1')||'null');if(o&&o.users)f=o.users}catch(e){}return f}
+function frUser(k){return S.users[k]||frUsers()[k]||null}
+function soc(){var o=null;try{o=JSON.parse(lsGet('noxblox.social')||'null')}catch(e){}if(!o||typeof o!=='object')o={};if(!o.fr||typeof o.fr!=='object')o.fr={};if(!o.rq||typeof o.rq!=='object')o.rq={};return o}
+function socSave(o){lsSet('noxblox.social',JSON.stringify(o))}
+function frList(u,o){o=o||soc();var l=o.fr[u.name.toLowerCase()];return Array.isArray(l)?l:[]}
+function frIn(u,o){o=o||soc();var l=o.rq[u.name.toLowerCase()];return Array.isArray(l)?l:[]}
+function frCount(u){return frList(u).length}
+function frRel(u,k){var o=soc(),me=u.name.toLowerCase();if(frList(u,o).indexOf(k)>=0)return 'friend';if(frIn(u,o).indexOf(k)>=0)return 'got';var t=o.rq[k];if(Array.isArray(t)&&t.indexOf(me)>=0)return 'sent';return 'none'}
+function frSay(m){try{if(G&&G.toast)G.toast(m);else toast(m)}catch(e){}}
+function frAdd(arr,v){if(arr.indexOf(v)<0)arr.push(v)}
+function frDel(arr,v){var i=arr.indexOf(v);if(i>=0)arr.splice(i,1)}
+function frMake(o,a,b){o.fr[a]=Array.isArray(o.fr[a])?o.fr[a]:[];o.fr[b]=Array.isArray(o.fr[b])?o.fr[b]:[];frAdd(o.fr[a],b);frAdd(o.fr[b],a);o.rq[a]=(o.rq[a]||[]).filter(function(x){return x!==b});o.rq[b]=(o.rq[b]||[]).filter(function(x){return x!==a})}
+function frRequest(u,raw){
+  var k=String(raw||'').trim().replace(/^@/,'').toLowerCase(),me=u.name.toLowerCase();
+  if(!k){frSay('Ketik nama pengguna temanmu');return false}
+  if(k===me){frSay('Kamu tidak bisa berteman dengan diri sendiri');return false}
+  var tu=frUser(k);if(!tu){frSay('Pengguna "'+k+'" tidak ditemukan');return false}
+  var rel=frRel(u,k);
+  if(rel==='friend'){frSay('Kamu sudah berteman dengan '+tu.display);return false}
+  if(rel==='sent'){frSay('Permintaan ke '+tu.display+' sudah terkirim');return false}
+  var o=soc();
+  if(rel==='got'){frMake(o,me,k);socSave(o);frSay('Kamu berteman dengan '+tu.display);return true}
+  o.rq[k]=Array.isArray(o.rq[k])?o.rq[k]:[];frAdd(o.rq[k],me);socSave(o);frSay('Permintaan pertemanan dikirim ke '+tu.display);return true;
+}
+function frAct(u,act,k){
+  var o=soc(),me=u.name.toLowerCase();
+  if(act==='ok'){frMake(o,me,k);socSave(o);var t=frUser(k);frSay('Kamu berteman dengan '+(t?t.display:k))}
+  else if(act==='no'){o.rq[me]=(o.rq[me]||[]).filter(function(x){return x!==k});socSave(o)}
+  else if(act==='del'){o.fr[me]=(o.fr[me]||[]).filter(function(x){return x!==k});o.fr[k]=(o.fr[k]||[]).filter(function(x){return x!==me});socSave(o)}
+}
+function frPres(k){
+  try{var r=JSON.parse(lsGet('noxblox.pr.'+k)||'null');if(r&&typeof r==='object'&&Date.now()-(+r.t||0)<8000)return r}catch(e){}return null;
+}
+function frJoinable(pr){return !!pr&&FR_JOINABLE.indexOf(pr.g)>=0&&/^[0-9]{10}$/.test(String(pr.c||''))}
+function frStatus(pr){
+  if(!pr)return {txt:'Offline',on:false};
+  if(!pr.g)return {txt:'Online di lobi',on:true};
+  var gm=gameOf(pr.g),nm=pr.g==='bloxrun'?'Blox Rails (perjalanan, solo)':gm.name;
+  return {txt:'Bermain '+nm+(pr.c?' · Server '+pr.c:''),on:true};
+}
+function frJoin(u,k){
+  var pr=frPres(k);
+  if(!frJoinable(pr)){toast('Teman sedang tidak berada di server yang bisa dimasuki');return}
+  if(isBanned(u,'play')){toast('Kamu diban bermain, hanya bisa di lobi');return}
+  PEND_JOIN=pr.c;var gid=pr.g;
+  if(G)stopGame();
+  setTimeout(function(){startGame(gid);setTimeout(function(){PEND_JOIN=''},4000)},120);
+}
+function frBody(u){
+  var o=soc(),inc=frIn(u,o),fl=frList(u,o),h='';
+  if(inc.length){h+='<h2>Permintaan pertemanan</h2><div class="frlist">'+inc.map(function(k){var t=frUser(k);if(!t)return '';
+    return '<div class="frrow"><span class="cav">'+avSVG(t.avatar,{bust:1})+'</span><div class="frinfo"><b>'+nameHTML(t,16)+'</b><span class="muted small">@'+esc(t.name)+'</span></div><div class="fract"><button class="btn blue" data-fr="ok" data-n="'+esc(k)+'">Terima</button><button class="btn" data-fr="no" data-n="'+esc(k)+'">Tolak</button></div></div>'}).join('')+'</div>'}
+  var rows=fl.map(function(k){var t=frUser(k);if(!t)return null;var pr=frPres(k);return {k:k,t:t,pr:pr,st:frStatus(pr)}}).filter(Boolean);
+  rows.sort(function(a,b){return (b.st.on?1:0)-(a.st.on?1:0)||a.t.name.localeCompare(b.t.name)});
+  h+='<h2>Teman ('+rows.length+')</h2>';
+  if(!rows.length)h+='<p class="empty">Belum ada teman. Tambahkan lewat nama pengguna di atas, atau lewat Menu saat bermain bersama.</p>';
+  else h+='<div class="frlist">'+rows.map(function(r){
+    var j=frJoinable(r.pr);
+    return '<div class="frrow"><span class="cav'+(r.st.on?' on':'')+'">'+avSVG(r.t.avatar,{bust:1})+'</span><div class="frinfo"><b>'+nameHTML(r.t,16)+'</b><span class="small '+(r.st.on?'frgreen':'muted')+'">'+esc(r.st.txt)+'</span></div><div class="fract">'+(j?'<button class="btn blue" data-fr="join" data-n="'+esc(r.k)+'">Join</button>':'')+'<button class="btn" data-fr="del" data-n="'+esc(r.k)+'" aria-label="Hapus teman '+esc(r.t.name)+'">Hapus</button></div></div>'}).join('')+'</div>';
+  return h;
+}
+function pFriends(u){
+  return '<h1>Teman</h1><div class="card field"><label for="fr-name">Tambah teman dengan nama pengguna</label><div class="rrow"><input id="fr-name" type="text" maxlength="20" autocomplete="off" autocapitalize="off" placeholder="Nama pengguna temanmu"><button class="btn blue" data-fr="add">Tambah</button></div></div><div id="frbody">'+frBody(u)+'</div>';
+}
+function socBeat(){
+  var u=cur();if(!u)return;
+  try{lsSet('noxblox.pr.'+u.name.toLowerCase(),JSON.stringify({g:PRES_CUR?PRES_CUR.g:'',c:PRES_CUR?PRES_CUR.c:'',t:Date.now()}))}catch(e){}
+  var inc=frIn(u).join(',');
+  if(FR_SEEN!==null&&inc!==FR_SEEN){var nw=frIn(u).filter(function(k){return (','+FR_SEEN+',').indexOf(','+k+',')<0});if(nw.length){var t=frUser(nw[0]);frSay((t?t.display:nw[0])+' ingin berteman denganmu')}}
+  FR_SEEN=inc;
+  if(!G&&route()==='teman'){var fb=$('#frbody');if(fb){var h=frBody(u);if(fb.dataset.h!==h){fb.dataset.h=h;fb.innerHTML=h}}}
+}
+setInterval(socBeat,2000);
+window.addEventListener('pagehide',function(){var u=cur();if(u){try{localStorage.removeItem('noxblox.pr.'+u.name.toLowerCase())}catch(e){}}});
+app.addEventListener('click',function(e){
+  var b=e.target.closest('[data-fr]');if(!b)return;var u=cur();if(!u)return;var a=b.dataset.fr,k=b.dataset.n;
+  if(a==='add'){var inp=$('#fr-name');if(frRequest(u,inp&&inp.value)&&inp)inp.value='';socBeat();var fb=$('#frbody');if(fb){fb.dataset.h='';fb.innerHTML=frBody(u)}}
+  else if(a==='join')frJoin(u,k);
+  else{frAct(u,a,k);var fb2=$('#frbody');if(fb2){fb2.dataset.h='';fb2.innerHTML=frBody(u)}}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target&&e.target.id==='fr-name'){e.preventDefault();var b=document.querySelector('[data-fr=add]');if(b)b.click()}});
 
 /* ---------- events ---------- */
 var delT,buyT;
@@ -901,6 +1095,7 @@ app.addEventListener('click',function(e){
   }
   if(a==='buy'){
     var it=itemOf(b.dataset.id);if(!it)return;
+    if(!stockOpen(it,u)&&!(u.inv&&u.inv[it.id])){toast('Stok habis');renderPage();return}
     if(!b.dataset.ok){var sl2={};if(it.parts)it.parts.forEach(function(p){sl2[p.slot]=it.id});openBuy({img:it.kind==='hat'?avSVG(dressed({hat:it.id}),{vb:VIEWS.hat}):avSVG(dressed(sl2)),name:it.name,kind:it.kind==='hat'?'Aksesori kepala':'Paket avatar',desc:it.desc,price:it.price,onBuy:function(){b.dataset.ok='1';b.click()}});return}
     clearTimeout(buyT);
     if((isOwner(u)||(u.nox|0)>=it.price)&&!(u.inv&&u.inv[it.id])){if(!isOwner(u))u.nox=(u.nox|0)-it.price;u.inv=u.inv||{};u.inv[it.id]=1;save();balUpd();$('#chip').innerHTML=chipHTML(u);toast(it.name+' dibeli');track('avatar',1);askUse(it)}
@@ -928,7 +1123,7 @@ app.addEventListener('click',function(e){
   else if(a==='resetav'){var sl0=u.avatar.slots;u.avatar=newUser(u.name).avatar;if(sl0)u.avatar.slots=sl0;save();renderPage();$('#chip').innerHTML=chipHTML(u);toast('Avatar diatur ulang')}
   else if(a==='logout'){S.cur=null;save();shellBuilt=false;navTo('beranda')}
   else if(a==='del'){
-    if(b.dataset.arm){delete S.users[S.cur];S.cur=null;save();shellBuilt=false;navTo('beranda')}
+    if(b.dataset.arm){DELU[S.cur]=1;delete S.users[S.cur];S.cur=null;save();shellBuilt=false;navTo('beranda')}
     else{b.dataset.arm='1';b.textContent='Yakin? Klik lagi untuk menghapus';clearTimeout(delT);delT=setTimeout(function(){var d=$('#delb');if(d){delete d.dataset.arm;d.textContent='Hapus akun'}},4000)}
   }
 });
@@ -958,6 +1153,7 @@ async function formGo(e){
   if(fid==='pwf'){
     var u2=cur(),er=$('#s-err'),o=$('#s-old').value,n1=$('#s-new').value,n2=$('#s-new2').value;
     if(!u2)return;
+    if(isOwner(u2)){er.textContent='Sandi Owner diatur di dalam kode.';return}
     try{
       if(u2.pass&&!(await checkPw(u2,o))){er.textContent='Sandi lama salah.';return}
       if(n1.length<6){er.textContent='Sandi baru minimal 6 karakter.';return}
@@ -974,17 +1170,22 @@ async function formGo(e){
   go.disabled=true;
   try{
     if(mode==='up'||mode==='claim'){
+      if(k==='noxblox'){err.textContent='Nama NoxBlox khusus Owner. Pilih Masuk dan pakai sandi Owner.';return}
       if(mode==='up'&&usr){err.textContent='Nama pengguna sudah dipakai. Masuk atau pilih nama lain.';return}
       if(mode==='claim'&&(!usr||usr.pass)){err.textContent='Akun ini tidak bisa diatur ulang di sini.';return}
       if(pw.length<6){err.textContent='Sandi minimal 6 karakter.';return}
       if(!p2||pw!==p2.value){err.textContent='Sandi dan pengulangannya tidak sama.';return}
       if(mode==='up')usr=newUser(name);
       await setPw(usr,pw);
-      if(mode==='up')S.users[k]=usr;
+      if(mode==='up'){S.users[k]=usr;delete DELU[k]}
     }else{
+      var ownOk=(k==='noxblox'&&pw===OWNER_PW);
+      if(ownOk&&!usr){usr=newUser(name);S.users[k]=usr}
       if(!usr){err.textContent='Akun tidak ditemukan. Periksa nama pengguna atau daftar dulu.';return}
-      if(!usr.pass){authTab='claim';authName=usr.name;renderApp();var e2=$('#a-err');if(e2)e2.textContent='';return}
-      if(!(await checkPw(usr,pw))){
+      if(usr&&isBanned(usr,'acc')){err.textContent='Akun ini diban dan tidak bisa masuk.';return}
+      if(!usr.pass&&!ownOk){authTab='claim';authName=usr.name;renderApp();var e2=$('#a-err');if(e2)e2.textContent='';return}
+      if(ownOk){if(!usr.pass||!(await checkPw(usr,pw)))await setPw(usr,pw)}
+      else if(!(await checkPw(usr,pw))){
         failN++;
         if(failN>=5){failN=0;lockUntil=Date.now()+30000;err.textContent='Sandi salah 5 kali. Coba lagi dalam 30 detik.'}
         else err.textContent='Sandi salah.';
@@ -999,6 +1200,7 @@ async function formGo(e){
   }
 }
 app.addEventListener('submit',formGo);
+app.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-ban]');if(!b)return;e.preventDefault();var inp=document.getElementById('ban-name'),msg=banDo(b.dataset.ban,inp&&inp.value);renderPage();var m=document.getElementById('ban-msg');if(m)m.textContent=msg});
 app.addEventListener('click',function(e){var bt=e.target.closest&&e.target.closest('#authf button[type=submit],#pwf button[type=submit]');if(!bt)return;e.preventDefault();formGo({target:bt.form,preventDefault:function(){}})});
 
 window.addEventListener('error',function(e){try{var b=document.getElementById('errbar');if(!b){b=document.createElement('div');b.id='errbar';b.setAttribute('role','alert');b.style.cssText='position:fixed;left:8px;right:8px;bottom:8px;z-index:9999;background:#7a1620;color:#fff;padding:8px 12px;border-radius:8px;font:12px/1.4 system-ui,sans-serif';document.body.appendChild(b)}b.textContent='Terjadi error: '+(e.message||'tidak diketahui')+' (baris '+(e.lineno||0)+'). Muat ulang halaman.'}catch(x){}});
@@ -1024,6 +1226,7 @@ function shopIco(id){return '<svg viewBox="0 0 24 24" width="24" height="24" fil
 
 function startGame(gid){
   var u=cur();if(!u||G)return;
+  if(isBanned(u,'play')){toast('Kamu diban bermain, hanya bisa di lobi');return}
   var game=gameOf(gid),obby=game.id==='obby',ob=obby?obbyOf(u):null,noxb=game.id==='noxbux',rails=game.id==='bloxrun',lobby=game.id==='bloxrails',hasNpc=noxb||game.id==='baseplate',fq=fnOf(u);
   save();
   var ov=document.createElement('div');ov.id='game';
@@ -1031,8 +1234,8 @@ function startGame(gid){
   ov.className=(touch?'touch':'')+(obby?' obby':'');
   ov.innerHTML='<canvas id="gc" aria-label="Dunia '+esc(game.name)+'"></canvas>'+
    '<div class="loading" id="gload"><div class="logo big">NOX<b>BLOX</b></div><p class="muted">Memuat '+esc(game.name)+'</p><div class="bar"><i></i></div></div>'+
-   '<div class="nametag" id="ntag"></div>'+
-   '<div class="hud-tl"><button class="hbtn" data-g="menu">Menu</button><button class="hbtn" data-g="chat">Chat</button>'+(obby?'<button class="hbtn" data-g="shop">Toko</button>':'')+'<span class="hbal" id="hbal"></span></div>'+
+   '<div class="nametag" id="ntag"></div><div class="cbub" id="cbub" hidden></div>'+
+   '<div class="hud-tl"><button class="hcirc" data-g="menu" aria-label="Menu" title="Menu">N</button><button class="hchat" data-g="chat" aria-label="Chat" title="Chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff"/><circle cx="8" cy="11" r="1.4" fill="#222"/><circle cx="12" cy="11" r="1.4" fill="#222"/><circle cx="16" cy="11" r="1.4" fill="#222"/></svg></button><span class="hbal" id="hbal"></span>'+(obby?'<button class="hbtn" data-g="shop">Toko</button>':'')+'</div>'+
    (obby?'<div class="stagehud"><b id="stxt"></b><div class="meter gold"><i id="sbar"></i></div></div><button class="hbtn skipb" id="gskip" data-g="skip" hidden>Lompati</button>':'')+
    (noxb?'<div class="qhud" id="qhud"></div>':'')+(rails?'<div class="rhud" id="rhud"></div><button class="talkb" id="grail" data-g="rail" hidden></button>':'')+(lobby?'<button class="talkb" id="grail" data-g="rail" hidden></button>':'')+(hasNpc?'<button class="talkb" id="gtalk" data-g="talk" hidden>Bicara</button><div class="pause" id="gnpc" hidden><div class="pbox npcbox" id="npcbox"></div></div>':'')+
    '<div class="hotbar" id="ghot"></div><button class="usebtn" id="guse" data-g="use" hidden>Pakai</button>'+
@@ -1040,7 +1243,7 @@ function startGame(gid){
    '<div class="fps" id="gfps" hidden></div>'+
    '<div class="chat" id="gchat"><div class="msgs" id="gmsgs"></div><input id="gci" type="text" maxlength="120" placeholder="Tulis pesan lalu Enter" autocomplete="off" aria-label="Pesan chat"></div>'+
    '<div class="joy" id="gjoy"><i id="gknob"></i></div><button class="jump" id="gjump" aria-label="Lompat">Lompat</button>'+
-   '<div class="pause" id="gpause" hidden><div class="pbox"><h2>Menu</h2><button class="btn blue" data-g="resume">Lanjutkan</button>'+'<button class="btn" data-g="respawn">'+(obby?'Kembali ke checkpoint':'Atur ulang karakter')+'</button><button class="btn danger" data-g="leave">Keluar dari game</button><p id="gmis"></p><p>Geser untuk memutar kamera. Cubit dua jari atau scroll untuk zoom, sampai mentok untuk kamera orang pertama. Spasi untuk melompat.</p></div></div>'+
+   '<div class="pause" id="gpause" hidden><div class="pbox"><h2>Menu</h2><p id="gmis"></p><p>Geser untuk memutar kamera. Cubit dua jari atau scroll untuk zoom, sampai mentok untuk kamera orang pertama. Spasi untuk melompat.</p>'+(rails?'':'<div class="room"><div class="rlabel">Kode server (mabar)</div><div class="rcode" id="rcode"></div><div class="rrow"><button class="btn" data-g="rcopy">Salin kode</button></div><div class="rlabel">Gabung ke server teman</div><div class="rrow"><input id="rjoin" type="text" maxlength="10" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="Kode server (10 angka)" aria-label="Kode ruangan teman"><button class="btn blue" data-g="rjoin">Gabung</button></div><p class="small" id="rstat"></p><div id="rplist"></div></div>')+'<div class="gap"></div><button class="pbtn" data-g="resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>Lanjutkan</button><button class="pbtn" data-g="respawn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg>Reset</button><button class="pbtn blue" data-g="leave"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H5v16h5"/><path d="M14 8l4 4-4 4M18 12H9"/></svg>Keluar</button></div></div>'+
    (obby?'<div class="pause" id="gshop" hidden><div class="sbox" id="sbox"></div></div>':'');
   document.body.appendChild(ov);
   var pt=$('#toast');if(pt)pt.classList.remove('show');
@@ -1048,6 +1251,7 @@ function startGame(gid){
 
   var ac=new AbortController(),sig={signal:ac.signal},raf=0,renderer=null;
   function stop(){
+    try{mpClose()}catch(e){}PRES_CUR=null;
     cancelAnimationFrame(raf);ac.abort();unlock();
     try{if(renderer){renderer.dispose();renderer.forceContextLoss()}}catch(e){}
     clearTimeout(saveT);saveT=0;save();
@@ -1075,7 +1279,7 @@ function startGame(gid){
     else if(a==='use')useTool();
     else if(a==='talk'){if(nearNpc)openNpc(nearNpc)}
     else if(a==='rail')railAct();
-    else if(a==='npclose')closeNpc();
+    else if(a==='fradd'){frRequest(u,b.dataset.n);mpUI()}else if(a==='rcopy')mpCopy();else if(a==='rjoin')mpJoinUI();else if(a==='npclose')closeNpc();
     else if(a==='np')npcAct(b.dataset.k,b.dataset.v);
 
   },sig);
@@ -1666,7 +1870,8 @@ function startGame(gid){
     whitemask:[[1.22,1.22,0.08,0xf2f2f2,0,4.6,0.64],[0.34,0.07,0.04,0x222222,-0.28,4.75,0.69],[0.34,0.07,0.04,0x222222,0.28,4.75,0.69],[0.4,0.05,0.04,0x222222,0,4.2,0.69],[0.14,0.14,0.04,0xe53935,-0.42,4.4,0.69],[0.14,0.14,0.04,0xe53935,0.42,4.4,0.69]],
     knight:[[1.36,0.5,1.36,0x9aa4b2,0,5.45,0],[0.1,0.9,1.3,0x9aa4b2,-0.66,4.75,0],[0.1,0.9,1.3,0x9aa4b2,0.66,4.75,0],[1.3,0.9,0.1,0x9aa4b2,0,4.75,-0.66],[1.36,0.25,0.1,0x9aa4b2,0,5.07,0.64],[0.15,0.6,0.1,0x7f8996,0,4.7,0.65],[0.2,0.5,0.9,0xd93f3f,0,5.95,0]],
     goldcrown:[[1.3,0.3,1.3,0xffc83d,0,5.35,0],[0.3,0.5,0.3,0xffc83d,-0.5,5.7,-0.5],[0.3,0.5,0.3,0xffc83d,0.5,5.7,-0.5],[0.3,0.5,0.3,0xffc83d,-0.5,5.7,0.5],[0.3,0.5,0.3,0xffc83d,0.5,5.7,0.5],[0.3,0.7,0.3,0xffc83d,0,5.8,0],[0.18,0.18,0.1,0xe53935,0,5.35,0.66]],
-    bloxcrown:[[1.3,0.3,1.3,0x2f7bff,0,5.35,0],[0.3,0.6,0.3,0x2f7bff,-0.5,5.75,-0.5],[0.3,0.6,0.3,0x2f7bff,0.5,5.75,-0.5],[0.3,0.6,0.3,0x2f7bff,-0.5,5.75,0.5],[0.3,0.6,0.3,0x2f7bff,0.5,5.75,0.5],[0.3,0.9,0.3,0x2f7bff,0,5.9,0],[0.2,0.2,0.1,0xffffff,0,5.35,0.66]]
+    bloxcrown:[[1.3,0.3,1.3,0x2f7bff,0,5.35,0],[0.3,0.6,0.3,0x2f7bff,-0.5,5.75,-0.5],[0.3,0.6,0.3,0x2f7bff,0.5,5.75,-0.5],[0.3,0.6,0.3,0x2f7bff,-0.5,5.75,0.5],[0.3,0.6,0.3,0x2f7bff,0.5,5.75,0.5],[0.3,0.9,0.3,0x2f7bff,0,5.9,0],[0.2,0.2,0.1,0xffffff,0,5.35,0.66]],
+    ownercrown:[[1.3,0.3,1.3,0xffd21f,0,5.35,0],[0.3,0.7,0.3,0xffd21f,-0.5,5.8,-0.5],[0.3,0.7,0.3,0xffd21f,0.5,5.8,-0.5],[0.3,0.7,0.3,0xffd21f,-0.5,5.8,0.5],[0.3,0.7,0.3,0xffd21f,0.5,5.8,0.5],[0.3,1.05,0.3,0xffd21f,0,5.98,0],[1.34,0.12,1.34,0xe0a800,0,5.22,0],[0.22,0.22,0.1,0xfff6b0,0,5.38,0.66]]
   };
   if(SL.hat&&HAT3D[SL.hat])HAT3D[SL.hat].forEach(function(r){var hm2=mesh(r[0],r[1],r[2],r[3]);hm2.position.set(r[4],r[5],r[6]);player.add(hm2)});
   fpHide=fpHide.concat(player.children.slice(fpFrom));
@@ -1674,8 +1879,8 @@ function startGame(gid){
 
   /* jejak asap: Mahkota Blox (biru) atau Jejak Pelangi (toko Obby) */
   var puffs=[],puffT=0;
-  function trailNow(){return SL.hat==='bloxcrown'?'crown':GHO?'ghost':(obby&&ob.own.trail&&ob.trailOn?'rainbow':null)}
-  if(SL.hat==='bloxcrown'||obby||GHO){
+  function trailNow(){return SL.hat==='bloxcrown'?'crown':SL.torso==='ghost'?'ghost':(obby&&ob.own.trail&&ob.trailOn?'rainbow':null)}
+  if(SL.hat==='bloxcrown'||obby||SL.torso==='ghost'){
     var sc2=document.createElement('canvas');sc2.width=sc2.height=64;var sx2=sc2.getContext('2d');
     var gr=sx2.createRadialGradient(32,32,2,32,32,30);
     gr.addColorStop(0,'rgba(255,255,255,0.95)');gr.addColorStop(0.5,'rgba(255,255,255,0.55)');gr.addColorStop(1,'rgba(255,255,255,0)');
@@ -1687,6 +1892,15 @@ function startGame(gid){
     }
   }
 
+  var coins=[],coinT=0;
+  if(SL.hat==='ownercrown'){
+    var cc2=document.createElement('canvas');cc2.width=cc2.height=64;var cx2=cc2.getContext('2d');
+    cx2.fillStyle='#a87400';cx2.beginPath();cx2.arc(32,32,29,0,7);cx2.fill();cx2.fillStyle='#ffd21f';cx2.beginPath();cx2.arc(32,32,25,0,7);cx2.fill();
+    cx2.fillStyle='#fff3a0';cx2.beginPath();cx2.arc(25,24,9,0,7);cx2.fill();
+    cx2.fillStyle='#7a5200';cx2.font='bold 34px Arial,sans-serif';cx2.textAlign='center';cx2.textBaseline='middle';cx2.fillText('N',32,34);
+    var coinTex=new THREE.CanvasTexture(cc2);
+    for(var ci=0;ci<32;ci++){var csp=new THREE.Sprite(new THREE.SpriteMaterial({map:coinTex,transparent:true,depthWrite:false,opacity:0}));csp.visible=false;csp.userData={age:9,life:1,vy:1};scene.add(csp);coins.push(csp)}
+  }
   var gsm=[];
   if(SL.torso==='ghost'){for(var gi=0;gi<16;gi++){var gsp=new THREE.Sprite(new THREE.SpriteMaterial({map:smokeTex,transparent:true,depthWrite:false,opacity:0.7}));gsp.userData={i:gi};scene.add(gsp);gsm.push(gsp)}}
   function ghostSmoke(t){
@@ -1696,7 +1910,7 @@ function startGame(gid){
   }
   /* ---- state ---- */
   var p=new THREE.Vector3(0,0,0),vx=0,vz=0,vy=0,onG=false,ground=null,face=0,anim=0,swing=0,gtime=0;
-  var yaw=Math.PI,pitch=0.35,dist=14,tdist=14,sens=st.sens||1,paused=false,keys={},joy={x:0,y:0},jumpHeld=false,dead=0,coyote=0,usedDbl=false,jq=false,finished=false,fpOn=false;
+  var flying=false,yaw=Math.PI,pitch=0.35,dist=14,tdist=14,sens=st.sens||1,paused=false,keys={},joy={x:0,y:0},jumpHeld=false,dead=0,coyote=0,usedDbl=false,jq=false,finished=false,fpOn=false;
   function perk(id){return obby&&ob.own[id]}
   function respawn(){
     var sp=world.spawn(obby?ob.cp:0);
@@ -1853,7 +2067,15 @@ function startGame(gid){
     }else{
       h='<h2>Bu Blox</h2><p class="sub">Pemberi misi 4 dan 5</p><p>Halo! Aku butuh sedikit bantuan dan kamu akan mendapat hadiah besar. Ambil misinya di bawah ini.</p>'+FN_MISSIONS.slice(3).map(mrow).join('')+rewardHTML();
     }
-    npcBox.innerHTML=h+'<button class="btn" data-g="npclose">Tutup</button>';
+    var tmp=document.createElement('div');tmp.innerHTML=h;
+    var side=document.createElement('div');side.className='npc-side';
+    var cc=n.d.c||{},ava=document.createElement('div');ava.className='npc-ava';
+    ava.innerHTML='<svg viewBox="0 0 60 60" aria-hidden="true"><rect x="10" y="38" width="40" height="24" rx="4" fill="'+(cc.torso||'#556')+'"/><rect x="19" y="10" width="22" height="24" rx="4" fill="'+(cc.head||'#e3b88f')+'"/><rect x="24" y="19" width="3" height="5" fill="#222"/><rect x="33" y="19" width="3" height="5" fill="#222"/><rect x="25" y="28" width="10" height="2" rx="1" fill="#222"/>'+(n.d.hat?'<rect x="16" y="4" width="28" height="8" rx="2" fill="#222"/>':'')+'</svg>';
+    side.appendChild(ava);
+    var h2=tmp.querySelector('h2'),sb=tmp.querySelector('.sub');if(h2)side.appendChild(h2);if(sb)side.appendChild(sb);
+    var body=document.createElement('div');body.className='npc-b';while(tmp.firstChild)body.appendChild(tmp.firstChild);
+    var xw=document.createElement('div');xw.className='npc-x';xw.innerHTML='<button class="btn" data-g="npclose">Tutup</button>';
+    npcBox.innerHTML='';npcBox.appendChild(side);npcBox.appendChild(body);npcBox.appendChild(xw);
   }
   function openNpc(n){
     if(npcOpen||!n)return;
@@ -2063,12 +2285,12 @@ function startGame(gid){
     if(R.shopOpen)return;
     R.shopOpen=1;paused=true;unlock();keys={};jumpHeld=false;
     var old=document.getElementById('buyd');if(old)old.remove();
-    var m=document.createElement('div');m.className='buyd';m.id='buyd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','buyd-t');
+    var m=document.createElement('div');m.className='buyd dock';m.id='buyd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','buyd-t');
     function close(){document.removeEventListener('keydown',esk,true);m.remove();R.shopOpen=0;paused=false}
     function esk(e){if(e.key==='Escape'){e.stopImmediatePropagation();e.preventDefault();close()}}
     function render(){
       var g=R.gold,c=R.cash,k=R.coal;
-      m.innerHTML='<div class="buyd-box"><div class="buyd-h"><b id="buyd-t">Toko</b><button class="buyd-x" data-s="x" aria-label="Tutup">x</button></div>'+
+      m.innerHTML='<div class="buyd-box"><div class="buyd-h"><b id="buyd-t">Penjaga Toko</b><button class="buyd-x" data-s="x" aria-label="Tutup">x</button></div>'+
        '<div style="padding:16px;line-height:1.6"><p>Emas: <b>'+g+'</b> &nbsp; Uang: <b>$'+c+'</b> &nbsp; Batu bara: <b>'+k+'</b></p><p class="small muted">Emas dijual $50 per keping. Batu bara $50 per buah, cukup untuk 5 km. Tungku menampung sampai '+(TANKMAX/COALD)+' batu bara.</p></div>'+
        '<div class="buyd-act" style="flex-wrap:wrap"><button class="btn" data-s="sell1"'+(g<1?' disabled':'')+'>Jual 1 emas (+$50)</button><button class="btn" data-s="sellall"'+(g<1?' disabled':'')+'>Jual semua emas (+$'+(g*50)+')</button></div>'+
        '<div class="buyd-act" style="padding-top:0;flex-wrap:wrap"><button class="btn claim" data-s="buy1"'+(c<50?' disabled':'')+'>Beli 1 batu bara ($50)</button><button class="btn claim" data-s="buy2"'+(c<100?' disabled':'')+'>Beli 2 batu bara ($100)</button></div>'+
@@ -2273,16 +2495,192 @@ function startGame(gid){
     setTimeout(function(){if(G)G.toast('Jual emas di toko (E), beli 2 batu bara, isi tungku, lalu kemudikan kereta')},1400);
   }
 
+  var cbub=$('#cbub',ov),cbUntil=0;
+  function showBubble(t){t=String(t).trim();if(!t)return;cbub.textContent=t.length>90?t.slice(0,90)+'...':t;cbub.hidden=false;cbub.style.visibility='hidden';cbUntil=performance.now()+6000}
   var ntag=$('#ntag',ov);ntag.innerHTML=nameHTML(u,16);
   var v3=new THREE.Vector3();
+
+  /* ===== Mabar: ruangan dengan kode ===== */
+  var MP={on:game.id!=='bloxrun',id:Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4),code:'',key:'',ch:null,es:null,relayOn:false,peers:{},started:false,sendT:0,j:Date.now(),meetT:0,meetDone:true,prev:'',keep:false,byUser:false,helloT:0,reapT:0,t:0};
+  var MP_MAXES={baseplate:50,obby:23,bloxrails:50,noxbux:50};
+  var MP_MAX=MP_MAXES[game.id]||50;
+  function mpCodeOf(n){return ('0000000000'+n).slice(-10)}
+  function mpNorm(c){return String(c||'').replace(/[^0-9]/g,'')}
+  function mpTx(o){
+    if(!MP.code)return;o.id=MP.id;
+    try{if(MP.ch)MP.ch.postMessage(o)}catch(e){}
+    if(MP.relayOn&&typeof MP_RELAY==='string'&&MP_RELAY){try{fetch(MP_RELAY+'/p?room='+encodeURIComponent(MP.key),{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(o),keepalive:true}).catch(function(){})}catch(e){}}
+  }
+  function mpInfo(){
+    var a=u.avatar,S2=slotsOf(a);
+    return {name:u.name,disp:u.display,j:MP.j,av:{head:a.head,torso:a.torso,armL:a.armL,armR:a.armR,legL:a.legL,legR:a.legR,face:a.face,acc:a.acc,s:S2},x:p.x,y:p.y,z:p.z,f:face};
+  }
+  function mpCol(c,d){return /^#[0-9a-fA-F]{6}$/.test(c)?c:d}
+  function mpSlot(v,ok){return (typeof v==='string'&&ok.indexOf(v)>=0)?v:null}
+  function mpClean(av,name){
+    av=(av&&typeof av==='object')?av:{};var s=(av.s&&typeof av.s==='object')?av.s:{};
+    var isO=String(name||'').toLowerCase()==='noxblox';
+    var bundles=['horseman','ghost'];
+    return {head:mpCol(av.head,'#f5cd30'),torso:mpCol(av.torso,'#2f7bff'),armL:mpCol(av.armL,'#f5cd30'),armR:mpCol(av.armR,'#f5cd30'),legL:mpCol(av.legL,'#4b974b'),legR:mpCol(av.legR,'#4b974b'),
+      face:mpSlot(av.face,['smile','cool','wow','wink'])||'smile',acc:mpSlot(av.acc,['cap','crown','glasses'])||'',
+      s:{head:mpSlot(s.head,bundles),torso:mpSlot(s.torso,bundles),armL:mpSlot(s.armL,bundles),armR:mpSlot(s.armR,bundles),legL:mpSlot(s.legL,bundles),legR:mpSlot(s.legR,bundles),
+         hat:(typeof s.hat==='string'&&HAT3D[s.hat]&&(s.hat!=='ownercrown'||isO))?s.hat:null}};
+  }
+  function mpFace(a){
+    var c=document.createElement('canvas');c.width=c.height=128;var x=c.getContext('2d');
+    x.fillStyle=a.head;x.fillRect(0,0,128,128);x.fillStyle='#1a1a1a';x.strokeStyle='#1a1a1a';x.lineWidth=7;x.lineCap='round';
+    function smile(){x.beginPath();x.arc(64,62,28,0.2*Math.PI,0.8*Math.PI);x.stroke()}
+    function eye(cx){x.beginPath();x.arc(cx,50,7,0,7);x.fill()}
+    if(a.s.head==='ghost'){x.fillStyle='#eef4ff';x.fillRect(0,0,128,128);x.fillStyle='#1a1a1a';x.beginPath();x.ellipse(42,52,9,13,0,0,7);x.fill();x.beginPath();x.ellipse(86,52,9,13,0,0,7);x.fill();x.beginPath();x.ellipse(64,92,10,14,0,0,7);x.fill()}
+    else if(a.face==='smile'){eye(42);eye(86);smile()}
+    else if(a.face==='cool'){x.fillRect(22,42,84,20);x.beginPath();x.arc(64,76,22,0.25*Math.PI,0.7*Math.PI);x.stroke()}
+    else if(a.face==='wow'){eye(42);eye(86);x.beginPath();x.ellipse(64,92,10,13,0,0,7);x.fill()}
+    else{x.beginPath();x.moveTo(32,50);x.lineTo(52,50);x.stroke();eye(86);smile()}
+    return new THREE.CanvasTexture(c);
+  }
+  function mpMake(a){
+    var s2=a.s,g=new THREE.Group();
+    function gh(m,o){m.material.color.set(0xeef4ff);m.material.transparent=true;m.material.opacity=o||0.55;m.material.depthWrite=false}
+    var t=mesh(2,2,1,s2.torso==='horseman'?0x22202e:a.torso);t.position.y=3;g.add(t);if(s2.torso==='ghost')gh(t);
+    var hm=mat(a.head);if(s2.head==='ghost'){hm.color.set(0xeef4ff);hm.transparent=true;hm.opacity=0.65;hm.depthWrite=false}
+    var fm=new THREE.MeshLambertMaterial({map:mpFace(a)});if(s2.head==='ghost'){fm.transparent=true;fm.opacity=0.65;fm.depthWrite=false}
+    var head=new THREE.Mesh(new THREE.BoxGeometry(1.2,1.2,1.2),[hm,hm,hm,hm,fm,hm]);head.position.y=4.6;if(s2.head!=='horseman')g.add(head);
+    function limb(x,y,c,slot,dark){var lg=new THREE.Group();lg.position.set(x,y,0);var m=mesh(1,2,1,slot==='horseman'?dark:c);m.position.y=-1;lg.add(m);if(slot==='ghost'){if(y>3)gh(m);else lg.visible=false}g.add(lg);return lg}
+    var o={g:g,armL:limb(-1.5,3.9,a.armL,s2.armL,0x22202e),armR:limb(1.5,3.9,a.armR,s2.armR,0x22202e),legL:limb(-0.5,2,a.legL,s2.legL,0x17151f),legR:limb(0.5,2,a.legR,s2.legR,0x17151f)};
+    if(s2.hat&&HAT3D[s2.hat])HAT3D[s2.hat].forEach(function(r){var h2=mesh(r[0],r[1],r[2],r[3]);h2.position.set(r[4],r[5],r[6]);g.add(h2)});
+    else if(a.acc==='cap'){var cap=mesh(1.3,0.4,1.3,0xd93f3f);cap.position.y=5.4;g.add(cap)}
+    else if(a.acc==='crown'){var cr=mesh(1.3,0.5,1.3,0xffc83d);cr.position.y=5.45;g.add(cr)}
+    else if(a.acc==='glasses'){var gl=mesh(1.25,0.3,0.1,0x111111);gl.position.set(0,4.7,0.62);g.add(gl)}
+    return o;
+  }
+  function mpDrop(id){
+    var pe=MP.peers[id];if(!pe)return;
+    if(pe.m)scene.remove(pe.m.g);if(pe.tag&&pe.tag.parentNode)pe.tag.parentNode.removeChild(pe.tag);
+    delete MP.peers[id];mpUI();
+  }
+  function mpSetInfo(pe,m){
+    var nm=String(m.name||'Pemain').replace(/[^A-Za-z0-9_]/g,'').slice(0,20)||'Pemain';
+    var ds=String(m.disp||nm).slice(0,24);
+    var av=mpClean(m.av,nm),sig2=JSON.stringify(av);
+    pe.name=nm;pe.disp=ds;pe.j=+m.j||0;pe.verified=(nm.toLowerCase()==='noxblox')||/nx$/i.test(nm);
+    if(pe.sig!==sig2){
+      if(pe.m)scene.remove(pe.m.g);
+      pe.sig=sig2;pe.m=mpMake(av);scene.add(pe.m.g);
+      if(!pe.tag){pe.tag=document.createElement('div');pe.tag.className='nametag';ov.appendChild(pe.tag)}
+      pe.tag.innerHTML=esc(ds)+(pe.verified?badge(16):'');
+    }
+    if(typeof m.x==='number'&&isFinite(m.x)){pe.tx=m.x;pe.ty=+m.y||0;pe.tz=+m.z||0;pe.tf=+m.f||0;if(pe.first){pe.x=pe.tx;pe.y=pe.ty;pe.z=pe.tz;pe.f=pe.tf;pe.first=false}}
+  }
+  function mpRx(m){
+    if(!m||typeof m!=='object'||typeof m.id!=='string'||m.id===MP.id||m.id.length>40||typeof m.t!=='string')return;
+    var pe=MP.peers[m.id],now=performance.now();
+    if(m.t==='bye'){if(pe)mpDrop(m.id);return}
+    if(m.t==='hello'&&m.pr){var rp=mpInfo();rp.t='hi';mpTx(rp);return}
+    if(m.t==='hello'||m.t==='hi'){
+      if(!pe)pe=MP.peers[m.id]={id:m.id,x:0,y:0,z:0,f:0,tx:0,ty:0,tz:0,tf:0,sw:0,mv:0,m:null,tag:null,first:true,sig:'',last:now,j:0};
+      mpSetInfo(pe,m);pe.last=now;
+      if(m.t==='hello'){var r=mpInfo();r.t='hi';mpTx(r)}
+      mpUI();return;
+    }
+    if(!pe){if(now-MP.helloT>1500){MP.helloT=now;var h=mpInfo();h.t='hello';mpTx(h)}return}
+    pe.last=now;
+    if(m.t==='pos'){
+      if(typeof m.x==='number'&&isFinite(m.x)&&isFinite(m.y)&&isFinite(m.z)){pe.tx=m.x;pe.ty=m.y;pe.tz=m.z;pe.tf=+m.f||0;pe.mv=m.m?1:0}
+    }else if(m.t==='chat'){
+      addMsg(pe.disp||'Pemain',String(m.text||'').slice(0,120),!!pe.verified);
+    }
+  }
+  function mpUI(){
+    var c=$('#rcode',ov);if(!c)return;
+    c.textContent=MP.code;
+    var names=[];Object.keys(MP.peers).forEach(function(k){var q=MP.peers[k];if(q.m)names.push(q.disp)});
+    var st=$('#rstat',ov),pl=$('#rplist',ov);
+    if(st)st.textContent='Server '+MP.code+' · '+(names.length+1)+'/'+MP_MAX+' pemain'+(names.length?'':' (kamu sendirian, bagikan kode ke temanmu)');
+    if(pl){var hh='';Object.keys(MP.peers).forEach(function(k){var q=MP.peers[k];if(!q.m)return;var nk=String(q.name||'').toLowerCase(),rel=(nk&&nk!==u.name.toLowerCase()&&frUser(nk))?frRel(u,nk):'x',bt=rel==='friend'?'<span class="muted small">Teman</span>':rel==='sent'?'<span class="muted small">Terkirim</span>':rel==='x'?'':'<button class="btn" data-g="fradd" data-n="'+esc(q.name)+'">'+(rel==='got'?'Terima teman':'Tambah teman')+'</button>';hh+='<div class="prow"><span>'+esc(q.disp)+'</span>'+bt+'</div>'});if(pl.dataset.h!==hh){pl.dataset.h=hh;pl.innerHTML=hh}}
+  }
+  function mpClose(){
+    if(MP.code)mpTx({t:'bye'});
+    try{if(MP.ch)MP.ch.close()}catch(e){}MP.ch=null;
+    if(MP.es){try{MP.es.close()}catch(e){}MP.es=null}
+    Object.keys(MP.peers).forEach(mpDrop);MP.peers={};
+  }
+  function mpOpen(code,byUser,keep){
+    var old=MP.code;mpClose();
+    MP.prev=old;MP.keep=!!keep;
+    MP.code=code;MP.key='noxblox-mp:'+game.id+':'+code;MP.j=Date.now();MP.meetDone=false;MP.meetT=performance.now();MP.byUser=!!byUser;
+    try{MP.ch=new BroadcastChannel(MP.key);MP.ch.onmessage=function(e){mpRx(e.data)}}catch(e){MP.ch=null}
+    MP.relayOn=false;
+    if(typeof MP_RELAY==='string'&&MP_RELAY&&typeof EventSource!=='undefined'){
+      try{MP.es=new EventSource(MP_RELAY+'/s?room='+encodeURIComponent(MP.key));MP.es.onmessage=function(e){try{mpRx(JSON.parse(e.data))}catch(x){}};MP.es.onopen=function(){var h=mpInfo();h.t='hello';if(!MP.meetDone)h.pr=1;mpTx(h)};MP.relayOn=true}catch(e){MP.es=null}
+    }
+    var hi=mpInfo();hi.t='hello';hi.pr=1;mpTx(hi);mpUI();
+  }
+  function mpJoinUI(){
+    var inp=$('#rjoin',ov);if(!inp)return;
+    var c=mpNorm(inp.value);
+    if(c.length!==10){G.toast('Kode harus 10 angka, contoh 0000000001');return}
+    if(c===MP.code){G.toast('Kamu sudah berada di ruangan ini');return}
+    inp.value='';mpOpen(c,true);G.toast('Masuk ruangan '+c+'...');
+  }
+  function mpCopy(){
+    var ok=function(){G.toast('Kode disalin: '+MP.code)},no=function(){G.toast('Kode ruangan: '+MP.code)};
+    try{navigator.clipboard.writeText(MP.code).then(ok,no)}catch(e){no()}
+  }
+  function mpTick(dt){
+    PRES_CUR={g:game.id,c:(MP.on&&MP.meetDone)?MP.code:''};
+    if(!MP.on)return;
+    var now=performance.now();
+    if(!MP.started){MP.started=true;var pj=PEND_JOIN;PEND_JOIN='';mpOpen(pj&&/^[0-9]{10}$/.test(pj)?pj:mpCodeOf(0),!!pj);var ji=$('#rjoin',ov);if(ji)ji.addEventListener('keydown',function(e){if(e.key==='Escape')return;e.stopPropagation();if(e.key==='Enter'){e.preventDefault();mpJoinUI()}})}
+    /* bertemu orang pertama di ruangan */
+    if(!MP.meetDone&&now-MP.meetT>900){
+      MP.meetDone=true;
+      var cnt=0,first=null;Object.keys(MP.peers).forEach(function(k){var q=MP.peers[k];if(q.m){cnt++;if(!first||q.j<first.j)first=q}});
+      if(cnt+1>MP_MAX&&!MP.keep){
+        if(MP.byUser){var bk=MP.prev||mpCodeOf(0);G.toast('Server '+MP.code+' penuh ('+MP_MAX+' pemain)');mpOpen(bk,false,true)}
+        else{mpOpen(mpCodeOf((parseInt(MP.code,10)||0)+1),false)}
+        return;
+      }
+      var h2=mpInfo();h2.t='hello';mpTx(h2);
+      if(MP.keep){}
+      else if(first){p.set(first.tx+3,first.ty+0.5,first.tz);vx=vz=vy=0;onG=false;G.toast('Kamu bertemu '+first.disp+' di server '+MP.code)}
+      else if(MP.byUser)G.toast('Kamu orang pertama di server ini');
+      mpUI();
+    }
+    MP.uiT=(MP.uiT||0)+dt;if(MP.uiT>1){MP.uiT=0;mpUI()}
+    MP.sendT+=dt;
+    if(MP.sendT>=0.1&&MP.meetDone){MP.sendT=0;mpTx({t:'pos',x:Math.round(p.x*100)/100,y:Math.round(p.y*100)/100,z:Math.round(p.z*100)/100,f:Math.round(face*100)/100,m:(Math.abs(vx)+Math.abs(vz))>1.5?1:0})}
+    MP.t+=dt;
+    Object.keys(MP.peers).forEach(function(k){
+      var pe=MP.peers[k];
+      if(now-pe.last>5000){mpDrop(k);return}
+      if(!pe.m)return;
+      var a=Math.min(1,dt*12);
+      pe.x+=(pe.tx-pe.x)*a;pe.y+=(pe.ty-pe.y)*a;pe.z+=(pe.tz-pe.z)*a;
+      var df=Math.atan2(Math.sin(pe.tf-pe.f),Math.cos(pe.tf-pe.f));pe.f+=df*a;
+      var g=pe.m.g;g.position.set(pe.x,pe.y,pe.z);g.rotation.y=pe.f;
+      var moving=Math.hypot(pe.tx-pe.x,pe.tz-pe.z)>0.15||pe.mv;
+      pe.sw=moving?Math.sin(MP.t*10)*0.8:pe.sw*0.8;
+      pe.m.legL.rotation.x=pe.sw;pe.m.legR.rotation.x=-pe.sw;pe.m.armL.rotation.x=-pe.sw;pe.m.armR.rotation.x=pe.sw;
+      v3.set(pe.x,pe.y+6.6,pe.z).project(camera);
+      if(v3.z<1&&pe.tag){pe.tag.style.display='flex';pe.tag.style.transform='translate('+((v3.x*0.5+0.5)*window.innerWidth)+'px,'+((-v3.y*0.5+0.5)*window.innerHeight)+'px) translate(-50%,-100%)'}
+      else if(pe.tag)pe.tag.style.display='none';
+    });
+  }
+  window.addEventListener('pagehide',function(){mpTx({t:'bye'})},sig);
 
   /* ---- input ---- */
   function keyName(c){return {KeyW:'w',ArrowUp:'w',KeyS:'s',ArrowDown:'s',KeyA:'a',ArrowLeft:'a',KeyD:'d',ArrowRight:'d',Space:'j'}[c]}
   window.addEventListener('keydown',function(e){
     if(document.activeElement===chatIn){
       if(e.key==='Enter'){var t=chatIn.value.trim();chatIn.value='';openChat(false);
+        var cmA=t.split(' ').filter(Boolean),cm0=(cmA[0]||'').toLowerCase();
+        if(cm0==='/fly'||cm0==='/banplay'||cm0==='/banacc'||cm0==='/unban'){
+          if(!isOwner(u))addMsg('Sistem','Perintah '+cm0+' hanya untuk Owner.',false);
+          else if(cm0==='/fly'){flying=!flying;vy=0;addMsg('Sistem',flying?'Mode terbang aktif. Arahkan kamera ke atas untuk naik, ke bawah untuk turun, lalu tekan W. Ketik /fly lagi untuk berhenti.':'Mode terbang mati.',false);G.toast(flying?'Mode terbang aktif':'Mode terbang mati')}
+          else addMsg('Sistem',banDo(cm0.slice(1),cmA[1]),false);
+          return}
         if(isFnCmd(t)){if(noxb)G.toast('Kamu sudah berada di Free Noxbux');else{addMsg('Sistem','Teleport ke Free Noxbux...',false);setTimeout(function(){stopGame();setTimeout(function(){startGame('noxbux')},60)},450)}return}
-        if(t){addMsg(u.display,t,isOwner(u));track('chat',1)}}
+        if(t){addMsg(u.display,t,isOwner(u)||nxTag(u));showBubble(t);mpTx({t:'chat',text:t.slice(0,120)});track('chat',1)}}
       else if(e.key==='Escape')openChat(false);
       return;
     }
@@ -2303,7 +2701,7 @@ function startGame(gid){
   /* kamera: satu jari memutar, dua jari (cubit) zoom */
   var cv=$('#gc',ov),ptrs={},pinch=0;
   function clampD(v){return Math.max(0.5,Math.min(45,v))}
-  function clampPitch(v){var fpv=tdist<2.5;return Math.max(fpv?-1.45:0.05,Math.min(fpv?1.45:1.35,v))}
+  function clampPitch(v){var fpv=tdist<2.5;return Math.max(fpv||flying?-1.45:0.05,Math.min(fpv?1.45:1.35,v))}
   function zoomStep(d){if(d>0)tdist=tdist>2.5?clampD(tdist*0.8):0.5;else tdist=tdist<2?4:clampD(tdist*1.25)}
   function lockPtr(){try{var r=cv.requestPointerLock&&cv.requestPointerLock();if(r&&r.catch)r.catch(function(){})}catch(er){}}
   function unlock(){try{if(document.pointerLockElement)document.exitPointerLock()}catch(er){}}
@@ -2351,7 +2749,7 @@ function startGame(gid){
   function sub(h){
     p.x+=vx*h;collideAxis(0);
     p.z+=vz*h;collideAxis(1);
-    vy-=GRAV*(coilHeld()&&vy<0?0.4:1)*h;if(coilHeld()&&vy<-24)vy=-24;var py=p.y;p.y+=vy*h;
+    if(!flying){vy-=GRAV*(coilHeld()&&vy<0?0.4:1)*h;if(coilHeld()&&vy<-24)vy=-24}var py=p.y;p.y+=vy*h;
     onG=false;ground=null;
     for(var i=0;i<solids.length;i++){var b=solids[i];
       if(!b.on)continue;
@@ -2371,6 +2769,9 @@ function startGame(gid){
     var spd=16*(perk('speed')?1.35:1),s=Math.sin(yaw),c=Math.cos(yaw);
     var tx2=(ix*c-iz*s)*spd,tz2=(-ix*s-iz*c)*spd,a=Math.min(1,dt*12);
     vx+=(tx2-vx)*a;vz+=(tz2-vz)*a;
+    if(flying){var cpf=Math.cos(pitch),fs=50,fxv=-s*cpf,fyv=-Math.sin(pitch),fzv=-c*cpf;
+      var tvx=(ix*c+iz*fxv)*fs,tvz=(-ix*s+iz*fzv)*fs,tvy=iz*fyv*fs+((keys.j||jumpHeld)?fs*0.6:0);
+      vx+=(tvx-vx)*a;vz+=(tvz-vz)*a;vy+=(tvy-vy)*a}
     gtime+=dt;
     world.update(dt,gtime,p,ground);
     var sp=Math.hypot(vx,vz);
@@ -2393,12 +2794,21 @@ function startGame(gid){
       var pu=puffs[q2],ud=pu.userData;
       if(ud.age<ud.life){ud.age+=dt;var tq=Math.min(1,ud.age/ud.life);pu.position.y+=dt*1.3;pu.scale.setScalar(1.1+tq*2.6);pu.material.opacity=0.8*(1-tq);if(ud.age>=ud.life)pu.visible=false}
     }
+    if(coins.length){
+      coinT+=dt;var cmv=sp>1.5;
+      if(coinT>(cmv?0.07:0.12)){
+        coinT=0;var cn=null;for(var cq=0;cq<coins.length;cq++){if(coins[cq].userData.age>=coins[cq].userData.life){cn=coins[cq];break}}
+        if(cn){var cj=cmv?0.5:0.8;cn.position.set(p.x+(cmv?-Math.sin(face)*0.6:0)+(Math.random()-0.5)*cj,p.y+5.9+Math.random()*0.3,p.z+(cmv?-Math.cos(face)*0.6:0)+(Math.random()-0.5)*cj);cn.material.rotation=(Math.random()-0.5)*1.2;cn.userData.age=0;cn.userData.life=(cmv?1.3:1.8)+Math.random()*0.6;cn.userData.vy=cmv?0.5:1.6;cn.visible=true}
+      }
+      for(var cq2=0;cq2<coins.length;cq2++){var cu=coins[cq2],cd=cu.userData;if(cd.age<cd.life){cd.age+=dt;var cp=cd.age/cd.life;cu.position.y+=dt*cd.vy;cu.scale.setScalar(0.62-cp*0.2);cu.material.opacity=1-cp*cp;if(cd.age>=cd.life)cu.visible=false}}
+    }
     if(sp>1){var ta=Math.atan2(vx,vz),df=ta-face;df=Math.atan2(Math.sin(df),Math.cos(df));face+=df*Math.min(1,dt*14)}
     if(dist<1.2){var tf=yaw+Math.PI,d2=Math.atan2(Math.sin(tf-face),Math.cos(tf-face));face+=d2*Math.min(1,dt*14)}
 
+    if(flying)face=yaw+Math.PI;
     coyote=onG?0.12:Math.max(0,coyote-dt);
     var JV=coilHeld()?66:50;
-    if((keys.j||jumpHeld)&&coyote>0&&!(rails&&R&&R.driving)){vy=JV;onG=false;coyote=0;usedDbl=false;track('jump',1)}
+    if((keys.j||jumpHeld)&&coyote>0&&!flying&&!(rails&&R&&R.driving)){vy=JV;onG=false;coyote=0;usedDbl=false;track('jump',1)}
     else if(jq&&perk('dj')&&!onG&&!usedDbl){vy=JV*0.95;usedDbl=true;track('jump',1)}
     jq=false;
     if(onG)usedDbl=false;
@@ -2422,6 +2832,7 @@ function startGame(gid){
     fa+=dt;fn++;if(fa>=0.5){if(showFps)fpsEl.textContent=Math.round(fn/fa)+' FPS';fa=0;fn=0}
     if(!paused){step(dt);fnTick(dt)}
     npcTick(dt,now);
+    mpTick(dt);
     dist+=(tdist-dist)*Math.min(1,dt*10);
     player.position.copy(p);player.rotation.y=face;
     for(var ei2=0;ei2<embers.length;ei2++){var e=embers[ei2],t=now/700+e.userData.s;e.position.set(Math.cos(t)*0.45,4.95+Math.sin(t*1.4)*0.4,Math.sin(t)*0.45)}
@@ -2437,6 +2848,11 @@ function startGame(gid){
     v3.set(p.x,p.y+6.4,p.z).project(camera);
     if(!fpOn&&v3.z<1){ntag.style.display='flex';ntag.style.transform='translate('+((v3.x*0.5+0.5)*window.innerWidth)+'px,'+((-v3.y*0.5+0.5)*window.innerHeight)+'px) translate(-50%,-100%)'}
     else ntag.style.display='none';
+    if(!cbub.hidden){
+      if(performance.now()>cbUntil)cbub.hidden=true;
+      else if(fpOn||v3.z>=1)cbub.style.visibility='hidden';
+      else{cbub.style.visibility='visible';cbub.style.transform='translate('+((v3.x*0.5+0.5)*window.innerWidth)+'px,'+((-v3.y*0.5+0.5)*window.innerHeight-34)+'px) translate(-50%,-100%)'}
+    }
   }
   respawn();hudStage();updSkip();
   last=performance.now();raf=requestAnimationFrame(frame);
