@@ -368,27 +368,20 @@ a.hello{color:inherit;text-decoration:none;cursor:pointer;transition:border-colo
 .rrow{display:flex;gap:8px}.rrow input{flex:1;min-width:0;height:40px;border-radius:8px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.45);color:#fff;padding:0 10px;font:600 14px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.06em;text-transform:uppercase}
 .rrow input::placeholder{text-transform:none;letter-spacing:0;font-family:inherit;color:#7d8590}.rrow .btn{min-height:40px;padding:0 14px;white-space:nowrap}
 .room .small{margin:0}
-.frgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-bottom:18px}
-.frcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;align-items:stretch}
-.frmain{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;border-radius:8px;padding:4px}.frmain:focus-visible{outline:2px solid var(--blue)}.frmain:hover b{text-decoration:underline}
-.frmain .cav{width:84px;height:84px;border-radius:50%;overflow:hidden;background:var(--panel2);border:3px solid transparent}.frmain .cav.on{border-color:#2e9e58}.frmain .cav svg{width:100%;height:100%;display:block}
-.frmain b{overflow-wrap:anywhere;max-width:100%}
-.frstrip{display:flex;gap:12px;overflow-x:auto;padding:4px 0 8px}.frmini{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;width:72px;flex:none;text-align:center}.frmini:focus-visible{outline:2px solid var(--blue);border-radius:8px}
-.frmini .cav{width:64px;height:64px;border-radius:50%;overflow:hidden;background:var(--panel2)}.frmini .cav svg{width:100%;height:100%;display:block}.frmini .small{max-width:72px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.frmodal{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:16px}
-.frbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;width:min(440px,100%);max-height:calc(100dvh - 32px);overflow:auto;padding:0 0 18px}
-.frban{height:80px;background:linear-gradient(135deg,#1d3fa8,#2f7bff 60%,#7ec3ff)}
-.frhead{display:flex;gap:14px;align-items:flex-end;padding:0 18px;margin-top:-40px}.frhead .cav.big{width:96px;height:96px;border-radius:50%;overflow:hidden;background:var(--panel2);border:4px solid var(--panel);flex:none}.frhead .cav.big.on{border-color:#2e9e58}.frhead .cav svg{width:100%;height:100%;display:block}
-.frhead .frinfo h2{margin:0;font-size:20px}.frbox .bio{padding:12px 18px 0;margin:0}.frbox .pstats{margin:14px 18px 0}.frbox .fract{padding:0 18px}
-.myid{font:800 24px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.12em;color:#ffc83d;user-select:all;margin:2px 0 0}
-.frlist{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
-.frrow{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;flex-wrap:wrap}
-.frrow .cav{width:46px;height:46px;border-radius:50%;overflow:hidden;background:var(--panel2);flex:none;border:2px solid transparent}.frrow .cav.on{border-color:#2e9e58}
-.frrow .cav svg{width:100%;height:100%;display:block}
-.frinfo{flex:1 1 140px;min-width:0;display:flex;flex-direction:column}.frinfo b{overflow-wrap:anywhere}.frgreen{color:#3fbf72}
-.fract{display:flex;gap:8px;flex-wrap:wrap}.fract .btn{min-height:38px}
-.prow{display:flex;align-items:center;gap:8px;justify-content:space-between;padding:4px 0}.prow span{overflow-wrap:anywhere;font-size:14px}.prow .btn{min-height:32px;padding:0 10px;font-size:13px}
-</style>
+.clsl{padding:12px 16px;display:flex;flex-direction:column;gap:10px;max-height:58vh;overflow:auto}
+.clsc{display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(255,255,255,.07);border-radius:10px;padding:10px 12px}
+.clsc ul{margin:6px 0 0;padding-left:18px}.clsc .btn{flex:none;min-width:110px}
+.rhud{top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));left:auto;transform:none;width:min(46vw,200px);flex-direction:column;flex-wrap:nowrap;justify-content:flex-start;gap:6px}
+.rhud .rch,.rdrive .rch{min-width:0;flex:none}
+.rtop{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:6px;width:min(52vw,460px);pointer-events:none}
+.rpill{background:rgba(10,12,17,.74);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 14px;color:#fff;font:700 12px var(--display)}
+.rdrive{position:absolute;left:calc(12px + env(safe-area-inset-left,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:3;display:flex;flex-direction:column;gap:6px;width:min(46vw,200px);pointer-events:none}
+.touch .rdrive{bottom:calc(190px + env(safe-area-inset-bottom,0px))}
+.rdrive[hidden]{display:none}
+.dhud{position:absolute;top:58px;left:50%;transform:translateX(-50%);z-index:6;display:flex;flex-direction:column;gap:6px;align-items:center;background:rgba(10,12,17,.78);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:8px 14px;min-width:min(340px,88vw);max-width:92vw;color:#fff;text-align:center;pointer-events:auto}
+.dhud .dh1{font-size:14px}.dhud .dh3{font-size:12px;opacity:.85}
+.dbar{position:relative;width:100%;height:16px;background:rgba(255,255,255,.14);border-radius:8px;overflow:hidden}.dbar i{display:block;height:100%}.dbar span{position:absolute;inset:0;font-size:11px;line-height:16px}
+.joy{background:rgba(140,146,158,.3);border:2px solid rgba(180,186,198,.55);transition:opacity .15s;opacity:.8}.joy.on{opacity:1;background:rgba(140,146,158,.4)}.joy i{background:rgba(176,182,194,.9);box-shadow:0 0 0 2px rgba(120,126,138,.5)}.jump{width:96px;height:96px;display:none;align-items:center;justify-content:center;padding:0;background:rgba(140,146,158,.4);border:2px solid rgba(180,186,198,.6);right:calc(34px + env(safe-area-inset-right,0px));bottom:calc(50px + env(safe-area-inset-bottom,0px));-webkit-tap-highlight-color:transparent;user-select:none}.jump.on{background:rgba(170,176,188,.6);transform:scale(.93)}.jump svg{pointer-events:none}.touch .jump{display:flex}.hamb{width:40px;height:40px;border:0;background:transparent;border-radius:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;flex:none;padding:0;margin-left:-8px}.hamb:hover{background:var(--panel2)}.hamb span{width:20px;height:2px;border-radius:2px;background:var(--fg);transition:transform .2s,opacity .2s}.menu-open .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu-open .hamb span:nth-child(2){opacity:0}.menu-open .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.lb{display:none}.menu-open .lb{display:inline}.nl svg,.tab svg{width:24px;height:24px}.shell{grid-template-columns:56px minmax(0,1fr)}.menu-open .shell{grid-template-columns:200px minmax(0,1fr)}.nl{justify-content:center;padding:12px 0}.menu-open .nl{justify-content:flex-start;padding:10px 12px}@media(max-width:860px){.shell,.menu-open .shell{grid-template-columns:minmax(0,1fr)}.side,.menu-open .side{display:none}.tabbar{display:flex}.tab{justify-content:center;padding:8px 0}.menu-open .tab{padding:4px 0}}@keyframes lbIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}@keyframes tabLbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.shell{transition:grid-template-columns .28s cubic-bezier(.2,.8,.2,1)}.menu-open .nl .lb{animation:lbIn .28s cubic-bezier(.2,.8,.2,1) both}.menu-open .tab .lb{animation:tabLbIn .26s cubic-bezier(.2,.8,.2,1) both}.menu-open .nl:nth-child(2) .lb,.menu-open .tab:nth-child(2) .lb{animation-delay:.04s}.menu-open .nl:nth-child(3) .lb,.menu-open .tab:nth-child(3) .lb{animation-delay:.08s}.menu-open .nl:nth-child(4) .lb,.menu-open .tab:nth-child(4) .lb{animation-delay:.12s}.menu-open .nl:nth-child(5) .lb,.menu-open .tab:nth-child(5) .lb{animation-delay:.16s}.nl,.tab{transition:background .2s,color .2s,transform .15s}.nl:active,.tab:active{transform:scale(.94)}.hamb:active{transform:scale(.92)}@keyframes pboxIn{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:none}}@keyframes pbtnIn{from{opacity:0;transform:translateX(-22px) scale(.96)}to{opacity:1;transform:none}}.pause .pbox{animation:pboxIn .3s cubic-bezier(.2,.8,.2,1) both}.pause .pbtn{animation:pbtnIn .34s cubic-bezier(.2,.8,.2,1) both}.pause .pbtn:nth-of-type(1){animation-delay:.06s}.pause .pbtn:nth-of-type(2){animation-delay:.11s}.pause .pbtn:nth-of-type(3){animation-delay:.16s}.pause .pbtn:nth-of-type(4){animation-delay:.21s}@media(prefers-reduced-motion:reduce){.shell,.nl,.tab,.hamb span,.pause .pbox,.pause .pbtn,.menu-open .lb{animation:none!important;transition:none!important}}</style>
 
 <div id="app"></div>
 <div id="toast" role="status" aria-live="polite"></div>
@@ -411,7 +404,7 @@ Object.keys(S.users).forEach(function(k){var uu=S.users[k],a=uu.avatar;if(a&&a.b
   if(!uu.votes)uu.votes={baseplate:uu.vote|0};if(!uu.gp)uu.gp={baseplate:uu.plays|0}});
 var DELU={};
 function save(){try{var o0=JSON.parse(lsGet('noxblox.v1')||'null');if(o0&&o0.users&&typeof o0.users==='object')Object.keys(o0.users).forEach(function(k){if(k!==S.cur&&!DELU[k])S.users[k]=o0.users[k]})}catch(e){}lsSet('noxblox.v1',JSON.stringify(S))}
-function cur(){var u0=S.cur&&S.users[S.cur]||null;if(u0){var want=String(u0.name||'').toLowerCase()==='noxblox'?'9999999999':'';if(want){if(u0.uid!==want)u0.uid=want}else if(!/^[0-9]{10}$/.test(u0.uid||'')||u0.uid==='9999999999')u0.uid=genUid()}return u0}
+function cur(){return S.cur&&S.users[S.cur]||null}
 function isOwner(u){return !!u&&u.name.toLowerCase()==='noxblox'}
 /* ===== Stok terbatas: [bulan awal, tanggal awal, bulan akhir, tanggal akhir] setiap tahun ===== */
 var STOCK={horseman:[10,30,11,30,'30 Okt sampai 30 Nov'],ghost:[1,1,2,1,'1 Jan sampai 1 Feb']};
@@ -483,6 +476,7 @@ function hatSVG(id){
     case 'knight':return '<path d="M41 28 L41 6 Q41 -12 60 -12 Q79 -12 79 6 L79 28 L72 28 L72 22 L48 22 L48 28 Z" fill="#9aa4b2" stroke="#5b6573" stroke-width="1.5" stroke-linejoin="round"/><rect x="47" y="12" width="26" height="4.5" rx="1" fill="#1a1a1a"/><path d="M60 -12 Q64 -26 78 -22 Q70 -16 66 -10 Z" fill="#d93f3f"/>';
     case 'goldcrown':return '<path d="M41 10 L41 -9 L50 0 L60 -15 L70 0 L79 -9 L79 10 Z" fill="#ffc83d" stroke="#b8860b" stroke-width="1.5" stroke-linejoin="round"/><rect x="41" y="5" width="38" height="6" fill="#e0a800"/><circle cx="50" cy="8" r="2" fill="#e53935"/><circle cx="60" cy="8" r="2.2" fill="#2f7bff"/><circle cx="70" cy="8" r="2" fill="#e53935"/>';
     case 'ownercrown':return '<path d="M39 10 L38 -14 L49 -3 L60 -28 L71 -3 L82 -14 L81 10 Z" fill="#ffd21f" stroke="#a87400" stroke-width="1.5" stroke-linejoin="round"/><rect x="39" y="4" width="42" height="7" fill="#e0a800"/><circle cx="38" cy="-14" r="2.6" fill="#fff6b0"/><circle cx="82" cy="-14" r="2.6" fill="#fff6b0"/><circle cx="60" cy="-28" r="3" fill="#fff6b0"/><text x="60" y="-3" text-anchor="middle" font-size="13" font-weight="800" font-family="Arial,sans-serif" fill="#7a5200">N</text>';
+    case 'flamehead':return '<path d="M60 -28 Q73 -10 70 0 Q78 -6 77 9 Q77 15 60 15 Q43 15 43 9 Q42 -6 50 0 Q47 -12 60 -28 Z" fill="#ff6a13"/><path d="M60 -12 Q69 0 67 8 Q67 13 60 13 Q53 13 53 8 Q51 0 60 -12 Z" fill="#ffc83d"/><path d="M60 0 Q65 6 63 10 Q60 12 57 10 Q55 6 60 0 Z" fill="#fff3a0"/>';
     case 'bloxcrown':return '<path d="M41 10 L41 -12 L50 -2 L60 -24 L70 -2 L79 -12 L79 10 Z" fill="#2f7bff" stroke="#0a3c99" stroke-width="1.5" stroke-linejoin="round"/><rect x="41" y="5" width="38" height="6" fill="#1a56c8"/><path d="M60 -6 L65 1 L60 8 L55 1 Z" fill="#fff"/>';
   }
   return '';
@@ -494,6 +488,7 @@ function avSVG(av,o){
   var s='<svg class="avsvg" viewBox="'+vb+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar">';
   if(S.head==='horseman')s+='<defs><radialGradient id="hmg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff9a3c" stop-opacity=".45"/><stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/></radialGradient></defs><circle cx="60" cy="24" r="28" fill="url(#hmg)"/>';
   if(S.hat==='ownercrown')s+='<circle cx="28" cy="166" r="7" fill="#ffd21f" opacity=".75"/><circle cx="20" cy="154" r="5" fill="#ffd21f" opacity=".5"/><circle cx="94" cy="168" r="6" fill="#ffd21f" opacity=".65"/><circle cx="102" cy="158" r="4" fill="#ffd21f" opacity=".4"/>';
+  if(S.hat==='flamehead')s+='<circle cx="30" cy="166" r="8" fill="#ff7a1a" opacity=".55"/><circle cx="20" cy="156" r="5.5" fill="#ffc83d" opacity=".4"/><circle cx="92" cy="168" r="6" fill="#ff7a1a" opacity=".5"/><circle cx="102" cy="160" r="4" fill="#ffc83d" opacity=".35"/>';
   if(S.hat==='bloxcrown')s+='<circle cx="30" cy="166" r="8" fill="#4aa8ff" opacity=".5"/><circle cx="20" cy="156" r="5.5" fill="#4aa8ff" opacity=".35"/><circle cx="92" cy="168" r="6" fill="#4aa8ff" opacity=".45"/><circle cx="102" cy="160" r="4" fill="#4aa8ff" opacity=".3"/>';
   /* kaki */
   [['legL',37],['legR',61]].forEach(function(q){var x=q[1],v=S[q[0]];
@@ -547,7 +542,8 @@ var HATS=[
   {id:'knight',name:'Helm Ksatria',price:350,desc:'Helm baja dengan jambul merah.'},
   {id:'goldcrown',name:'Mahkota Emas',price:500,desc:'Mahkota emas bertatahkan permata.'},
   {id:'bloxcrown',name:'Mahkota Blox',price:1000,fx:'Asap biru di setiap langkah',desc:'Mahkota biru langka. Setiap kamu berjalan, ia meninggalkan jejak asap biru.'},
-  {id:'ownercrown',name:'Mahkota Owner',price:0,owner:true,fx:'Jejak koin Noxbux di setiap langkah',desc:'Mahkota kuning khusus Owner NoxBlox. Setiap kamu berjalan, koin Noxbux berjatuhan dan tertinggal di belakangmu seperti jejak.'}
+  {id:'ownercrown',name:'Mahkota Owner',price:0,owner:true,fx:'Jejak koin Noxbux di setiap langkah',desc:'Mahkota kuning khusus Owner NoxBlox. Setiap kamu berjalan, koin Noxbux berjatuhan dan tertinggal di belakangmu seperti jejak.'},
+  {id:'flamehead',name:'Kepala Api',price:10000,fx:'Jejak api dari kepala saat berjalan',desc:'Kepalamu menyala dengan api. Saat berjalan, api tertinggal di belakang kepalamu seperti jejak.'}
 ].map(function(h){h.kind='hat';return h});
 var ITEMS=[{id:'horseman',name:'Headless Horseman',price:31000,
   desc:'Paket penunggang kuda tanpa kepala: mantel gelap bertepi oranye, tangan bermanset, sepatu bot, dan leher yang mengepulkan bara. Setelah dibeli, tiap bagiannya bisa dipakai terpisah di kategori Pakaian di Kustom Avatar.',
@@ -568,6 +564,7 @@ var ITEMS=[{id:'horseman',name:'Headless Horseman',price:31000,
     {slot:'legR',label:'Kaki kanan',name:'Tanpa Kaki Kanan',desc:'Tidak ada kaki sama sekali'}]}].concat(HATS);
 var TOOLS_ALL=[
   {id:'revolver',rails:1,price:0,name:'Revolver',desc:'Revolver untuk melawan zombie di Blox Rails. Tekan Pakai atau F untuk menembak.',svg:'<svg viewBox="0 0 36 36"><rect x="4" y="11" width="24" height="6" rx="1.5" fill="#8a97ab"/><rect x="12" y="9" width="9" height="10" rx="2" fill="#5b6577"/><path d="M20 17h8l-2 14h-6z" fill="#7a4b2a"/></svg>'},
+    {id:'notebook',rails:1,cls:'witch',price:0,name:'Note Book',desc:'Buku sihir Penyihir. Tekan Pakai atau F untuk memanggil monster 8000 darah yang bisa kamu naiki.',svg:'<svg viewBox="0 0 36 36"><rect x="7" y="5" width="22" height="27" rx="2" fill="#5b2f9e"/><rect x="10" y="5" width="19" height="27" rx="2" fill="#7e4bd6"/><path d="M19 12l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#ffc83d"/></svg>'},
     {id:'coil',obby:1,passive:1,price:90,desc:'Dibeli di toko Obby Tower.',name:'Gravity Coil',svg:'<svg viewBox="0 0 36 36"><rect x="15" y="4" width="6" height="28" rx="2" fill="#8a97ab"/><rect x="8" y="7" width="20" height="4" rx="2" fill="#2f7bff"/><rect x="8" y="14" width="20" height="4" rx="2" fill="#4aa3ff"/><rect x="8" y="21" width="20" height="4" rx="2" fill="#2f7bff"/></svg>'},
     {id:'pedang',price:50,desc:'Pedang besi untuk berlatih. Ayunkan dengan tombol Pakai.',name:'Pedang',svg:'<svg viewBox="0 0 36 36"><path d="M18 3l3 4v15h-6V7z" fill="#cfd8e6" stroke="#8a97ab" stroke-width="1.5"/><rect x="10" y="22" width="16" height="3.5" rx="1" fill="#ffc83d"/><rect x="16" y="25" width="4" height="8" rx="1" fill="#7a4b2a"/></svg>'},
   {id:'senter',price:30,desc:'Senter dengan sinar kuning. Tekan Pakai untuk menyalakan atau mematikan.',name:'Senter',svg:'<svg viewBox="0 0 36 36"><rect x="13" y="14" width="10" height="19" rx="2" fill="#7b8499"/><path d="M10 6h16l-3 8H13z" fill="#3a3f4f"/><rect x="12" y="4" width="12" height="3" fill="#ffe27a"/></svg>'},
@@ -589,9 +586,8 @@ var ICON={
   profil:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 18.5a6 6 0 0 1 11 0"/>',
   pengaturan:'<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>'
 };
-ICON.teman='<circle cx="9" cy="8" r="3.2"/><path d="M3 19a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.2A5 5 0 0 1 21 19"/>';
 ICON.misi='<path d="M9 6h11M9 12h11M9 18h11"/><path d="M3.5 6l1.5 1.5L7 5M3.5 12l1.5 1.5L7 11M3.5 18l1.5 1.5L7 17"/>';
-var NAV=[['beranda','Beranda'],['misi','Misi'],['avatar','Avatar'],['teman','Teman'],['profil','Profil'],['pengaturan','Pengaturan']];
+var NAV=[['beranda','Beranda'],['misi','Misi'],['avatar','Avatar'],['profil','Profil'],['pengaturan','Pengaturan']];
 var tt;
 function openBuy(o){
   var u=cur(),owner=isOwner(u),have=balOf(u),short=owner?0:o.price-have;
@@ -797,9 +793,9 @@ function authHTML(){
 }
 function chipHTML(u){return '<span class="cav">'+avSVG(u.avatar,{bust:1})+'</span><span class="cn">'+nameHTML(u,16)+'</span>'}
 function shellHTML(u){
-  var nav=NAV.map(function(n){return '<a class="nl" data-r="'+n[0]+'" href="#'+n[0]+'"><svg viewBox="0 0 24 24">'+ICON[n[0]]+'</svg>'+n[1]+'</a>'}).join('');
-  var tabs=NAV.map(function(n){return '<a class="tab" data-r="'+n[0]+'" href="#'+n[0]+'"><svg viewBox="0 0 24 24">'+ICON[n[0]]+'</svg>'+n[1]+'</a>'}).join('');
-  return '<header class="top"><div class="topin gut"><a class="logo" href="#beranda">NOX<b>BLOX</b></a>'+
+  var nav=NAV.map(function(n){return '<a class="nl" data-r="'+n[0]+'" title="'+n[1]+'" aria-label="'+n[1]+'" href="#'+n[0]+'"><svg viewBox="0 0 24 24">'+ICON[n[0]]+'</svg><span class="lb">'+n[1]+'</span></a>'}).join('');
+  var tabs=NAV.map(function(n){return '<a class="tab" data-r="'+n[0]+'" title="'+n[1]+'" aria-label="'+n[1]+'" href="#'+n[0]+'"><svg viewBox="0 0 24 24">'+ICON[n[0]]+'</svg><span class="lb">'+n[1]+'</span></a>'}).join('');
+  return '<header class="top"><div class="topin gut"><button type="button" class="hamb" id="hamb" aria-label="Menu" aria-expanded="false" aria-controls="page"><span></span><span></span><span></span></button><a class="logo" href="#beranda">NOX<b>BLOX</b></a>'+
     '<div class="search"><input id="q" type="search" placeholder="Cari game" aria-label="Cari game" autocomplete="off"></div>'+
     '<a class="bal" id="bal" href="#misi" aria-label="Saldo Noxbux"></a>'+
     '<a class="chip" id="chip" href="#avatar" data-edit="1" aria-label="Buka editor avatar">'+chipHTML(u)+'</a></div></header>'+
@@ -845,8 +841,10 @@ var GAMES=[
    desc:'Panjat menara melingkar setinggi '+OB_STAGES+' checkpoint. Lewati platform sempit, lantai yang runtuh, balok berputar, dan pilar api. Belanja perlengkapan di toko dengan Noxbux dari misi harian.'},
   {id:'noxbux',route:'noxbux',hidden:1,name:'Free Noxbux',cat:'Event',mode:'Sendiri',made:'20 Nov 2026',thumb:thumbNoxbux,desc:'Selesaikan 5 misi dari NPC dan dapatkan 10.000 Noxbux gratis.'},
   {id:'bloxrails',route:'bloxrails',name:'Blox Rails',cat:'Survival',mode:'Sendiri',made:'21 Nov 2026',thumb:thumbRails,desc:'Kota gurun Wild West saat senja. Mulai dari lobi: jelajahi kota, lihat kereta yang menunggu di peron, lalu naik kereta di gerbang untuk memulai perjalanan.'},
+  {id:'disaster',route:'bencana',name:'Natural Disaster',cat:'Survival',mode:'Sendiri',made:'24 Nov 2026',thumb:thumbDis,desc:'Mulai di menara lobi. Setelah 2 menit pilih satu dari tiga map: alun-alun, sekolah, atau peternakan. Satu bencana acak akan menyerang: tsunami, gunung berapi meletus, hujan asam, tornado, atau kiamat es. Bertahan hidup selama 3 menit untuk menang.'},
   {id:'bloxrun',route:'bloxrails',hidden:1,name:'Blox Rails: Perjalanan',cat:'Survival',mode:'Sendiri',made:'21 Nov 2026',thumb:thumbRails,desc:'Perjalanan kereta Blox Rails.'}
 ];
+function thumbDis(id){return '<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3f57"/><stop offset="1" stop-color="#9aa7b8"/></linearGradient></defs><rect width="320" height="180" fill="url(#'+id+')"/><path d="M200 20 L250 20 L232 60 L242 60 L222 100 L230 100 L214 150 L204 100 L212 100 L196 60 L206 60 Z" fill="#5a6270"/><path d="M0 140 Q40 110 80 140 T160 140 T240 140 T320 140 V180 H0Z" fill="#2a8bd8"/><rect x="40" y="70" width="40" height="70" fill="#cfc8bc"/><rect x="28" y="62" width="64" height="10" fill="#8a3b2f"/></svg>'}
 function gameOf(id){return GAMES.filter(function(g){return g.id===id})[0]||GAMES[0]}
 function gameCard(u,g){
   var n=(u.gp&&u.gp[g.id])|0;
@@ -868,6 +866,7 @@ function pGame(u,g){
   var keys='<li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> atau panah untuk berjalan</li><li><kbd>Spasi</kbd> untuk melompat</li><li>Geser mouse atau layar untuk memutar kamera</li>'+
     '<li>Cubit dua jari di layar untuk zoom. Di komputer: scroll, <kbd>+</kbd> dan <kbd>−</kbd></li><li>Zoom sampai mentok untuk kamera orang pertama, zoom keluar untuk kembali</li><li><kbd>Enter</kbd> untuk chat, <kbd>Esc</kbd> untuk menu</li><li>Di ponsel: joystick kiri dan tombol Lompat di kanan</li>'+
     (ob?'<li><kbd>B</kbd> atau tombol Toko untuk membuka toko dan memilih tahap</li><li>Jatuh ke lava akan mengembalikanmu ke checkpoint terakhir</li>':'');
+  if(g.id==='disaster')keys+='<li>Kamu mulai di menara lobi. Setelah 2 menit, atau lewat tombol Pilih map, pilih salah satu dari 3 map</li><li>Satu bencana acak terjadi di tiap ronde. Bertahan hidup 3 menit untuk menang dan dapat 400 Noxbux</li><li>Tsunami: naik ke tempat tinggi. Gunung berapi: hindari bom dan lava. Hujan asam: berlindung di bawah atap. Tornado: jaga jarak. Kiamat es: dekati api unggun</li>';
   if(g.id==='bloxrails')keys+='<li>Mulai di lobi kota gurun. Berjalan ke gerbang Naik Kereta di peron lalu tekan <kbd>E</kbd> untuk memulai perjalanan</li><li>Isi tungku kereta dengan batu bara hitam: dekati tungku di kabin lokomotif lalu tekan <kbd>E</kbd> atau tombol Isi tungku</li><li><kbd>1</kbd> memegang Revolver, <kbd>F</kbd> atau tombol Pakai untuk menembak ke arah depan kamera</li><li>Ambil batu bara dan obligasi emas di sepanjang rel. Zombie menyerang dari samping kereta</li><li>Capai Stasiun Akhir. Tiap obligasi dihargai 20 Noxbux, ditambah bonus 150</li>';
   return '<section class="ghero"><div class="gthumb">'+g.thumb('th-'+g.id)+'</div><div class="ginfo"><p class="eyebrow">Game resmi</p><h1>'+esc(g.name)+'</h1>'+
     '<p class="by" style="font-size:15px">Dibuat oleh NoxBlox '+badge(18)+'</p><p>'+esc(g.desc)+'</p>'+
@@ -964,8 +963,8 @@ function pProfile(u){
   var o=isOwner(u);
   return '<section class="card pcard"><div class="banner"></div><div class="phead"><div class="pav">'+avSVG(u.avatar,{bust:1})+'</div><div class="pname"><h1>'+nameHTML(u,26)+'</h1><p class="muted">@'+esc(u.name)+'</p>'+(o?'<span class="role">'+badge(16)+' Owner</span>':'')+'</div><a class="btn" href="#pengaturan">Edit profil</a></div>'+
     '<p class="bio">'+(u.bio?esc(u.bio):'<span class="muted">Belum ada bio.</span>')+'</p>'+
-    '<div class="pstats"><div><b>'+frCount(u)+'</b><span>Teman</span></div><div><b>0</b><span>Pengikut</span></div><div><b>0</b><span>Mengikuti</span></div><div><b>'+(isOwner(u)?'<span class="rnd5">'+rnd5()+'</span>':(u.nox|0))+'</b><span>Noxbux</span></div></div></section>'+
-    '<section><h2>Teman ('+frCount(u)+')</h2>'+frStrip(u)+'</section><section><h2>Tentang</h2><dl class="card kv"><dt>Nama pengguna</dt><dd>@'+esc(u.name)+'</dd><dt>ID pemain</dt><dd>'+esc(u.uid||'')+'</dd><dt>Peran</dt><dd>'+(o?badge(16)+' Owner NoxBlox':(nxTag(u)?badge(16)+' Pemain terverifikasi':'Pemain'))+'</dd><dt>Bergabung</dt><dd>'+fmtDate(u.joined)+'</dd></dl></section>'+
+    '<div class="pstats"><div><b>0</b><span>Teman</span></div><div><b>0</b><span>Pengikut</span></div><div><b>0</b><span>Mengikuti</span></div><div><b>'+(isOwner(u)?'<span class="rnd5">'+rnd5()+'</span>':(u.nox|0))+'</b><span>Noxbux</span></div></div></section>'+
+    '<section><h2>Tentang</h2><dl class="card kv"><dt>Nama pengguna</dt><dd>@'+esc(u.name)+'</dd><dt>Peran</dt><dd>'+(o?badge(16)+' Owner NoxBlox':(nxTag(u)?badge(16)+' Pemain terverifikasi':'Pemain'))+'</dd><dt>Bergabung</dt><dd>'+fmtDate(u.joined)+'</dd></dl></section>'+
     '<section><h2>Game buatan</h2>'+(o?'<div class="games">'+GAMES.filter(function(g){return !g.hidden}).map(function(g){return gameCard(u,g)}).join('')+'</div>':'<p class="empty">Belum ada game. Hanya Owner yang dapat menerbitkan game di NoxBlox.</p>')+'</section>';
 }
 function pSettings(u){
@@ -982,7 +981,7 @@ function pSettings(u){
    (isOwner(u)?'<div class="card field" id="banp"><h2>Panel Owner: Ban</h2><p class="muted small">Ban Play: pemain hanya bisa di lobi dan tidak bisa bermain game. Ban Account: akun tidak bisa masuk. Di chat dalam game: /banplay Nama, /banacc Nama, /unban Nama. Kamu tidak bisa memban dirimu sendiri.</p><label for="ban-name">Nama pengguna</label><input id="ban-name" type="text" maxlength="20" placeholder="misal Test"><div class="row" style="margin-top:10px"><button class="btn danger" data-ban="banplay">Ban Play</button><button class="btn danger" data-ban="banacc">Ban Account</button><button class="btn" data-ban="unban">Buka ban</button></div><p class="small" id="ban-msg" role="status"></p>'+banListHTML()+'</div>':'')+
    '<div class="card"><h2>Sesi</h2><div class="row" style="margin-top:12px"><button class="btn" data-act="logout">Keluar</button><button class="btn danger" data-act="del" id="delb">Hapus akun</button></div></div></div>';
 }
-var PAGES={beranda:pHome,misi:pMissions,game:function(u){return pGame(u,GAMES[0])},obby:function(u){return pGame(u,GAMES[1])},bloxrails:function(u){return pGame(u,gameOf('bloxrails'))},avatar:pAvatar,teman:pFriends,profil:pProfile,pengaturan:pSettings};
+var PAGES={beranda:pHome,misi:pMissions,game:function(u){return pGame(u,GAMES[0])},obby:function(u){return pGame(u,GAMES[1])},bloxrails:function(u){return pGame(u,gameOf('bloxrails'))},bencana:function(u){return pGame(u,gameOf('disaster'))},avatar:pAvatar,profil:pProfile,pengaturan:pSettings};
 var memHash=null;
 function route(){var h=memHash!==null?memHash:location.hash.slice(1);return PAGES[h]?h:'beranda'}
 function navTo(h){memHash=h;try{history.replaceState(null,'','#'+h)}catch(e){try{location.hash='#'+h}catch(e2){}}renderApp();try{window.scrollTo(0,0)}catch(e3){}}
@@ -991,166 +990,18 @@ function renderPage(){
   var u=cur();if(!u||!$('#page'))return;
   var r=route();
   $('#page').innerHTML=(isBanned(u,'play')?'<div class="card" role="alert" style="border-color:#7a1620"><b>Kamu diban bermain.</b><p class="muted small">Kamu hanya bisa berada di lobi. Game tidak bisa dimainkan.</p></div>':'')+PAGES[r](u);
-  document.querySelectorAll('[data-r]').forEach(function(a){if(a.dataset.r===r||((r==='game'||r==='obby'||r==='bloxrails')&&a.dataset.r==='beranda'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  document.querySelectorAll('[data-r]').forEach(function(a){if(a.dataset.r===r||((r==='game'||r==='obby'||r==='bloxrails'||r==='bencana')&&a.dataset.r==='beranda'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
 }
 function renderApp(){
   var u=cur();
   if(u&&isOwner(u)&&!(u.inv&&u.inv.ownercrown)){u.inv=u.inv||{};u.inv.ownercrown=1;save()}
   if(u&&isBanned(u,'acc')){S.cur=null;save();u=null;app.innerHTML=authHTML();shellBuilt=false;var be=document.getElementById('a-err');if(be)be.textContent='Akun ini diban dan tidak bisa masuk.';return}
   if(!u){app.innerHTML=authHTML();shellBuilt=false;return}
-  if(!shellBuilt){app.innerHTML=shellHTML(u);shellBuilt=true}
+  if(!shellBuilt){app.innerHTML=shellHTML(u);shellBuilt=true;try{document.body.classList.toggle('menu-open',localStorage.getItem('noxblox.menu')==='1')}catch(e){}var hb0=document.getElementById('hamb');if(hb0)hb0.setAttribute('aria-expanded',String(document.body.classList.contains('menu-open')))}
   track('login',1);balUpd();
   renderPage();
 }
 window.addEventListener('hashchange',function(){memHash=null;renderApp();window.scrollTo(0,0)});
-
-/* ---------- Pertemanan ---------- */
-var PRES_CUR=null,PEND_JOIN='',FR_SEEN=null,FR_JOINABLE=['baseplate','obby','bloxrails','noxbux'];
-function frUsers(){var f={};try{var o=JSON.parse(lsGet('noxblox.v1')||'null');if(o&&o.users)f=o.users}catch(e){}return f}
-function frUser(k){return S.users[k]||frUsers()[k]||null}
-function soc(){var o=null;try{o=JSON.parse(lsGet('noxblox.social')||'null')}catch(e){}if(!o||typeof o!=='object')o={};if(!o.fr||typeof o.fr!=='object')o.fr={};if(!o.rq||typeof o.rq!=='object')o.rq={};return o}
-function socSave(o){lsSet('noxblox.social',JSON.stringify(o))}
-function frList(u,o){o=o||soc();var l=o.fr[u.name.toLowerCase()];return Array.isArray(l)?l:[]}
-function frIn(u,o){o=o||soc();var l=o.rq[u.name.toLowerCase()];return Array.isArray(l)?l:[]}
-function frCount(u){return frList(u).length}
-function frRel(u,k){var o=soc(),me=u.name.toLowerCase();if(frList(u,o).indexOf(k)>=0)return 'friend';if(frIn(u,o).indexOf(k)>=0)return 'got';var t=o.rq[k];if(Array.isArray(t)&&t.indexOf(me)>=0)return 'sent';return 'none'}
-function frSay(m){try{if(G&&G.toast)G.toast(m);else toast(m)}catch(e){}}
-function frAdd(arr,v){if(arr.indexOf(v)<0)arr.push(v)}
-function frDel(arr,v){var i=arr.indexOf(v);if(i>=0)arr.splice(i,1)}
-function frMake(o,a,b){o.fr[a]=Array.isArray(o.fr[a])?o.fr[a]:[];o.fr[b]=Array.isArray(o.fr[b])?o.fr[b]:[];frAdd(o.fr[a],b);frAdd(o.fr[b],a);o.rq[a]=(o.rq[a]||[]).filter(function(x){return x!==b});o.rq[b]=(o.rq[b]||[]).filter(function(x){return x!==a})}
-function frFindId(id){
-  var all=frUsers(),k;
-  for(k in S.users)if(S.users[k]&&S.users[k].uid===id)return k;
-  for(k in all)if(all[k]&&all[k].uid===id)return k;
-  return null;
-}
-function frReqName(u,k){
-  var me=u.name.toLowerCase();
-  if(!k){frSay('Pemain tidak ditemukan');return false}
-  if(k===me){frSay('Itu ID kamu sendiri');return false}
-  var tu=frUser(k);if(!tu){frSay('Pemain tidak ditemukan');return false}
-  var rel=frRel(u,k);
-  if(rel==='friend'){frSay('Kamu sudah berteman dengan '+tu.display);return false}
-  if(rel==='sent'){frSay('Permintaan ke '+tu.display+' sudah terkirim');return false}
-  var o=soc();
-  if(rel==='got'){frMake(o,me,k);socSave(o);frSay('Kamu berteman dengan '+tu.display);return true}
-  o.rq[k]=Array.isArray(o.rq[k])?o.rq[k]:[];frAdd(o.rq[k],me);socSave(o);frSay('Permintaan pertemanan dikirim ke '+tu.display);return true;
-}
-function frRequest(u,raw){
-  var id=String(raw||'').replace(/[^0-9]/g,'');
-  if(id.length!==10){frSay('ID pemain terdiri dari 10 angka');return false}
-  var k=frFindId(id);
-  if(!k){frSay('Tidak ada pemain dengan ID '+id);return false}
-  return frReqName(u,k);
-}
-function genUid(){
-  for(var n=0;n<50;n++){
-    var a=new Uint32Array(2),s='',i;try{crypto.getRandomValues(a)}catch(e){a[0]=Math.random()*4294967296;a[1]=Math.random()*4294967296}
-    s=String(a[0]%100000).padStart(5,'0')+String(a[1]%100000).padStart(5,'0');
-    if(s==='9999999999'||s==='0000000000')continue;
-    if(!frFindId(s))return s;
-  }
-  return String(Date.now()).slice(-10);
-}
-function frAct(u,act,k){
-  var o=soc(),me=u.name.toLowerCase();
-  if(act==='ok'){frMake(o,me,k);socSave(o);var t=frUser(k);frSay('Kamu berteman dengan '+(t?t.display:k))}
-  else if(act==='no'){o.rq[me]=(o.rq[me]||[]).filter(function(x){return x!==k});socSave(o)}
-  else if(act==='del'){o.fr[me]=(o.fr[me]||[]).filter(function(x){return x!==k});o.fr[k]=(o.fr[k]||[]).filter(function(x){return x!==me});socSave(o)}
-}
-function frPres(k){
-  try{var r=JSON.parse(lsGet('noxblox.pr.'+k)||'null');if(r&&typeof r==='object'&&Date.now()-(+r.t||0)<8000)return r}catch(e){}return null;
-}
-function frJoinable(pr){return !!pr&&FR_JOINABLE.indexOf(pr.g)>=0&&/^[0-9]{10}$/.test(String(pr.c||''))}
-function frStatus(pr){
-  if(!pr)return {txt:'Offline',on:false};
-  if(!pr.g)return {txt:'Online di lobi',on:true};
-  var gm=gameOf(pr.g),nm=pr.g==='bloxrun'?'Blox Rails (perjalanan, solo)':gm.name;
-  return {txt:'Bermain '+nm+(pr.c?' · Server '+pr.c:''),on:true};
-}
-function frJoin(u,k){
-  var pr=frPres(k);
-  if(!frJoinable(pr)){toast('Teman sedang tidak berada di server yang bisa dimasuki');return}
-  if(isBanned(u,'play')){toast('Kamu diban bermain, hanya bisa di lobi');return}
-  PEND_JOIN=pr.c;var gid=pr.g;
-  if(G)stopGame();
-  setTimeout(function(){startGame(gid);setTimeout(function(){PEND_JOIN=''},4000)},120);
-}
-function frBody(u){
-  var o=soc(),inc=frIn(u,o),fl=frList(u,o),h='';
-  if(inc.length){h+='<h2>Permintaan pertemanan</h2><div class="frlist">'+inc.map(function(k){var t=frUser(k);if(!t)return '';
-    return '<div class="frrow"><span class="cav">'+avSVG(t.avatar,{bust:1})+'</span><div class="frinfo"><b>'+nameHTML(t,16)+'</b><span class="muted small">ID '+esc(t.uid||'-')+'</span></div><div class="fract"><button class="btn blue" data-fr="ok" data-n="'+esc(k)+'">Terima</button><button class="btn" data-fr="no" data-n="'+esc(k)+'">Tolak</button></div></div>'}).join('')+'</div>'}
-  var rows=fl.map(function(k){var t=frUser(k);if(!t)return null;var pr=frPres(k);return {k:k,t:t,pr:pr,st:frStatus(pr)}}).filter(Boolean);
-  rows.sort(function(a,b){return (b.st.on?1:0)-(a.st.on?1:0)||a.t.name.localeCompare(b.t.name)});
-  h+='<h2>Teman ('+rows.length+')</h2>';
-  if(!rows.length)h+='<p class="empty">Belum ada teman. Cari pemain dengan ID di atas, atau tambahkan lewat Menu saat bermain bersama.</p>';
-  else h+='<div class="frgrid">'+rows.map(function(r){
-    var j=frJoinable(r.pr);
-    return '<div class="frcard"><button class="frmain" data-fr="prof" data-n="'+esc(r.k)+'" aria-label="Buka profil '+esc(r.t.name)+'"><span class="cav'+(r.st.on?' on':'')+'">'+avSVG(r.t.avatar,{bust:1})+'</span><b>'+nameHTML(r.t,15)+'</b><span class="small '+(r.st.on?'frgreen':'muted')+'">'+esc(r.st.txt)+'</span></button>'+(j?'<button class="btn blue" data-fr="join" data-n="'+esc(r.k)+'">Join</button>':'')+'</div>'}).join('')+'</div>';
-  return h;
-}
-function pFriends(u){
-  return '<h1>Teman</h1><div class="card field"><p class="small muted">ID kamu</p><p class="myid">'+esc(u.uid||'')+'</p><label for="fr-name" style="margin-top:12px">Cari pemain dengan ID</label><div class="rrow"><input id="fr-name" type="text" inputmode="numeric" maxlength="10" autocomplete="off" placeholder="Ketik ID lengkap (10 angka)"></div><div id="frres" aria-live="polite"></div></div><div id="frbody">'+frBody(u)+'</div>';
-}
-function socBeat(){
-  var u=cur();if(!u)return;
-  try{lsSet('noxblox.pr.'+u.name.toLowerCase(),JSON.stringify({g:PRES_CUR?PRES_CUR.g:'',c:PRES_CUR?PRES_CUR.c:'',t:Date.now()}))}catch(e){}
-  var inc=frIn(u).join(',');
-  if(FR_SEEN!==null&&inc!==FR_SEEN){var nw=frIn(u).filter(function(k){return (','+FR_SEEN+',').indexOf(','+k+',')<0});if(nw.length){var t=frUser(nw[0]);frSay((t?t.display:nw[0])+' ingin berteman denganmu')}}
-  FR_SEEN=inc;
-  if(!G&&route()==='teman'){var fb=$('#frbody');if(fb){var h=frBody(u);if(fb.dataset.h!==h){fb.dataset.h=h;fb.innerHTML=h}}}
-}
-setInterval(socBeat,2000);
-window.addEventListener('pagehide',function(){var u=cur();if(u){try{localStorage.removeItem('noxblox.pr.'+u.name.toLowerCase())}catch(e){}}});
-app.addEventListener('click',function(e){
-  var b=e.target.closest('[data-fr]');if(!b)return;var u=cur();if(!u)return;var a=b.dataset.fr,k=b.dataset.n;
-  if(a==='addid'){frReqName(u,k);frShowRes();var fb=$('#frbody');if(fb){fb.dataset.h='';fb.innerHTML=frBody(u)}}
-  else if(a==='join')frJoin(u,k);
-  else{frAct(u,a,k);var fb2=$('#frbody');if(fb2){fb2.dataset.h='';fb2.innerHTML=frBody(u)}}
-});
-function frResult(u,raw){
-  var id=String(raw||'').replace(/[^0-9]/g,'');
-  if(id.length<10)return id.length?'<p class="small muted">Ketik '+(10-id.length)+' angka lagi...</p>':'';
-  var k=frFindId(id);
-  if(!k)return '<p class="small muted">Tidak ada pemain dengan ID '+esc(id)+'.</p>';
-  var t=frUser(k),me=u.name.toLowerCase(),rel=k===me?'me':frRel(u,k),pr=frStatus(frPres(k));
-  var bt=rel==='me'?'<span class="muted small">Ini kamu</span>':rel==='friend'?'<span class="muted small">Sudah berteman</span>':rel==='sent'?'<span class="muted small">Permintaan terkirim</span>':'<button class="btn blue" data-fr="addid" data-n="'+esc(k)+'">'+(rel==='got'?'Terima teman':'Tambah teman')+'</button>';
-  return '<div class="frrow" style="margin-top:12px"><span class="cav'+(pr.on?' on':'')+'">'+avSVG(t.avatar,{bust:1})+'</span><div class="frinfo"><b>'+nameHTML(t,16)+'</b><span class="muted small">@'+esc(t.name)+' · ID '+esc(t.uid||id)+'</span><span class="small '+(pr.on?'frgreen':'muted')+'">'+esc(pr.txt)+'</span></div><div class="fract">'+bt+'</div></div>';
-}
-function frShowRes(){var u=cur(),i=$('#fr-name'),r=$('#frres');if(!u||!i||!r)return;i.value=i.value.replace(/[^0-9]/g,'').slice(0,10);r.innerHTML=frResult(u,i.value)}
-document.addEventListener('input',function(e){if(e.target&&e.target.id==='fr-name')frShowRes()});
-
-var FR_OPEN=null;
-function frProfHTML(u,k){
-  var t=frUser(k);if(!t)return '';var pr=frPres(k),st=frStatus(pr),j=frJoinable(pr),n=Array.isArray(soc().fr[k])?soc().fr[k].length:0;
-  return '<div class="frbox" role="dialog" aria-modal="true" aria-label="Profil '+esc(t.name)+'"><div class="frban"></div><div class="frhead"><span class="cav big'+(st.on?' on':'')+'">'+avSVG(t.avatar,{bust:1})+'</span><div class="frinfo"><h2>'+nameHTML(t,22)+'</h2><span class="muted small">@'+esc(t.name)+' · ID '+esc(t.uid||'-')+'</span><span class="small '+(st.on?'frgreen':'muted')+'">'+esc(st.txt)+'</span></div></div>'+
-   '<p class="bio">'+(t.bio?esc(t.bio):'<span class="muted">Belum ada bio.</span>')+'</p>'+
-   '<div class="pstats"><div><b>'+n+'</b><span>Teman</span></div><div><b>'+esc(fmtDate(t.joined))+'</b><span>Bergabung</span></div></div>'+
-   '<div class="fract" style="margin-top:14px">'+(j?'<button class="btn blue" data-fr="join" data-n="'+esc(k)+'">Join</button>':'')+'<button class="btn" data-fr="del" data-n="'+esc(k)+'">Hapus teman</button><button class="btn" data-fr="close">Tutup</button></div></div>';
-}
-function frProfRender(){
-  var u=cur(),m=document.getElementById('frprof');
-  if(!FR_OPEN||!u||frRel(u,FR_OPEN)!=='friend'){FR_OPEN=null;if(m)m.remove();return}
-  var h=frProfHTML(u,FR_OPEN);if(!h){FR_OPEN=null;if(m)m.remove();return}
-  if(!m){m=document.createElement('div');m.id='frprof';m.className='frmodal';document.body.appendChild(m)}
-  if(m.dataset.h!==h){m.dataset.h=h;m.innerHTML=h}
-}
-document.addEventListener('click',function(e){
-  var b=e.target.closest&&e.target.closest('[data-fr]'),u=cur();if(!u)return;
-  if(e.target.id==='frprof'){FR_OPEN=null;frProfRender();return}
-  if(!b)return;var a=b.dataset.fr,k=b.dataset.n;
-  if(a==='prof'){FR_OPEN=k;frProfRender()}
-  else if(a==='close'){FR_OPEN=null;frProfRender()}
-  else if(FR_OPEN&&b.closest('#frprof')&&a==='join'){FR_OPEN=null;frProfRender();frJoin(u,k)}
-  else if(FR_OPEN&&b.closest('#frprof')&&a==='del'){FR_OPEN=null;frProfRender();frAct(u,'del',k);var fb3=$('#frbody');if(fb3){fb3.dataset.h='';fb3.innerHTML=frBody(u)}}
-});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&FR_OPEN){FR_OPEN=null;frProfRender();e.stopPropagation()}},true);
-setInterval(function(){if(FR_OPEN&&!G)frProfRender()},2000);
-function frStrip(u){
-  var l=frList(u).map(function(k){return {k:k,t:frUser(k)}}).filter(function(x){return x.t});
-  if(!l.length)return '<p class="empty">Belum ada teman.</p>';
-  return '<div class="frstrip">'+l.map(function(x){return '<button class="frmini" data-fr="prof" data-n="'+esc(x.k)+'" aria-label="Profil '+esc(x.t.name)+'"><span class="cav">'+avSVG(x.t.avatar,{bust:1})+'</span><span class="small">'+esc(x.t.display)+'</span></button>'}).join('')+'</div>';
-}
 
 /* ---------- events ---------- */
 var delT,buyT;
@@ -1277,6 +1128,7 @@ async function formGo(e){
   }
 }
 app.addEventListener('submit',formGo);
+app.addEventListener('click',function(e){var hb=e.target.closest&&e.target.closest('#hamb');if(!hb)return;var on=document.body.classList.toggle('menu-open');hb.setAttribute('aria-expanded',String(on));try{localStorage.setItem('noxblox.menu',on?'1':'0')}catch(er){}});
 app.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-ban]');if(!b)return;e.preventDefault();var inp=document.getElementById('ban-name'),msg=banDo(b.dataset.ban,inp&&inp.value);renderPage();var m=document.getElementById('ban-msg');if(m)m.textContent=msg});
 app.addEventListener('click',function(e){var bt=e.target.closest&&e.target.closest('#authf button[type=submit],#pwf button[type=submit]');if(!bt)return;e.preventDefault();formGo({target:bt.form,preventDefault:function(){}})});
 
@@ -1301,10 +1153,11 @@ var SHOP_ICO={
 };
 function shopIco(id){return '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+SHOP_ICO[id]+'</svg>'}
 
+var RAIL_CLASS='';
 function startGame(gid){
   var u=cur();if(!u||G)return;
   if(isBanned(u,'play')){toast('Kamu diban bermain, hanya bisa di lobi');return}
-  var game=gameOf(gid),obby=game.id==='obby',ob=obby?obbyOf(u):null,noxb=game.id==='noxbux',rails=game.id==='bloxrun',lobby=game.id==='bloxrails',hasNpc=noxb||game.id==='baseplate',fq=fnOf(u);
+  var game=gameOf(gid),obby=game.id==='obby',ob=obby?obbyOf(u):null,noxb=game.id==='noxbux',rails=game.id==='bloxrun',lobby=game.id==='bloxrails',dis=game.id==='disaster',isBase=game.id==='baseplate',hasNpc=noxb||game.id==='baseplate',fq=fnOf(u);
   save();
   var ov=document.createElement('div');ov.id='game';
   var touch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
@@ -1314,13 +1167,13 @@ function startGame(gid){
    '<div class="nametag" id="ntag"></div><div class="cbub" id="cbub" hidden></div>'+
    '<div class="hud-tl"><button class="hcirc" data-g="menu" aria-label="Menu" title="Menu">N</button><button class="hchat" data-g="chat" aria-label="Chat" title="Chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff"/><circle cx="8" cy="11" r="1.4" fill="#222"/><circle cx="12" cy="11" r="1.4" fill="#222"/><circle cx="16" cy="11" r="1.4" fill="#222"/></svg></button><span class="hbal" id="hbal"></span>'+(obby?'<button class="hbtn" data-g="shop">Toko</button>':'')+'</div>'+
    (obby?'<div class="stagehud"><b id="stxt"></b><div class="meter gold"><i id="sbar"></i></div></div><button class="hbtn skipb" id="gskip" data-g="skip" hidden>Lompati</button>':'')+
-   (noxb?'<div class="qhud" id="qhud"></div>':'')+(rails?'<div class="rhud" id="rhud"></div><button class="talkb" id="grail" data-g="rail" hidden></button>':'')+(lobby?'<button class="talkb" id="grail" data-g="rail" hidden></button>':'')+(hasNpc?'<button class="talkb" id="gtalk" data-g="talk" hidden>Bicara</button><div class="pause" id="gnpc" hidden><div class="pbox npcbox" id="npcbox"></div></div>':'')+
+   (noxb?'<div class="qhud" id="qhud"></div>':'')+(rails?'<div class="rhud" id="rhud"></div><div class="rtop" id="rtop"></div><div class="rdrive" id="rdrive" hidden></div><button class="talkb" id="grail" data-g="rail" hidden></button>':'')+(lobby?'<button class="talkb" id="grail" data-g="rail" hidden></button>':'')+(hasNpc?'<button class="talkb" id="gtalk" data-g="talk" hidden>Bicara</button><div class="pause" id="gnpc" hidden><div class="pbox npcbox" id="npcbox"></div></div>':'')+
    '<div class="hotbar" id="ghot"></div><button class="usebtn" id="guse" data-g="use" hidden>Pakai</button>'+
    '<div class="gtoast" id="gtoast" role="status"></div>'+
    '<div class="fps" id="gfps" hidden></div>'+
    '<div class="chat" id="gchat"><div class="msgs" id="gmsgs"></div><input id="gci" type="text" maxlength="120" placeholder="Tulis pesan lalu Enter" autocomplete="off" aria-label="Pesan chat"></div>'+
-   '<div class="joy" id="gjoy"><i id="gknob"></i></div><button class="jump" id="gjump" aria-label="Lompat">Lompat</button>'+
-   '<div class="pause" id="gpause" hidden><div class="pbox"><h2>Menu</h2><p id="gmis"></p><p>Geser untuk memutar kamera. Cubit dua jari atau scroll untuk zoom, sampai mentok untuk kamera orang pertama. Spasi untuk melompat.</p>'+(rails?'':'<div class="room"><div class="rlabel" id="rlabel">Server</div><div class="rcode" id="rcode" hidden></div><p class="small" id="rstat"></p><div id="rplist"></div></div>')+'<div class="gap"></div><button class="pbtn" data-g="resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>Lanjutkan</button><button class="pbtn" data-g="respawn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg>Reset</button><button class="pbtn blue" data-g="leave"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H5v16h5"/><path d="M14 8l4 4-4 4M18 12H9"/></svg>Keluar</button></div></div>'+
+   '<div class="joy" id="gjoy"><i id="gknob"></i></div><button class="jump" id="gjump" aria-label="Lompat"><svg viewBox="0 0 24 24" width="46" height="46"><path d="M12 3.5l8.5 9.5h-5.2v7.5H8.7V13H3.5z" fill="#e4e7ed" fill-opacity=".95"/></svg></button>'+
+   '<div class="pause" id="gpause" hidden><div class="pbox"><h2>Menu</h2><p id="gmis"></p><p>Geser untuk memutar kamera. Cubit dua jari atau scroll untuk zoom, sampai mentok untuk kamera orang pertama. Spasi untuk melompat.</p>'+(rails?'':'<div class="room"><div class="rlabel" id="rlabel">Server publik</div><div class="rcode" id="rcode" hidden></div><p class="small" id="rstat"></p><div id="rplist"></div><div id="rpub"><button class="btn blue" data-g="rcreate" style="width:100%">Buat server Mabar</button><div class="rlabel" style="margin-top:10px">Gabung server Mabar</div><div class="rrow"><input id="rjoin" type="text" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Kode server (10 huruf/angka)" aria-label="Kode server Mabar"><button class="btn" data-g="rjoin">Gabung</button></div></div><div id="rpriv" hidden><div class="rrow"><button class="btn" data-g="rcopy">Salin kode</button><button class="btn" data-g="rleave">Keluar server</button></div></div></div>')+'<div class="gap"></div><button class="pbtn" data-g="resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></svg>Lanjutkan</button><button class="pbtn" data-g="respawn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4v5h-5"/></svg>Reset</button><button class="pbtn blue" data-g="leave"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4H5v16h5"/><path d="M14 8l4 4-4 4M18 12H9"/></svg>Keluar</button></div></div>'+
    (obby?'<div class="pause" id="gshop" hidden><div class="sbox" id="sbox"></div></div>':'');
   document.body.appendChild(ov);
   var pt=$('#toast');if(pt)pt.classList.remove('show');
@@ -1328,7 +1181,7 @@ function startGame(gid){
 
   var ac=new AbortController(),sig={signal:ac.signal},raf=0,renderer=null;
   function stop(){
-    try{mpClose()}catch(e){}PRES_CUR=null;
+    try{mpClose()}catch(e){}
     cancelAnimationFrame(raf);ac.abort();unlock();
     try{if(renderer){renderer.dispose();renderer.forceContextLoss()}}catch(e){}
     clearTimeout(saveT);saveT=0;save();
@@ -1356,7 +1209,7 @@ function startGame(gid){
     else if(a==='use')useTool();
     else if(a==='talk'){if(nearNpc)openNpc(nearNpc)}
     else if(a==='rail')railAct();
-    else if(a==='fradd'){frReqName(u,String(b.dataset.n||'').toLowerCase());mpUI()}else if(a==='npclose')closeNpc();
+    else if(a==='rcreate')mpCreate();else if(a==='rjoin')mpJoinUI();else if(a==='rcopy')mpCopy();else if(a==='rleave')mpLeave();else if(a==='npclose')closeNpc();
     else if(a==='np')npcAct(b.dataset.k,b.dataset.v);
 
   },sig);
@@ -1372,8 +1225,8 @@ function startGame(gid){
   var scene=new THREE.Scene();
   scene.background=new THREE.Color(0x7ec0ff);
   scene.fog=obby?new THREE.Fog(0x7ec0ff,120,420):new THREE.Fog(0x9fd0ff,90,320);
-  var camera=new THREE.PerspectiveCamera(65,1,0.1,700);
-  scene.add(new THREE.HemisphereLight(0xffffff,0x6b7a8f,0.8));
+  var camera=new THREE.PerspectiveCamera(65,1,0.1,700);scene.add(camera);
+  var hemi=new THREE.HemisphereLight(0xffffff,0x6b7a8f,0.8);scene.add(hemi);
   var sun=new THREE.DirectionalLight(0xffffff,0.65);
   sun.position.set(30,60,20);sun.castShadow=!!st.shadows;
   sun.shadow.mapSize.set(1024,1024);
@@ -1399,6 +1252,422 @@ function startGame(gid){
     pl.rotation.x=-Math.PI/2;pl.position.set(b.cx,b.top+0.03,b.cz);scene.add(pl);
   }
 
+  function buildDis(){
+    var MC={};
+    function M(c){return MC[c]||(MC[c]=new THREE.MeshLambertMaterial({color:c}))}
+    function B(w,h,d,c,x,y0,z,solid){
+      var m=typeof c==='object'?c:M(c);
+      if(solid){var b=addPlat(x,y0+h,z,w,d,h,m);return b}
+      var o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y0+h/2,z);scene.add(o);return o;
+    }
+    var seed=7;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+    var TOWER={x:0,z:0};
+    var MAPS={
+      plaza:{n:'Alun-alun',cx:1000,cz:0,sp:[0,25],d:'Lapangan kota dengan air mancur, toko, monumen bertingkat, dan dua gazebo tinggi.'},
+      school:{n:'Sekolah',cx:2000,cz:0,sp:[0,20],d:'Gedung sekolah dua lantai, menara jam, gimnasium, dan lapangan.'},
+      farm:{n:'Peternakan',cx:3000,cz:0,sp:[0,0],d:'Lumbung, silo, kincir angin, ladang, dan kolam.'}
+    };
+    var D={phase:'lobby',wait:120,t:0,map:null,dis:null,hp:100,temp:100,hitT:9,dlg:0,fx:[],heat:[],hudT:0,wHit:0,res:null,msg:''};
+    var SURV=180,INTRO=12;
+    var DIS={
+      tsunami:{n:'Tsunami',tip:'Naik ke tempat tinggi (monumen, atap tinggi, menara) sebelum gelombang tiba.'},
+      volcano:{n:'Gunung berapi meletus',tip:'Hindari bom lahar dan lava yang merayap. Berlindung di bawah atap atau naik ke tempat tinggi.'},
+      acid:{n:'Hujan asam',tip:'Berlindung di bawah atap. Setelah 40 detik asam menggenang dan naik: cari tempat tinggi yang beratap.'},
+      tornado:{n:'Tornado',tip:'Jauhi tornado. Semakin lama, semakin banyak tornado.'},
+      ice:{n:'Kiamat es',tip:'Suhu tubuh turun terus. Dekati api unggun atau berlindung di bawah atap untuk menghangat.'}
+    };
+    /* ---------- bangunan ---------- */
+    function stairsTo(ex,ez,dx,dz,top,w){
+      var n=Math.ceil(top/3),dep=4;
+      for(var i=0;i<n;i++){var h=top*(i+1)/n,k=(n-i)*dep-dep/2;
+        B(dx?dep:w,h,dz?dep:w,0x9aa0a8,ex-dx*k,0,ez-dz*k,true)}
+    }
+    function wallZ(x,z,w,t,H,y0,c,door){
+      if(door){var sg=(w-10)/2;B(sg,H,t,c,x-w/2+sg/2,y0,z,true);B(sg,H,t,c,x+w/2-sg/2,y0,z,true);B(10,H-9,t,c,x,y0+9,z,true)}
+      else B(w,H,t,c,x,y0,z,true);
+    }
+    function wallX(x,z,d,t,H,y0,c,door){
+      if(door){var sg=(d-10)/2;B(t,H,sg,c,x,y0,z-d/2+sg/2,true);B(t,H,sg,c,x,y0,z+d/2-sg/2,true);B(t,H-9,10,c,x,y0+9,z,true)}
+      else B(t,H,d,c,x,y0,z,true);
+    }
+    function house(x,z,w,d,H,wc,rc,door,y0){
+      y0=y0||0;var t=1.2;
+      wallZ(x,z-d/2,w,t,H,y0,wc,door==='n');wallZ(x,z+d/2,w,t,H,y0,wc,door==='s');
+      wallX(x-w/2,z,d,t,H,y0,wc,door==='w');wallX(x+w/2,z,d,t,H,y0,wc,door==='e');
+      B(w+3,1.5,d+3,rc,x,y0+H,z,true);
+      return y0+H+1.5;
+    }
+    function pavilion(x,z){
+      [[-1,-1],[1,-1],[-1,1],[1,1]].forEach(function(q){B(2,19,2,0xd8c9a8,x+q[0]*9,0,z+q[1]*9,true)});
+      B(22,1,22,0xb59a6a,x,11.5,z,true);
+      B(24,1.5,24,0x8a3b2f,x,19,z,true);
+      stairsTo(x,z+11,0,-1,12.5,6);
+      stairsTo(x+12,z,-1,0,20.5,6);
+    }
+    function tree(x,z){B(1.4,6,1.4,0x6b4a2b,x,0,z,false);B(6,6,6,0x3f8f3f,x,6,z,false)}
+    function fire(m,rx,rz){
+      var x=m.cx+rx,z=m.cz+rz;B(2.4,0.8,2.4,0x4a3a2a,x,0,z,false);
+      var f=B(2.2,2.6,1.2,M2(0xff8a1a),x,0.8,z,false);D.heat.push({x:x,z:z,f:f});
+    }
+    function M2(c){return new THREE.MeshBasicMaterial({color:c})}
+    function gfloor(m,c){return addPlat(m.cx,0,m.cz,300,300,4,M(c))}
+    function scatter(m,n,avoid){
+      for(var i=0;i<n;i++){var rx=(rnd()-0.5)*270,rz=(rnd()-0.5)*270,bad=false;
+        for(var j=0;j<avoid.length;j++)if(Math.abs(rx-avoid[j][0])<avoid[j][2]&&Math.abs(rz-avoid[j][1])<avoid[j][3])bad=true;
+        if(!bad)tree(m.cx+rx,m.cz+rz)}
+    }
+    function heaters(m){[[-22,-22],[22,-22],[-22,22],[22,22],[0,48]].forEach(function(q){fire(m,q[0],q[1])})}
+    function buildPlaza(){
+      var m=MAPS.plaza;gfloor(m,0x6fae5a);
+      B(14,2,14,0xbfc7d0,m.cx,0,m.cz,true);B(10,1.2,10,0x4aa8ff,m.cx,2,m.cz,false);
+      var cols=[0xcfc8bc];for(var i=0;i<7;i++)B([40,34,28,22,16,10,6][i],3,[40,34,28,22,16,10,6][i],0xcfc8bc,m.cx,3*i,m.cz-45,true);
+      B(2,14,2,0xe8e2d4,m.cx,21,m.cz-45,false);
+      [[-75,-55,'e'],[75,-55,'w'],[-75,55,'e'],[75,55,'w']].forEach(function(q,i){
+        var top=house(m.cx+q[0],m.cz+q[1],40,30,14,[0xd9a566,0x9ec1d6,0xd98a8a,0xb8d68a][i],0x6b3a2a,q[2]);
+        stairsTo(m.cx+q[0],m.cz+q[1]+(q[1]<0?-16.5:16.5),0,q[1]<0?1:-1,top,8);
+      });
+      pavilion(m.cx-45,m.cz+15);pavilion(m.cx+45,m.cz+15);
+      heaters(m);scatter(m,26,[[0,-45,30,30],[0,0,14,14],[-75,-55,40,40],[75,-55,40,40],[-75,55,40,40],[75,55,40,40],[-45,15,40,40],[45,15,40,40],[0,25,10,10]]);
+      for(var b=0;b<6;b++)B(5,1.2,1.6,0x7a5a3a,m.cx-50+b*20,0,m.cz-12,false);
+    }
+    function buildSchool(){
+      var m=MAPS.school;gfloor(m,0x74b058);
+      var t1=house(m.cx,m.cz-50,110,40,12,0xe6d3a0,0x8a5a3a,'s');
+      var t2=house(m.cx,m.cz-50,110,40,12,0xe6d3a0,0x7a3a2a,'s',t1);
+      stairsTo(m.cx,m.cz-28.5,0,-1,t1,8);
+      stairsTo(m.cx-56.5,m.cz-50,1,0,t2,8);
+      B(14,34,14,0xb7a58a,m.cx+80,0,m.cz-50,true);B(16,2,16,0x8a3b2f,m.cx+80,34,m.cz-50,true);
+      stairsTo(m.cx+80,m.cz-57,0,1,34,8);
+      var tg=house(m.cx-65,m.cz+40,45,35,14,0x9ec1d6,0x4a5a6a,'e');stairsTo(m.cx-65,m.cz+59,0,-1,tg,8);
+      pavilion(m.cx+55,m.cz+35);
+      B(90,0.3,50,0x4f9a4a,m.cx,0,m.cz+30,false);B(90,0.1,1,0xffffff,m.cx,0.3,m.cz+30,false);B(1,0.1,50,0xffffff,m.cx,0.3,m.cz+30,false);
+      B(2,8,12,0xdddddd,m.cx-45,0,m.cz+30,false);B(2,8,12,0xdddddd,m.cx+45,0,m.cz+30,false);
+      heaters(m);scatter(m,22,[[0,-50,60,30],[80,-50,15,15],[-65,40,30,25],[55,35,30,30],[0,30,50,30],[0,20,10,10]]);
+    }
+    function buildFarm(){
+      var m=MAPS.farm;gfloor(m,0x8bbd55);
+      var tb=house(m.cx-60,m.cz-30,60,40,16,0xa63a2a,0x6b2a22,'e');stairsTo(m.cx-60,m.cz-30-21.5,0,1,tb,8);
+      B(12,30,12,0xd8d8d0,m.cx+30,0,m.cz-60,true);B(14,2,14,0x8a8a8a,m.cx+30,30,m.cz-60,true);stairsTo(m.cx+30,m.cz-66,0,1,32,8);
+      B(10,26,10,0xcfa070,m.cx-30,0,m.cz+60,true);B(12,2,12,0x6b3a2a,m.cx-30,26,m.cz+60,true);stairsTo(m.cx-30,m.cz+65,0,-1,28,8);
+      D.blades=new THREE.Group();D.blades.position.set(m.cx-30,22,m.cz+54.5);scene.add(D.blades);
+      for(var k=0;k<4;k++){var bl=new THREE.Mesh(new THREE.BoxGeometry(2,18,0.4),M(0xf0e6d0));bl.position.set(0,0,0);bl.rotation.z=k*Math.PI/2;D.blades.add(bl)}
+      pavilion(m.cx+50,m.cz+25);
+      [[-20,20],[10,30],[30,-20]].forEach(function(q){B(8,5,8,0xd8b84a,m.cx+q[0],0,m.cz+q[1],true)});
+      for(var r=0;r<6;r++)B(70,0.7,5,r%2?0xc9b04a:0x6aa84a,m.cx+10,0,m.cz+70-r*9,false);
+      B(34,0.2,24,0x4aa8ff,m.cx+60,0,m.cz-30,false);
+      for(var c=0;c<4;c++){B(5,3,2.4,0xf2f2f2,m.cx-15+c*9,2,m.cz+8+(c%2)*5,false);B(2,2,2,0x222222,m.cx-12+c*9,3,m.cz+8+(c%2)*5,false)}
+      heaters(m);scatter(m,18,[[-60,-30,40,30],[30,-60,15,15],[-30,60,15,15],[50,25,25,25],[10,70,45,30],[60,-30,25,20]]);
+    }
+    /* ---------- menara lobi ---------- */
+    (function(){
+      var g=addPlat(0,0,0,300,300,4,M(0x6fae5a));
+      B(20,40,20,0x7a8896,0,0,0,true);B(34,1.5,34,0x9aa6b4,0,40,0,true);
+      [[0,-16.5,34,1],[0,16.5,34,1],[-16.5,0,1,34],[16.5,0,1,34]].forEach(function(q){B(q[2],6,q[3],0x5a6676,q[0],41.5,q[1],true)});
+      var tex=rtex('NATURAL DISASTER',512,128,'#1b2235','#ffc83d',54,'Bertahan hidup 3 menit');
+      rsign(tex,16,4,0,46,-15.8,0);rsign(tex,16,4,0,46,15.8,Math.PI);
+      for(var i=0;i<14;i++){var a=i/14*Math.PI*2;tree(Math.cos(a)*60,Math.sin(a)*60)}
+      B(4,10,4,0xff5a5f,0,41.5,-8,false);B(3,7,3,0x4aa8ff,-6,41.5,-8,false);B(3,7,3,0x7bdc6e,6,41.5,-8,false);
+    })();
+    buildPlaza();buildSchool();buildFarm();
+    /* ---------- util ---------- */
+    function mmss(s){s=Math.max(0,Math.ceil(s));var m=Math.floor(s/60),r=s%60;return m+':'+(r<10?'0':'')+r}
+    function covered(x,y,z){
+      for(var i=0;i<solids.length;i++){var b=solids[i];
+        if(b.y0>=y+PH-0.6&&b.y0-y<45&&x>b.x0&&x<b.x1&&z>b.z0&&z<b.z1&&b.t<5)return true}
+      return false;
+    }
+    function topAt(x,z){var t=0;for(var i=0;i<solids.length;i++){var b=solids[i];if(b.y1>t&&b.y1<45&&x>b.x0&&x<b.x1&&z>b.z0&&z<b.z1)t=b.y1}return t}
+    function dmg(n){D.hp-=n;D.hitT=0;D.flash=1}
+    var vig=document.createElement('div');vig.style.cssText='position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 140px 40px rgba(255,40,40,0.75);opacity:0;transition:opacity .25s;z-index:3';ov.appendChild(vig);
+    var hud=document.createElement('div');hud.id='dhud';hud.className='dhud';ov.appendChild(hud);
+    hud.addEventListener('pointerdown',function(e){e.stopPropagation()});
+    hud.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-d]');if(!b)return;e.stopPropagation();if(b.dataset.d==='pick'){D.wait=0;pickMap()}});
+    function setSky(c,fn,ff){scene.background.set(c);scene.fog.color.set(c);scene.fog.near=fn;scene.fog.far=ff}
+    function dayAll(){setSky(0x7ec0ff,90,320)}
+    function addFx(o){scene.add(o);D.fx.push(o);return o}
+    function clean(){D.fx.forEach(function(o){scene.remove(o)});D.fx=[];D.sp=null;D.tn=null;D.rain=null;dayAll()}
+    function mk(w,h,d,c,x,y,z,tr){var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),new THREE.MeshLambertMaterial({color:c,transparent:!!tr,opacity:tr||1}));m.position.set(x,y,z);return addFx(m)}
+    function mkb(w,h,d,c,x,y,z){var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),new THREE.MeshBasicMaterial({color:c}));m.position.set(x,y,z);return addFx(m)}
+    function parts(n,w,h,c){var a=[];for(var i=0;i<n;i++){var o=mkb(w,h,w,c,0,-999,0);o.userData.s=Math.random();a.push(o)}return a}
+    function fall(arr,dt,speed,sway){
+      arr.forEach(function(o){
+        if(o.position.y<-100||o.position.y<p.y-6){o.position.set(p.x+(Math.random()-0.5)*80,p.y+10+Math.random()*34,p.z+(Math.random()-0.5)*80)}
+        o.position.y-=speed*dt;if(sway)o.position.x+=Math.sin(gtime*2+o.userData.s*6)*dt*6;
+      });
+    }
+    /* ---------- ronde ---------- */
+    function area(){return MAPS[D.map]}
+    function startRound(key,force){
+      D.map=key;D.phase='play';D.t=0;D.hp=100;D.temp=100;D.hitT=9;D.wHit=0;D.flash=0;
+      var keys2=Object.keys(DIS);D.dis=force||keys2[Math.floor(Math.random()*keys2.length)];
+      var m=area();p.set(m.cx+m.sp[0],0.15,m.cz+m.sp[1]);vx=vz=vy=0;onG=false;ground=null;
+      initDis();
+      if(G)G.toast('Bencana ronde ini: '+DIS[D.dis].n+'. Bertahan hidup 3 menit!');
+    }
+    function endRound(win,why){
+      var d=D.dis,mp=D.map?area().n:'';
+      clean();D.phase='lobby';D.wait=120;D.map=null;D.dis=null;
+      p.set(TOWER.x,41.65,TOWER.z+8);vx=vz=vy=0;onG=false;ground=null;flying=false;
+      var rw=0;
+      if(win){rw=400;u.nox=(u.nox|0)+rw;u.dw=(u.dw|0)+1;save();balUpd()}
+      D.res={win:win,why:why||'',dis:DIS[d]?DIS[d].n:'',map:mp,rw:rw};
+      resultDlg();
+    }
+    function initDis(){
+      var m=area(),d=D.dis;
+      if(d==='tsunami'){D.w=mk(300,16,300,0x2a8bd8,0,-999,0,0.62);D.fl=mk(300,40,300,0x2a8bd8,m.cx,-40,m.cz,0.5);D.lv=0;D.wv=null;D.wk=-1}
+      if(d==='volcano'){
+        var v=new THREE.Mesh(new THREE.CylinderGeometry(14,80,120,14),M(0x4a3b34));v.position.set(m.cx,60,m.cz-210);addFx(v);
+        mkb(30,6,30,0xff5a1a,m.cx,121,m.cz-210);
+        D.lava=mk(300,3,300,0xff4a0a,m.cx,-999,m.cz,0.9);D.lava.material=new THREE.MeshBasicMaterial({color:0xff5a14});D.bombs=[];D.vT=0;
+        setSky(0x6a3a2a,60,260);
+      }
+      if(d==='acid'){D.rain=parts(150,0.16,2.6,0x8dff4a);D.ac=mk(300,40,300,0x7dff3a,m.cx,-60,m.cz,0.5);setSky(0x7d9a4a,40,230)}
+      if(d==='tornado'){D.tn=[];D.tnT=0}
+      if(d==='ice'){D.rain=parts(170,0.35,0.35,0xffffff);D.snow=mk(300,0.5,300,0xf4f8ff,m.cx,0.1,m.cz,0.01);setSky(0xcfe0ee,30,190)}
+    }
+    function newTornado(){
+      var m=area(),g=new THREE.Group(),rings=[];
+      for(var i=0;i<9;i++){var r=new THREE.Mesh(new THREE.CylinderGeometry(3+(i+1)*2.1,3+i*2.1,7,12),new THREE.MeshLambertMaterial({color:0x8a8f98,transparent:true,opacity:0.6}));r.position.y=i*7+3.5;g.add(r);rings.push(r)}
+      var x=m.cx+(Math.random()-0.5)*220,z=m.cz+(Math.random()-0.5)*220;g.position.set(x,0,z);addFx(g);
+      D.tn.push({g:g,rings:rings,x:x,z:z,tx:x,tz:z});
+    }
+    function updDis(dt){
+      var m=area(),t=D.t-INTRO,d=D.dis,cov=covered(p.x,p.y,p.z),i;
+      if(d==='tsunami'){
+        var per=45,k=t<0?-1:Math.floor(t/per),ph=t<0?-1:t%per;
+        if(k!==D.wk&&ph>=0){D.wk=k;var dir=[[1,0],[-1,0],[0,1],[0,-1]][Math.floor(Math.random()*4)];D.wd=dir;D.wHit=0;D.wv=0;D.wn=dir[0]?(dir[0]>0?'barat':'timur'):(dir[1]>0?'utara':'selatan');if(G)G.toast('Tsunami datang dari '+D.wn+'! Naik ke tempat tinggi!')}
+        if(ph>=8&&ph<8+8.6&&D.wd){
+          var front=-170+(ph-8)*40,dx=D.wd[0],dz=D.wd[1];
+          var cx2=m.cx+dx*front,cz2=m.cz+dz*front;D.w.position.set(cx2,8,cz2);D.w.scale.set(dx?0.0533:1,1,dz?0.0533:1);
+          var along=dx?(p.x-cx2)*dx:(p.z-cz2)*dz,side=dx?p.z-m.cz:p.x-m.cx;
+          if(Math.abs(along)<10&&Math.abs(side)<150&&p.y<16){if(!D.wHit){D.wHit=1;dmg(80);if(G)G.toast('Terhantam tsunami!')}vx=dx*40;vz=dz*40}
+        }else D.w.position.y=-999;
+        var tl=0;if(ph>=12.3&&ph<16)tl=3;else if(ph>=16&&ph<36)tl=3*(1-(ph-16)/20);
+        D.fl.position.y=tl>0.05?tl-20:-60;D.lv=tl;
+        if(tl>0.05&&p.y<tl){vx*=Math.pow(0.4,dt);vz*=Math.pow(0.4,dt)}
+        D.inf=ph<0?'Gelombang pertama dalam '+Math.ceil(-t)+' dtk':(ph<8?'Gelombang tiba dalam '+Math.ceil(8-ph)+' dtk ('+D.wn+')':'Gelombang berikutnya dalam '+Math.ceil(per-ph)+' dtk');
+      }
+      if(d==='volcano'){
+        var lz=m.cz-150+Math.max(0,t)*0.8;D.lz=lz;
+        if(t>0){var len=Math.max(0.01,lz-(m.cz-150));D.lava.scale.set(1,1,len/300);D.lava.position.set(m.cx,0.9,m.cz-150+len/2)}
+        if(t>0&&p.z<lz&&p.y<1.4){dmg(35*dt)}
+        D.vT-=dt;
+        if(t>0&&D.vT<=0){D.vT=Math.max(2.5,5-t/60);var nb=4+Math.floor(t/45);
+          for(i=0;i<nb;i++){var near=Math.random()<0.45,bx=near?p.x+(Math.random()-0.5)*50:m.cx+(Math.random()-0.5)*260,bz=near?p.z+(Math.random()-0.5)*50:m.cz+(Math.random()-0.5)*260;
+            var ring=new THREE.Mesh(new THREE.CylinderGeometry(7,7,0.2,18),new THREE.MeshBasicMaterial({color:0xff2a1a,transparent:true,opacity:0.55}));
+            var ty=topAt(bx,bz);ring.position.set(bx,ty+0.3,bz);addFx(ring);
+            var ball=new THREE.Mesh(new THREE.SphereGeometry(3,8,6),new THREE.MeshBasicMaterial({color:0xff7a1a}));ball.position.set(bx,ty+170,bz);addFx(ball);
+            D.bombs.push({ring:ring,ball:ball,x:bx,z:bz,y:ty,t:0})}}
+        D.bombs=D.bombs.filter(function(b){
+          b.t+=dt;b.ball.position.y=b.y+170-b.t/3*170;
+          if(b.t>=3){scene.remove(b.ring);scene.remove(b.ball);D.fx=D.fx.filter(function(o){return o!==b.ring&&o!==b.ball});
+            if(Math.hypot(p.x-b.x,p.z-b.z)<7&&Math.abs(p.y-b.y)<5){dmg(40);if(G)G.toast('Terkena bom lahar!')}return false}
+          return true});
+        D.inf=t<0?'Letusan dimulai dalam '+Math.ceil(-t)+' dtk':'Lava merayap. Jarak lava ke kamu: '+Math.max(0,Math.round(p.z-lz))+' unit';
+      }
+      if(d==='acid'){
+        var lv=Math.max(0,(t-40)*0.05);D.lv=lv;D.ac.position.y=lv>0?lv-20:-60;
+        fall(D.rain,dt,70,false);
+        if(t>0&&!cov)dmg((6+t/60)*dt);
+        if(lv>0&&p.y<lv){dmg(20*dt);vx*=Math.pow(0.4,dt);vz*=Math.pow(0.4,dt)}
+        D.inf=t<0?'Hujan dimulai dalam '+Math.ceil(-t)+' dtk':(cov?'Kamu terlindung atap':'Terkena hujan asam! Cari atap')+(lv>0?' | Asam setinggi '+lv.toFixed(1):' | Asam menggenang dalam '+Math.max(0,Math.ceil(40-t))+' dtk');
+      }
+      if(d==='tornado'){
+        var want=t<0?0:(t<60?1:(t<120?2:3));
+        while(D.tn.length<want)newTornado();
+        D.tn.forEach(function(q,qi){
+          var dxn=q.tx-q.x,dzn=q.tz-q.z,dd=Math.hypot(dxn,dzn);
+          if(dd<6){q.tx=m.cx+(Math.random()-0.5)*240;q.tz=m.cz+(Math.random()-0.5)*240}
+          else{q.x+=dxn/dd*9*dt;q.z+=dzn/dd*9*dt}
+          q.g.position.set(q.x,0,q.z);q.rings.forEach(function(r,ri){r.rotation.y+=dt*(2+ri*0.4)});
+          var ex=q.x-p.x,ez=q.z-p.z,e=Math.hypot(ex,ez);
+          if(e<32&&p.y<60){var s=(1-e/32)*18;vx+=ex/e*s*12*dt+(-ez/e)*s*0.6*12*dt;vz+=ez/e*s*12*dt+(ex/e)*s*0.6*12*dt}
+          if(e<11){var f=1-e/11;vy=Math.max(vy,26*f);dmg((14+60*f*f)*dt)}
+        });
+        D.inf=t<0?'Tornado muncul dalam '+Math.ceil(-t)+' dtk':D.tn.length+' tornado berkeliaran. Jaga jarak!';
+      }
+      if(d==='ice'){
+        fall(D.rain,dt,14,true);
+        var gl=Math.min(0.9,Math.max(0,t)/60*0.9);D.snow.material.opacity=gl;D.snow.material.transparent=true;
+        var near=false;for(i=0;i<D.heat.length;i++){var h=D.heat[i];if(Math.hypot(p.x-h.x,p.z-h.z)<9&&Math.abs(p.y)<8)near=true}
+        if(t>0){var rate=0.9+t/180*1.1;if(cov)rate*=0.4;
+          D.temp=Math.max(0,Math.min(100,D.temp-rate*dt+(near?11*dt:0)))}
+        if(D.temp<=0)dmg(6*dt);
+        D.inf=t<0?'Es mulai turun dalam '+Math.ceil(-t)+' dtk':(near?'Menghangat di api unggun':(cov?'Terlindung atap: dingin melambat':'Kedinginan! Cari api unggun'));
+      }
+    }
+    function hudHtml(){
+      if(D.phase==='lobby'){
+        return '<div class="dh1"><b>Menara Lobi</b> &middot; Pemilihan map dalam <b>'+mmss(D.wait)+'</b></div><div class="dh2"><button class="btn blue" data-d="pick">'+(D.wait<=0?'Pilih map':'Pilih map sekarang')+'</button></div>';
+      }
+      var left=SURV-D.t,s='<div class="dh1"><b>'+DIS[D.dis].n+'</b> &middot; '+area().n+' &middot; sisa <b>'+mmss(left)+'</b></div>';
+      s+='<div class="dbar"><i style="width:'+Math.max(0,D.hp)+'%;background:'+(D.hp<30?'#ff5a5f':'#3fbf72')+'"></i><span>Darah '+Math.max(0,Math.round(D.hp))+'</span></div>';
+      if(D.dis==='ice')s+='<div class="dbar"><i style="width:'+D.temp+'%;background:#4aa8ff"></i><span>Suhu '+Math.round(D.temp)+'</span></div>';
+      s+='<div class="dh3">'+(D.t<INTRO?DIS[D.dis].tip:(D.inf||''))+'</div>';
+      return s;
+    }
+    function dlgBox(title,html,btns,onClick){
+      var old=document.getElementById('buyd');if(old)old.remove();
+      paused=true;unlock();keys={};jumpHeld=false;
+      var m=document.createElement('div');m.className='buyd';m.id='buyd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','buyd-t');
+      m.innerHTML='<div class="buyd-box"><div class="buyd-h"><b id="buyd-t">'+title+'</b></div><div class="clsl">'+html+'</div><div class="buyd-act">'+btns+'</div></div>';
+      function close(){document.removeEventListener('keydown',esk,true);m.remove();paused=false;D.dlg=0}
+      function esk(e){if(e.key==='Escape'){e.stopImmediatePropagation();e.preventDefault();close()}}
+      m.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-c]');if(!b)return;e.stopPropagation();var c=b.dataset.c;close();if(c!=='x')onClick(c)});
+      document.addEventListener('keydown',esk,true);document.body.appendChild(m);D.dlg=1;
+    }
+    function pickMap(){
+      if(D.phase!=='lobby'||D.dlg||paused)return;
+      var h=Object.keys(MAPS).map(function(k){var mm=MAPS[k];return '<div class="clsc"><div><b>'+mm.n+'</b><div class="small muted">'+mm.d+'</div></div><button class="btn blue" data-c="'+k+'">Pilih</button></div>'}).join('');
+      dlgBox('Pilih map','<p class="small" style="margin:0">Satu bencana acak akan terjadi. Bertahan hidup selama 3 menit untuk menang (+400 Noxbux).</p>'+h,'<button class="btn" data-c="x">Nanti</button>',function(c){startRound(c)});
+    }
+    function resultDlg(){
+      var r=D.res;if(!r)return;
+      dlgBox(r.win?'Kamu selamat!':'Kamu gugur','<p style="margin:0">'+(r.win?'Kamu bertahan 3 menit melawan <b>'+r.dis+'</b> di '+r.map+'. Hadiah <b>+'+r.rw+' Noxbux</b>.':'Bencana <b>'+r.dis+'</b> di '+r.map+' mengalahkanmu'+(r.why?' ('+r.why+')':'')+'. Kamu kembali ke menara lobi.')+'</p>','<button class="btn blue" data-c="x">Oke</button>',function(){});
+    }
+    seatList([[-11,41.5,12,0,0],[11,41.5,12,0,0],[-11,41.5,-12,0,0,'chair'],[11,41.5,-12,0,0,'chair']]);
+    var hsT=0;
+    return {
+      D:D,MAPS:MAPS,startRound:startRound,endRound:endRound,
+      spawn:function(){if(D.phase==='play'){var m=area();return {x:m.cx+m.sp[0],y:0,z:m.cz+m.sp[1]}}return {x:TOWER.x,y:41.5,z:TOWER.z+8}},
+      update:function(dt,t){
+        if(D.blades)D.blades.rotation.z+=dt*0.6;
+        if(D.phase==='lobby'){
+          D.wait-=dt;if(D.wait<=0&&!D.dlg&&!D.autoShown){D.autoShown=1;pickMap()}
+          if(D.wait>0)D.autoShown=0;
+        }else{
+          D.t+=dt;D.hitT+=dt;
+          if(D.t>INTRO)updDis(dt);
+          D.heat.forEach(function(h){h.f.scale.y=0.85+Math.sin(t*9+h.x)*0.15});
+          if(D.hitT>6&&D.hp<100)D.hp=Math.min(100,D.hp+3*dt);
+          if(D.hp<=0){endRound(false,'darah habis');return}
+          if(D.t>=SURV){endRound(true);return}
+        }
+        vig.style.opacity=D.flash?0.9:0;if(D.flash){D.flash=0}
+        hsT-=dt;if(hsT<=0){hsT=0.25;hud.innerHTML=hudHtml()}
+      },
+      deadly:function(){return false},killY:-40,killDelay:0.5,sky:null
+    };
+  }
+  var SEATS=[],V={mode:null,car:null,sx:0,sy:0,sz:0,sf:0,wasDrive:0,td:14,near:null};
+  function seatPut(par,w,h,d,c,x,y,z){var m=mesh(w,h,d,c);m.position.set(x,y,z);par.add(m);return m}
+  function furn(x,z,face,kind,y0){
+      var put=seatPut,sy=y0||0;
+      var g=new THREE.Group();g.position.set(x,sy,z);g.rotation.y=face;
+      if(kind==='bench'){
+        put(g,10,0.8,3.2,0x9a6b3d,0,1.1,0);put(g,10,3,0.8,0x8a5b2f,0,2.9,-1.5);
+        [[-4.5,-1.2],[4.5,-1.2],[-4.5,1.2],[4.5,1.2]].forEach(function(q){put(g,0.8,0.8,0.8,0x3a3f4a,q[0],0.4,q[1])});
+        [-2.5,2.5].forEach(function(lx){SEATS.push({x:x+lx*Math.cos(face)+0.2*Math.sin(face),z:z-lx*Math.sin(face)+0.2*Math.cos(face),face:face,y:sy})});
+      }else{
+        put(g,3.4,0.8,3.4,0x2f6b8a,0,1.1,0);put(g,3.4,2.8,0.7,0x24566f,0,2.9,-1.35);
+        [[-1.4,-1.4],[1.4,-1.4],[-1.4,1.4],[1.4,1.4]].forEach(function(q){put(g,0.6,0.8,0.6,0x3a3f4a,q[0],0.4,q[1])});
+        SEATS.push({x:x+0.2*Math.sin(face),z:z+0.2*Math.cos(face),face:face,y:sy});
+      }
+      scene.add(g);
+  }
+  function seatList(a){a.forEach(function(q){furn(q[0],q[2],Math.atan2(-q[0]+(q[3]||0),-q[2]+(q[4]||0)),q[5]||'bench',q[1])})}
+  function mkSeats(){
+    for(var i=0;i<6;i++){var a=i*Math.PI/3+Math.PI/6,bx=Math.cos(a)*38,bz=Math.sin(a)*38;furn(bx,bz,Math.atan2(-bx,-bz),'bench')}
+    for(var j=0;j<4;j++){var b=j*Math.PI/2+Math.PI/4,cx=Math.cos(b)*22,cz=Math.sin(b)*22;furn(cx,cz,Math.atan2(-cx,-cz),'chair')}
+  }
+  function mkCar(){
+    var g=new THREE.Group(),ws=[];
+    function bx(w,h,d,c,x,y,z){var m=mesh(w,h,d,c);m.position.set(x,y,z);g.add(m);return m}
+    bx(9,2.2,18,0xd8322c,0,2.3,0);bx(7.6,2.2,9,0xe24a43,0,4.5,1.5);
+    bx(7.7,1.5,0.3,0x1c2b3a,0,4.7,-3.1);bx(7.7,1.5,0.3,0x1c2b3a,0,4.7,6.1);bx(0.3,1.5,6,0x1c2b3a,3.9,4.7,1.5);bx(0.3,1.5,6,0x1c2b3a,-3.9,4.7,1.5);
+    bx(1.6,0.8,0.4,0xfff2a8,-3,2.6,-9.1);bx(1.6,0.8,0.4,0xfff2a8,3,2.6,-9.1);bx(1.6,0.8,0.4,0xa01818,-3,2.6,9.1);bx(1.6,0.8,0.4,0xa01818,3,2.6,9.1);
+    [[-4.7,-5.5],[4.7,-5.5],[-4.7,5.5],[4.7,5.5]].forEach(function(q){
+      var wg=new THREE.Group();wg.position.set(q[0],1.7,q[1]);
+      var cy=new THREE.Mesh(new THREE.CylinderGeometry(1.7,1.7,1.2,14),new THREE.MeshLambertMaterial({color:0x1b1d22}));cy.rotation.z=Math.PI/2;wg.add(cy);
+      var hub=mesh(1.3,0.8,0.8,0xc9ced6);hub.position.set(q[0]>0?0.45:-0.45,0,0);wg.add(hub);
+      g.add(wg);ws.push(wg)});
+    scene.add(g);return {g:g,w:ws,x:0,z:0,ry:0,v:0};
+  }
+  function carBtn(){
+    if(!isBase)return;
+    if(V.mode==='drive'){G.toast('Kamu sedang mengemudi. Loncat atau tekan E untuk turun');return}
+    if(V.mode==='sit')vStand();
+    var c=V.car||(V.car=mkCar());
+    var x=p.x-Math.sin(yaw)*16,z=p.z-Math.cos(yaw)*16;
+    c.x=Math.max(-240,Math.min(240,x));c.z=Math.max(-240,Math.min(240,z));c.ry=yaw;c.v=0;
+    c.g.position.set(c.x,0,c.z);c.g.rotation.y=c.ry;
+    G.toast('Mobil dipanggil. Dekati lalu tekan E untuk naik');
+  }
+  function nearSeat(){
+    var best=null,bd=5;
+    SEATS.forEach(function(s){var d=Math.hypot(p.x-s.x,p.z-s.z);if(d<bd&&Math.abs(p.y-(s.y||0))<3){bd=d;best=s}});
+    return best;
+  }
+  function vSit(s){V.mode='sit';V.sx=s.x;V.sy=s.y||0;V.sz=s.z;V.sf=s.face;vx=vz=vy=0;p.set(s.x,V.sy,s.z);face=s.face;G.toast('Duduk. Loncat untuk berdiri')}
+  function vStand(){
+    if(V.mode!=='sit')return;V.mode=null;
+    p.set(V.sx+Math.sin(V.sf)*3.5,V.sy+0.15,V.sz+Math.cos(V.sf)*3.5);vx=vz=vy=0;onG=false;ground=null;
+  }
+  function enterCar(){
+    V.mode='drive';V.td=tdist;tdist=Math.max(tdist,26);flying=false;vx=vz=vy=0;V.car.v=0;
+    G.toast('Mengemudi: W gas, S rem/mundur, A/D belok, loncat atau E turun');
+  }
+  function exitCar(){
+    var c=V.car;V.mode=null;tdist=V.td||14;
+    p.set(c.x+Math.cos(c.ry)*8,0.15,c.z-Math.sin(c.ry)*8);vx=vz=vy=0;onG=false;ground=null;c.v=0;
+  }
+  function vAct(){
+    if(V.mode==='sit'){vStand();return true}
+    if(V.mode==='drive'){exitCar();return true}
+    var s=nearSeat();if(s){vSit(s);return true}
+    if(V.car&&Math.hypot(p.x-V.car.x,p.z-V.car.z)<10){enterCar();return true}
+    return false;
+  }
+  function carHit(nx,nz){
+    for(var i=0;i<solids.length;i++){var b=solids[i];
+      if(b.y1>0.8&&b.y0<4&&Math.abs(nx-b.cx)<b.hx+5&&Math.abs(nz-b.cz)<b.hz+5)return true}
+    return false;
+  }
+  function carStep(dt){
+    var c=V.car,ix=Math.max(-1,Math.min(1,(keys.d?1:0)-(keys.a?1:0)+joy.x)),iz=Math.max(-1,Math.min(1,(keys.w?1:0)-(keys.s?1:0)+joy.y));
+    var acc;
+    if(iz>0.05)acc=(c.v<0?90:42)*iz;else if(iz<-0.05)acc=(c.v>0?-90:-26)*(-iz);else acc=-Math.sign(c.v)*Math.min(Math.abs(c.v)/dt,14);
+    c.v=Math.max(-22,Math.min(72,c.v+acc*dt));
+    c.ry-=ix*1.9*dt*Math.max(-1,Math.min(1,c.v/10));
+    var nx=c.x-Math.sin(c.ry)*c.v*dt,nz=c.z-Math.cos(c.ry)*c.v*dt;
+    if(Math.abs(nx)>246||Math.abs(nz)>246||carHit(nx,nz)){c.v*=-0.25;nx=c.x;nz=c.z}
+    c.x=nx;c.z=nz;c.g.position.set(c.x,0,c.z);c.g.rotation.y=c.ry;
+    c.w.forEach(function(w){w.rotation.x-=c.v*dt/1.7});
+    p.set(c.x,0.2,c.z);vx=vz=vy=0;face=c.ry+Math.PI;
+    if(Math.abs(c.v)>3){var dy=c.ry-yaw;dy=Math.atan2(Math.sin(dy),Math.cos(dy));yaw+=dy*Math.min(1,dt*2.2)}
+    gtime+=dt;
+  }
+  function vehTick(dt){
+    if(V.mode==='sit'){
+      var mv=keys.w||keys.a||keys.s||keys.d||keys.j||jumpHeld||Math.abs(joy.x)>0.3||Math.abs(joy.y)>0.3;
+      if(mv){var jh=keys.j||jumpHeld;vStand();if(jh)vy=34;return false}
+      vx=vz=vy=0;p.set(V.sx,V.sy,V.sz);face=V.sf;return false;
+    }
+    if(V.mode==='drive'){if(keys.j||jumpHeld){exitCar();vy=34;return false}carStep(dt);return true}
+    return false;
+  }
+  var vBtn=null,vCar=null;
+  function vehHud(dt){
+    if(!vBtn)return;
+    var t='';
+    if(!paused&&!npcOpen){
+      if(V.mode==='sit')t='Berdiri'+(touch?'':' (E)');
+      else if(V.mode==='drive')t='Turun dari mobil'+(touch?'':' (E)');
+      else if(nearSeat())t='Duduk'+(touch?'':' (E)');
+      else if(V.car&&Math.hypot(p.x-V.car.x,p.z-V.car.z)<10)t='Naik mobil'+(touch?'':' (E)');
+    }
+    if(t){vBtn.textContent=t;vBtn.hidden=false}else vBtn.hidden=true;
+  }
+  {
+    vBtn=document.createElement('button');vBtn.className='talkb';vBtn.id='vact';vBtn.hidden=true;
+    vBtn.addEventListener('click',function(e){e.stopPropagation();vAct()});vBtn.addEventListener('pointerdown',function(e){e.stopPropagation()});
+    ov.appendChild(vBtn);
+    if(isBase){vCar=document.createElement('button');vCar.className='hbtn';vCar.id='vcar';vCar.textContent='Panggil mobil'+(touch?'':' (C)');
+    vCar.style.cssText='position:absolute;right:14px;bottom:190px;z-index:6;min-height:44px;padding:0 14px';
+    vCar.addEventListener('click',function(e){e.stopPropagation();carBtn()});vCar.addEventListener('pointerdown',function(e){e.stopPropagation()});
+    ov.appendChild(vCar);}
+  }
   function buildBase(){
     var tc=document.createElement('canvas');tc.width=tc.height=64;
     var tx=tc.getContext('2d');tx.fillStyle='#5d6068';tx.fillRect(0,0,64,64);
@@ -1415,6 +1684,7 @@ function startGame(gid){
     px.fillStyle='#2f7bff';px.fillText('BLOX',128,184);
     var pad=new THREE.Mesh(new THREE.PlaneGeometry(12,12),new THREE.MeshLambertMaterial({map:new THREE.CanvasTexture(pc)}));
     pad.rotation.x=-Math.PI/2;pad.position.y=0.03;pad.receiveShadow=true;scene.add(pad);
+    mkSeats();
     return {spawn:function(){return {x:0,y:0,z:0}},update:function(){},deadly:function(){return false},killY:-60,killDelay:0.6,sky:null};
   }
 
@@ -1559,9 +1829,11 @@ function startGame(gid){
       var cg=new THREE.Group(),cm=new THREE.Mesh(new THREE.CylinderGeometry(1.6,1.6,0.4,20),gold);cm.rotation.x=Math.PI/2;cg.add(cm);
       var a=j/14*Math.PI*2;cg.position.set(Math.cos(a)*26,4.2,Math.sin(a)*26+6);scene.add(cg);coins.push(cg);
     }
+    seatList([[-14,0,-30,0,-14],[14,0,-30,0,-14],[-10,0,0,0,0,'chair'],[10,0,0,0,0,'chair']]);
     return {spawn:function(){return {x:0,y:0,z:-14}},update:function(dt,t){for(var k=0;k<coins.length;k++){coins[k].rotation.y=t*2+k;coins[k].position.y=4.2+Math.sin(t*2+k)*0.4}},deadly:function(){return false},killY:-60,killDelay:0.6,sky:null};
   }
-  var KM=160,RV=40,RDECK=3.5,R=null,onToolUse=null,ZB0=Math.round(80.3*KM),ZB1=ZB0+56,ZEND=ZB1+260,COALD=800,TANKMAX=6400;
+  var CLS=rails?RAIL_CLASS:'';if(rails)RAIL_CLASS='';
+  var KM=160,RV=40,RDECK=4.9,TK=1.4,R=null,onToolUse=null,ZB0=Math.round(80.3*KM),ZB1=ZB0+56,ZEND=ZB1+260,COALD=800,TANKMAX=6400;
   function rbox(w,h,d,m,x,y,z,par){var o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);(par||scene).add(o);return o}
   function rtex(txt,w,h,bg,fg,fs,sub){
     var c=document.createElement('canvas');c.width=w;c.height=h;var x=c.getContext('2d');
@@ -1571,39 +1843,140 @@ function startGame(gid){
     return new THREE.CanvasTexture(c);
   }
   function rsign(tex,w,h,x,y,z,ry){var pl=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({map:tex}));pl.position.set(x,y,z);pl.rotation.y=ry;scene.add(pl);return pl}
+  function SKL(){return [
+    {id:'std',name:'Kereta Standar',price:0,sk:['Kereta bawaan Blox Rails']},
+    {id:'pass',name:'Kereta Penumpang',price:150,sk:['Gerbong tertutup dengan kursi penumpang','Lebih cepat dari kereta standar (+30%)']},
+    {id:'mil',name:'Kereta Militer',price:200,sk:['Kereta lapis baja dengan karung pasir','Prajurit muncul dan menembak musuh yang mendekat']},
+    {id:'own',name:'Kereta Owner',price:0,only:1,sk:['Tanpa bahan bakar, melaju sampai 80 km','Gerbong tertutup berhias emas']}
+  ]}
+  function skinOwned(s){return s.id==='std'||isOwner(u)||!!(u.rsko&&u.rsko[s.id])}
+  function curSkin(){
+    var id=(u&&u.rsk)||'std',s=SKL().filter(function(x){return x.id===id})[0];
+    if(!s||(s.only&&!isOwner(u))||!skinOwned(s))return 'std';
+    return id;
+  }
+  function trainSkin(sk,trainG,box,M,po){
+    var ud=trainG.userData||(trainG.userData={});
+    (ud.deco||[]).forEach(function(o){trainG.remove(o)});ud.deco=[];
+    M.red.color.set(0xc0392b);M.deckM.color.set(0x5a3b22);M.dark.color.set(0x222a36);M.blk.color.set(0x14171d);
+    if(sk==='std')return;
+    var n0=trainG.children.length;
+    var pal={pass:[0x2a6fb5,0xe8e2d0,0x24324a,0x8a2a2a],mil:[0x4b5d3a,0x3b4630,0x2b3324,0x6b6a48],own:[0xd4a017,0x2a1f3d,0x151226,0x5b2a7a]}[sk];
+    M.red.color.set(pal[0]);M.deckM.color.set(pal[1]);M.dark.color.set(pal[2]);
+    if(sk==='mil')M.blk.color.set(0x1c2018);
+    var win=new THREE.MeshBasicMaterial({color:0x9fd4ff}),seat=new THREE.MeshLambertMaterial({color:pal[3]});
+    if(sk==='pass'||sk==='own'){
+      [-1,1].forEach(function(sd){
+        box(0.4,3.6,14,M.deckM,sd*3.45,5.4,po,trainG);
+        for(var k=0;k<6;k++)box(0.12,1.4,1.6,win,sd*3.68,6.1,po+(k-2.5)*2.3,trainG);
+        box(2.2,3.6,0.4,M.deckM,sd*2.3,5.4,po+6.9,trainG);
+      });
+      box(7.2,3.6,0.4,M.deckM,0,5.4,po-6.9,trainG);
+      box(2.4,1.2,0.12,win,0,6.1,po-7.12,trainG);
+      box(8,0.45,14.8,M.dark,0,7.4,po,trainG);
+      if(sk==='own')box(8.2,0.2,15,M.red,0,7.7,po,trainG);
+      for(var r2=0;r2<5;r2++){var zz=po+4.6-r2*2.4;
+        [-1,1].forEach(function(sd){box(1.7,0.7,1.2,seat,sd*2.1,4.0,zz,trainG);box(1.7,1.5,0.3,seat,sd*2.1,4.9,zz-0.55,trainG)});
+      }
+    }
+    if(sk==='mil'){
+      var bag=new THREE.MeshLambertMaterial({color:0x8a7a55});
+      [-1,1].forEach(function(sd){
+        box(0.4,2.6,14,M.deckM,sd*3.45,4.8,po,trainG);
+        for(var k=0;k<7;k++)box(0.9,0.8,1.6,bag,sd*3.45,6.5,po+(k-3)*2,trainG);
+      });
+      box(7.2,2.6,0.4,M.deckM,0,4.8,po-6.9,trainG);
+      var gp=box(0.5,1.2,0.5,M.steel,0,6.2,po-6.9,trainG);box(0.4,0.4,2.4,M.steel,0,7.0,po-7.6,trainG);
+    }
+    ud.deco=trainG.children.slice(n0);
+  }
+  function milSpawn(){
+    var S=[[-2,-11],[2,-7],[-2,-2],[2,2]];
+    S.forEach(function(q){
+      var o=mkMan(0xe3b88f,0x4b5d3a,0x3b4630,0x2b3324,true);o.g.scale.setScalar(0.9);scene.add(o.g);
+      var tr=new THREE.Mesh(new THREE.BoxGeometry(0.14,0.14,1),new THREE.MeshBasicMaterial({color:0xffe27a}));tr.visible=false;scene.add(tr);
+      R.sold.push({o:o,tr:tr,x:q[0],dz:q[1],cd:0.3+Math.random()*0.6,t:0,ph:0});
+    });
+    G.toast('Prajurit kereta militer bersiaga!');
+  }
+  function milTick(dt,pp){
+    if(!R||R.sk!=='mil')return;
+    var tg=[];
+    railTargets().forEach(function(z){if(!z.dead&&!(z.home&&!z.act)&&Math.abs(z.x)<70&&z.z>R.zT-60&&z.z<R.zT+75)tg.push(z)});
+    if(tg.length){R.solIdle=0;if(!R.sold.length)milSpawn()}
+    else if(R.sold.length){R.solIdle=(R.solIdle||0)+dt;if(R.solIdle>6){R.sold.forEach(function(s){scene.remove(s.o.g);scene.remove(s.tr)});R.sold=[]}}
+    R.sold.forEach(function(s){
+      var wx=s.x,wz=R.zT+s.dz;
+      s.o.g.position.set(wx,RDECK,wz);
+      if(s.t>0){s.t-=dt;if(s.t<=0)s.tr.visible=false}
+      var best=null,bd=60;
+      tg.forEach(function(z){if(z.dead)return;var d=Math.hypot(z.x-wx,z.z-wz);if(d<bd){bd=d;best=z}});
+      if(!best)return;
+      s.o.g.rotation.y=Math.atan2(best.x-wx,best.z-wz);
+      s.cd-=dt;
+      if(s.cd<=0){
+        s.cd=0.7+Math.random()*0.4;
+        railHitZ(best,28);
+        var dx=best.x-wx,dz=best.z-wz,len=Math.hypot(dx,dz);
+        s.tr.position.set((wx+best.x)/2,RDECK+3.4,(wz+best.z)/2);s.tr.rotation.y=Math.atan2(dx,dz);s.tr.scale.set(1,1,len);s.tr.visible=true;s.t=0.07;
+      }
+    });
+  }
   function makeTrain(tx,r){
     var box=rbox,wood=new THREE.MeshLambertMaterial({color:0x6b4a2b});
-    var trainG=new THREE.Group();scene.add(trainG);trainG.position.x=tx;
+    var trainG=new THREE.Group();scene.add(trainG);trainG.position.x=tx;trainG.scale.setScalar(1.4);
     var deckM=new THREE.MeshLambertMaterial({color:0x5a3b22}),dark=new THREE.MeshLambertMaterial({color:0x222a36}),red=new THREE.MeshLambertMaterial({color:0xc0392b}),blk=new THREE.MeshLambertMaterial({color:0x14171d}),wm=new THREE.MeshLambertMaterial({color:0x7a8696});
-    var CARS=[{oz:14,len:16},{oz:-1,len:12},{oz:-16,len:14}],decks=[],wheels=[];
+    var CARS=[{oz:14,len:16},{oz:-3,len:14}],decks=[],wheels=[];
     CARS.forEach(function(c){
-      var b=addPlat(tx,RDECK,c.oz,7,c.len,1,deckM);b.rail=1;b.oz=c.oz;decks.push(b);
+      var b=addPlat(tx,RDECK,c.oz*1.4,9.8,c.len*1.4,1,deckM);b.rail=1;b.oz=c.oz*1.4;decks.push(b);
       box(5.6,1.2,c.len-1,blk,0,2.5,c.oz,trainG);
       for(var k=0;k<3;k++)for(var sd=-1;sd<=1;sd+=2){
-        var wg=new THREE.Group();wg.position.set(sd*2.7,1.3,c.oz+(k-1)*c.len*0.32);
+        var wg=new THREE.Group();wg.position.set(sd*2.7/1.4,1.3,c.oz+(k-1)*c.len*0.32);
         var wc=new THREE.Mesh(new THREE.CylinderGeometry(1.3,1.3,0.6,14),wm);wc.rotation.z=Math.PI/2;wg.add(wc);trainG.add(wg);wheels.push(wg);
       }
     });
     /* lokomotif */
     var lo=14;
-    var boiler=new THREE.Mesh(new THREE.CylinderGeometry(2.3,2.3,10,16),dark);boiler.rotation.x=Math.PI/2;boiler.position.set(0,6.3,lo+3);trainG.add(boiler);
-    var stack=new THREE.Mesh(new THREE.CylinderGeometry(0.9,1.2,3.6,10),blk);stack.position.set(0,9.6,lo+6.5);trainG.add(stack);
-    box(7,5.4,0.5,red,0,6.2,lo-6,trainG);box(0.4,5.4,6,red,-3.3,6.2,lo-3,trainG);box(0.4,5.4,6,red,3.3,6.2,lo-3,trainG);box(7.8,0.5,7,dark,0,9.1,lo-3,trainG);
-    var fur=new THREE.Mesh(new THREE.BoxGeometry(2.6,2.2,0.3),new THREE.MeshBasicMaterial({color:0xff7a1a}));fur.position.set(0,5,lo-5.6);trainG.add(fur);
-    var hl=new THREE.Mesh(new THREE.BoxGeometry(1.4,1.4,0.4),new THREE.MeshBasicMaterial({color:0xfff2a0}));hl.position.set(0,6.4,lo+8.2);trainG.add(hl);
-    /* tender batu bara */
-    var to=-1;
-    box(0.4,1.8,12,deckM,-3.3,4.4,to,trainG);box(0.4,1.8,12,deckM,3.3,4.4,to,trainG);box(7,1.8,0.4,deckM,0,4.4,to+5.8,trainG);box(7,1.8,0.4,deckM,0,4.4,to-5.8,trainG);
-    for(var q=0;q<7;q++)box(1.6+r()*1.4,0.8+r()*1.2,1.6+r()*1.4,blk,(r()-0.5)*4.4,4.4,to+(r()-0.5)*9,trainG);
-    /* gerbong */
-    var po=-16;
-    [-3.2,3.2].forEach(function(px){[-5.5,5.5].forEach(function(pz){box(0.4,5,0.4,wood,px,6,po+pz,trainG)})});
-    box(7.6,0.5,14.4,red,0,8.6,po,trainG);box(2,0.8,6,wood,-1.8,4.4,po,trainG);box(2,0.8,6,wood,1.8,4.4,po,trainG);
+    var boiler=new THREE.Mesh(new THREE.CylinderGeometry(2.3,2.3,8,16),dark);boiler.rotation.x=Math.PI/2;boiler.position.set(0,5.1,lo+4);trainG.add(boiler);
+    var stack=new THREE.Mesh(new THREE.CylinderGeometry(0.9,1.2,3.6,10),blk);stack.position.set(0,8.4,lo+6.5);trainG.add(stack);
+    /* dinding kabin dengan jendela kotak: depan 2 jendela, samping 1 jendela */
+    box(7,2.9,0.5,red,0,4.95,lo,trainG);box(7,0.5,0.5,red,0,8.65,lo,trainG);box(1.7,2,0.5,red,0,7.4,lo,trainG);box(0.8,2,0.5,red,-3.1,7.4,lo,trainG);box(0.8,2,0.5,red,3.1,7.4,lo,trainG);
+    [-3.3,3.3].forEach(function(wx){box(0.4,1.5,6,red,wx,4.25,lo-3,trainG);box(0.4,1.3,6,red,wx,8.25,lo-3,trainG);box(0.4,2.6,1.7,red,wx,6.3,lo-5.15,trainG);box(0.4,2.6,1.7,red,wx,6.3,lo-0.85,trainG)});box(7.8,0.5,7,dark,0,9.1,lo-3,trainG);
+    
+    var hl=new THREE.Mesh(new THREE.BoxGeometry(1.4,1.4,0.4),new THREE.MeshBasicMaterial({color:0xfff2a0}));hl.position.set(0,5.2,lo+8.2);trainG.add(hl);
+    /* ---- kabin masinis: kursi, panel kontrol, tungku (ala Dead Rails) ---- */
+    var leather=new THREE.MeshLambertMaterial({color:0x7a2e22}),brass=new THREE.MeshLambertMaterial({color:0xc9a227}),steel=new THREE.MeshLambertMaterial({color:0x4a5361});
+    box(2.6,1.2,1.8,leather,-1.4,4.1,12.6,trainG);box(2.6,2.8,0.5,leather,-1.4,5.2,11.2,trainG);box(0.4,0.9,1.7,steel,-2.9,4.55,12.6,trainG);box(0.4,0.9,1.7,steel,0.1,4.55,12.6,trainG);
+    box(3.2,1.7,0.9,dark,-1.4,5.4,13.9,trainG);
+    var gOn=new THREE.MeshBasicMaterial({color:0x6cf09a}),gWarm=new THREE.MeshBasicMaterial({color:0xffc24a});
+    [-2.4,-1.4,-0.4].forEach(function(gx,gi){box(0.95,0.95,0.12,brass,gx,5.5,13.42,trainG);box(0.6,0.6,0.1,gi===1?gWarm:gOn,gx,5.5,13.36,trainG)});
+    var thr=box(0.3,1.9,0.3,brass,0.5,4.9,13.0,trainG);thr.rotation.x=-0.5;box(0.6,0.6,0.6,red,0.5,5.9,12.5,trainG);
+    var brk=box(0.3,1.7,0.3,steel,-2.7,4.8,13.0,trainG);brk.rotation.x=0.4;box(0.55,0.55,0.55,brass,-2.7,5.7,13.2,trainG);
+    /* tungku bahan bakar: pintunya menghadap belakang (kabin terbuka di belakang) */
+    box(3.8,3.2,1.4,steel,1.2,5.1,9.2,trainG);
+    box(2.5,2.0,0.12,blk,1.2,4.6,8.44,trainG);
+    var fglow=new THREE.Mesh(new THREE.BoxGeometry(1.9,1.4,0.1),new THREE.MeshBasicMaterial({color:0xff7a1a}));fglow.position.set(1.2,4.6,8.38);trainG.add(fglow);
+    box(2.7,0.55,1.3,blk,1.2,6.9,9.2,trainG);
+    for(var cq=0;cq<4;cq++)box(0.7+r()*0.5,0.5,0.7+r()*0.5,blk,1.2+(cq-1.5)*0.7,7.35,9.2+(r()-0.5)*0.5,trainG);
+    var fc=document.createElement('canvas');fc.width=256;fc.height=64;var fx=fc.getContext('2d');fx.fillStyle='#1a1d24';fx.fillRect(0,0,256,64);fx.fillStyle='#ffb84d';fx.textAlign='center';fx.textBaseline='middle';fx.font='700 34px "Chakra Petch",sans-serif';fx.fillText('BATU BARA',128,34);
+    var fpl=new THREE.Mesh(new THREE.PlaneGeometry(2.6,0.65),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(fc)}));fpl.position.set(1.2,6.2,8.44);fpl.rotation.y=Math.PI;trainG.add(fpl);
+    /* gandengan */
+    box(0.7,0.7,3.2,steel,0,3.0,5.0,trainG);
+    /* gerbong kosong di belakang */
+    var po=-3;
+    var plk=new THREE.MeshLambertMaterial({color:0x4a3220});
+    for(var pk2=-3;pk2<=3;pk2++)box(0.08,0.06,13.6,plk,pk2*0.9,3.52,po,trainG);
+    box(0.5,1.7,14,deckM,-3.3,4.35,po,trainG);box(0.5,1.7,14,deckM,3.3,4.35,po,trainG);
+    box(7.1,1.7,0.5,deckM,0,4.35,po-6.8,trainG);
+    box(0.6,0.3,14.4,red,-3.3,5.3,po,trainG);box(0.6,0.3,14.4,red,3.3,5.3,po,trainG);box(7.6,0.3,0.6,red,0,5.3,po-6.8,trainG);
+    box(0.7,0.7,0.7,brass,0,5.0,po-7.3,trainG);
     var bc=document.createElement('canvas');bc.width=512;bc.height=128;var bx=bc.getContext('2d');
     bx.fillStyle='#f2c14e';bx.fillRect(0,0,512,128);bx.fillStyle='#2a1a10';bx.textAlign='center';bx.textBaseline='middle';bx.font='700 78px "Chakra Petch",sans-serif';bx.fillText('BLOX RAILS',256,68);
     var bt=new THREE.CanvasTexture(bc);
     [-1,1].forEach(function(sd){var pl=new THREE.Mesh(new THREE.PlaneGeometry(10,2.5),new THREE.MeshBasicMaterial({map:bt}));pl.position.set(sd*3.55,3.3,po);pl.rotation.y=sd*Math.PI/2;trainG.add(pl)});
-    return {g:trainG,decks:decks,wheels:wheels};
+    var SKM={red:red,deckM:deckM,dark:dark,blk:blk,brass:brass,steel:steel};trainSkin(curSkin(),trainG,box,SKM,po);
+    return {g:trainG,decks:decks,wheels:wheels,apply:function(k){trainSkin(k,trainG,box,SKM,po)}};
+
   }
   var LB=null;
   function lbox(w,h,d,c,x,y,z,solid){
@@ -1646,11 +2019,10 @@ function startGame(gid){
     rbox(0.8,10,0.8,wood,31,5,-6,null);rbox(0.8,10,0.8,wood,31,5,6,null);rbox(1,1,13.6,wood,31,10,0,null);
     rsign(rtex('NAIK KERETA',512,128,'#161b2a','#ffc83d',70,'tekan E di sini'),10,2.5,30.4,10,0,-Math.PI/2);
     /* bangunan kota */
-    lbld(-50,18,26,20,13,0x8b5a35,0x4a2f17,'SALOON','Minuman dan hiburan');
-    lbld(-50,-24,22,18,14,0xa8553b,0x3b2a1f,'BANK','Obligasi emas');
-    lbld(-8,64,28,20,16,0xcfc3a8,0x6b4a2b,'HOTEL','Kamar tersedia');
-    lbld(22,66,22,16,11,0x6b8a5a,0x3b4a30,'TOKO UMUM','Perlengkapan');
-    lbld(-32,-62,20,14,11,0x9a7b4f,0x4a3a22,'SHERIFF','Hukum Blox Rails');
+    lbld(14,-64,20,16,12,0x5b4a8a,0x2f2650,'TOKO KELAS','Masinis, Super, Penyihir');
+    lbld(-86,22,20,16,12,0x2f6b8a,0x1e3d52,'GAMEPASS','Bahan bakar unlimited');
+    lbld(-12,-64,20,16,12,0x8a3b2f,0x4a1f17,'SKIN KERETA','Penumpang, Militer, Owner');
+    lbld(-38,-64,20,16,12,0x2f7a5b,0x1d4a38,'PENINGKATAN','Level kelas Super dan Penyihir');
     /* sumur */
     var stone=new THREE.MeshLambertMaterial({color:0x8d8a84});
     var wellB=addPlat(0,1.6,0,6.4,6.4,1.6,stone);
@@ -1661,9 +2033,9 @@ function startGame(gid){
     [[-15,-15],[15,-15],[-15,15],[15,15]].forEach(function(l){rbox(0.5,9,0.5,wood,l[0],4.5,l[1],null);rbox(1.4,1.4,1.4,bulb,l[0],9.6,l[1],null)});
     /* tong, peti, jerami */
     var barrel=new THREE.MeshLambertMaterial({color:0x7a4b2a}),hay=new THREE.MeshLambertMaterial({color:0xd9b44a});
-    [[-36,6],[-36,9],[-34,7.5],[-36,-12],[-34,-14],[-6,52],[-2,53],[30,56],[33,56],[-22,-50],[-20,-52]].forEach(function(b){var m=new THREE.Mesh(new THREE.CylinderGeometry(1.2,1.2,2.4,12),barrel);m.position.set(b[0],1.2,b[1]);m.castShadow=true;scene.add(m)});
-    [[-37,-3],[-35,-3.4],[-12,50],[24,55],[-27,-54]].forEach(function(b){lbox(2.4,2.4,2.4,0x9a6a3a,b[0],1.2,b[1],1);});
-    [[-30,28],[10,50],[-16,-48]].forEach(function(b){lbox(4,2,2.4,0xd9b44a,b[0],1,b[1],1)});
+    [].forEach(function(b){var m=new THREE.Mesh(new THREE.CylinderGeometry(1.2,1.2,2.4,12),barrel);m.position.set(b[0],1.2,b[1]);m.castShadow=true;scene.add(m)});
+    [].forEach(function(b){lbox(2.4,2.4,2.4,0x9a6a3a,b[0],1.2,b[1],1);});
+    [].forEach(function(b){lbox(4,2,2.4,0xd9b44a,b[0],1,b[1],1)});
     /* menara air dan kincir */
     [[-3,-3],[3,-3],[-3,3],[3,3]].forEach(function(l){rbox(0.7,11,0.7,wood,-84+l[0],5.5,-72+l[1],null)});
     var tank=new THREE.Mesh(new THREE.CylinderGeometry(4.6,4.6,6,16),new THREE.MeshLambertMaterial({color:0x7a4b2a}));tank.position.set(-84,14,-72);scene.add(tank);
@@ -1672,10 +2044,10 @@ function startGame(gid){
     var bm=new THREE.MeshLambertMaterial({color:0xe9dcc2});
     for(var bl=0;bl<4;bl++){var bg=new THREE.Group();bg.rotation.z=bl*Math.PI/2;var bb=new THREE.Mesh(new THREE.BoxGeometry(2,11,0.3),bm);bb.position.y=6;bg.add(bb);blades.add(bg)}
     /* kaktus dan batu */
-    var cac=new THREE.MeshLambertMaterial({color:0x3f8a4a}),rock=new THREE.MeshLambertMaterial({color:0x8b7a68}),cen=[[-50,18],[-50,-24],[-8,64],[22,66],[-32,-62]];
+    var cac=new THREE.MeshLambertMaterial({color:0x3f8a4a}),rock=new THREE.MeshLambertMaterial({color:0x8b7a68}),cen=[[14,-64],[-86,22],[-12,-64],[-38,-64]];
     for(var i=0;i<70;i++){
       var x=(r()-0.5)*250,z=(r()-0.5)*250;
-      if(Math.hypot(x,z)<30||(x>26&&x<62)||Math.abs(x)>120||Math.abs(z)>120)continue;
+      if(Math.hypot(x,z)<44||(x>26&&x<62)||Math.abs(x)>120||Math.abs(z)>120)continue;
       var near=false;cen.forEach(function(c){if(Math.hypot(x-c[0],z-c[1])<26)near=true});if(near)continue;
       if(r()<0.6){var h=6+r()*5;rbox(1.6,h,1.6,cac,x,h/2,z,null);rbox(3.2,1.1,1.1,cac,x+1.6,h*0.55,z,null);rbox(1.1,2.6,1.1,cac,x+3,h*0.55+1.3,z,null)}
       else{var rb=rbox(3+r()*5,2+r()*3,3+r()*5,rock,x,1.2,z,null);rb.rotation.y=r()*3}
@@ -1684,7 +2056,8 @@ function startGame(gid){
     var hill=new THREE.MeshLambertMaterial({color:0xc9996a});
     for(var hi=0;hi<16;hi++){var ha=hi/16*Math.PI*2,hr=190+r()*40;rbox(50+r()*40,16+r()*20,50+r()*40,hill,Math.cos(ha)*hr,6,Math.sin(ha)*hr,null)}
     var sunB=new THREE.Mesh(new THREE.SphereGeometry(30,18,12),new THREE.MeshBasicMaterial({color:0xffe3a6,fog:false}));sunB.position.set(0,36,360);scene.add(sunB);
-    LB={blades:blades,gate:{x:32,z:0},near:false};
+    seatList([[-34,0,-14],[-34,0,14],[22,0,30],[-12,0,38]]);
+    LB={blades:blades,gate:{x:32,z:0},shop:{x:14,z:-54},gp:{x:-73.5,z:22},sk:{x:-12,z:-54},up:{x:-38,z:-54},tn:tn,cam:null,near:''};
     return {
       spawn:function(){return {x:0,y:0,z:-40,yaw:Math.PI}},
       update:function(dt,t,pp){lobbyTick(dt,pp)},
@@ -1737,9 +2110,10 @@ function startGame(gid){
     gadd(g);return {g:g,lid:l};
   }
   function rollLoot(rich){
-    var L={gold:0,coal:0,cash:0};
+    var L={gold:0,coal:0,cash:0,mc:0};
     if(rich){L.gold=1+Math.floor(Math.random()*3);L.coal=Math.random()<0.6?1+Math.floor(Math.random()*2):0;L.cash=Math.random()<0.5?20+Math.floor(Math.random()*40):0}
     else{L.gold=Math.random()<0.7?1+Math.floor(Math.random()*2):0;L.coal=Math.random()<0.4?1:0;L.cash=Math.random()<0.4?10+Math.floor(Math.random()*30):0;if(!L.gold&&!L.coal&&!L.cash)L.gold=1}
+    if(Math.random()<(rich?0.25:0.55))L.mc=1+(Math.random()<0.3?1:0);
     return L;
   }
   function addChest(f,idx,x,z,ry){
@@ -1758,6 +2132,86 @@ function startGame(gid){
     gsign(rtex('STASIUN AWAL',1024,256,'#161b2a','#ffc83d',120,'jual emas, beli batu bara'),14,3.5,-9,8,-22,Math.PI);
     gbox(0.6,8,0.6,0x4a2f17,-15,0,-22,0);gbox(0.6,8,0.6,0x4a2f17,-3.2,0,-22,0);
   }
+  /* ---- Base ala Dead Rails (tiap 10 km) + siklus siang malam ---- */
+  var BKM=[10,20,30,40,50,60,70],BH=15,BHW=30,BHL=40,CYC=480;
+  function baseZone(x,z){
+    if(!R||!R.bz)return false;
+    for(var i=0;i<R.bz.length;i++){var c=R.bz[i];if(Math.abs(x)<BHW+1&&z>c-BHL-1&&z<c+BHL+1)return true}
+    return false;
+  }
+  function bBaseGate(ez){
+    var b=gbox(12,BH,1.2,0x3a3f4a,0,0,ez,1);
+    [-4.5,0,4.5].forEach(function(sy){var st=new THREE.Mesh(new THREE.BoxGeometry(12.1,1.1,1.5),new THREE.MeshBasicMaterial({color:0xffc83d}));st.position.set(0,sy,0);b.m.add(st)});
+    return {b:b,z:ez,open:1,tg:1,H:BH};
+  }
+  function gSet(g){g.b.top=g.H+g.open*(g.H+1);g.b.y0=g.b.top-g.b.t;g.b.y1=g.b.top;sync(g.b)}
+  function bBase(f){
+    var z=f.z,wm=0x7a5a3a,dm=0x2b2118,lamp=[[-14,-24],[14,-24],[-14,24],[14,24],[-14,0],[14,0]];
+    gbox(58,0.04,78,0x6b5a45,0,0,z,0);
+    gbox(2,BH,82,wm,-BHW,0,z,1);gbox(2,BH,82,wm,BHW,0,z,1);
+    [-1,1].forEach(function(sd){var ez=z+sd*BHL;
+      gbox(24,BH,2,wm,-18,0,ez,1);gbox(24,BH,2,wm,18,0,ez,1);
+      [-6.8,6.8].forEach(function(px){gbox(1.8,BH+4,3,dm,px,0,ez,1)});
+    });
+    var gi=bBaseGate(z-BHL),go=bBaseGate(z+BHL);
+    f.gt={i:gi,o:go};
+    var night=R&&R.night;gi.open=1;go.open=night?0:1;gi.tg=1;go.tg=go.open;gSet(gi);gSet(go);
+    gsign(rtex('BASE km '+f.km,1024,256,'#161b2a','#ffc83d',120,'aman saat malam'),13,3.2,0,BH+4.6,z-BHL-1.7,Math.PI);
+    gsign(rtex('BASE km '+f.km,1024,256,'#161b2a','#ffc83d',120,'pintu tertutup saat malam'),13,3.2,0,BH+4.6,z+BHL+1.7,0);
+    /* toko di dalam base */
+    var b=bBld(-22,z,1,12,14,9,0x8b5a35,0x4a2f17,'TOKO');
+    gbox(2,2.4,8,0x5a3b22,b.xb+2.2,0,z,1);
+    var n=mkMan(0xe3b88f,0x2f6b4a,0x3a2f20,0x3a2a1a);n.g.position.set(b.xb+3.8,0,z);n.g.rotation.y=Math.PI/2;gadd(n.g);
+    f.shop={x:b.xf+1,z:z};
+    /* lampu, peti, api unggun */
+    lamp.forEach(function(l){gbox(0.5,9,0.5,0x4a2f17,l[0],0,z+l[1],0);gbox(1.4,1.4,1.4,0xffe27a,l[0],9,z+l[1],0,1)});
+    [[20,z-22],[22,z-19],[20,z+22],[23,z+20]].forEach(function(c){gbox(2.4,2.4,2.4,0x9a6a3a,c[0],0,c[1],1)});
+    gbox(2.6,0.6,2.6,0x5a5148,22,0,z+4,0);gbox(1.4,1.6,1.4,0xff8a2a,22,0.6,z+4,0,1);gbox(0.8,2.4,0.8,0xffd24a,22,1.2,z+4,0,1);
+  }
+  function dayF(ph){if(ph<0.55)return 1;if(ph<0.62)return 1-(ph-0.55)/0.07;if(ph<0.92)return 0;return (ph-0.92)/0.08}
+  var cDay=new THREE.Color(0xe99a5b),cNight=new THREE.Color(0x0a1230),cMix=new THREE.Color(),sDay=new THREE.Color(0xffffff),sNight=new THREE.Color(0x6f86ff),moon=null;
+  function gMove(g,t,dt){
+    if(g.open===t)return;
+    var s=dt*0.35;g.open=g.open<t?Math.min(t,g.open+s):Math.max(t,g.open-s);gSet(g);
+  }
+  function baseTick(f,dt){
+    var gi=f.gt.i,go=f.gt.o,tIn=R.zT-14,tOut=R.zT+32.2;
+    function straddle(g){return tOut>g.z-0.5&&tIn<g.z+1.6}
+    var inside=tIn>gi.z+1.6&&tOut<go.z-0.5;
+    var ti=R.night?(inside?0:1):1,to=R.night?0:1;
+    if(straddle(gi))ti=1;if(straddle(go))to=1;
+    if(ti===0&&gi.tg!==0)G.toast('Kereta masuk base. Pintu masuk ditutup');
+    gi.tg=ti;go.tg=to;
+    gMove(gi,ti,dt);gMove(go,to,dt);
+  }
+  function baseBlock(dz){
+    if(dz<=0||!R)return dz;
+    var fr=R.zT+32.2;
+    R.feats.forEach(function(f){
+      if(f.kind!=='base'||!f.built||!f.gt)return;
+      [f.gt.i,f.gt.o].forEach(function(g){
+        if(g.open<0.8&&fr<=g.z-0.8&&fr+dz>g.z-0.8){
+          dz=Math.max(0,g.z-0.8-fr);R.speed=0;R.th=0;
+          if(R.t-(R.gwT||-9)>6){R.gwT=R.t;G.toast('Pintu base tertutup. Tunggu pagi untuk keluar')}
+        }
+      });
+    });
+    return dz;
+  }
+  function todTick(dt,pp){
+    R.clock+=dt;
+    var ph=(R.clock%CYC)/CYC,d=dayF(ph),was=R.night;
+    R.day=d;R.night=d<0.45?true:(d>0.55?false:R.night);
+    cMix.copy(cNight).lerp(cDay,d);scene.background.copy(cMix);scene.fog.color.copy(cMix);
+    scene.fog.near=30+40*d;scene.fog.far=190+130*d;
+    hemi.intensity=0.22+0.58*d;sun.intensity=0.06+0.59*d;sun.color.copy(sNight).lerp(sDay,d);
+    if(!moon){moon=new THREE.Mesh(new THREE.SphereGeometry(14,16,12),new THREE.MeshBasicMaterial({color:0xe8efff,fog:false}));scene.add(moon)}
+    moon.visible=d<0.5;moon.position.set(pp.x-120,170,pp.z+360);
+    if(R.night!==was)G.toast(R.night?'Malam tiba! Segera menuju base terdekat':'Pagi tiba. Pintu base dibuka');
+    var t=R.night?(ph<0.964?0.964-ph:1.964-ph)*CYC:(ph<0.5885?0.5885-ph:1.5885-ph)*CYC;
+    t=Math.max(0,Math.round(t));R.tlab=(R.night?'Malam ':'Siang ')+Math.floor(t/60)+':'+('0'+(t%60)).slice(-2);
+    R.feats.forEach(function(f){if(f.kind==='base'&&f.built&&f.gt)baseTick(f,dt)});
+  }
   function bHouse(f){
     var dir=-f.side,b=bBld(f.x,f.z,dir,12,14,8,0x6a5a48,0x3b3128,null);
     addChest(f,0,b.xb+dir*0+dir*0+(-dir)*0+dir*2.2,f.z-4,dir>0?-Math.PI/2:Math.PI/2);
@@ -1766,10 +2220,7 @@ function startGame(gid){
     if(f.zN>0&&!f.cleared&&!f.zSpawned){f.zSpawned=1;for(var i=0;i<f.zN;i++)railSpawnAt(f.x-dir*(1+Math.random()*3),f.z+(Math.random()-0.5)*8,true,f)}
   }
   function bVillage(f){
-    var z=f.z,s1=bBld(-34,z,1,14,16,9,0x8b5a35,0x4a2f17,'TOKO UMUM');
-    gbox(2,2.4,9,0x5a3b22,s1.xb+2.4,0,z,1);
-    var n=mkMan(0xe3b88f,0xa8553b,0x3a2f20,0x3a2a1a);n.g.position.set(s1.xb+4,0,z);n.g.rotation.y=Math.PI/2;gadd(n.g);
-    f.shop={x:s1.xf+1,z:z};
+    var z=f.z,s1=bBld(-34,z,1,14,16,9,0x7a6a58,0x3b3128,null);
     var h1=bBld(36,z-32,-1,12,14,8,0x7a6a58,0x3b3128,null),h2=bBld(-36,z+38,1,12,14,8,0x7a6a58,0x3b3128,null),h3=bBld(38,z+26,-1,12,12,8,0x6a5a48,0x3b3128,null);
     addChest(f,0,h1.xb-h1.dir*2.2*-1,z-32,Math.PI/2);addChest(f,1,h2.xb+2.2,z+38,-Math.PI/2);
     gbox(2,3,2,0x8d8a84,0,0,z,1);gbox(0.4,10,0.4,0x4a2f17,-3,0,z-10,0);gbox(1.2,1.2,1.2,0xffe27a,-3,10,z-10,0,1);
@@ -1821,7 +2272,7 @@ function startGame(gid){
     for(var k=0;k<14;k++){
       var x=(r()<0.5?-1:1)*(14+r()*110),z=z0+r()*400;
       if(!okZ(z))continue;
-      var nearF=false;R.feats.forEach(function(f){if(f.kind==='village'&&Math.abs(f.z-z)<90)nearF=true;if(f.kind==='house'&&Math.hypot(f.x-x,f.z-z)<30)nearF=true;if(f.kind==='bandit'&&z>f.z-80)nearF=true});
+      var nearF=false;R.feats.forEach(function(f){if(f.kind==='village'&&Math.abs(f.z-z)<90)nearF=true;if(f.kind==='base'&&Math.abs(f.z-z)<75&&Math.abs(x)<50)nearF=true;if(f.kind==='house'&&Math.hypot(f.x-x,f.z-z)<30)nearF=true;if(f.kind==='bandit'&&z>f.z-80)nearF=true});
       if(nearF)continue;
       if(r()<0.6){var h=6+r()*5;gbox(1.6,h,1.6,cac,x,0,z,0);gbox(3.2,1.1,1.1,cac,x+1.6,h*0.55,z,0);gbox(1.1,2.6,1.1,cac,x+3,h*0.55,z,0)}
       else{var ro=gbox(3+r()*5,2+r()*3,3+r()*5,rock,x,0,z,0);ro.rotation.y=r()*3}
@@ -1855,6 +2306,7 @@ function startGame(gid){
       feats.push({kind:'village',km:vk,z:vk*KM,x:0,near:700,chests:[rollLoot(0),rollLoot(0)]});
     }
     feats.push({kind:'store',km:0,z:6,x:-22,near:9e9,keep:1,chests:[]});
+    BKM.forEach(function(bk){feats.push({kind:'base',km:bk,z:bk*KM,x:0,near:800,chests:[]})});
     var hc=1+Math.floor(Math.random()*8),hz=[],tries=0;
     while(hz.length<hc&&tries++<300){
       var km=hz.length?3+Math.random()*75:2+Math.random()*3,bad=false;
@@ -1873,13 +2325,13 @@ function startGame(gid){
     /* pickup tersebar: emas dan batu bara */
     var pickups={};
     function addPk(kind,km){var z=km*KM+Math.random()*60,x=(Math.random()<0.5?-1:1)*(10+Math.random()*60),si=Math.floor(z/400);
-      var near=false;feats.forEach(function(f){if(f.kind==='village'&&Math.abs(f.z-z)<90)near=true});if(near||(z>ZB0-300))return;(pickups[si]=pickups[si]||[]).push({kind:kind,x:x,z:z,got:0})}
+      var near=false;feats.forEach(function(f){if(f.kind==='village'&&Math.abs(f.z-z)<90)near=true;if(f.kind==='base'&&Math.abs(f.z-z)<75&&Math.abs(x)<50)near=true});if(near||(z>ZB0-300))return;(pickups[si]=pickups[si]||[]).push({kind:kind,x:x,z:z,got:0})}
     for(var gk=1.2;gk<78;gk+=1.9)addPk('gold',gk+Math.random());
     for(var ck=2.5;ck<78;ck+=7)addPk('coal',ck+Math.random()*3);
     var tr=new THREE.Mesh(new THREE.BoxGeometry(0.2,0.2,1),new THREE.MeshBasicMaterial({color:0xfff2a0}));tr.visible=false;scene.add(tr);
     var btr=new THREE.Mesh(new THREE.BoxGeometry(0.2,0.2,1),new THREE.MeshBasicMaterial({color:0xff4a3a}));btr.visible=false;scene.add(btr);
     R={zT:0,speed:0,th:0,thIn:0,driving:false,fuel:0,coal:0,gold:2,cash:0,hp:100,hitT:9,zombies:[],bandits:[],feats:feats,pickups:pickups,segs:{},
-      bridge:{state:0,t:0,prog:0,hinge:null,solid:null},end:0,decks:tn.decks,wheels:tn.wheels,trainG:trainG,tracer:tr,btracer:btr,trT:0,btT:0,hudS:'',kills:0,warn:0,t:0,spawnT:20,ctx:null,bwarn:0,shopOpen:0};
+      bridge:{state:0,t:0,prog:0,hinge:null,solid:null},end:0,decks:tn.decks,wheels:tn.wheels,trainG:trainG,tracer:tr,btracer:btr,trT:0,btT:0,hudS:'',kills:0,warn:0,t:0,spawnT:20,ctx:null,bwarn:0,shopOpen:0};R.unl=!!(u.gp&&u.gp.fuel);R.sk=curSkin();R.sm=R.sk==='pass'?1.3:1;if(R.sk==='own')R.unl=true;R.sold=[];R.clock=0.1*CYC;R.night=false;R.day=1;R.tlab='';R.bz=BKM.map(function(k){return k*KM});R.cls=CLS;R.fm=CLS==='masinis'?0.78:1;R.clv=clv(CLS);R.dm=CLS==='super'?[0.85,0.7,0.3,0][R.clv]:1;R.sps=[1.25,1.5,2.5,3.75][R.clv];R.msp=[1.4,1.4,3.5,3.5][R.clv];R.monHP=[6000,8000,9500,15000][R.clv];R.guards=[];setTimeout(flyBtn,300);R.coal=CLS==='masinis'?2:0;R.mon=null;R.mount=0;R.monCD=0;
     R.feats.forEach(function(f){if(f.kind==='store'){f.built=true;CUR=f.c;bStation(f);CUR=null}});
     return {
       spawn:function(){return {x:0,y:RDECK+0.1,z:R.zT-1,yaw:Math.PI}},
@@ -1887,7 +2339,7 @@ function startGame(gid){
       deadly:function(){return false},killY:-34,killDelay:0.5,sky:null
     };
   }
-  var world=obby?buildObby():(noxb?buildNoxbux():(rails?buildRails():(lobby?buildLobby():buildBase())));
+  var world=obby?buildObby():(noxb?buildNoxbux():(rails?buildRails():(lobby?buildLobby():(dis?buildDis():buildBase()))));
   if(rails||lobby){scene.background=new THREE.Color(0xe99a5b);scene.fog=new THREE.Fog(0xe99a5b,lobby?110:70,lobby?520:320)}
 
   /* ---- karakter ---- */
@@ -1948,16 +2400,18 @@ function startGame(gid){
     knight:[[1.36,0.5,1.36,0x9aa4b2,0,5.45,0],[0.1,0.9,1.3,0x9aa4b2,-0.66,4.75,0],[0.1,0.9,1.3,0x9aa4b2,0.66,4.75,0],[1.3,0.9,0.1,0x9aa4b2,0,4.75,-0.66],[1.36,0.25,0.1,0x9aa4b2,0,5.07,0.64],[0.15,0.6,0.1,0x7f8996,0,4.7,0.65],[0.2,0.5,0.9,0xd93f3f,0,5.95,0]],
     goldcrown:[[1.3,0.3,1.3,0xffc83d,0,5.35,0],[0.3,0.5,0.3,0xffc83d,-0.5,5.7,-0.5],[0.3,0.5,0.3,0xffc83d,0.5,5.7,-0.5],[0.3,0.5,0.3,0xffc83d,-0.5,5.7,0.5],[0.3,0.5,0.3,0xffc83d,0.5,5.7,0.5],[0.3,0.7,0.3,0xffc83d,0,5.8,0],[0.18,0.18,0.1,0xe53935,0,5.35,0.66]],
     bloxcrown:[[1.3,0.3,1.3,0x2f7bff,0,5.35,0],[0.3,0.6,0.3,0x2f7bff,-0.5,5.75,-0.5],[0.3,0.6,0.3,0x2f7bff,0.5,5.75,-0.5],[0.3,0.6,0.3,0x2f7bff,-0.5,5.75,0.5],[0.3,0.6,0.3,0x2f7bff,0.5,5.75,0.5],[0.3,0.9,0.3,0x2f7bff,0,5.9,0],[0.2,0.2,0.1,0xffffff,0,5.35,0.66]],
+    flamehead:[[1.2,0.5,1.2,0xff5a13,0,5.4,0],[0.9,0.6,0.9,0xff7a1a,0,5.85,0],[0.65,0.6,0.65,0xffa02e,0,6.3,0],[0.4,0.55,0.4,0xffc83d,0,6.75,0],[0.2,0.5,0.2,0xfff0a0,0,7.2,0],[0.35,0.7,0.35,0xff7a1a,-0.5,5.9,0.2],[0.35,0.6,0.35,0xff7a1a,0.5,5.9,-0.2]],
     ownercrown:[[1.3,0.3,1.3,0xffd21f,0,5.35,0],[0.3,0.7,0.3,0xffd21f,-0.5,5.8,-0.5],[0.3,0.7,0.3,0xffd21f,0.5,5.8,-0.5],[0.3,0.7,0.3,0xffd21f,-0.5,5.8,0.5],[0.3,0.7,0.3,0xffd21f,0.5,5.8,0.5],[0.3,1.05,0.3,0xffd21f,0,5.98,0],[1.34,0.12,1.34,0xe0a800,0,5.22,0],[0.22,0.22,0.1,0xfff6b0,0,5.38,0.66]]
   };
-  if(SL.hat&&HAT3D[SL.hat])HAT3D[SL.hat].forEach(function(r){var hm2=mesh(r[0],r[1],r[2],r[3]);hm2.position.set(r[4],r[5],r[6]);player.add(hm2)});
+  var flameM=[];
+  if(SL.hat&&HAT3D[SL.hat])HAT3D[SL.hat].forEach(function(r){var hm2=mesh(r[0],r[1],r[2],r[3]);hm2.position.set(r[4],r[5],r[6]);player.add(hm2);if(SL.hat==='flamehead'){hm2.userData.by=r[5];flameM.push(hm2)}});
   fpHide=fpHide.concat(player.children.slice(fpFrom));
   scene.add(player);
 
   /* jejak asap: Mahkota Blox (biru) atau Jejak Pelangi (toko Obby) */
   var puffs=[],puffT=0;
-  function trailNow(){return SL.hat==='bloxcrown'?'crown':SL.torso==='ghost'?'ghost':(obby&&ob.own.trail&&ob.trailOn?'rainbow':null)}
-  if(SL.hat==='bloxcrown'||obby||SL.torso==='ghost'){
+  function trailNow(){return SL.hat==='flamehead'?'fire':SL.hat==='bloxcrown'?'crown':SL.torso==='ghost'?'ghost':(obby&&ob.own.trail&&ob.trailOn?'rainbow':null)}
+  if(SL.hat==='bloxcrown'||SL.hat==='flamehead'||obby||SL.torso==='ghost'){
     var sc2=document.createElement('canvas');sc2.width=sc2.height=64;var sx2=sc2.getContext('2d');
     var gr=sx2.createRadialGradient(32,32,2,32,32,30);
     gr.addColorStop(0,'rgba(255,255,255,0.95)');gr.addColorStop(0.5,'rgba(255,255,255,0.55)');gr.addColorStop(1,'rgba(255,255,255,0)');
@@ -1989,9 +2443,11 @@ function startGame(gid){
   var p=new THREE.Vector3(0,0,0),vx=0,vz=0,vy=0,onG=false,ground=null,face=0,anim=0,swing=0,gtime=0;
   var flying=false,yaw=Math.PI,pitch=0.35,dist=14,tdist=14,sens=st.sens||1,paused=false,keys={},joy={x:0,y:0},jumpHeld=false,dead=0,coyote=0,usedDbl=false,jq=false,finished=false,fpOn=false;
   function perk(id){return obby&&ob.own[id]}
+  var spGrace=0,spY=0;
   function respawn(){
     var sp=world.spawn(obby?ob.cp:0);
-    p.set(sp.x,sp.y,sp.z);vx=vz=vy=0;onG=false;ground=null;dead=0;coyote=0;
+    if(V.mode==='drive')tdist=V.td||14;V.mode=null;
+    p.set(sp.x,sp.y+0.15,sp.z);vx=vz=vy=0;onG=false;ground=null;dead=0;coyote=0;spGrace=2;spY=sp.y;
     if(sp.yaw!==undefined)yaw=sp.yaw;
   }
   function die(){
@@ -2203,7 +2659,7 @@ function startGame(gid){
   if(noxb){updHud()}
 
   /* ---- Hotbar dan tool ---- */
-  function ownedTools(){var ob2=obbyOf(u);return TOOLS_ALL.filter(function(t){return t.rails?rails:(t.obby?!!(ob2.own&&ob2.own[t.id]):!!(u.tools&&u.tools[t.id]))})}
+  function ownedTools(){var ob2=obbyOf(u);return TOOLS_ALL.filter(function(t){return t.rails?(rails&&(!t.cls||t.cls===CLS)):(rails?false:(t.obby?!!(ob2.own&&ob2.own[t.id]):!!(u.tools&&u.tools[t.id])))})}
   var TOOLS=ownedTools();
   function coilHeld(){return toolEq>=0&&TOOLS[toolEq]&&TOOLS[toolEq].id==='coil'}
   function syncTools(){var cid=toolEq>=0&&TOOLS[toolEq]?TOOLS[toolEq].id:null;TOOLS=ownedTools();toolEq=-1;for(var i=0;i<TOOLS.length;i++)if(TOOLS[i].id===cid)toolEq=i;renderHot()}
@@ -2215,9 +2671,19 @@ function startGame(gid){
     else if(id==='senter'){bxm(0.6,0.6,1.6,0x7b8499,0,0,0.4,g);bxm(1.0,1.0,0.7,0x2d3140,0,0,1.4,g);toolLens=bxm(0.8,0.8,0.12,0x777777,0,0,1.8,g,true);
       toolBeam=new THREE.Mesh(new THREE.BoxGeometry(1.6,1.6,10),new THREE.MeshBasicMaterial({color:0xfff2a0,transparent:true,opacity:0.22}));toolBeam.position.set(0,0,6.9);toolBeam.visible=flashOn;g.add(toolBeam);if(flashOn)toolLens.material.color.set(0xfff2a0)}
     else if(id==='revolver'){bxm(0.35,2.0,0.35,0x555a66,0,-1.0,0.15,g);bxm(0.62,0.7,0.62,0x3b3f4b,0,-0.3,0.1,g);bxm(0.4,0.55,1.0,0x7a4b2a,0,0.2,-0.55,g)}
+    else if(id==='notebook'){bxm(1.9,0.35,2.4,0x5b2f9e,0,0,0.6,g);bxm(1.7,0.18,2.2,0xf3ead0,0,0.25,0.6,g);bxm(0.5,0.12,0.5,0xffc83d,0,0.36,0.6,g,true)}
     else if(id==='coil'){bxm(0.45,0.45,2.8,0x8a97ab,0,0,1.3,g);for(var ci=0;ci<6;ci++)bxm(1.35,1.35,0.16,ci%2?0x4aa3ff:0x2f7bff,0,0,0.35+ci*0.45,g);bxm(0.7,0.7,0.3,0xffc83d,0,0,2.85,g)}
     else{bxm(0.22,0.22,3.2,0x6b3fb5,0,0,1.3,g);toolTip=bxm(0.65,0.65,0.65,0xffc83d,0,0,3.1,g,true)}
     g.position.set(0,-1.9,0);g.rotation.x=id==='revolver'?0:0.4;return g;
+  }
+  var fpW=null,fpPv=null;
+  function fpToolSync(){
+    var want=fpOn&&toolG&&V.mode!=='drive';
+    if(want){
+      if(!fpW){fpW=new THREE.Group();fpW.rotation.y=Math.PI;fpW.position.set(1.3,-1.5,-0.4);fpW.scale.setScalar(0.6);fpPv=new THREE.Group();fpW.add(fpPv);camera.add(fpW)}
+      if(toolG.parent!==fpPv)fpPv.add(toolG);
+      fpPv.rotation.x=armR.rotation.x;
+    }else if(fpPv&&toolG&&toolG.parent===fpPv){armR.add(toolG)}
   }
   function renderHot(){
     if(!hotEl)return;
@@ -2226,7 +2692,7 @@ function startGame(gid){
   }
   function equipTool(i){
     if(i<0||i>=TOOLS.length)return;
-    if(toolG){armR.remove(toolG);toolG=null}
+    if(toolG){if(toolG.parent)toolG.parent.remove(toolG);toolG=null}
     toolUse=0;
     if(toolEq===i){toolEq=-1;G.toast('Tool disimpan')}
     else{toolEq=i;toolG=makeTool(TOOLS[i].id);armR.add(toolG);G.toast(TOOLS[i].name+' dipegang. '+(TOOLS[i].passive?'Lompat lebih tinggi dan jatuh lebih pelan selama dipegang.':(touch?'Tekan Pakai':'Tekan F untuk memakai')))}
@@ -2286,24 +2752,125 @@ function startGame(gid){
   }
   function railAmbient(pp){
     var an=Math.random()*Math.PI*2,rd=55+Math.random()*30,x=Math.max(-300,Math.min(300,pp.x+Math.cos(an)*rd)),z=pp.z+Math.sin(an)*rd;
-    if(z<-60)z=-60;if(z>ZB0-12&&z<ZB1+10)z=ZB0-12;
+    if(z<-60)z=-60;if(z>ZB0-12&&z<ZB1+10)z=ZB0-12;if(baseZone(x,z))return;
     railSpawnAt(x,z,false,null);
   }
+  /* ---- Kelas Blox Rails + monster tunggangan ---- */
+  var RCLS_NAME={masinis:'Masinis',super:'Manusia Super',witch:'Penyihir'};
+  var MON_HP=8000,MON_RIDE=6.4;
+  function monMake(){
+    var g=new THREE.Group(),legs=[];
+    var steel=0x6f7a88,dk=0x2b313a,mid=0x4a5361,acc=0xff7a1a,yel=0xffc83d;
+    var bas=function(c){return new THREE.MeshBasicMaterial({color:c})};
+    function add(par,m,x,y,z){m.position.set(x,y,z);par.add(m);return m}
+    /* panggul dan badan: dek atas rata di y=6.4 tempat pemain berdiri */
+    add(g,mesh(4.4,1.2,3.6,dk),0,3.6,0);
+    add(g,mesh(5.4,2.4,4.4,steel),0,5.2,0);
+    add(g,mesh(5.6,0.3,4.6,mid),0,6.55,0);
+    var stripe=mesh(5.5,0.3,0.7,yel);add(g,stripe,0,6.5,-1.8);add(g,mesh(5.5,0.3,0.7,yel),0,6.5,1.8);
+    /* inti energi dan panel dada */
+    add(g,new THREE.Mesh(new THREE.BoxGeometry(1.8,1.3,0.2),bas(acc)),0,5.3,2.25);
+    add(g,mesh(2.6,1.9,0.3,dk),0,5.3,2.2);
+    var core=add(g,new THREE.Mesh(new THREE.BoxGeometry(1.3,0.9,0.2),bas(acc)),0,5.3,2.38);
+    /* mesin dan knalpot di punggung */
+    add(g,mesh(3.4,2.2,1.2,mid),0,5.4,-2.7);
+    [-1.1,1.1].forEach(function(ex){var pipe=mesh(0.7,2.8,0.7,dk);add(g,pipe,ex,7.4,-2.9);add(g,new THREE.Mesh(new THREE.BoxGeometry(0.5,0.2,0.5),bas(0xff9a3d)),ex,8.85,-2.9)});
+    /* kepala kotak dengan visor menyala, di depan dek */
+    var head=new THREE.Group();head.position.set(0,6.2,2.3);g.add(head);
+    add(head,mesh(2.4,1.8,2.0,steel),0,0.4,0.4);
+    add(head,mesh(2.6,0.4,2.2,dk),0,1.45,0.4);
+    add(head,new THREE.Mesh(new THREE.BoxGeometry(1.9,0.5,0.15),bas(0x6af0ff)),0,0.7,1.45);
+    add(head,mesh(0.15,1.2,0.15,dk),-0.9,2.3,0.2);add(head,new THREE.Mesh(new THREE.BoxGeometry(0.25,0.25,0.25),bas(0xff3b3b)),-0.9,2.95,0.2);
+    /* bahu */
+    [-1,1].forEach(function(sd){add(g,mesh(2.0,1.1,2.8,mid),sd*3.6,6.1,0);add(g,mesh(2.1,0.3,2.9,yel),sd*3.6,6.75,0)});
+    /* lengan besar (pivot di bahu) */
+    function arm(sd){var a=new THREE.Group();a.position.set(sd*3.7,5.8,0);g.add(a);
+      add(a,mesh(1.5,2.6,1.7,steel),0,-1.3,0);add(a,mesh(1.2,0.5,1.4,dk),0,-2.7,0);
+      add(a,mesh(1.9,1.9,2.0,mid),0,-3.8,0.2);add(a,mesh(1.5,0.4,1.7,yel),0,-4.85,0.2);
+      if(sd>0){add(a,mesh(0.6,0.6,1.6,dk),0,-3.8,1.6)}
+      return a}
+    var armL=arm(-1),armR=arm(1);
+    /* kaki tebal */
+    function leg(sx){var l=new THREE.Group();l.position.set(sx,3.1,0);g.add(l);
+      add(l,mesh(1.8,1.7,2.0,steel),0,-0.9,0);add(l,mesh(1.5,0.4,1.7,yel),0,-1.85,0);
+      add(l,mesh(1.6,1.0,1.8,dk),0,-2.4,0);add(l,mesh(2.2,0.7,3.2,mid),0,-2.85,0.5);
+      return l}
+    var legL=leg(-1.5),legR=leg(1.5);
+    legs=[legL,legR,armL,armR];
+    return {g:g,legs:legs,head:head};
+  }
+  function monSummon(){
+    if(!R||R.end)return;
+    if(R.mon&&R.mon.hp>0){
+      if(R.mount){G.toast('Kamu sedang menaiki monster');return}
+      R.mon.x=p.x-Math.sin(face)*-6;R.mon.z=p.z-Math.cos(face)*-6;R.mon.y=Math.min(p.y,0.05);G.toast('Monster dipanggil ke sisimu. Tekan E di dekatnya untuk menaiki');return;
+    }
+    if(R.monCD>0){G.toast('Note Book belum siap, tunggu '+Math.ceil(R.monCD)+' detik');return}
+    var o=monMake();scene.add(o.g);
+    R.mon={g:o.g,legs:o.legs,head:o.head,x:p.x+Math.sin(face)*6,z:p.z+Math.cos(face)*6,y:Math.min(p.y,0.05),ry:face,hp:R.monHP,ph:0,biteT:0.5,bite:0};
+    o.g.position.set(R.mon.x,R.mon.y,R.mon.z);
+    G.toast('Monster dipanggil! (8000 darah) Dekati dan tekan E untuk menaikinya');
+  }
+  function monRide(){
+    if(!R||!R.mon||R.mon.hp<=0)return;
+    R.mount=1;R.driving=false;G.toast('Menaiki monster. Loncat atau tekan E untuk turun');
+  }
+  function monDismount(){
+    if(!R||!R.mount)return;
+    R.mount=0;G.toast('Turun dari monster');
+  }
+  function monDie(){
+    if(!R||!R.mon)return;
+    scene.remove(R.mon.g);R.mon=null;R.mount=0;R.monCD=3;
+    G.toast('Monster tumbang! Panggil lagi dengan Note Book');
+  }
+  function monTick(dt,pp){
+    if(!R)return;
+    if(R.monCD>0)R.monCD-=dt;
+    R.ride=(R.ride||0)+((R.mount?MON_RIDE:0)-(R.ride||0))*Math.min(1,dt*6);
+    var m=R.mon;if(!m||m.hp<=0)return;
+    var moving=false,dx,dz,d;
+    if(R.mount){m.x=pp.x;m.z=pp.z;m.y=pp.y;m.ry=face;moving=Math.hypot(vx,vz)>1.5}
+    else{
+      dx=pp.x-m.x;dz=pp.z-m.z;d=Math.hypot(dx,dz)||1;
+      if(d>9){var sp=Math.min(32,(d-6)*3+14);m.x+=dx/d*sp*dt;m.z+=dz/d*sp*dt;m.ry=Math.atan2(dx,dz);moving=true}
+      m.y+=(Math.min(pp.y,0.05)-m.y)*Math.min(1,dt*8);
+    }
+    m.biteT-=dt;if(m.bite>0)m.bite-=dt;
+    if(m.biteT<=0){
+      var hit=0;
+      railTargets().forEach(function(z){if(z.dead||(z.home&&!z.act))return;if(Math.hypot(z.x-m.x,z.z-m.z)<10&&Math.abs(z.y-m.y)<8){railHitZ(z,70);hit++}});
+      m.biteT=hit?0.7:0.2;if(hit)m.bite=0.3;
+    }
+    m.ph+=dt*(moving?11:0);
+    var sw=moving?Math.sin(m.ph)*0.6:0;
+    m.legs[0].rotation.x=sw;m.legs[3].rotation.x=sw;m.legs[1].rotation.x=-sw;m.legs[2].rotation.x=-sw;
+    if(m.bite>0)m.legs[3].rotation.x=-1.5;
+    m.head.rotation.x=m.bite>0?0.2:0;
+    m.g.position.set(m.x,m.y,m.z);m.g.rotation.y=m.ry;
+  }
+  function monHud(){
+    var h='';
+    if(R.cls)h+='<div class="rch two"><span>Kelas: <b style="display:inline">'+RCLS_NAME[R.cls]+(R.clv?' Lvl '+R.clv:'')+'</b> &nbsp; Koin: <b style="display:inline">'+(u.mc|0)+'</b></span></div>';
+    if(R.mon&&R.mon.hp>0)h+='<div class="rch"><b>Monster</b><div class="rbar"><i style="width:'+Math.max(0,Math.round(R.mon.hp/R.monHP*100))+'%;background:#b085ff"></i></div><span>'+Math.max(0,Math.round(R.mon.hp))+' / '+R.monHP+'</span></div>';
+    return h;
+  }
   function railHurt(n,nx,nz){
-    R.hp-=n;R.hitT=0;vx+=nx*14;vz+=nz*14;
+    if(R.mount&&R.mon&&R.mon.hp>0){R.mon.hp-=n*8;if(R.mon.hp<=0)monDie();return}n*=R.dm;R.hp-=n;R.hitT=0;vx+=nx*14*R.dm;vz+=nz*14*R.dm;
     if(R.hp<=0)railDie();
   }
   function railDie(){
-    R.gold=Math.floor(R.gold/2);R.coal=Math.floor(R.coal/2);R.hp=100;R.driving=false;
-    R.zombies.forEach(function(z){if(!z.dead&&!z.home&&Math.hypot(z.x-p.x,z.z-p.z)<40){scene.remove(z.g);z.dead=99}});
-    G.toast('Kamu tumbang. Kembali ke kereta, emas dan batu bara dibawa berkurang separuh');
-    respawn();
+    if(R.end)return;if(R.mount)monDismount();
+    R.end=1;R.speed=0;R.driving=false;R.hp=0;paused=true;unlock();keys={};jumpHeld=false;
+    u.rails=u.rails||{runs:0,done:0,bonds:0};u.rails.runs++;save();
+    railDialog({title:'Kamu kalah',html:'<p>Kamu tumbang dan perjalanan berakhir.</p><p>Musuh dikalahkan: <b>'+R.kills+'</b><br>Emas dikumpulkan: <b>'+R.gold+'</b></p>',
+      yes:function(){stopGame();setTimeout(function(){startGame('bloxrun')},80)},no:function(){stopGame();setTimeout(function(){startGame('bloxrails')},80)},noL:'Ke lobi'});
   }
   function railHitZ(z,d){
     if(z.dead)return;z.hp-=d;z.flash=0.15;z.head.material.color.set(0xff5a5a);
     if(z.hp<=0){
-      z.dead=0.001;R.kills++;
-      if(z.kind==='b'){R.gold++;G.toast('+1 emas dari bandit')}
+      z.dead=0.001;R.kills++;if(R.cls==='witch'&&R.clv>=2)guardSpawn(z);
+      if(z.kind==='b'){R.gold++;G.toast('+1 emas dari bandit');if(Math.random()<0.35)mcGet(1)}
       if(z.f){z.f.zN=Math.max(0,z.f.zN-1);if(!z.f.zN)z.f.cleared=1}
     }
   }
@@ -2329,12 +2896,12 @@ function startGame(gid){
       if(al>-1&&al<7.5&&pe<3.4&&Math.abs(z.y+2.5-(p.y+3))<6)railHitZ(z,40);
     });
   }
-  onToolUse=function(id){if(!rails||!R||R.end||R.driving)return;if(id==='revolver')railShoot();else if(id==='pedang')railMelee()};
+  onToolUse=function(id){if(!rails||!R||R.end||R.driving)return;if(id==='revolver')railShoot();else if(id==='pedang')railMelee();else if(id==='notebook')monSummon()};
 
   /* interaksi */
   function railToggleDrive(){
-    if(R.driving){R.driving=false;G.toast('Turun dari kemudi. Kereta tetap melaju sesuai gas');return}
-    R.driving=true;G.toast('Mengemudi: W naikkan gas, S turunkan gas, E untuk turun');
+    if(R.driving){R.driving=false;G.toast('Turun dari kemudi. Kereta akan melambat perlahan');return}
+    R.driving=true;G.toast('Mengemudi: W naikkan gas, S turunkan gas, loncat atau E untuk turun');
   }
   function railFuel(){
     if(R.coal<1){G.toast('Kamu belum membawa batu bara');return}
@@ -2345,7 +2912,7 @@ function startGame(gid){
   function railOpenChest(cs){
     cs.opened=1;if(cs.o)cs.o.lid.position.y=2.4;
     var L=cs,t=[];
-    R.gold+=L.gold;R.coal+=L.coal;R.cash+=L.cash;
+    R.gold+=L.gold;R.coal+=L.coal;R.cash+=L.cash;if(L.mc)mcGet(L.mc);
     if(L.gold)t.push('+'+L.gold+' emas');if(L.coal)t.push('+'+L.coal+' batu bara');if(L.cash)t.push('+$'+L.cash);
     G.toast('Isi peti: '+t.join(', '));
   }
@@ -2389,12 +2956,14 @@ function startGame(gid){
   }
   function railCtx(){
     if(!R||R.end)return null;
+    if(R.mount)return {label:'Turun dari monster',act:monDismount};
     if(R.driving)return {label:'Turun dari kemudi',act:railToggleDrive};
     var best=null,bd=1e9;
     function cand(d,max,label,act){if(d<max&&d<bd){bd=d;best={label:label,act:act}}}
-    if(p.y>RDECK-1&&p.y<12&&Math.abs(p.x)<5){
-      cand(Math.hypot(p.x,p.z-(R.zT+8.5)),4.4,R.coal>0?'Isi tungku ('+R.coal+' batu bara)':'Tungku (butuh batu bara)',railFuel);
-      cand(Math.hypot(p.x,p.z-(R.zT+12.8)),3.4,'Kemudikan kereta',railToggleDrive);
+    if(R.mon&&R.mon.hp>0&&p.y<RDECK+11)cand(Math.hypot(p.x-R.mon.x,p.z-R.mon.z),6.5,'Naiki monster',monRide);
+    if(p.y>RDECK-1&&p.y<17&&Math.abs(p.x)<7){
+      cand(Math.hypot(p.x-1.7,p.z-(R.zT+11.9)),4.4,R.coal>0?'Isi tungku ('+R.coal+' batu bara)':'Tungku (butuh batu bara)',railFuel);
+      cand(Math.hypot(p.x+1.9,p.z-(R.zT+17.9)),3.4,'Kemudikan kereta',railToggleDrive);
     }
     R.feats.forEach(function(f){
       if(!f.built)return;
@@ -2439,13 +3008,16 @@ function startGame(gid){
   }
   function railHud(){
     var km=R.zT/KM,f=R.fuel/KM,fp=Math.round(R.fuel/TANKMAX*100),ob=railObj();
-    var h='<div class="rch"><b>Jarak</b><div class="rbar"><i style="width:'+Math.min(100,km/80.65*100).toFixed(1)+'%;background:#4aa3ff"></i></div><span>'+km.toFixed(1)+' / 80 km</span></div>'+
-      '<div class="rch"><b>Kecepatan</b><div class="rbar"><i style="width:'+Math.round(R.th*100)+'%;background:#b085ff"></i></div><span>'+Math.round(R.speed*2.5)+' km/j &middot; gas '+Math.round(R.th*100)+'%</span></div>'+
-      '<div class="rch"><b>Bahan bakar</b><div class="rbar"><i style="width:'+fp+'%;background:'+(fp<15?'#ff5a5a':'#ffb84d')+'"></i></div><span>'+f.toFixed(1)+' km</span></div>'+
-      '<div class="rch"><b>Nyawa</b><div class="rbar"><i style="width:'+Math.max(0,Math.round(R.hp))+'%;background:'+(R.hp<35?'#ff5a5a':'#3ddc84')+'"></i></div><span>'+Math.max(0,Math.round(R.hp))+'</span></div>'+
-      '<div class="rch two"><span>Emas: <b style="display:inline">'+R.gold+'</b> &middot; Uang: <b style="display:inline">$'+R.cash+'</b></span><span>Batu bara: <b style="display:inline">'+R.coal+'</b></span></div>'+
-      (ob.o?'<div class="rwarn">'+ob.o+'</div>':'')+(ob.hint?'<div class="rwarn" style="color:#9ad0ff">'+ob.hint+'</div>':'');
-    if(h!==R.hudS){R.hudS=h;var he=document.getElementById('rhud');if(he)he.innerHTML=h}
+    var side='<div class="rch"><b>Nyawa</b><div class="rbar"><i style="width:'+Math.max(0,Math.round(R.hp))+'%;background:'+(R.hp<35?'#ff5a5a':'#3ddc84')+'"></i></div><span>'+Math.max(0,Math.round(R.hp))+'</span></div>'+
+      monHud()+
+      '<div class="rch two"><span>Emas: <b style="display:inline">'+R.gold+'</b> &middot; Uang: <b style="display:inline">$'+R.cash+'</b></span><span>Batu bara: <b style="display:inline">'+R.coal+'</b></span></div>';
+    var top='<div class="rpill">Jarak '+km.toFixed(1)+' / 80 km &middot; '+R.tlab+'</div>'+(ob.o?'<div class="rwarn">'+ob.o+'</div>':'')+(ob.hint?'<div class="rwarn" style="color:#9ad0ff">'+ob.hint+'</div>':'');
+    var drv='<div class="rch"><b>Kecepatan</b><div class="rbar"><i style="width:'+Math.round(R.th*100)+'%;background:#b085ff"></i></div><span>'+Math.round(R.speed*2.5)+' km/j &middot; gas '+Math.round(R.th*100)+'%</span></div>'+
+      '<div class="rch"><b>Bahan bakar</b><div class="rbar"><i style="width:'+(R.unl?100:fp)+'%;background:'+(R.unl?'#6af0ff':(fp<15?'#ff5a5a':'#ffb84d'))+'"></i></div><span>'+(R.unl?'Tak terbatas':f.toFixed(1)+' km')+'</span></div>';
+    if(side!==R.hudS){R.hudS=side;var he=document.getElementById('rhud');if(he)he.innerHTML=side}
+    if(top!==R.hudT){R.hudT=top;var te=document.getElementById('rtop');if(te)te.innerHTML=top}
+    var de=document.getElementById('rdrive');
+    if(de){de.hidden=!R.driving;if(R.driving&&drv!==R.hudD){R.hudD=drv;de.innerHTML=drv}}
     var cx=R.shopOpen?null:railCtx(),bt=document.getElementById('grail');
     if(bt){bt.hidden=!cx;if(cx)bt.textContent=cx.label+' (E)'}
   }
@@ -2457,7 +3029,7 @@ function startGame(gid){
       var d=Math.abs(R.zT-f.z);
       if(!f.built&&d<f.near){
         f.built=true;CUR=f.c;
-        if(f.kind==='house')bHouse(f);else if(f.kind==='village')bVillage(f);else if(f.kind==='bandit')bBandit(f);else if(f.kind==='bridge')bBridge(f);
+        if(f.kind==='house')bHouse(f);else if(f.kind==='village')bVillage(f);else if(f.kind==='base')bBase(f);else if(f.kind==='bandit')bBandit(f);else if(f.kind==='bridge')bBridge(f);
         CUR=null;
       }else if(f.built&&!f.keep&&d>f.near+400){
         gfree(f.c);f.built=false;f.zSpawned=0;
@@ -2468,27 +3040,28 @@ function startGame(gid){
   }
   function railTick(dt,pp,gr){
     if(!R||R.end)return;
-    R.t+=dt;R.hitT+=dt;
-    if(R.driving)R.th=Math.max(0,Math.min(1,R.th+R.thIn*dt*0.35));
-    var tgt=R.fuel>0?R.th*RV:0;
+    R.t+=dt;R.hitT+=dt;todTick(dt,pp);if(R.unl)R.fuel=TANKMAX;
+    if(R.driving)R.th=Math.max(0,Math.min(1,R.th+R.thIn*dt*0.35));else R.th=Math.max(0,R.th-dt*0.06);
+    var tgt=R.fuel>0?R.th*RV*(R.sm||1):0;
     R.speed+=(tgt-R.speed)*Math.min(1,dt*(tgt>R.speed?0.35:0.9));
     if(tgt===0&&R.speed<0.05)R.speed=0;
-    var dz=R.speed*dt,maxZ=R.bridge.state===2?1e9:ZB0-14-22;
+    var dz=R.speed*dt,maxZ=R.bridge.state===2?1e9:ZB0-14-31;
     if(R.zT+dz>maxZ){dz=Math.max(0,maxZ-R.zT);R.speed=0;if(!R.bwarn){R.bwarn=1;G.toast('Jembatan terputus! Tarik tuas di markas bandit')}}else if(R.zT+dz<maxZ-60)R.bwarn=0;
-    R.zT+=dz;R.fuel=Math.max(0,R.fuel-dz);
+    dz=baseBlock(dz);
+    R.zT+=dz;if(R.unl)R.fuel=TANKMAX;else R.fuel=Math.max(0,R.fuel-dz*R.fm);
     if(R.fuel<=0&&R.speed>0.5&&!R.warn){R.warn=1;G.toast('Bahan bakar habis!')}else if(R.fuel>0)R.warn=0;
     for(var di=0;di<R.decks.length;di++){var dk=R.decks[di];dk.cz=R.zT+dk.oz;sync(dk)}
     if(gr&&gr.rail)pp.z+=dz;
     R.trainG.position.z=R.zT;
     for(var wi=0;wi<R.wheels.length;wi++)R.wheels[wi].rotation.x+=dz/1.3;
-    if(R.driving){pp.x=0;pp.z=R.zT+12.8;pp.y=RDECK+0.05;vx=0;vz=0;vy=0}
-    if(R.hitT>4&&R.hp<100)R.hp=Math.min(100,R.hp+2*dt);
+    if(R.driving){pp.x=-1.9;pp.z=R.zT+17.9;pp.y=RDECK+0.05;vx=0;vz=0;vy=0}
+    if(R.cls==='witch'){if(R.hitT>1&&R.hp<100)R.hp=Math.min(100,R.hp+9*dt)}else if(R.hitT>4&&R.hp<100)R.hp=Math.min(100,R.hp+2*dt);
     railWorld();
     var i,k;
     /* pickup tersebar */
     for(k in R.segs){var pl=R.pickups[k]||[];
       for(i=0;i<pl.length;i++){var pk=pl[i];if(pk.got||!pk.m)continue;pk.m.rotation.y+=dt*2;pk.m.position.y=pk.y+Math.sin(R.t*2+i)*0.3;
-        if(Math.abs(pp.x-pk.x)<3.4&&Math.abs(pp.z-pk.z)<3.4&&Math.abs(pp.y-pk.y)<6){pk.got=1;scene.remove(pk.m);
+        if((Math.abs(pp.x-pk.x)<3.4&&Math.abs(pp.z-pk.z)<3.4&&Math.abs(pp.y-pk.y)<6)||(R.cls==='witch'&&R.clv>=3&&R.mon&&R.mon.hp>0&&Math.hypot(R.mon.x-pk.x,R.mon.z-pk.z)<8)){pk.got=1;scene.remove(pk.m);
           if(pk.kind==='gold'){R.gold++;G.toast('+1 emas ('+R.gold+')')}else{R.coal++;G.toast('+1 batu bara ('+R.coal+')')}}}}
     /* jembatan */
     var B=R.bridge;
@@ -2503,8 +3076,8 @@ function startGame(gid){
       if(z.home&&!z.act){if(d<26&&Math.abs(pp.y-z.y)<8)z.act=true;else{z.g.position.set(z.x,z.y,z.z);continue}}
       if(!z.home&&d>170){scene.remove(z.g);R.zombies.splice(i,1);continue}
       if(!z.home)alive++;
-      if(d>2.2){z.x+=dx/d*z.sp*dt;z.z+=dz2/d*z.sp*dt;z.ph+=dt*z.sp*0.9}
-      if(Math.abs(z.x)<4.9&&z.z>R.zT-24&&z.z<R.zT+23)z.x=(z.x<0?-1:1)*4.9;
+      if(d>2.2){var ox=z.x,oz=z.z;z.x+=dx/d*z.sp*dt;z.z+=dz2/d*z.sp*dt;if(baseZone(z.x,z.z)){z.x=ox;z.z=oz}z.ph+=dt*z.sp*0.9}
+      if(Math.abs(z.x)<6.9&&z.z>R.zT-34&&z.z<R.zT+32.2)z.x=(z.x<0?-1:1)*6.9;
       z.cd-=dt;
       if(d<2.8&&Math.abs(pp.y-z.y)<7&&z.cd<=0){z.cd=0.9;railHurt(12,dx/d,dz2/d);if(R.end||!R)return}
       z.g.position.set(z.x,z.y,z.z);z.g.rotation.y=Math.atan2(dx,dz2);
@@ -2512,7 +3085,7 @@ function startGame(gid){
       if(z.flash>0){z.flash-=dt;if(z.flash<=0)z.head.material.color.set(z.skin)}
     }
     R.spawnT-=dt;
-    if(R.spawnT<=0&&R.t>20&&R.speed<10&&alive<5&&R.zT<ZB0-200){railAmbient(pp);R.spawnT=5+Math.random()*4}
+    if(R.spawnT<=0&&R.t>20&&R.speed<10&&alive<(R.night?9:5)&&R.zT<ZB0-200){railAmbient(pp);R.spawnT=(R.night?2.5:5)+Math.random()*4}
     /* bandit */
     var alert=[];
     for(i=R.bandits.length-1;i>=0;i--){
@@ -2539,13 +3112,20 @@ function startGame(gid){
     if(!R)return;
     if(R.trT>0){R.trT-=dt;if(R.trT<=0)R.tracer.visible=false}
     if(R.btT>0){R.btT-=dt;if(R.btT<=0)R.btracer.visible=false}
+    monTick(dt,pp);milTick(dt,pp);guardTick(dt,pp);
     railHud();
-    if(R.bridge.state===2&&R.zT+22>=ZB1+30)railWin();
+    if(R.bridge.state===2&&R.zT+31>=ZB1+30)railWin();
   }
+  function lobbyGpNear(pp){return LB&&Math.hypot(pp.x-LB.gp.x,pp.z-LB.gp.z)<7&&pp.y<6}
+  function lobbyShopNear(pp){return LB&&Math.hypot(pp.x-LB.shop.x,pp.z-LB.shop.z)<7&&pp.y<6}
   function lobbyNear(pp){return LB&&Math.hypot(pp.x-LB.gate.x,pp.z-LB.gate.z)<8&&pp.y<6}
   function lobbyAct(){
     if(!LB||paused)return;
-    if(!lobbyNear(p)){G.toast('Berjalanlah ke gerbang Naik Kereta di peron');return}
+    if(lobbyGpNear(p)){gpShop();return}
+    if(lobbySkNear(p)){skinShop();return}
+    if(lobbyUpNear(p)){upShop();return}
+    if(lobbyShopNear(p)){classPick(true);return}
+    if(!lobbyNear(p)){G.toast('Berjalanlah ke gerbang Naik Kereta, Toko Kelas, Toko Gamepass, Toko Skin, atau Peningkatan Kelas');return}
     var old=document.getElementById('buyd');if(old)old.remove();
     paused=true;unlock();keys={};jumpHeld=false;
     var m=document.createElement('div');m.className='buyd';m.id='buyd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','buyd-t');
@@ -2554,17 +3134,201 @@ function startGame(gid){
     m.innerHTML='<div class="buyd-box"><div class="buyd-h"><b id="buyd-t">Pilih mode permainan</b></div><div style="padding:16px;line-height:1.5"><p>Pilih cara bermain sebelum naik kereta.</p><p class="small muted">Multiplayer belum tersedia karena NoxBlox belum punya server online.</p></div><div class="buyd-act" style="flex-wrap:wrap"><button class="btn claim" data-m="solo">Solo</button><button class="btn" data-m="multi" disabled>Multiplayer (belum tersedia)</button><button class="btn" data-m="x">Batal</button></div></div>';
     m.addEventListener('click',function(e){
       var b=e.target.closest&&e.target.closest('[data-m]');if(!b||b.disabled)return;e.stopPropagation();
-      if(b.dataset.m==='solo'){close();stopGame();setTimeout(function(){startGame('bloxrun')},80)}
+      if(b.dataset.m==='solo'){close();var cs=RCLS.filter(function(x){return x.id===(u.rcsel||'none')})[0];if(cs&&!(cs.price===0||isOwner(u)||(u.rcls&&u.rcls[cs.id])))cs=null;RAIL_CLASS=cs&&cs.id!=='none'?cs.id:'';stopGame();setTimeout(function(){startGame('bloxrun')},80)}
       else if(b.dataset.m==='x')close();
     });
     document.addEventListener('keydown',esk,true);document.body.appendChild(m);
     var sb=m.querySelector('[data-m=solo]');if(sb)sb.focus();
   }
+  function lobbySkNear(pp){return LB&&Math.hypot(pp.x-LB.sk.x,pp.z-LB.sk.z)<7&&pp.y<6}
+  function skinShop(){
+    if(paused)return;
+    var old=document.getElementById('buyd');if(old)old.remove();
+    paused=true;unlock();keys={};jumpHeld=false;
+    var m=document.createElement('div');m.className='buyd dock';m.id='buyd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','buyd-t');
+    var conf='',pv=curSkin();
+    if(LB)LB.cam={a:0.6};
+    function show(id){pv=id;if(LB&&LB.tn&&LB.tn.apply)LB.tn.apply(id)}
+    function close(){document.removeEventListener('keydown',esk,true);m.remove();paused=false;if(LB){LB.cam=null;if(LB.tn&&LB.tn.apply)LB.tn.apply(curSkin())}}
+    function esk(e){if(e.key==='Escape'){e.stopImmediatePropagation();e.preventDefault();close()}}
+    function render(){
+      m.innerHTML='<div class="buyd-box"><div class="buyd-h"><b id="buyd-t">Toko skin kereta</b></div><div class="clsl" style="flex-direction:row;overflow-x:auto;max-height:none">'+
+      SKL().filter(function(s){return !s.only||isOwner(u)}).map(function(s){
+        var o=skinOwned(s),on=curSkin()===s.id,k='s_'+s.id;
+        var lab=o?(on?'Dipakai':'Pakai'):(conf===k?'Ya, beli':'Beli '+s.price+' Noxbux');
+        return '<div class="clsc" data-v="'+s.id+'" style="flex-direction:column;align-items:stretch;min-width:220px;'+(pv===s.id?'outline:2px solid #ffc83d':'')+'"><div><b>'+s.name+'</b> <span class="muted small">'+(o?(isOwner(u)&&s.id!=='std'?'gratis untuk Owner':'dimiliki'):s.price+' Noxbux')+'</span><ul class="small muted">'+s.sk.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'+(conf===k&&!o?'<p class="small" style="margin:6px 0 0">Beli skin '+s.name+' seharga '+s.price+' Noxbux?</p>':'')+'</div><button class="btn '+(o?'':'blue')+'" data-c="'+k+'"'+(o&&on?' disabled':'')+'>'+lab+'</button></div>'}).join('')+
+      '</div><div class="buyd-act"><span class="small muted" style="margin-right:auto">Ketuk kartu untuk melihat modelnya</span><button class="btn" data-c="x">Tutup</button></div></div>';
+    }
+    render();show(pv);
+    m.addEventListener('click',function(e){
+      var b=e.target.closest&&e.target.closest('[data-c]');
+      if(!b){var v=e.target.closest&&e.target.closest('[data-v]');if(v){e.stopPropagation();conf='';show(v.dataset.v);render()}return}
+      if(b.disabled)return;e.stopPropagation();
+      var id=b.dataset.c;if(id==='x'){close();return}
+      var sid=id.slice(2),sn=SKL().filter(function(x){return x.id===sid})[0];if(!sn)return;
+      show(sid);
+      if(skinOwned(sn)){u.rsk=sid;save();G.toast('Skin '+sn.name+' dipakai');conf='';render();return}
+      if(conf!==id){conf=id;render();return}
+      if((u.nox|0)<sn.price){G.toast('Noxbux tidak cukup');conf='';render();return}
+      u.nox=(u.nox|0)-sn.price;u.rsko=u.rsko||{};u.rsko[sid]=1;u.rsk=sid;save();balUpd();conf='';G.toast('Skin '+sn.name+' dibeli dan dipakai');render();
+    });
+    document.addEventListener('keydown',esk,true);document.body.appendChild(m);
+  }
+  var LVC=[0,5,15,25];
+  function clv(c){if(c!=='witch'&&c!=='super')return 0;if(isOwner(u))return 3;return Math.max(0,Math.min(3,(u.rlv&&u.rlv[c])|0))}
+  function mcGet(n){u.mc=(u.mc|0)+n;save();if(G)G.toast('+'+n+' Koin Penguasaan')}
+  function lobbyUpNear(pp){return LB&&Math.hypot(pp.x-LB.up.x,pp.z-LB.up.z)<7&&pp.y<6}
+  var LVD={
+    witch:['Monster 8000 darah, kecepatan normal','Monster 9500 darah, lebih cepat dari kereta. Musuh yang dibunuh (olehmu, monster, atau prajurit) menjadi penjagamu','Monster 15000 darah. Penjagamu punya darah 5 kali lipat. Monster otomatis mengambil emas dan batu bara di jalan'],
+    super:['Darah sedikit lebih tebal, kecepatan sedikit lebih cepat','Darah super tebal, kecepatan mengimbangi kereta','Kebal serangan, lebih cepat dari kereta, bisa terbang (tekan V)']
+  };
+  function upShop(){
+    if(paused)return;
+    var old=document.getElementById('buyd');if(old)old.remove();
+    paused=true;unlock();keys={};jumpHeld=false;
+    var m=document.createElement('div');m.className='buyd';m.id='buyd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','buyd-t');
+    var conf='';
+    function close(){document.removeEventListener('keydown',esk,true);m.remove();paused=false}
+    function esk(e){if(e.key==='Escape'){e.stopImmediatePropagation();e.preventDefault();close()}}
+    function row(c,name){
+      var has=isOwner(u)||!!(u.rcls&&u.rcls[c]),lv=clv(c),nx=lv+1,k='u_'+c;
+      var list=LVD[c].map(function(d,i){return '<li'+(lv===i+1?' style="color:#ffc83d"':'')+'>Lvl '+(i+1)+' ('+LVC[i+1]+' koin): '+d+'</li>'}).join('');
+      var lab=!has?'Beli kelas dulu':(lv>=3?'Level maksimal':(conf===k?'Ya, tingkatkan':'Ke Lvl '+nx+' ('+LVC[nx]+' koin)'));
+      return '<div class="clsc"><div><b>'+name+'</b> <span class="muted small">Level '+lv+(isOwner(u)?' (Owner)':'')+'</span><ul class="small muted">'+list+'</ul>'+(conf===k&&has&&lv<3?'<p class="small" style="margin:6px 0 0">Tingkatkan '+name+' ke Lvl '+nx+' seharga '+LVC[nx]+' koin?</p>':'')+'</div><button class="btn '+(has&&lv<3?'blue':'')+'" data-c="'+k+'"'+((!has||lv>=3)?' disabled':'')+'>'+lab+'</button></div>';
+    }
+    function render(){
+      m.innerHTML='<div class="buyd-box"><div class="buyd-h"><b id="buyd-t">Peningkatan kelas</b></div><div class="clsl"><p class="small" style="margin:0">Koin Penguasaan kamu: <b>'+(u.mc|0)+'</b>. Dapatkan dari peti di desa atau dari bandit (kadang jatuh).</p>'+row('super','Manusia Super')+row('witch','Penyihir')+'</div><div class="buyd-act"><button class="btn" data-c="x">Tutup</button></div></div>';
+    }
+    render();
+    m.addEventListener('click',function(e){
+      var b=e.target.closest&&e.target.closest('[data-c]');if(!b||b.disabled)return;e.stopPropagation();
+      var id=b.dataset.c;if(id==='x'){close();return}
+      var c=id.slice(2),lv=clv(c);if(lv>=3)return;
+      if(conf!==id){conf=id;render();return}
+      var cost=LVC[lv+1];
+      if((u.mc|0)<cost){G.toast('Koin Penguasaan tidak cukup');conf='';render();return}
+      u.mc=(u.mc|0)-cost;u.rlv=u.rlv||{};u.rlv[c]=lv+1;save();conf='';G.toast('Level '+(lv+1)+' dibuka');render();
+    });
+    document.addEventListener('keydown',esk,true);document.body.appendChild(m);
+  }
+  function flyToggle(){
+    if(!R||R.cls!=='super'||R.clv<3)return;
+    if(R.driving||R.mount){G.toast('Tidak bisa terbang saat mengemudi atau menaiki monster');return}
+    flying=!flying;vy=0;G.toast(flying?'Terbang aktif (V untuk berhenti)':'Terbang berhenti');
+  }
+  function guardSpawn(z){
+    var o=mkMan(0xb9a2ff,0x5a3fa8,0x2d1f5a,0x1a1233,true);o.g.scale.setScalar(0.95);scene.add(o.g);
+    var tr=new THREE.Mesh(new THREE.BoxGeometry(0.14,0.14,1),new THREE.MeshBasicMaterial({color:0xb58bff}));tr.visible=false;scene.add(tr);
+    var hp=(z.kind==='b'?80:60)*(R.clv>=3?5:1);
+    R.guards.push({o:o,tr:tr,hp:hp,mhp:hp,x:z.x,z:z.z,y:p.y,cd:0.5,t:0});
+    if(R.guards.length>6){var g0=R.guards.shift();scene.remove(g0.o.g);scene.remove(g0.tr)}
+    G.toast('Musuh menjadi penjagamu ('+hp+' darah)');
+  }
+  function guardTick(dt,pp){
+    if(!R)return;
+    if(flying&&(R.driving||R.mount))flying=false;
+    if(R.cls!=='witch'||R.clv<2||!R.guards.length)return;
+    var tg=railTargets().filter(function(z){return !z.dead&&!(z.home&&!z.act)});
+    tg.forEach(function(z){z.gcd=(z.gcd||0)-dt});
+    var n=R.guards.length;
+    R.guards=R.guards.filter(function(g,i){
+      var a=i/n*Math.PI*2+0.6,tx=pp.x+Math.cos(a)*4.5,tz=pp.z+Math.sin(a)*4.5,k=Math.min(1,dt*5);
+      g.x+=(tx-g.x)*k;g.z+=(tz-g.z)*k;g.y=pp.y;
+      g.o.g.position.set(g.x,g.y,g.z);
+      tg.forEach(function(z){if(Math.hypot(z.x-g.x,z.z-g.z)<2.8&&z.gcd<=0){g.hp-=12;z.gcd=0.9}});
+      if(g.hp<=0){scene.remove(g.o.g);scene.remove(g.tr);return false}
+      if(g.t>0){g.t-=dt;if(g.t<=0)g.tr.visible=false}
+      var best=null,bd=35;
+      tg.forEach(function(z){if(z.dead)return;var d=Math.hypot(z.x-g.x,z.z-g.z);if(d<bd){bd=d;best=z}});
+      if(best){
+        g.o.g.rotation.y=Math.atan2(best.x-g.x,best.z-g.z);
+        g.cd-=dt;
+        if(g.cd<=0){
+          g.cd=0.8;railHitZ(best,R.clv>=3?30:20);
+          var dx=best.x-g.x,dz=best.z-g.z;
+          g.tr.position.set((g.x+best.x)/2,g.y+3.4,(g.z+best.z)/2);g.tr.rotation.y=Math.atan2(dx,dz);g.tr.scale.set(1,1,Math.hypot(dx,dz));g.tr.visible=true;g.t=0.07;
+        }
+      }
+      return true;
+    });
+  }
+  function flyBtn(){
+    if(!R||R.cls!=='super'||R.clv<3)return;
+    var b=document.createElement('button');b.className='hbtn';b.id='gfly';b.textContent='Terbang (V)';
+    b.style.cssText='position:absolute;right:14px;bottom:190px;z-index:6;min-height:44px;padding:0 14px';
+    b.addEventListener('click',function(e){e.stopPropagation();flyToggle()});
+    ov.appendChild(b);G.toast('Skill terbang: tekan V');
+  }
+  var GPASS=[{id:'fuel',name:'Bahan Bakar Unlimited',price:1000,sk:['Bahan bakar kereta tidak pernah habis','Berlaku selamanya di semua perjalanan Blox Rails']}];
+  function gpShop(){
+    if(paused)return;
+    var old=document.getElementById('buyd');if(old)old.remove();
+    paused=true;unlock();keys={};jumpHeld=false;
+    var m=document.createElement('div');m.className='buyd';m.id='buyd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','buyd-t');
+    var conf='';
+    function close(){document.removeEventListener('keydown',esk,true);m.remove();paused=false}
+    function esk(e){if(e.key==='Escape'){e.stopImmediatePropagation();e.preventDefault();close()}}
+    function own(g){return !!(u.gp&&u.gp[g.id])||isOwner(u)}
+    function render(){
+      m.innerHTML='<div class="buyd-box"><div class="buyd-h"><b id="buyd-t">Toko gamepass</b></div><div class="clsl">'+GPASS.map(function(g){
+        var o=own(g);
+        return '<div class="clsc"><div><b>'+g.name+'</b> <span class="muted small">'+(isOwner(u)?'gratis untuk Owner':(o?'sudah dimiliki':g.price+' Noxbux'))+'</span><ul class="small muted">'+g.sk.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'+(conf===g.id&&!o?'<p class="small" style="margin:6px 0 0">Beli '+g.name+' seharga '+g.price+' Noxbux? Gamepass berlaku selamanya.</p>':'')+'</div><button class="btn '+(o?'':'blue')+'" data-c="'+g.id+'"'+(o?' disabled':'')+'>'+(o?'Dimiliki':(conf===g.id?'Ya, beli':'Beli '+g.price+' Noxbux'))+'</button></div>'}).join('')+
+        '</div><div class="buyd-act"><button class="btn" data-c="x">Tutup</button></div></div>';
+    }
+    render();
+    m.addEventListener('click',function(e){
+      var b=e.target.closest&&e.target.closest('[data-c]');if(!b||b.disabled)return;e.stopPropagation();
+      var id=b.dataset.c;if(id==='x'){close();return}
+      var g=GPASS.filter(function(x){return x.id===id})[0];if(!g||own(g))return;
+      if(conf!==id){conf=id;render();return}
+      if((u.nox|0)<g.price){G.toast('Noxbux tidak cukup');conf='';render();return}
+      u.nox=(u.nox|0)-g.price;u.gp=u.gp||{};u.gp[id]=1;save();balUpd();conf='';G.toast(g.name+' dibeli');render();
+    });
+    document.addEventListener('keydown',esk,true);document.body.appendChild(m);
+  }
+  var RCLS=[
+    {id:'none',name:'Tanpa kelas',price:0,sk:['Tanpa skill khusus. Gratis.']},
+    {id:'masinis',name:'Masinis',price:50,sk:['Bahan bakar kereta habis lebih lama','Mendapat 2 batu bara saat baru mulai']},
+    {id:'super',name:'Manusia Super',price:75,sk:['Bisa berlari lebih cepat','Damage dari zombie dan musuh jauh lebih kecil']},
+    {id:'witch',name:'Penyihir',price:100,sk:['Mendapat Note Book: memanggil monster 8000 darah yang bisa dinaiki (mati bisa dipanggil lagi)','Darah pulih dengan cepat']}
+  ];
+  function classPick(shop){
+    if(paused)return;
+    var old=document.getElementById('buyd');if(old)old.remove();
+    paused=true;unlock();keys={};jumpHeld=false;
+    var m=document.createElement('div');m.className='buyd';m.id='buyd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','buyd-t');
+    var conf='';
+    function close(){document.removeEventListener('keydown',esk,true);m.remove();paused=false}
+    function esk(e){if(e.key==='Escape'){e.stopImmediatePropagation();e.preventDefault();close()}}
+    function own(c){return c.price===0||isOwner(u)||!!(u.rcls&&u.rcls[c.id])}
+    function render(){
+      m.innerHTML='<div class="buyd-box"><div class="buyd-h"><b id="buyd-t">'+(shop?'Toko kelas':'Pilih kelas')+'</b></div><div class="clsl"><p class="small muted" style="margin:0">Kamu hanya bisa memakai 1 kelas. '+(shop?'Pilih Pakai pada kelas yang ingin digunakan.':'Pilih kelas untuk perjalanan ini.')+'</p>'+RCLS.map(function(c){
+        var o=own(c),on=(u.rcsel||'')===c.id,lab=shop?(o?(on?'Dipakai':'Pakai'):(conf===c.id?'Ya, beli':'Beli '+c.price+' Noxbux')):(o?(on?'Dipakai - Mulai':'Pilih'):'Terkunci'),dis=(shop&&o&&on)||(!shop&&!o);
+        return '<div class="clsc"><div><b>'+c.name+'</b>'+(on?' <span class="small" style="color:#3fbf72">dipakai</span>':'')+''+(c.price?' <span class="muted small">'+(isOwner(u)?'gratis untuk Owner':(o?'sudah dimiliki':c.price+' Noxbux'))+'</span>':'')+'<ul class="small muted">'+c.sk.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'+(!shop&&!o?'<p class="small" style="margin:6px 0 0">Beli kelas ini di Toko Kelas di lobi.</p>':'')+(conf===c.id&&!o&&shop?'<p class="small" style="margin:6px 0 0">Beli kelas '+c.name+' seharga '+c.price+' Noxbux? Kelas yang dibeli bisa dipakai seterusnya.</p>':'')+'</div><button class="btn '+(o&&!shop?'claim':(o?'':'blue'))+'" data-c="'+c.id+'"'+(dis?' disabled':'')+'>'+lab+'</button></div>'}).join('')+
+        '</div><div class="buyd-act"><button class="btn" data-c="x">'+(shop?'Tutup':'Batal')+'</button></div></div>';
+    }
+    render();
+    m.addEventListener('click',function(e){
+      var b=e.target.closest&&e.target.closest('[data-c]');if(!b||b.disabled)return;e.stopPropagation();
+      var id=b.dataset.c;
+      if(id==='x'){close();return}
+      var c=RCLS.filter(function(x){return x.id===id})[0];if(!c)return;
+      if(!own(c)){
+        if(conf!==id){conf=id;render();return}
+        if((u.nox|0)<c.price){G.toast('Noxbux tidak cukup');conf='';render();return}
+        u.nox=(u.nox|0)-c.price;u.rcls=u.rcls||{};u.rcls[id]=1;save();balUpd();conf='';G.toast('Kelas '+c.name+' dibeli');render();return;
+      }
+      u.rcsel=id;save();
+      if(shop){G.toast(c.name+' dipakai');render();return}
+      RAIL_CLASS=id==='none'?'':id;close();stopGame();setTimeout(function(){startGame('bloxrun')},80);
+    });
+    document.addEventListener('keydown',esk,true);document.body.appendChild(m);
+  }
   function lobbyTick(dt,pp){
     if(!LB)return;
     LB.blades.rotation.z+=dt*0.8;
-    var n=lobbyNear(pp);
-    if(n!==LB.near){LB.near=n;var bt=document.getElementById('grail');if(bt){bt.hidden=!n;if(n)bt.textContent='Naik kereta'}}
+    var n=lobbyNear(pp)?'gate':(lobbyShopNear(pp)?'shop':(lobbyGpNear(pp)?'gp':(lobbySkNear(pp)?'sk':(lobbyUpNear(pp)?'up':''))));
+    if(n!==LB.near){LB.near=n;var bt=document.getElementById('grail');if(bt){bt.hidden=!n;if(n)bt.textContent=n==='shop'?'Toko kelas':(n==='gp'?'Toko gamepass':(n==='sk'?'Toko skin kereta':(n==='up'?'Peningkatan kelas':'Naik kereta')))}}
   }
   if(lobby)setTimeout(function(){if(G)G.toast('Selamat datang di lobi Blox Rails')},1200);
   if(rails){
@@ -2578,11 +3342,14 @@ function startGame(gid){
   var v3=new THREE.Vector3();
 
   /* ===== Mabar: ruangan dengan kode ===== */
-  var MP={on:game.id!=='bloxrun',id:Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4),code:'',key:'',ch:null,es:null,relayOn:false,peers:{},started:false,sendT:0,j:Date.now(),meetT:0,meetDone:true,prev:'',keep:false,byUser:false,helloT:0,reapT:0,t:0};
-  var MP_MAXES={baseplate:50,obby:23,bloxrails:50,noxbux:50};
+  var MP={on:game.id!=='bloxrun',id:Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4),code:'',key:'',ch:null,es:null,relayOn:false,peers:{},started:false,sendT:0,j:Date.now(),meetT:0,meetDone:true,prev:'',keep:false,jn:false,byUser:false,helloT:0,reapT:0,t:0};
+  var MP_MAXES={baseplate:50,obby:23,bloxrails:50,noxbux:50,disaster:50};
   var MP_MAX=MP_MAXES[game.id]||50;
+  var MP_CHARS='ABCDEFGHJKLMNPQRSTUVWXYZ';
+  function mpGen(){var a=new Uint8Array(10),o='',k,C='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';try{crypto.getRandomValues(a)}catch(e){for(k=0;k<10;k++)a[k]=Math.floor(Math.random()*256)}for(k=0;k<10;k++)o+=C.charAt(a[k]%C.length);if(!/[A-Z]/.test(o))o='M'+o.slice(1);return o}
+  function mpPub(c){return /^[0-9]{10}$/.test(c)}
   function mpCodeOf(n){return ('0000000000'+n).slice(-10)}
-  function mpNorm(c){return String(c||'').replace(/[^0-9]/g,'')}
+  function mpNorm(c){return String(c||'').toUpperCase().replace(/[^A-Z0-9]/g,'')}
   function mpTx(o){
     if(!MP.code)return;o.id=MP.id;
     try{if(MP.ch)MP.ch.postMessage(o)}catch(e){}
@@ -2669,11 +3436,13 @@ function startGame(gid){
   }
   function mpUI(){
     var c=$('#rcode',ov),lb=$('#rlabel',ov);if(!c)return;
-    c.textContent=MP.code;c.hidden=!MP.byUser;if(lb)lb.textContent=MP.byUser?'Server Mabar':'Server';
+    var pv=mpPub(MP.code);
+    c.textContent=MP.code;c.hidden=pv;if(lb)lb.textContent=pv?'Server publik':'Server Mabar';
+    var q1=$('#rpriv',ov),q2=$('#rpub',ov);if(q1)q1.hidden=pv;if(q2)q2.hidden=!pv;
     var names=[];Object.keys(MP.peers).forEach(function(k){var q=MP.peers[k];if(q.m)names.push(q.disp)});
     var st=$('#rstat',ov),pl=$('#rplist',ov);
-    if(st)st.textContent=(MP.byUser?'Server Mabar':'Server publik')+' · '+(names.length+1)+'/'+MP_MAX+' pemain'+(names.length?'':' (kamu sendirian)');
-    if(pl){var hh='';Object.keys(MP.peers).forEach(function(k){var q=MP.peers[k];if(!q.m)return;var nk=String(q.name||'').toLowerCase(),rel=(nk&&nk!==u.name.toLowerCase()&&frUser(nk))?frRel(u,nk):'x',bt=rel==='friend'?'<span class="muted small">Teman</span>':rel==='sent'?'<span class="muted small">Terkirim</span>':rel==='x'?'':'<button class="btn" data-g="fradd" data-n="'+esc(q.name)+'">'+(rel==='got'?'Terima teman':'Tambah teman')+'</button>';hh+='<div class="prow"><span>'+esc(q.disp)+'</span>'+bt+'</div>'});if(pl.dataset.h!==hh){pl.dataset.h=hh;pl.innerHTML=hh}}
+    if(st)st.textContent=(mpPub(MP.code)?'Server publik':'Server Mabar')+' · '+(names.length+1)+'/'+MP_MAX+' pemain'+(names.length?'':(mpPub(MP.code)?' (kamu sendirian)':' (menunggu temanmu, bagikan kodenya)'));
+    if(pl)pl.textContent=names.length?('Pemain: '+names.join(', ')):'';
   }
   function mpClose(){
     if(MP.code)mpTx({t:'bye'});
@@ -2681,10 +3450,10 @@ function startGame(gid){
     if(MP.es){try{MP.es.close()}catch(e){}MP.es=null}
     Object.keys(MP.peers).forEach(mpDrop);MP.peers={};
   }
-  function mpOpen(code,byUser,keep){
+  function mpOpen(code,jn,keep){
     var old=MP.code;mpClose();
     MP.prev=old;MP.keep=!!keep;
-    MP.code=code;MP.key='noxblox-mp:'+game.id+':'+code;MP.j=Date.now();MP.meetDone=false;MP.meetT=performance.now();MP.byUser=!!byUser;
+    MP.code=code;MP.key='noxblox-mp:'+game.id+':'+code;MP.j=Date.now();MP.meetDone=false;MP.meetT=performance.now();MP.byUser=!mpPub(code);MP.jn=jn===1;
     try{MP.ch=new BroadcastChannel(MP.key);MP.ch.onmessage=function(e){mpRx(e.data)}}catch(e){MP.ch=null}
     MP.relayOn=false;
     if(typeof MP_RELAY==='string'&&MP_RELAY&&typeof EventSource!=='undefined'){
@@ -2695,35 +3464,39 @@ function startGame(gid){
   function mpJoinUI(){
     var inp=$('#rjoin',ov);if(!inp)return;
     var c=mpNorm(inp.value);
-    if(c.length!==10){G.toast('Kode harus 10 angka, contoh 0000000001');return}
-    if(c===MP.code){G.toast('Kamu sudah berada di ruangan ini');return}
-    inp.value='';mpOpen(c,true);G.toast('Masuk ruangan '+c+'...');
+    if(c.length!==10||mpPub(c)){G.toast('Kode server Mabar terdiri dari 10 huruf/angka');return}
+    if(c===MP.code){G.toast('Kamu sudah berada di server ini');return}
+    inp.value='';mpOpen(c,1);G.toast('Mencari server Mabar...');
   }
+  function mpCreate(){
+    if(!mpPub(MP.code)){G.toast('Kamu sudah di server Mabar');return}
+    mpOpen(mpGen(),0);G.toast('Server Mabar dibuat. Bagikan kodenya ke temanmu');
+  }
+  function mpLeave(){if(mpPub(MP.code))return;mpOpen(mpCodeOf(0),0);G.toast('Kembali ke server publik')}
   function mpCopy(){
     var ok=function(){G.toast('Kode disalin: '+MP.code)},no=function(){G.toast('Kode ruangan: '+MP.code)};
     try{navigator.clipboard.writeText(MP.code).then(ok,no)}catch(e){no()}
   }
   function mpTick(dt){
-    PRES_CUR={g:game.id,c:(MP.on&&MP.meetDone)?MP.code:''};
     if(!MP.on)return;
     var now=performance.now();
-    if(!MP.started){MP.started=true;var pj=PEND_JOIN;PEND_JOIN='';mpOpen(pj&&/^[0-9]{10}$/.test(pj)?pj:mpCodeOf(0),!!pj);var ji=$('#rjoin',ov);if(ji)ji.addEventListener('keydown',function(e){if(e.key==='Escape')return;e.stopPropagation();if(e.key==='Enter'){e.preventDefault();mpJoinUI()}})}
+    if(!MP.started){MP.started=true;mpOpen(mpCodeOf(0),false);var ji=$('#rjoin',ov);if(ji)ji.addEventListener('keydown',function(e){if(e.key==='Escape')return;e.stopPropagation();if(e.key==='Enter'){e.preventDefault();mpJoinUI()}})}
     /* bertemu orang pertama di ruangan */
     if(!MP.meetDone&&now-MP.meetT>900){
       MP.meetDone=true;
       var cnt=0,first=null;Object.keys(MP.peers).forEach(function(k){var q=MP.peers[k];if(q.m){cnt++;if(!first||q.j<first.j)first=q}});
       if(cnt+1>MP_MAX&&!MP.keep){
-        if(MP.byUser){var bk=MP.prev||mpCodeOf(0);G.toast('Server '+MP.code+' penuh ('+MP_MAX+' pemain)');mpOpen(bk,false,true)}
-        else{mpOpen(mpCodeOf((parseInt(MP.code,10)||0)+1),false)}
+        if(MP.jn){var bk=MP.prev||mpCodeOf(0);G.toast('Server Mabar penuh ('+MP_MAX+' pemain)');mpOpen(bk,0,true)}
+        else{mpOpen(mpCodeOf((parseInt(MP.code,10)||0)+1),0)}
         return;
       }
+      if(MP.jn&&!cnt&&!MP.keep){var bk2=MP.prev||mpCodeOf(0);G.toast('Tidak ada server Mabar dengan kode ini');mpOpen(bk2,0,true);return}
       var h2=mpInfo();h2.t='hello';mpTx(h2);
       if(MP.keep){}
-      else if(first){p.set(first.tx+3,first.ty+0.5,first.tz);vx=vz=vy=0;onG=false;G.toast('Kamu bertemu '+first.disp+' di server '+MP.code)}
-      else if(MP.byUser)G.toast('Kamu orang pertama di server ini');
+      else if(first){p.set(first.tx+3,first.ty+0.5,first.tz);vx=vz=vy=0;onG=false;G.toast('Kamu bertemu '+first.disp)}
+      else if(MP.byUser)G.toast('Kamu sendirian di server Mabar ini');
       mpUI();
     }
-    MP.uiT=(MP.uiT||0)+dt;if(MP.uiT>1){MP.uiT=0;mpUI()}
     MP.sendT+=dt;
     if(MP.sendT>=0.1&&MP.meetDone){MP.sendT=0;mpTx({t:'pos',x:Math.round(p.x*100)/100,y:Math.round(p.y*100)/100,z:Math.round(p.z*100)/100,f:Math.round(face*100)/100,m:(Math.abs(vx)+Math.abs(vz))>1.5?1:0})}
     MP.t+=dt;
@@ -2763,7 +3536,9 @@ function startGame(gid){
     }
     if(e.key==='Escape'){if(npcOpen)closeNpc();else if(shopOpen)openShop(false);else setPause(!paused);return}
     if(e.code==='KeyE'&&!paused&&nearNpc&&!npcOpen){e.preventDefault();openNpc(nearNpc);return}
-    if(!paused&&!shopOpen&&!npcOpen){var dg=/^(?:Digit|Numpad)([1-9])$/.exec(e.code);if(dg){e.preventDefault();equipTool(+dg[1]-1);return}if(e.code==='KeyF'&&!e.repeat){e.preventDefault();useTool();return}}
+    if(!paused&&!shopOpen&&!npcOpen){var dg=/^(?:Digit|Numpad)([1-9])$/.exec(e.code);if(dg){e.preventDefault();equipTool(+dg[1]-1);return}if(e.code==='KeyF'&&!e.repeat){e.preventDefault();useTool();return}if(e.code==='KeyV'&&!e.repeat&&rails&&R){e.preventDefault();flyToggle();return}}
+    if(e.code==='KeyE'&&SEATS.length&&!paused&&!e.repeat&&vAct()){e.preventDefault();return}
+    if(e.code==='KeyC'&&isBase&&!paused&&!e.repeat){e.preventDefault();carBtn();return}
     if(e.code==='KeyE'&&(rails||lobby)&&!paused&&!e.repeat){railAct();return}
     if(e.code==='KeyB'&&obby&&!paused){openShop(true);return}
     if(e.key==='Enter'&&!paused){e.preventDefault();openChat(true);return}
@@ -2777,13 +3552,14 @@ function startGame(gid){
 
   /* kamera: satu jari memutar, dua jari (cubit) zoom */
   var cv=$('#gc',ov),ptrs={},pinch=0;
-  function clampD(v){return Math.max(0.5,Math.min(45,v))}
+  function clampD(v){if(rails)return 0.5;return Math.max(0.5,Math.min(45,v))}
   function clampPitch(v){var fpv=tdist<2.5;return Math.max(fpv||flying?-1.45:0.05,Math.min(fpv?1.45:1.35,v))}
-  function zoomStep(d){if(d>0)tdist=tdist>2.5?clampD(tdist*0.8):0.5;else tdist=tdist<2?4:clampD(tdist*1.25)}
+  function zoomStep(d){if(rails)return;if(d>0)tdist=tdist>2.5?clampD(tdist*0.8):0.5;else tdist=tdist<2?4:clampD(tdist*1.25)}
   function lockPtr(){try{var r=cv.requestPointerLock&&cv.requestPointerLock();if(r&&r.catch)r.catch(function(){})}catch(er){}}
   function unlock(){try{if(document.pointerLockElement)document.exitPointerLock()}catch(er){}}
-  cv.addEventListener('pointerdown',function(e){if(paused)return;ptrs[e.pointerId]={x:e.clientX,y:e.clientY};try{cv.setPointerCapture(e.pointerId)}catch(er){}pinch=0;if(dist<1.2&&e.pointerType==='mouse')lockPtr()});
+  cv.addEventListener('pointerdown',function(e){if(paused)return;if(e.pointerType!=='mouse'&&!jid&&jid!==0&&e.clientX<window.innerWidth*0.5&&joyFloat(e))return;ptrs[e.pointerId]={x:e.clientX,y:e.clientY};try{cv.setPointerCapture(e.pointerId)}catch(er){}pinch=0;if(dist<1.2&&e.pointerType==='mouse')lockPtr()});
   cv.addEventListener('pointermove',function(e){
+    if(jid!==null&&e.pointerId===jid){jmove(e);return}
     if(document.pointerLockElement===cv&&!paused){var kk=0.0035*sens;yaw-=e.movementX*kk;pitch=clampPitch(pitch+e.movementY*kk);return}
     var q=ptrs[e.pointerId];if(!q||paused)return;
     var ids=Object.keys(ptrs);
@@ -2797,19 +3573,22 @@ function startGame(gid){
       q.x=e.clientX;q.y=e.clientY;
     }
   });
-  var dend=function(e){delete ptrs[e.pointerId];pinch=0};
+  var dend=function(e){if(jid!==null&&e.pointerId===jid){jend(e);return}delete ptrs[e.pointerId];pinch=0};
   cv.addEventListener('pointerup',dend);cv.addEventListener('pointercancel',dend);
   cv.addEventListener('wheel',function(e){e.preventDefault();var nd=tdist+e.deltaY*(e.ctrlKey?0.08:0.02);if(e.deltaY<0&&nd<2)nd=0.5;else if(e.deltaY>0&&tdist<2)nd=Math.max(nd,3);tdist=clampD(nd)},{passive:false,signal:ac.signal});
   var joyEl=$('#gjoy',ov),knob=$('#gknob',ov),jid=null;
   function jmove(e){var r=joyEl.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),m=r.width/2*0.8,l=Math.hypot(dx,dy);
     if(l>m){dx=dx/l*m;dy=dy/l*m}knob.style.transform='translate('+dx+'px,'+dy+'px)';joy.x=dx/m;joy.y=-dy/m}
-  joyEl.addEventListener('pointerdown',function(e){jid=e.pointerId;joyEl.setPointerCapture(jid);jmove(e)});
+  joyEl.addEventListener('pointerdown',function(e){jid=e.pointerId;joyEl.classList.add('on');joyEl.setPointerCapture(jid);jmove(e)});
   joyEl.addEventListener('pointermove',function(e){if(e.pointerId===jid)jmove(e)});
-  var jend=function(e){if(e.pointerId===jid){jid=null;joy.x=joy.y=0;knob.style.transform=''}};
+  var jend=function(e){if(e.pointerId===jid){jid=null;joy.x=joy.y=0;knob.style.transform='';joyEl.classList.remove('on');joyEl.style.left=joyEl.style.top=joyEl.style.bottom=''}};
+  function joyFloat(e){var r=ov.getBoundingClientRect(),m=joyEl.offsetWidth/2||64;
+    joyEl.style.left=Math.max(4,Math.min(r.width-2*m-4,e.clientX-r.left-m))+'px';joyEl.style.top=Math.max(4,Math.min(r.height-2*m-4,e.clientY-r.top-m))+'px';joyEl.style.bottom='auto';
+    jid=e.pointerId;joyEl.classList.add('on');try{cv.setPointerCapture(jid)}catch(er){}jmove(e);return true}
   joyEl.addEventListener('pointerup',jend);joyEl.addEventListener('pointercancel',jend);
   var jb=$('#gjump',ov);
-  jb.addEventListener('pointerdown',function(){jumpHeld=true;jq=true});
-  ['pointerup','pointercancel','pointerleave'].forEach(function(n){jb.addEventListener(n,function(){jumpHeld=false})});
+  jb.addEventListener('pointerdown',function(e){e.stopPropagation();try{jb.setPointerCapture(e.pointerId)}catch(er){}jumpHeld=true;jq=true;jb.classList.add('on')});
+  ['pointerup','pointercancel'].forEach(function(n){jb.addEventListener(n,function(){jumpHeld=false;jb.classList.remove('on')})});
 
   function resize(){var w=window.innerWidth,h=window.innerHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
   window.addEventListener('resize',resize,sig);resize();
@@ -2840,13 +3619,16 @@ function startGame(gid){
   var showFps=!!st.fps,fpsEl=$('#gfps',ov);fpsEl.hidden=!showFps;
   var last=performance.now(),fa=0,fn=0;
   function step(dt){
+    if(dt<=0)return;
+    if(vehTick(dt))return;
+    if(spGrace>0){spGrace-=dt;if(p.y<spY-0.6&&!flying){p.y=spY;vy=0;onG=true}}
     var ix=(keys.d?1:0)-(keys.a?1:0)+joy.x,iz=(keys.w?1:0)-(keys.s?1:0)+joy.y;
     if(rails&&R){R.thIn=R.driving?Math.max(-1,Math.min(1,iz)):0;if(R.driving){ix=0;iz=0}}
     var len=Math.hypot(ix,iz);if(len>1){ix/=len;iz/=len}
-    var spd=16*(perk('speed')?1.35:1),s=Math.sin(yaw),c=Math.cos(yaw);
+    var spd=16*(perk('speed')?1.35:1)*(rails&&R?(R.cls==='super'?R.sps:1)*(R.mount?R.msp:1):1),s=Math.sin(yaw),c=Math.cos(yaw);
     var tx2=(ix*c-iz*s)*spd,tz2=(-ix*s-iz*c)*spd,a=Math.min(1,dt*12);
     vx+=(tx2-vx)*a;vz+=(tz2-vz)*a;
-    if(flying){var cpf=Math.cos(pitch),fs=50,fxv=-s*cpf,fyv=-Math.sin(pitch),fzv=-c*cpf;
+    if(flying){var cpf=Math.cos(pitch),fs=(rails&&R&&R.cls==='super'&&R.clv>=3?60:50),fxv=-s*cpf,fyv=-Math.sin(pitch),fzv=-c*cpf;
       var tvx=(ix*c+iz*fxv)*fs,tvz=(-ix*s+iz*fzv)*fs,tvy=iz*fyv*fs+((keys.j||jumpHeld)?fs*0.6:0);
       vx+=(tvx-vx)*a;vz+=(tvz-vz)*a;vy+=(tvy-vy)*a}
     gtime+=dt;
@@ -2858,18 +3640,19 @@ function startGame(gid){
     if(gsm.length)ghostSmoke(gtime);
     var tm=trailNow();
     puffT+=dt;
-    if(tm&&sp>1.5&&onG&&puffT>0.045){
+    if(tm&&puffT>(tm==='fire'?(sp>1.5?0.03:0.11):0.045)&&(tm==='fire'||(sp>1.5&&onG))){
       puffT=0;var pf=null;
       for(var q=0;q<puffs.length;q++){if(puffs[q].userData.age>=puffs[q].userData.life){pf=puffs[q];break}}
       if(pf){
-        pf.position.set(p.x-Math.sin(face)*0.9+(Math.random()-0.5)*0.7,p.y+0.6,p.z-Math.cos(face)*0.9+(Math.random()-0.5)*0.7);
-        if(tm==='ghost')pf.material.color.setRGB(1,1,1);else if(tm==='crown')pf.material.color.setRGB(0.25,0.62,1);else pf.material.color.setHSL((gtime*0.6)%1,0.95,0.6);
+        var fz=tm==='fire',fm=fz&&sp>1.5;pf.userData.fire=fz;
+        pf.position.set(p.x-Math.sin(face)*(fz?(fm?0.8:0):0.9)+(Math.random()-0.5)*(fz?0.5:0.7),p.y+(fz?(fm?5.2:7.0)+Math.random()*0.5:0.6),p.z-Math.cos(face)*(fz?(fm?0.8:0):0.9)+(Math.random()-0.5)*(fz?0.5:0.7));
+        if(tm==='fire')pf.material.color.setHSL(0.02+Math.random()*0.1,1,0.5+Math.random()*0.15);else if(tm==='ghost')pf.material.color.setRGB(1,1,1);else if(tm==='crown')pf.material.color.setRGB(0.25,0.62,1);else pf.material.color.setHSL((gtime*0.6)%1,0.95,0.6);
         pf.userData.age=0;pf.userData.life=1.1+Math.random()*0.5;pf.visible=true;
       }
     }
     for(var q2=0;q2<puffs.length;q2++){
       var pu=puffs[q2],ud=pu.userData;
-      if(ud.age<ud.life){ud.age+=dt;var tq=Math.min(1,ud.age/ud.life);pu.position.y+=dt*1.3;pu.scale.setScalar(1.1+tq*2.6);pu.material.opacity=0.8*(1-tq);if(ud.age>=ud.life)pu.visible=false}
+      if(ud.age<ud.life){ud.age+=dt;var tq=Math.min(1,ud.age/ud.life);pu.position.y+=dt*1.3;pu.scale.setScalar(ud.fire?1.7-tq*1.2:1.1+tq*2.6);pu.material.opacity=0.8*(1-tq);if(ud.age>=ud.life)pu.visible=false}
     }
     if(coins.length){
       coinT+=dt;var cmv=sp>1.5;
@@ -2885,6 +3668,9 @@ function startGame(gid){
     if(flying)face=yaw+Math.PI;
     coyote=onG?0.12:Math.max(0,coyote-dt);
     var JV=coilHeld()?66:50;
+    var jnow=!!(keys.j||jumpHeld);
+    if(rails&&R&&!R.end&&jnow&&!step._jp&&(R.mount||R.driving)){if(R.mount)monDismount();else railToggleDrive()}
+    step._jp=jnow;
     if((keys.j||jumpHeld)&&coyote>0&&!flying&&!(rails&&R&&R.driving)){vy=JV;onG=false;coyote=0;usedDbl=false;track('jump',1)}
     else if(jq&&perk('dj')&&!onG&&!usedDbl){vy=JV*0.95;usedDbl=true;track('jump',1)}
     jq=false;
@@ -2905,24 +3691,29 @@ function startGame(gid){
   }
   function frame(now){
     raf=requestAnimationFrame(frame);
-    var dt=Math.min(0.05,(now-last)/1000);last=now;
+    var dt=Math.max(0,Math.min(0.05,(now-last)/1000));last=now;
     fa+=dt;fn++;if(fa>=0.5){if(showFps)fpsEl.textContent=Math.round(fn/fa)+' FPS';fa=0;fn=0}
     if(!paused){step(dt);fnTick(dt)}
-    npcTick(dt,now);
+    npcTick(dt,now);vehHud(dt);fpToolSync();
     mpTick(dt);
+    if(rails){tdist=0.5;dist=0.5}
     dist+=(tdist-dist)*Math.min(1,dt*10);
-    player.position.copy(p);player.rotation.y=face;
+    player.position.copy(p);if(rails&&R)player.position.y+=(R.driving?-1.2:(R.ride||0));player.rotation.y=face;
+    if(V.mode==='sit'){player.position.y-=0.4;legL.rotation.x=-1.5;legR.rotation.x=-1.5;armL.rotation.x=-0.5;armR.rotation.x=-0.5}
+    if(V.mode==='drive'){player.visible=false;V.wasDrive=1}else if(V.wasDrive){V.wasDrive=0;player.visible=!fpOn}
+    for(var fl=0;fl<flameM.length;fl++){var fm2=flameM[fl];fm2.scale.y=1+0.28*Math.sin(now/90+fl*1.9);fm2.scale.x=fm2.scale.z=1+0.12*Math.sin(now/70+fl*2.3);fm2.position.y=fm2.userData.by+0.05*Math.sin(now/110+fl)}
     for(var ei2=0;ei2<embers.length;ei2++){var e=embers[ei2],t=now/700+e.userData.s;e.position.set(Math.cos(t)*0.45,4.95+Math.sin(t*1.4)*0.4,Math.sin(t)*0.45)}
     if(world.sky)world.sky(p.y);
     sun.position.set(p.x+30,p.y+60,p.z+20);sun.target.position.copy(p);
     pitch=clampPitch(pitch);
     var fp=dist<1.2;
-    if(fp!==fpOn){fpOn=fp;player.visible=!fp;for(var fi=0;fi<fpHide.length;fi++)fpHide[fi].visible=!fp;if(fp)G.toast('Kamera orang pertama. Zoom keluar untuk kembali.');else unlock()}
-    var cp=Math.cos(pitch),fk=Math.max(0,Math.min(1,(2.2-dist)/1.7)),fy=3.2+1.5*fk;
+    if(fp!==fpOn){fpOn=fp;player.visible=!fp;for(var fi=0;fi<fpHide.length;fi++)fpHide[fi].visible=!fp;if(fp&&!rails)G.toast('Kamera orang pertama. Zoom keluar untuk kembali.');else unlock()}
+    var cp=Math.cos(pitch),fk=Math.max(0,Math.min(1,(2.2-dist)/1.7)),fy=3.2+1.5*fk+((rails&&R&&R.ride)||0);
+    if(LB&&LB.cam){LB.cam.a+=dt*0.35;camera.position.set(44+Math.sin(LB.cam.a)*50,20,10+Math.cos(LB.cam.a)*50);camera.lookAt(44,6,10)}else{
     camera.position.set(p.x+Math.sin(yaw)*cp*dist,p.y+fy+Math.sin(pitch)*dist,p.z+Math.cos(yaw)*cp*dist);
-    camera.lookAt(p.x,p.y+fy,p.z);
+    camera.lookAt(p.x,p.y+fy,p.z)}
     renderer.render(scene,camera);
-    v3.set(p.x,p.y+6.4,p.z).project(camera);
+    v3.set(p.x,p.y+6.4+((rails&&R&&R.ride)||0),p.z).project(camera);
     if(!fpOn&&v3.z<1){ntag.style.display='flex';ntag.style.transform='translate('+((v3.x*0.5+0.5)*window.innerWidth)+'px,'+((-v3.y*0.5+0.5)*window.innerHeight)+'px) translate(-50%,-100%)'}
     else ntag.style.display='none';
     if(!cbub.hidden){
