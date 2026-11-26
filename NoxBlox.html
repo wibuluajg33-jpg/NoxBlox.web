@@ -283,6 +283,11 @@ a.hello{color:inherit;text-decoration:none;cursor:pointer;transition:border-colo
 .mrow em{font-style:normal;font-size:12px;color:var(--muted);white-space:nowrap}.mrow em.ok{color:#5be394}.mrow em.go{color:#ffc83d}
 .mrow span{font-size:13px;color:var(--muted)}
 
+.hkb{position:absolute;right:calc(12px + env(safe-area-inset-right,0px));top:calc(64px + env(safe-area-inset-top,0px));z-index:5;border:1.5px solid #2bff88;background:rgba(10,14,12,.78);color:#2bff88;font:700 13px/1 ui-monospace,Menlo,Consolas,monospace;padding:9px 12px;border-radius:10px;cursor:pointer}
+.hkp{position:absolute;right:calc(12px + env(safe-area-inset-right,0px));top:calc(104px + env(safe-area-inset-top,0px));z-index:5;width:210px;display:grid;gap:6px;padding:10px;border-radius:12px;background:rgba(10,14,12,.88);border:1px solid rgba(43,255,136,.5);transform-origin:top right;animation:pboxIn .18s ease-out}
+.hkp[hidden]{display:none}.hkp b{color:#2bff88;font:700 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;text-transform:uppercase}
+.hkt{display:flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#e8ecf2;border-radius:9px;padding:9px 10px;font:600 13px/1 system-ui,sans-serif;cursor:pointer;text-align:left}
+.hkt i{width:14px;height:14px;border-radius:4px;border:2px solid #8a93a5}.hkt[aria-pressed=true]{border-color:#2bff88;background:rgba(43,255,136,.16)}.hkt[aria-pressed=true] i{background:#2bff88;border-color:#2bff88}
 .hotbar{position:absolute;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:6px;z-index:4}
 .slot{position:relative;width:56px;height:56px;padding:0;border-radius:10px;background:rgba(10,12,17,.72);border:2px solid rgba(255,255,255,.3);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .slot.on{border-color:#ffc83d;background:rgba(255,200,61,.28)}
@@ -290,6 +295,17 @@ a.hello{color:inherit;text-decoration:none;cursor:pointer;transition:border-colo
 .slot svg{width:36px;height:36px;pointer-events:none}
 .usebtn{position:absolute;right:calc(36px + env(safe-area-inset-right,0px));bottom:calc(140px + env(safe-area-inset-bottom,0px));z-index:4;width:68px;height:68px;border-radius:50%;border:2px solid #ffc83d;background:rgba(10,12,17,.75);color:#fff;font-weight:700;font-size:13px;cursor:pointer}
 
+.giftb{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:#ffc83d;cursor:pointer;padding:0;transition:transform .12s ease,background-color .12s ease}.giftb svg{width:19px;height:19px}.giftb:hover{transform:translateY(-1px);background:var(--panel)}.giftb:active{transform:scale(.94)}.giftb:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.rdm{width:min(480px,100%)}.rdm-b{padding:16px;display:grid;gap:12px}.rdm-b p{margin:0}.rdm-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.rdm-row input,.rdm-b #rdm-new{flex:1 1 140px;min-width:0;height:40px;padding:0 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--fg);font:600 15px ui-monospace,Menlo,Consolas,monospace;text-transform:uppercase}.rdm-b #rdm-new{width:100%;box-sizing:border-box;text-transform:none}.rdm-row #rdm-rw{flex:0 0 110px;text-transform:none}
+.rdm-msg{min-height:1.2em;font-size:13px}.rdm-msg.bad{color:#ff6b6b}.rdm-msg.good{color:#3ddc84}
+.rdm-own{display:grid;gap:10px;padding-top:12px;border-top:1px solid var(--line)}.rdm-own h3{margin:0;font-size:15px}.rdm-l{display:grid;gap:6px;max-height:200px;overflow:auto}.rdm-i{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:var(--panel2)}.rdm-i div{min-width:0;overflow-wrap:anywhere}
+body.kids .hchat,body.kids #gchat{display:none!important}
+body.kids .logo::after{content:'KIDS';margin-left:7px;padding:2px 6px;border-radius:6px;background:#ffc83d;color:#1a1a1a;font-size:.5em;letter-spacing:.08em;vertical-align:middle}
+.agd-file{cursor:pointer;display:inline-flex;align-items:center}
+.cons{position:fixed;left:0;right:0;bottom:0;z-index:99999;height:min(46vh,420px);display:flex;flex-direction:column;background:rgba(8,10,14,.96);color:#d5dbe6;border-top:2px solid #2bff88;font:13px/1.45 ui-monospace,Menlo,Consolas,monospace;padding-bottom:env(safe-area-inset-bottom,0px)}
+.con-h{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.12)}.con-h b{color:#2bff88}.con-dev{font-size:11px;opacity:.6}.con-sp{flex:1}.con-h button{font:inherit;color:inherit;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:4px 9px;cursor:pointer;min-height:30px}
+.con-log{flex:1;overflow:auto;padding:8px 12px;-webkit-overflow-scrolling:touch}.con-l{white-space:pre-wrap;overflow-wrap:anywhere}.con-l.warn{color:#ffc83d}.con-l.error{color:#ff6b6b}.con-l.cmd{color:#2bff88}.con-l.info{color:#8fc7ff}
+.con-f{display:flex;align-items:center;gap:8px;padding:8px 12px;border-top:1px solid rgba(255,255,255,.12)}.con-f span{color:#2bff88}.con-f input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;font:16px ui-monospace,Menlo,Consolas,monospace}
 .buyd{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(5,7,11,.72)}
 .buyd-box{width:min(460px,100%);background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:0 24px 60px rgba(0,0,0,.55);color:var(--fg);max-height:calc(100vh - 32px);overflow:auto}
 .buyd-h{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--panel2);border-bottom:1px solid var(--line)}
@@ -343,6 +359,18 @@ a.hello{color:inherit;text-decoration:none;cursor:pointer;transition:border-colo
 .pbtn.blue{background:#0a76cc;box-shadow:none}
 .pbtn.blue:hover{background:#1a8cf0;box-shadow:none}.pbtn.blue:active{background:#075fa8}
 .pbox{padding-top:calc(82px + env(safe-area-inset-top,0px))}
+.pbox{gap:clamp(8px,1.4vh,14px);overflow-y:auto;overscroll-behavior:contain}
+.pbtn{height:clamp(44px,7vh,68px);flex-shrink:0;border-radius:18px;border:1px solid rgba(255,255,255,.2);font:700 clamp(15px,2.2vh,21px) var(--display,inherit);letter-spacing:.01em;justify-content:flex-start;gap:14px;padding:0 clamp(14px,1.6vw,22px);color:#fff;background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.06));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 6px 16px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.18);animation-fill-mode:backwards;transition:transform .12s ease,filter .12s ease,box-shadow .12s ease}
+.pbtn svg{width:1.7em;height:1.7em;padding:.38em;border-radius:50%;background:rgba(0,0,0,.28);box-sizing:border-box;flex:0 0 auto}
+.pbtn:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.22)}
+.pbtn:active{filter:brightness(.95);transform:translateY(1px) scale(.985);box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.pbtn[data-g=resume]{background:linear-gradient(180deg,#3fe086,#17a65a);border-color:#8bf5b9;color:#042a14;text-shadow:0 1px 0 rgba(255,255,255,.25)}
+.pbtn[data-g=resume] svg{background:rgba(255,255,255,.35)}
+.pbtn[data-g=respawn]{background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,.08))}
+.pbtn.blue[data-g=leave]{background:linear-gradient(180deg,#ff6b6b,#d92f45);border-color:#ffa3a3;color:#fff}
+.pbtn.blue[data-g=leave]:hover,.pbtn.blue[data-g=leave]:active{background:linear-gradient(180deg,#ff7b7b,#e5384e)}
+.pbtn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.pbtn:hover,.pbtn:active{transform:none}}
 @media(prefers-reduced-motion:reduce){.btn,.hbtn,.pbtn,.talkb,.hcirc,.hchat,.slot{transition:none}}
 .cbub{position:absolute;left:0;top:0;z-index:3;pointer-events:none;max-width:min(240px,70vw);background:#fff;color:#111;padding:7px 13px;border-radius:14px;font:600 14px/1.3 system-ui,sans-serif;text-align:center;overflow-wrap:anywhere;box-shadow:0 3px 10px rgba(0,0,0,.35);will-change:transform}
 .cbub::after{content:'';position:absolute;left:50%;bottom:-7px;margin-left:-7px;border:7px solid transparent;border-bottom:0;border-top-color:#fff}
@@ -381,7 +409,7 @@ a.hello{color:inherit;text-decoration:none;cursor:pointer;transition:border-colo
 .dhud{position:absolute;top:58px;left:50%;transform:translateX(-50%);z-index:6;display:flex;flex-direction:column;gap:6px;align-items:center;background:rgba(10,12,17,.78);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:8px 14px;min-width:min(340px,88vw);max-width:92vw;color:#fff;text-align:center;pointer-events:auto}
 .dhud .dh1{font-size:14px}.dhud .dh3{font-size:12px;opacity:.85}
 .dbar{position:relative;width:100%;height:16px;background:rgba(255,255,255,.14);border-radius:8px;overflow:hidden}.dbar i{display:block;height:100%}.dbar span{position:absolute;inset:0;font-size:11px;line-height:16px}
-.joy{background:rgba(140,146,158,.3);border:2px solid rgba(180,186,198,.55);transition:opacity .15s;opacity:.8}.joy.on{opacity:1;background:rgba(140,146,158,.4)}.joy i{background:rgba(176,182,194,.9);box-shadow:0 0 0 2px rgba(120,126,138,.5)}.jump{width:96px;height:96px;display:none;align-items:center;justify-content:center;padding:0;background:rgba(140,146,158,.4);border:2px solid rgba(180,186,198,.6);right:calc(34px + env(safe-area-inset-right,0px));bottom:calc(50px + env(safe-area-inset-bottom,0px));-webkit-tap-highlight-color:transparent;user-select:none}.jump.on{background:rgba(170,176,188,.6);transform:scale(.93)}.jump svg{pointer-events:none}.touch .jump{display:flex}.hamb{width:40px;height:40px;border:0;background:transparent;border-radius:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;flex:none;padding:0;margin-left:-8px}.hamb:hover{background:var(--panel2)}.hamb span{width:20px;height:2px;border-radius:2px;background:var(--fg);transition:transform .2s,opacity .2s}.menu-open .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu-open .hamb span:nth-child(2){opacity:0}.menu-open .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.lb{display:none}.menu-open .lb{display:inline}.nl svg,.tab svg{width:24px;height:24px}.shell{grid-template-columns:56px minmax(0,1fr)}.menu-open .shell{grid-template-columns:200px minmax(0,1fr)}.nl{justify-content:center;padding:12px 0}.menu-open .nl{justify-content:flex-start;padding:10px 12px}@media(max-width:860px){.shell,.menu-open .shell{grid-template-columns:minmax(0,1fr)}.side,.menu-open .side{display:none}.tabbar{display:flex}.tab{justify-content:center;padding:8px 0}.menu-open .tab{padding:4px 0}}@keyframes lbIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}@keyframes tabLbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.shell{transition:grid-template-columns .28s cubic-bezier(.2,.8,.2,1)}.menu-open .nl .lb{animation:lbIn .28s cubic-bezier(.2,.8,.2,1) both}.menu-open .tab .lb{animation:tabLbIn .26s cubic-bezier(.2,.8,.2,1) both}.menu-open .nl:nth-child(2) .lb,.menu-open .tab:nth-child(2) .lb{animation-delay:.04s}.menu-open .nl:nth-child(3) .lb,.menu-open .tab:nth-child(3) .lb{animation-delay:.08s}.menu-open .nl:nth-child(4) .lb,.menu-open .tab:nth-child(4) .lb{animation-delay:.12s}.menu-open .nl:nth-child(5) .lb,.menu-open .tab:nth-child(5) .lb{animation-delay:.16s}.nl,.tab{transition:background .2s,color .2s,transform .15s}.nl:active,.tab:active{transform:scale(.94)}.hamb:active{transform:scale(.92)}@keyframes pboxIn{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:none}}@keyframes pbtnIn{from{opacity:0;transform:translateX(-22px) scale(.96)}to{opacity:1;transform:none}}.pause .pbox{animation:pboxIn .3s cubic-bezier(.2,.8,.2,1) both}.pause .pbtn{animation:pbtnIn .34s cubic-bezier(.2,.8,.2,1) both}.pause .pbtn:nth-of-type(1){animation-delay:.06s}.pause .pbtn:nth-of-type(2){animation-delay:.11s}.pause .pbtn:nth-of-type(3){animation-delay:.16s}.pause .pbtn:nth-of-type(4){animation-delay:.21s}@media(prefers-reduced-motion:reduce){.shell,.nl,.tab,.hamb span,.pause .pbox,.pause .pbtn,.menu-open .lb{animation:none!important;transition:none!important}}</style>
+.joy{background:rgba(140,146,158,.3);border:2px solid rgba(180,186,198,.55);transition:opacity .15s;opacity:.8}.joy.on{opacity:1;background:rgba(140,146,158,.4)}.joy i{background:rgba(176,182,194,.9);box-shadow:0 0 0 2px rgba(120,126,138,.5)}.jump{width:96px;height:96px;display:none;align-items:center;justify-content:center;padding:0;background:rgba(140,146,158,.4);border:2px solid rgba(180,186,198,.6);right:calc(34px + env(safe-area-inset-right,0px));bottom:calc(50px + env(safe-area-inset-bottom,0px));-webkit-tap-highlight-color:transparent;user-select:none}.jump.on{background:rgba(170,176,188,.6);transform:scale(.93)}.jump svg{pointer-events:none}.touch .jump{display:flex}.hamb{width:40px;height:40px;border:0;background:transparent;border-radius:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;flex:none;padding:0;margin-left:-8px}.hamb:hover{background:var(--panel2)}.hamb span{width:20px;height:2px;border-radius:2px;background:var(--fg);transition:transform .2s,opacity .2s}.menu-open .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu-open .hamb span:nth-child(2){opacity:0}.menu-open .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.lb{display:none}.menu-open .lb{display:inline}.nl svg,.tab svg{width:24px;height:24px}.shell{grid-template-columns:56px minmax(0,1fr)}.menu-open .shell{grid-template-columns:200px minmax(0,1fr)}.nl{justify-content:center;padding:12px 0}.menu-open .nl{justify-content:flex-start;padding:10px 12px}@media(max-width:860px){.shell,.menu-open .shell{grid-template-columns:minmax(0,1fr)}.side,.menu-open .side{display:none}.tabbar{display:flex}.tab{justify-content:center;padding:8px 0}.menu-open .tab{padding:4px 0}}@keyframes lbIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}@keyframes tabLbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.shell{transition:grid-template-columns .28s cubic-bezier(.2,.8,.2,1)}.menu-open .nl .lb{animation:lbIn .28s cubic-bezier(.2,.8,.2,1) both}.menu-open .tab .lb{animation:tabLbIn .26s cubic-bezier(.2,.8,.2,1) both}.menu-open .nl:nth-child(2) .lb,.menu-open .tab:nth-child(2) .lb{animation-delay:.04s}.menu-open .nl:nth-child(3) .lb,.menu-open .tab:nth-child(3) .lb{animation-delay:.08s}.menu-open .nl:nth-child(4) .lb,.menu-open .tab:nth-child(4) .lb{animation-delay:.12s}.menu-open .nl:nth-child(5) .lb,.menu-open .tab:nth-child(5) .lb{animation-delay:.16s}.nl,.tab{transition:background .2s,color .2s,transform .15s}.nl:active,.tab:active{transform:scale(.94)}.hamb:active{transform:scale(.92)}@keyframes pboxIn{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:none}}@keyframes pbtnIn{from{opacity:0;transform:translateX(-22px) scale(.96)}to{opacity:1;transform:none}}.pause .pbox{animation:pboxIn .3s cubic-bezier(.2,.8,.2,1) both}.pause .pbtn{animation:pbtnIn .34s cubic-bezier(.2,.8,.2,1) both}.pause .pbtn:nth-of-type(1){animation-delay:.06s}.pause .pbtn:nth-of-type(2){animation-delay:.11s}.pause .pbtn:nth-of-type(3){animation-delay:.16s}.pause .pbtn:nth-of-type(4){animation-delay:.21s}@media(prefers-reduced-motion:reduce){.shell,.nl,.tab,.hamb span,.pause .pbox,.pause .pbtn,.menu-open .lb{animation:none!important;transition:none!important}}.cpopen{position:absolute;top:calc(66px + env(safe-area-inset-top,0px));left:calc(10px + env(safe-area-inset-left,0px));z-index:4;height:42px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(18,18,21,.7);color:#fff;font:700 15px var(--display,inherit);cursor:pointer;backdrop-filter:blur(6px)}.cpopen:hover{filter:brightness(1.3)}.cpwrap{align-items:flex-end}@media(min-width:700px){.cpwrap{align-items:center}}.cpbox{width:min(720px,100%);max-height:calc(100vh - 24px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.55);color:var(--fg);animation:pboxUp .26s cubic-bezier(.2,.8,.2,1) both}@keyframes pboxUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}.cpbar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--panel2);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1}.cpbar b{font:700 17px var(--display)}.cpmain{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;padding:14px 16px}.cpprev{background:var(--panel2);border-radius:10px;padding:8px;align-self:start}.cpctl{min-width:0;display:grid;gap:10px}.cpbody{display:grid;gap:10px;max-height:min(46vh,380px);overflow:auto;padding-right:2px}.cpsws{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}.cpsw{aspect-ratio:1;border-radius:8px;border:2px solid rgba(255,255,255,.18);cursor:pointer;padding:0}.cpsw.on{border-color:#fff;box-shadow:0 0 0 2px var(--blue)}.cpit{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;gap:8px}.cpfoot{display:grid;gap:10px;padding:12px 16px 16px;border-top:1px solid var(--line)}.cpcode{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px dashed var(--gold);border-radius:10px;padding:10px 14px}.cpcode span{color:var(--muted);font-size:13px}.cpcode b{font:700 30px var(--display);letter-spacing:.3em;color:var(--gold);flex:1;text-align:center}@media(max-width:560px){.cpmain{grid-template-columns:minmax(0,1fr)}.cpprev{max-width:130px;margin:auto}.cpsws{grid-template-columns:repeat(6,minmax(0,1fr))}}@media(prefers-reduced-motion:reduce){.cpbox{animation:none}}</style>
 
 <div id="app"></div>
 <div id="toast" role="status" aria-live="polite"></div>
@@ -562,7 +590,11 @@ var ITEMS=[{id:'horseman',name:'Headless Horseman',price:31000,
     {slot:'armR',label:'Tangan kanan',name:'Tangan Kanan Hantu',desc:'Lengan putih tembus pandang'},
     {slot:'legL',label:'Kaki kiri',name:'Tanpa Kaki Kiri',desc:'Tidak ada kaki sama sekali'},
     {slot:'legR',label:'Kaki kanan',name:'Tanpa Kaki Kanan',desc:'Tidak ada kaki sama sekali'}]}].concat(HATS);
+var HK={fly:0,noclip:0,god:0,speed:0,jump:0};
+function hackOpen(){var d=new Date(),m=d.getMonth();return m===1||(m===2&&d.getDate()===1)}
+function hackOn(u,ob,ra,nx){return !!(u.tools&&u.tools.hacker)&&!ob&&!ra&&!nx}
 var TOOLS_ALL=[
+  {id:'hacker',hack:1,price:10000,name:'Hacker',desc:'Dipasang di punggung, bukan dipegang. Membuka panel: terbang, noclip, kebal, lari cepat, lompat tinggi. Dijual 1 Februari sampai 1 Maret. Tidak aktif di Obby, Blox Rails, dan Noxbux.',svg:'<svg viewBox="0 0 36 36"><rect x="6" y="7" width="24" height="17" rx="2" fill="#1b1f2a" stroke="#2bff88" stroke-width="1.5"/><path d="M10 13l4 3-4 3M17 19h8" stroke="#2bff88" stroke-width="1.8" fill="none"/><rect x="3" y="26" width="30" height="4" rx="1.5" fill="#3a4256"/></svg>'},
   {id:'revolver',rails:1,price:0,name:'Revolver',desc:'Revolver untuk melawan zombie di Blox Rails. Tekan Pakai atau F untuk menembak.',svg:'<svg viewBox="0 0 36 36"><rect x="4" y="11" width="24" height="6" rx="1.5" fill="#8a97ab"/><rect x="12" y="9" width="9" height="10" rx="2" fill="#5b6577"/><path d="M20 17h8l-2 14h-6z" fill="#7a4b2a"/></svg>'},
     {id:'notebook',rails:1,cls:'witch',price:0,name:'Note Book',desc:'Buku sihir Penyihir. Tekan Pakai atau F untuk memanggil monster 8000 darah yang bisa kamu naiki.',svg:'<svg viewBox="0 0 36 36"><rect x="7" y="5" width="22" height="27" rx="2" fill="#5b2f9e"/><rect x="10" y="5" width="19" height="27" rx="2" fill="#7e4bd6"/><path d="M19 12l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="#ffc83d"/></svg>'},
     {id:'coil',obby:1,passive:1,price:90,desc:'Dibeli di toko Obby Tower.',name:'Gravity Coil',svg:'<svg viewBox="0 0 36 36"><rect x="15" y="4" width="6" height="28" rx="2" fill="#8a97ab"/><rect x="8" y="7" width="20" height="4" rx="2" fill="#2f7bff"/><rect x="8" y="14" width="20" height="4" rx="2" fill="#4aa3ff"/><rect x="8" y="21" width="20" height="4" rx="2" fill="#2f7bff"/></svg>'},
@@ -669,6 +701,226 @@ function daily(u){u.nox=u.nox|0;var t=today();if(!u.daily||u.daily.date!==t)u.da
 var saveT=0;
 function saveSoon(){if(!saveT)saveT=setTimeout(function(){saveT=0;save()},2000)}
 function notify(msg){if(G&&G.toast)G.toast(msg);else toast(msg)}
+var RDM_KEY='noxblox.rdm',RDM_MON=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+var RDM_BUILTIN={H4CK3R:{s:10,e:12,y:2026,i:'hacker',by:'NoxBlox'}};
+function rdmLocal(){try{return JSON.parse(localStorage.getItem(RDM_KEY)||'{}')||{}}catch(e){return {}}}
+function rdmSaveL(m){try{localStorage.setItem(RDM_KEY,JSON.stringify(m))}catch(e){}}
+function rdmParse(txt){
+  var p=String(txt||'').trim().split('/').map(function(x){return x.trim()});
+  if(p.length!==5||!p[4])return {err:'Format: KODE/bulan awal/bulan akhir/tahun/hadiah. Contoh: FR33BL0X/10/11/2026/500 atau FR33BL0X/10/11/2026/Beanie Merah'};
+  var code=p[0].toUpperCase();
+  if(!/^[A-Z0-9]{3,20}$/.test(code))return {err:'Kode hanya huruf dan angka, 3 sampai 20 karakter.'};
+  if(!/^\d{1,2}$/.test(p[1])||!/^\d{1,2}$/.test(p[2])||!/^\d{4}$/.test(p[3]))return {err:'Bulan ditulis angka 1 sampai 12 dan tahun 4 angka.'};
+  var s=+p[1],e=+p[2],y=+p[3];
+  if(s<1||s>12||e<1||e>12)return {err:'Bulan harus antara 1 dan 12.'};
+  if(s>e)return {err:'Bulan awal tidak boleh setelah bulan akhir.'};
+  var rw=p[4],rec={code:code,s:s,e:e,y:y};
+  if(/^\d+$/.test(rw)){var n=+rw;if(!(n>=1&&n<=1000000))return {err:'Hadiah Noxbux harus antara 1 dan 1.000.000.'};rec.r=n}
+  else{var it=rdmFind(rw);if(!it)return {err:'Item bernama "'+rw+'" tidak ditemukan. Tulis nama persis seperti di Marketplace, atau angka untuk Noxbux.'};rec.i=it.id;rec.n=it.name}
+  return rec;
+}
+function rdmNorm(x){return String(x||'').toLowerCase().replace(/[^a-z0-9]/g,'')}
+function rdmFind(name){
+  var k=rdmNorm(name);if(!k)return null;
+  var a=ITEMS.filter(function(x){return rdmNorm(x.name)===k})[0];if(a)return a;
+  var t=TOOLS_ALL.filter(function(x){return !x.rails&&!x.obby&&rdmNorm(x.name)===k})[0];
+  return t?{id:t.id,name:t.name,tool:1}:null;
+}
+function rdmRewardTxt(r){return r.i?(r.n||r.i):r.r.toLocaleString('id-ID')+' Noxbux'}
+function rdmState(r,now){
+  var a=new Date(r.y,r.s-1,1).getTime(),b=new Date(r.y,r.e,1).getTime();
+  return now<a?'soon':(now>=b?'old':'ok');
+}
+function rdmSpan(r){return RDM_MON[r.s-1]+(r.s===r.e?'':' sampai '+RDM_MON[r.e-1])+' '+r.y}
+async function rdmCreate(txt,by){
+  var q=rdmParse(txt);if(q.err)return q;
+  var rec={s:q.s,e:q.e,y:q.y,by:String(by||'').slice(0,24),t:Date.now()},m=rdmLocal(),shared=false;
+  if(q.i){rec.i=q.i;rec.n=q.n}else rec.r=q.r;
+  m[q.code]=rec;rdmSaveL(m);
+  var db=await cusDB();if(db){try{await db.doc('redeem/'+q.code).set(rec);shared=true}catch(e){}}
+  return {code:q.code,rec:rec,shared:shared};
+}
+function rdmClean(rec){
+  if(!rec)return null;var s=+rec.s,e=+rec.e,y=+rec.y;
+  if(!(s>=1&&s<=12&&e>=s&&e<=12&&y>=2000&&y<=2200))return null;
+  var o={s:s,e:e,y:y,by:String(rec.by||'')};
+  if(rec.i){var it=itemOf(String(rec.i))||toolOf(String(rec.i));if(!it)return null;o.i=it.id;o.n=it.name;return o}
+  var r=Math.floor(+rec.r);if(!(r>=1&&r<=1000000))return null;o.r=r;return o;
+}
+async function rdmLookup(code){
+  var rec=rdmClean(RDM_BUILTIN[code]||rdmLocal()[code]);
+  if(!rec){var db=await cusDB();if(db){try{var sn=await db.doc('redeem/'+code).get();if(sn.exists)rec=rdmClean(sn.data())}catch(e){}}}
+  return rec;
+}
+async function rdmRedeem(u,raw){
+  var code=String(raw||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+  if(code.length<3)return {err:'Masukkan kode redeem.'};
+  var rec=await rdmLookup(code);
+  if(!rec)return {err:'Kode tidak ditemukan.'};
+  var st=rdmState(rec,Date.now());
+  if(st==='soon')return {err:'Kode ini baru berlaku mulai '+RDM_MON[rec.s-1]+' '+rec.y+'.'};
+  if(st==='old')return {err:'Kode ini sudah kedaluwarsa (berlaku '+rdmSpan(rec)+').'};
+  u.redeemed=u.redeemed||{};
+  if(u.redeemed[code])return {err:'Kamu sudah memakai kode ini.'};
+  if(rec.i){
+    var isT=!itemOf(rec.i);
+    if(isT){if(u.tools&&u.tools[rec.i])return {err:'Kamu sudah punya '+rec.n+'.'};u.tools=u.tools||{};u.tools[rec.i]=1}
+    else{if(u.inv&&u.inv[rec.i])return {err:'Kamu sudah punya '+rec.n+'.'};u.inv=u.inv||{};u.inv[rec.i]=1}
+    u.redeemed[code]=1;save();
+    return {ok:'Berhasil! Kamu mendapat item '+rec.n+'. Cek di Avatar.'};
+  }
+  if(isOwner(u))return {err:'Kode valid ('+rdmRewardTxt(rec)+'), tetapi Noxbux Owner sudah tidak terbatas.'};
+  u.redeemed[code]=1;u.nox=(u.nox|0)+rec.r;save();balUpd();
+  return {ok:'Berhasil! Kamu mendapat '+rec.r.toLocaleString('id-ID')+' Noxbux.'};
+}
+async function rdmList(){
+  var m=rdmLocal(),out={},k;for(k in RDM_BUILTIN){var bc=rdmClean(RDM_BUILTIN[k]);if(bc){bc.fix=1;out[k]=bc}}
+  for(k in m){if(RDM_BUILTIN[k])continue;var c=rdmClean(m[k]);if(c)out[k]=c}
+  var db=await cusDB();
+  if(db){try{var sn=await db.collection('redeem').get();var ds=sn.docs||[];ds.forEach(function(d){var c=rdmClean(d.data());if(c&&!out[d.id])out[d.id]=c})}catch(e){}}
+  return out;
+}
+function openRedeem(){
+  var u=cur();if(!u)return;
+  var old=document.getElementById('rdmd');if(old)old.remove();
+  var own=isOwner(u),m=document.createElement('div');m.className='buyd';m.id='rdmd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','rdm-t');
+  m.innerHTML='<div class="buyd-box rdm"><div class="buyd-h"><b id="rdm-t">Kode redeem</b><button class="buyd-x" data-r="x" aria-label="Tutup">×</button></div>'+
+    '<div class="rdm-b"><p class="small muted">Masukkan kode untuk mendapat Noxbux. Tiap kode hanya bisa dipakai sekali per akun dan hanya berlaku di bulan yang ditentukan.</p>'+
+    '<div class="rdm-row"><input id="rdm-in" type="text" maxlength="24" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Masukkan kode" aria-label="Kode redeem"><button class="btn claim" data-r="go">Tukar</button></div>'+
+    '<p class="rdm-msg" id="rdm-msg" role="status"></p>'+
+    (own?'<div class="rdm-own"><h3>Buat kode baru (Owner)</h3><p class="small muted">Tulis: KODE/bulan awal/bulan akhir/tahun/hadiah. Hadiah berupa angka untuk Noxbux atau nama item Avatar. Contoh: FR33BL0X/10/11/2026/500 atau FR33BL0X/10/11/2026/Beanie Merah.</p><input id="rdm-new" type="text" maxlength="70" autocomplete="off" spellcheck="false" placeholder="FR33BL0X/10/11/2026/Beanie Merah" aria-label="Kode baru"><div class="rdm-row"><button class="btn blue" data-r="mk">Buat kode</button></div><p class="rdm-msg" id="rdm-msg2" role="status"></p><div id="rdm-list"></div></div>':'')+
+    '</div></div>';
+  function close(){document.removeEventListener('keydown',esk,true);m.remove()}
+  function esk(e){if(e.key==='Escape'){e.stopImmediatePropagation();e.preventDefault();close()}}
+  function msg(id,t,bad){var e=m.querySelector('#'+id);if(e){e.textContent=t;e.className='rdm-msg '+(bad?'bad':'good')}}
+  function list(){
+    if(!own)return;var box=m.querySelector('#rdm-list');
+    rdmList().then(function(o){var ks=Object.keys(o);if(!box||!document.body.contains(m))return;
+      box.innerHTML=ks.length?'<div class="rdm-l">'+ks.map(function(k){var r=o[k],st=rdmState(r,Date.now());return '<div class="rdm-i"><div><b>'+esc(k)+'</b><span class="small muted"> '+esc(rdmSpan(r))+' · '+esc(rdmRewardTxt(r))+' · '+(st==='ok'?'aktif':(st==='soon'?'belum mulai':'kedaluwarsa'))+'</span></div>'+(r.fix?'<span class="small muted">bawaan</span>':'<button class="btn" data-r="del" data-c="'+esc(k)+'">Hapus</button>')+'</div>'}).join('')+'</div>':'<p class="small muted">Belum ada kode.</p>'});
+  }
+  m.addEventListener('click',function(e){
+    var t=e.target;if(t===m){close();return}
+    var b=t.closest&&t.closest('[data-r]');if(!b)return;e.stopPropagation();
+    var r=b.dataset.r;
+    if(r==='x'){close();return}
+    if(r==='go'){var v=m.querySelector('#rdm-in').value;b.disabled=true;
+      rdmRedeem(cur(),v).then(function(x){b.disabled=false;if(x.err)msg('rdm-msg',x.err,1);else{msg('rdm-msg',x.ok,0);m.querySelector('#rdm-in').value='';toast(x.ok)}})}
+    else if(r==='mk'){b.disabled=true;
+      rdmCreate(m.querySelector('#rdm-new').value,cur().name).then(function(x){b.disabled=false;if(x.err)msg('rdm-msg2',x.err,1);else{msg('rdm-msg2','Kode '+x.code+' dibuat, berlaku '+rdmSpan(x.rec)+', hadiah '+rdmRewardTxt(x.rec)+'.'+(x.shared?'':' Tersimpan di perangkat ini saja.'),0);m.querySelector('#rdm-new').value='';list()}})}
+    else if(r==='del'){var c=b.dataset.c,lm=rdmLocal();delete lm[c];rdmSaveL(lm);
+      cusDB().then(function(db){if(db){try{return db.doc('redeem/'+c).delete()}catch(e){}}}).then(list,list)}
+  });
+  m.addEventListener('keydown',function(e){if(e.key==='Enter'){var i=e.target&&e.target.id;if(i==='rdm-in')m.querySelector('[data-r=go]').click();else if(i==='rdm-new'){var k=m.querySelector('[data-r=mk]');k&&k.click()}}});
+  document.addEventListener('keydown',esk,true);
+  document.body.appendChild(m);list();
+  var f=m.querySelector('#rdm-in');if(f)f.focus();
+}
+/* ===== Mode umur: NoxBlox Kids (1-9) / NoxBlox (10-18+) ===== */
+function kidsOn(){var u=cur();return !!u&&u.mode==='kids'}
+function applyMode(){try{document.body.classList.toggle('kids',kidsOn())}catch(e){}}
+async function ageSample(){
+  try{if(window.claude&&claude.use){var s=await Promise.race([claude.use('sample'),new Promise(function(r){setTimeout(function(){r(null)},4000)})]);
+    if(s){var l=await s.limits();if(l&&l.images)return s}}}catch(e){}
+  return null;
+}
+async function ageShrink(file){
+  var bm=await createImageBitmap(file),k=Math.min(1,640/Math.max(bm.width,bm.height)),c=document.createElement('canvas');
+  c.width=Math.max(1,Math.round(bm.width*k));c.height=Math.max(1,Math.round(bm.height*k));
+  c.getContext('2d').drawImage(bm,0,0,c.width,c.height);if(bm.close)bm.close();
+  return await new Promise(function(r){c.toBlob(r,'image/jpeg',0.82)});
+}
+var AGE_PROMPT='Ini foto yang diambil untuk verifikasi umur di sebuah game. Perkirakan kelompok umur orang yang tampak di foto (jangan mengidentifikasi siapa orangnya). Jawab HANYA JSON: {"face":true atau false,"band":"kids" atau "teen_adult","conf":angka 0 sampai 1}. face=false jika tidak ada satu wajah manusia yang jelas. band="kids" jika perkiraan umur 1 sampai 9 tahun, band="teen_adult" jika 10 tahun ke atas. Jika ragu antara keduanya, pilih "kids".';
+function ageDialog(force){
+  var u=cur();if(!u||document.getElementById('agd'))return;
+  var m=document.createElement('div');m.className='buyd';m.id='agd';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-labelledby','agd-t');
+  m.innerHTML='<div class="buyd-box rdm"><div class="buyd-h"><b id="agd-t">Verifikasi umur</b>'+(force?'':'<button class="buyd-x" data-q="x" aria-label="Tutup">×</button>')+'</div>'+
+   '<div class="rdm-b"><p>Umur 1–9 tahun masuk <b>NoxBlox Kids</b> (chat dimatikan). Umur 10–18+ masuk <b>NoxBlox</b> biasa.</p>'+
+   '<p class="small muted">Ambil satu foto wajahmu. Foto dikirim sekali ke AI untuk memperkirakan umur, lalu langsung dibuang dan tidak disimpan. Hasilnya hanya perkiraan.</p>'+
+   '<div class="rdm-row"><label class="btn claim agd-file" for="agd-in">Ambil foto wajah</label><input id="agd-in" type="file" accept="image/*" capture="user" hidden></div>'+
+   '<p class="rdm-msg" id="agd-msg" role="status"></p><div id="agd-man" hidden><p class="small muted">Verifikasi AI tidak tersedia. Pilih sesuai umurmu dengan jujur:</p><div class="rdm-row"><button class="btn" data-q="k">Umur 1–9 (Kids)</button><button class="btn blue" data-q="r">Umur 10 ke atas</button></div></div></div></div>';
+  function msg(t,bad){var e=m.querySelector('#agd-msg');e.textContent=t;e.className='rdm-msg '+(bad?'bad':'good')}
+  function done(mode){var c=cur();if(!c)return;c.mode=mode;c.modeAt=Date.now();save();applyMode();m.remove();document.removeEventListener('keydown',esk,true);
+    toast(mode==='kids'?'Mode NoxBlox Kids aktif':'Mode NoxBlox aktif');renderPage()}
+  function esk(e){if(e.key==='Escape'&&!force){e.stopImmediatePropagation();e.preventDefault();m.remove();document.removeEventListener('keydown',esk,true)}}
+  m.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-q]');if(!b)return;e.stopPropagation();
+    var q=b.dataset.q;if(q==='x'){m.remove();document.removeEventListener('keydown',esk,true)}else if(q==='k')done('kids');else if(q==='r')done('regular')});
+  m.querySelector('#agd-in').addEventListener('change',async function(ev){
+    var f=ev.target.files&&ev.target.files[0];ev.target.value='';if(!f)return;
+    msg('Memeriksa foto...',0);
+    var s=await ageSample();
+    if(!s){m.querySelector('#agd-man').hidden=false;msg('Verifikasi AI tidak tersedia di versi ini.',1);return}
+    try{
+      var blob=await ageShrink(f);
+      var r=await s.json(AGE_PROMPT,{images:[blob],modelTier:'quick',cache:false});
+      blob=null;f=null;
+      if(!r||r.face!==true)msg('Wajah tidak terlihat jelas. Coba foto lagi dengan wajah menghadap kamera dan cahaya cukup.',1);
+      else if(r.band==='kids')done('kids');
+      else if(r.band==='teen_adult')done('regular');
+      else msg('Hasil belum jelas. Coba foto lagi.',1);
+    }catch(err){
+      m.querySelector('#agd-man').hidden=false;
+      msg(err&&err.code==='not_granted'?'Izin AI ditolak. Pilih umur manual di bawah.':'Verifikasi gagal. Coba lagi atau pilih manual di bawah.',1);
+    }
+  });
+  if(!force)document.addEventListener('keydown',esk,true);
+  document.body.appendChild(m);
+}
+/* ===== Panel console tersembunyi ===== */
+var CON={buf:[],el:null,taps:[],max:300};
+function conPush(l,t){CON.buf.push({l:l,t:t,at:Date.now()});if(CON.buf.length>CON.max)CON.buf.shift();if(CON.el)conDraw()}
+(function(){
+  ['log','info','warn','error'].forEach(function(k){var o=console[k];console[k]=function(){try{conPush(k,Array.prototype.map.call(arguments,function(a){try{return typeof a==='string'?a:(a&&a.stack?a.stack:JSON.stringify(a))}catch(e){return String(a)}}).join(' '))}catch(e){}return o.apply(console,arguments)}});
+  window.addEventListener('error',function(e){conPush('error',String(e.message||e)+(e.lineno?' ('+e.lineno+')':''))});
+  window.addEventListener('unhandledrejection',function(e){conPush('error','Promise: '+String(e.reason&&e.reason.message||e.reason))});
+})();
+function conDev(){
+  var ua=navigator.userAgent||'',t=/iPhone|iPad|iPod|Macintosh/.test(ua)&&(navigator.maxTouchPoints>1||/iPhone|iPad/.test(ua))?'Apple (iOS/iPadOS)':(/Android/.test(ua)?(/SM-|Samsung/i.test(ua)?'Samsung (Android)':'Android'):(/Mac/.test(ua)?'PC (macOS)':(/Windows/.test(ua)?'PC (Windows)':(/Linux|CrOS/.test(ua)?'PC (Linux/ChromeOS)':'Tidak diketahui'))));
+  return t;
+}
+function conDraw(){
+  var box=CON.el&&CON.el.querySelector('.con-log');if(!box)return;
+  box.textContent='';CON.buf.forEach(function(r){var d=document.createElement('div');d.className='con-l '+r.l;d.textContent=new Date(r.at).toTimeString().slice(0,8)+'  '+r.t;box.appendChild(d)});
+  box.scrollTop=box.scrollHeight;
+}
+function conRun(txt){
+  var u=cur(),p=txt.trim().split(/\s+/),c=(p[0]||'').toLowerCase(),own=isOwner(u);
+  conPush('cmd','> '+txt);
+  if(!c)return;
+  if(c==='help')conPush('info','Perintah: help, info, mode, reverify, copy, clear'+(own?', nox <jumlah>, resetdata yes':'')+'. Buka panel: tekan ` (PC) atau ketuk logo 5x (HP).');
+  else if(c==='clear'){CON.buf.length=0;conDraw()}
+  else if(c==='info'){var ls=0;try{for(var k in localStorage)if(k.indexOf('noxblox')===0)ls+=(localStorage[k]||'').length}catch(e){}
+    conPush('info','Perangkat: '+conDev());conPush('info','Layar: '+innerWidth+'x'+innerHeight+' @'+(window.devicePixelRatio||1)+'x, sentuh: '+(navigator.maxTouchPoints||0));
+    conPush('info','Pengguna: '+(u?u.name:'-')+' | Mode: '+(u&&u.mode==='kids'?'Kids':'Biasa')+' | Penyimpanan: '+Math.round(ls/1024)+' KB');
+    cusDB().then(function(d){conPush('info','Database bersama: '+(d?'aktif':'tidak ada'))});ageSample().then(function(s){conPush('info','Verifikasi AI: '+(s?'tersedia':'tidak tersedia'))})}
+  else if(c==='mode')conPush('info','Mode: '+(u&&u.mode==='kids'?'NoxBlox Kids':'NoxBlox')+(u&&u.modeAt?' (diverifikasi '+new Date(u.modeAt).toLocaleDateString('id-ID')+')':''));
+  else if(c==='reverify'){conClose();ageDialog(false)}
+  else if(c==='copy'){var all=CON.buf.map(function(r){return r.t}).join('\n');try{navigator.clipboard.writeText(all).then(function(){conPush('info','Log disalin.')},function(){conPush('warn','Gagal menyalin.')})}catch(e){conPush('warn','Gagal menyalin.')}}
+  else if(c==='nox'&&own){var n=Math.floor(Number(p[1]));if(n>=0&&n<=100000000){u.nox=n;save();balUpd();conPush('info','Saldo diatur ke '+n)}else conPush('warn','Pakai: nox <0-100000000>')}
+  else if(c==='resetdata'&&own){if(p[1]==='yes'){try{localStorage.removeItem('noxblox.v1')}catch(e){}location.reload()}else conPush('warn','Ini menghapus semua data lokal. Ketik: resetdata yes')}
+  else conPush('warn','Perintah tidak dikenal: '+c+'. Ketik help.');
+}
+function conClose(){if(CON.el){CON.el.remove();CON.el=null}}
+function conOpen(){
+  if(CON.el){conClose();return}
+  var d=document.createElement('div');d.id='cons';d.className='cons';d.setAttribute('role','dialog');d.setAttribute('aria-label','Console');
+  d.innerHTML='<div class="con-h"><b>Console</b><span class="con-dev"></span><span class="con-sp"></span><button type="button" data-c="copy">Salin</button><button type="button" data-c="clear">Bersih</button><button type="button" data-c="x" aria-label="Tutup">×</button></div><div class="con-log" role="log" aria-live="off"></div><form class="con-f"><span>&gt;</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ketik help" aria-label="Perintah console"></form>';
+  d.querySelector('.con-dev').textContent=conDev();
+  d.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var c=b.dataset.c;if(c==='x')conClose();else conRun(c)});
+  d.querySelector('form').addEventListener('submit',function(e){e.preventDefault();var i=d.querySelector('input'),v=i.value;i.value='';if(v.trim())conRun(v)});
+  ['keydown','keyup','keypress'].forEach(function(k){d.addEventListener(k,function(e){e.stopPropagation();if(k==='keydown'&&e.key==='Escape')conClose()})});
+  document.body.appendChild(d);CON.el=d;conDraw();
+  if(!CON.buf.length)conPush('info','Console NoxBlox. Ketik help untuk daftar perintah.');
+}
+document.addEventListener('keydown',function(e){
+  if(e.key!=='`'&&e.code!=='Backquote')return;
+  var t=e.target,tn=t&&t.tagName;if(tn==='INPUT'||tn==='TEXTAREA'||(t&&t.isContentEditable))return;
+  e.preventDefault();conOpen();
+},true);
+document.addEventListener('click',function(e){
+  var l=e.target.closest&&e.target.closest('.logo');if(!l)return;
+  var n=Date.now();CON.taps=CON.taps.filter(function(x){return n-x<2000});CON.taps.push(n);
+  if(CON.taps.length>=5){CON.taps=[];e.preventDefault();conOpen()}
+},true);
 function balUpd(){var u=cur();if(!u)return;var b=$('#bal');if(b)b.innerHTML=noxAmt(balOf(u),18);var h=$('#hbal');if(h)h.innerHTML='<span>N:</span><span>'+(isOwner(u)?'Noxbux':Number(balOf(u)).toLocaleString('id-ID'))+'</span>'}
 function track(id,amt){
   var u=cur();if(!u)return;
@@ -797,7 +1049,7 @@ function shellHTML(u){
   var tabs=NAV.map(function(n){return '<a class="tab" data-r="'+n[0]+'" title="'+n[1]+'" aria-label="'+n[1]+'" href="#'+n[0]+'"><svg viewBox="0 0 24 24">'+ICON[n[0]]+'</svg><span class="lb">'+n[1]+'</span></a>'}).join('');
   return '<header class="top"><div class="topin gut"><button type="button" class="hamb" id="hamb" aria-label="Menu" aria-expanded="false" aria-controls="page"><span></span><span></span><span></span></button><a class="logo" href="#beranda">NOX<b>BLOX</b></a>'+
     '<div class="search"><input id="q" type="search" placeholder="Cari game" aria-label="Cari game" autocomplete="off"></div>'+
-    '<a class="bal" id="bal" href="#misi" aria-label="Saldo Noxbux"></a>'+
+    '<a class="bal" id="bal" href="#misi" aria-label="Saldo Noxbux"></a><button type="button" class="giftb" id="giftb" data-act="gift" aria-label="Kode redeem" title="Kode redeem"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8c-2.5 0-4.5-1-4.5-2.8C7.5 3.8 8.6 3 9.8 3 11.3 3 12 5 12 8zM12 8c2.5 0 4.5-1 4.5-2.8C16.5 3.8 15.4 3 14.2 3 12.7 3 12 5 12 8z"/></svg></button>'+
     '<a class="chip" id="chip" href="#avatar" data-edit="1" aria-label="Buka editor avatar">'+chipHTML(u)+'</a></div></header>'+
     '<div class="shell gut"><nav class="side" aria-label="Menu utama">'+nav+'</nav><main id="page"></main></div>'+
     '<nav class="tabbar" aria-label="Menu utama">'+tabs+'</nav>';
@@ -842,8 +1094,97 @@ var GAMES=[
   {id:'noxbux',route:'noxbux',hidden:1,name:'Free Noxbux',cat:'Event',mode:'Sendiri',made:'20 Nov 2026',thumb:thumbNoxbux,desc:'Selesaikan 5 misi dari NPC dan dapatkan 10.000 Noxbux gratis.'},
   {id:'bloxrails',route:'bloxrails',name:'Blox Rails',cat:'Survival',mode:'Sendiri',made:'21 Nov 2026',thumb:thumbRails,desc:'Kota gurun Wild West saat senja. Mulai dari lobi: jelajahi kota, lihat kereta yang menunggu di peron, lalu naik kereta di gerbang untuk memulai perjalanan.'},
   {id:'disaster',route:'bencana',name:'Natural Disaster',cat:'Survival',mode:'Sendiri',made:'24 Nov 2026',thumb:thumbDis,desc:'Mulai di menara lobi. Setelah 2 menit pilih satu dari tiga map: alun-alun, sekolah, atau peternakan. Satu bencana acak akan menyerang: tsunami, gunung berapi meletus, hujan asam, tornado, atau kiamat es. Bertahan hidup selama 3 menit untuk menang.'},
+  {id:'custom',route:'karakter',name:'Custom Character',cat:'Kreatif',mode:'Sendiri',made:'25 Nov 2026',thumb:thumbCus,desc:'Ruang pamer untuk mencoba semua aksesori dan pakaian serta mengubah warna tubuh, tanpa memakai uang dan tanpa mengubah avatar aslimu. Publikasikan penampilanmu jadi kode 5 karakter, lalu pakai kode itu di menu Avatar untuk memakai pakaian yang sama.'},
   {id:'bloxrun',route:'bloxrails',hidden:1,name:'Blox Rails: Perjalanan',cat:'Survival',mode:'Sendiri',made:'21 Nov 2026',thumb:thumbRails,desc:'Perjalanan kereta Blox Rails.'}
 ];
+function thumbCus(id){return '<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b2035"/><stop offset="1" stop-color="#3b2a6e"/></linearGradient></defs><rect width="320" height="180" fill="url(#'+id+')"/><rect x="110" y="128" width="100" height="14" rx="4" fill="#2f7bff"/><rect x="146" y="48" width="28" height="28" rx="4" fill="#f5cd30"/><rect x="140" y="78" width="40" height="34" rx="3" fill="#ec407a"/><rect x="124" y="78" width="14" height="34" rx="3" fill="#26c6da"/><rect x="182" y="78" width="14" height="34" rx="3" fill="#fbc02d"/><rect x="142" y="112" width="16" height="16" fill="#7e57c2"/><rect x="162" y="112" width="16" height="16" fill="#22c26e"/><path d="M150 48 L160 30 L170 48 Z" fill="#ff7a1a"/><circle cx="60" cy="50" r="10" fill="#ff5a5f"/><circle cx="262" cy="60" r="12" fill="#ffc83d"/><circle cx="250" cy="130" r="8" fill="#22c26e"/></svg>'}
+/* ---- Custom Character: draft, kode publik, kartu kode di Avatar ---- */
+var CUS_AL='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',CUS_P=['head','torso','armL','armR','legL','legR'],CUSD={},CQ={code:'',res:null,by:'',err:'',ok:'',busy:0,shared:null};
+function cusDefC(){return {head:'#f5cd30',torso:'#0d69ac',armL:'#f5cd30',armR:'#f5cd30',legL:'#4b974b',legR:'#4b974b'}}
+function cusClean(o){
+  if(!o||typeof o!=='object')return null;
+  var r={c:{},s:{},f:'smile',a:'none'},d=cusDefC();
+  CUS_P.forEach(function(k){var c=o.c&&o.c[k];r.c[k]=(typeof c==='string'&&/^#[0-9a-fA-F]{6}$/.test(c))?c.toLowerCase():d[k]});
+  CUS_P.concat(['hat']).forEach(function(k){var id=o.s&&o.s[k];if(typeof id!=='string')return;var it=itemOf(id);if(!it||it.owner)return;
+    if(k==='hat'){if(it.kind==='hat')r.s.hat=id}else if(it.kind!=='hat'&&it.parts&&it.parts.some(function(p){return p.slot===k}))r.s[k]=id});
+  if(FACES.some(function(f){return f[0]===o.f}))r.f=o.f;
+  if(ACCS.some(function(a){return a[0]===o.a}))r.a=o.a;
+  return r;
+}
+function cusFromAv(av){
+  var S=slotsOf(av),r={c:{},s:{},f:av.face||'smile',a:av.acc||'none'},d=cusDefC();
+  CUS_P.forEach(function(k){r.c[k]=av[k]||d[k];if(S[k])r.s[k]=S[k]});if(S.hat)r.s.hat=S.hat;
+  return cusClean(r)||{c:d,s:{},f:'smile',a:'none'};
+}
+function cusAvOf(o){var a={face:o.f,acc:o.a,slots:{}};CUS_P.forEach(function(k){a[k]=o.c[k];if(o.s[k])a.slots[k]=o.s[k]});if(o.s.hat)a.slots.hat=o.s.hat;return a}
+function cusDraft(u){
+  var k=u.name;
+  if(!CUSD[k]){var d=null;try{var m=JSON.parse(localStorage.getItem('noxblox.cus')||'{}');d=cusClean(m[k])}catch(e){}CUSD[k]=d||cusFromAv(u.avatar)}
+  return CUSD[k];
+}
+function cusStore(u){try{var m=JSON.parse(localStorage.getItem('noxblox.cus')||'{}');m[u.name]=CUSD[u.name];localStorage.setItem('noxblox.cus',JSON.stringify(m))}catch(e){}}
+function cusAv(u){return cusAvOf(cusDraft(u))}
+function cusItems(o){var seen={},out=[];Object.keys(o.s).forEach(function(k){var id=o.s[k];if(seen[id])return;seen[id]=1;var it=itemOf(id);if(it)out.push(it)});return out}
+function cusNeed(o,u){
+  var list=cusItems(o).map(function(it){var own=isOwner(u)||!!(u.inv&&u.inv[it.id]);return {it:it,own:own,open:own||stockOpen(it,u)}});
+  var total=0;list.forEach(function(x){if(!x.own&&x.open)total+=x.it.price|0});
+  return {list:list,total:total,blocked:list.filter(function(x){return !x.own&&!x.open})};
+}
+/* registri kode: localStorage + (jika tersedia) database bersama artifact */
+function cusLocal(){try{return JSON.parse(localStorage.getItem('noxblox.codes')||'{}')||{}}catch(e){return {}}}
+async function cusDB(){try{if(window.claude&&claude.use){return await Promise.race([claude.use('db'),new Promise(function(r){setTimeout(function(){r(null)},4000)})])}}catch(e){}return null}
+function cusGen(){var a=new Uint8Array(5),s='';try{crypto.getRandomValues(a)}catch(e){for(var i=0;i<5;i++)a[i]=Math.floor(Math.random()*256)}for(var j=0;j<5;j++)s+=CUS_AL[a[j]%CUS_AL.length];return s}
+async function cusPublish(o,by){
+  var db=await cusDB(),loc=cusLocal(),code='',n=0;
+  while(n++<12){code=cusGen();if(loc[code])continue;if(db){try{var sn=await db.doc('codes/'+code).get();if(sn.exists)continue}catch(e){}}break}
+  var rec={o:JSON.stringify(o),by:String(by||'').slice(0,24),t:Date.now()},shared=false;
+  loc[code]=rec;try{localStorage.setItem('noxblox.codes',JSON.stringify(loc))}catch(e){}
+  if(db){try{await db.doc('codes/'+code).set(rec);shared=true}catch(e){}}
+  return {code:code,shared:shared};
+}
+async function cusLookup(code){
+  code=String(code||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+  if(code.length!==5)return {err:'Kode harus 5 huruf atau angka.'};
+  var rec=cusLocal()[code];
+  if(!rec){var db=await cusDB();if(db){try{var sn=await db.doc('codes/'+code).get();if(sn.exists)rec=sn.data()}catch(e){}}}
+  if(!rec)return {err:'Kode tidak ditemukan.'};
+  var o=null;try{o=cusClean(JSON.parse(rec.o))}catch(e){}
+  if(!o)return {err:'Kode rusak.'};
+  return {code:code,o:o,by:String(rec.by||'')};
+}
+function cusCheck(){
+  var inp=document.getElementById('codein');CQ.code=inp?inp.value:CQ.code;CQ.res=null;CQ.err='';CQ.ok='';CQ.busy=1;renderPage();
+  cusLookup(CQ.code).then(function(r){CQ.busy=0;if(r.err){CQ.err=r.err}else{CQ.code=r.code;CQ.res=r.o;CQ.by=r.by}renderPage()});
+}
+function cusGo(u){
+  if(!CQ.res)return;var o=CQ.res,nd=cusNeed(o,u);
+  if(!isOwner(u)&&nd.total>(u.nox|0)){toast('Noxbux kurang '+(nd.total-(u.nox|0)).toLocaleString('id-ID'));return}
+  var skip={};nd.blocked.forEach(function(x){skip[x.it.id]=1});
+  nd.list.forEach(function(x){if(!x.own&&x.open){u.inv=u.inv||{};u.inv[x.it.id]=1}});
+  if(!isOwner(u))u.nox=(u.nox|0)-nd.total;
+  var av=u.avatar;CUS_P.forEach(function(k){av[k]=o.c[k]});av.face=o.f;av.acc=o.a;
+  var sl={};Object.keys(o.s).forEach(function(k){if(!skip[o.s[k]])sl[k]=o.s[k]});av.slots=sl;
+  save();balUpd();var ch=$('#chip');if(ch)ch.innerHTML=chipHTML(u);
+  CQ.res=null;CQ.ok='Pakaian dipakai.'+(nd.total?(' Dibayar '+nd.total.toLocaleString('id-ID')+' Noxbux.'):'')+(nd.blocked.length?(' Tidak dipakai (stok habis): '+nd.blocked.map(function(x){return x.it.name}).join(', ')):'');
+  toast('Pakaian kode dipakai');renderPage();
+}
+function codeCard(u){
+  var h='<div class="card"><h2>Kode avatar</h2><p class="small muted">Punya kode 5 karakter dari game Custom Character? Masukkan untuk memakai pakaian itu.</p>'+
+   '<div class="row"><input id="codein" type="text" maxlength="5" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Kode avatar" placeholder="A1B2C" value="'+esc(CQ.code)+'" style="width:9em;text-transform:uppercase;letter-spacing:.25em;font:700 18px var(--display);text-align:center;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);padding:9px 10px"><button class="btn" data-act="codechk">'+(CQ.busy?'Mencari...':'Cek kode')+'</button></div>';
+  if(CQ.err)h+='<p class="small" style="color:var(--danger)">'+esc(CQ.err)+'</p>';
+  if(CQ.ok)h+='<p class="small" style="color:var(--play)">'+esc(CQ.ok)+'</p>';
+  if(CQ.res){
+    var nd=cusNeed(CQ.res,u);
+    h+='<div class="row" style="align-items:flex-start;gap:16px;margin-top:10px"><div style="width:120px;flex:none">'+avSVG(cusAvOf(CQ.res))+'</div><div style="flex:1;min-width:180px"><p class="small muted" style="margin:0 0 6px">Kode <b>'+esc(CQ.code)+'</b>'+(CQ.by?(' &middot; oleh '+esc(CQ.by)):'')+'</p>';
+    if(!nd.list.length)h+='<p class="small">Hanya warna tubuh, tidak ada item berbayar.</p>';
+    else h+='<ul style="list-style:none;margin:0;padding:0;display:grid;gap:4px">'+nd.list.map(function(x){return '<li class="small" style="display:flex;justify-content:space-between;gap:10px"><span>'+esc(x.it.name)+'</span><span style="color:'+(x.own?'var(--play)':(x.open?'var(--gold)':'var(--danger)'))+'">'+(x.own?'Sudah punya':(x.open?(x.it.price|0).toLocaleString('id-ID')+' Noxbux':'Stok habis'))+'</span></li>'}).join('')+'</ul>';
+    h+='<p style="margin:10px 0 6px"><b>Total yang perlu dibayar: '+nd.total.toLocaleString('id-ID')+' Noxbux</b></p>'+
+     '<button class="btn play" data-act="codego">'+(nd.total?'Beli & pakai':'Pakai')+'</button></div></div>';
+  }
+  return h+'</div>';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target&&e.target.id==='codein'){e.preventDefault();cusCheck()}});
+
 function thumbDis(id){return '<svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3f57"/><stop offset="1" stop-color="#9aa7b8"/></linearGradient></defs><rect width="320" height="180" fill="url(#'+id+')"/><path d="M200 20 L250 20 L232 60 L242 60 L222 100 L230 100 L214 150 L204 100 L212 100 L196 60 L206 60 Z" fill="#5a6270"/><path d="M0 140 Q40 110 80 140 T160 140 T240 140 T320 140 V180 H0Z" fill="#2a8bd8"/><rect x="40" y="70" width="40" height="70" fill="#cfc8bc"/><rect x="28" y="62" width="64" height="10" fill="#8a3b2f"/></svg>'}
 function gameOf(id){return GAMES.filter(function(g){return g.id===id})[0]||GAMES[0]}
 function gameCard(u,g){
@@ -867,6 +1208,7 @@ function pGame(u,g){
     '<li>Cubit dua jari di layar untuk zoom. Di komputer: scroll, <kbd>+</kbd> dan <kbd>−</kbd></li><li>Zoom sampai mentok untuk kamera orang pertama, zoom keluar untuk kembali</li><li><kbd>Enter</kbd> untuk chat, <kbd>Esc</kbd> untuk menu</li><li>Di ponsel: joystick kiri dan tombol Lompat di kanan</li>'+
     (ob?'<li><kbd>B</kbd> atau tombol Toko untuk membuka toko dan memilih tahap</li><li>Jatuh ke lava akan mengembalikanmu ke checkpoint terakhir</li>':'');
   if(g.id==='disaster')keys+='<li>Kamu mulai di menara lobi. Setelah 2 menit, atau lewat tombol Pilih map, pilih salah satu dari 3 map</li><li>Satu bencana acak terjadi di tiap ronde. Bertahan hidup 3 menit untuk menang dan dapat 400 Noxbux</li><li>Tsunami: naik ke tempat tinggi. Gunung berapi: hindari bom dan lava. Hujan asam: berlindung di bawah atap. Tornado: jaga jarak. Kiamat es: dekati api unggun</li>';
+  if(g.id==='custom')keys+='<li>Tekan Ganti pakaian untuk memilih warna tubuh, pakaian, dan aksesori. Semua bisa dicoba gratis di game ini saja</li><li>Tekan Lihat di 3D untuk melihat hasilnya pada karakter</li><li>Tekan Publikasikan untuk membuat kode 5 karakter. Masukkan kode itu di Avatar untuk memakai pakaian yang sama; item yang belum kamu punya dihitung total harganya</li>';
   if(g.id==='bloxrails')keys+='<li>Mulai di lobi kota gurun. Berjalan ke gerbang Naik Kereta di peron lalu tekan <kbd>E</kbd> untuk memulai perjalanan</li><li>Isi tungku kereta dengan batu bara hitam: dekati tungku di kabin lokomotif lalu tekan <kbd>E</kbd> atau tombol Isi tungku</li><li><kbd>1</kbd> memegang Revolver, <kbd>F</kbd> atau tombol Pakai untuk menembak ke arah depan kamera</li><li>Ambil batu bara dan obligasi emas di sepanjang rel. Zombie menyerang dari samping kereta</li><li>Capai Stasiun Akhir. Tiap obligasi dihargai 20 Noxbux, ditambah bonus 150</li>';
   return '<section class="ghero"><div class="gthumb">'+g.thumb('th-'+g.id)+'</div><div class="ginfo"><p class="eyebrow">Game resmi</p><h1>'+esc(g.name)+'</h1>'+
     '<p class="by" style="font-size:15px">Dibuat oleh NoxBlox '+badge(18)+'</p><p>'+esc(g.desc)+'</p>'+
@@ -885,6 +1227,7 @@ function pAvatar(u){
   avTab='edit';
   return avHead()+avTabs()+pEdit(u);
 }
+function starterOf(u){var o=TOOLS_ALL.filter(function(t){return !t.rails&&!t.obby&&!t.hack&&u.tools&&u.tools[t.id]});if(u.starter&&o.some(function(t){return t.id===u.starter}))return u.starter;return o.length?o[0].id:null}
 function ownedTool(u,t){return t.obby?!!(obbyOf(u).own&&obbyOf(u).own[t.id]):!!(u.tools&&u.tools[t.id])}
 function emptyCat(msg){return '<div class="empty">'+msg+'<div class="row" style="margin-top:12px"><button class="btn blue" data-act="avtab" data-t="market">Buka Marketplace</button></div></div>'}
 function pieceRow(prev,eyebrow,name,desc,btn){return '<div class="piece'+(btn&&btn.on?' worn':'')+'"><div class="pprev">'+prev+'</div><div><p class="eyebrow">'+eyebrow+'</p><h3>'+esc(name)+'</h3><p class="small muted">'+esc(desc)+'</p></div>'+(btn?btn.html:'')+'</div>'}
@@ -923,17 +1266,18 @@ function catAksesori(u){
   return '<div class="card"><h2>Aksesori gratis</h2><div class="chips'+((S.head||S.hat)?' dimc':'')+'">'+accs+'</div>'+anote+'</div>'+own;
 }
 function catTool(u){
-  var list=TOOLS_ALL.filter(function(t){return ownedTool(u,t)});
+  var list=TOOLS_ALL.filter(function(t){return ownedTool(u,t)}),st=starterOf(u);
   if(!list.length)return emptyCat('Kamu belum punya tool. Beli di Marketplace atau di toko Obby Tower.');
-  return '<section class="invset"><h2>Tool milikmu</h2><div class="pieces">'+list.map(function(t){
-    return pieceRow(t.svg,'Tool'+(t.passive?' · pasif':''),t.name,t.obby?'Lompat lebih tinggi dan jatuh lebih pelan saat dipegang.':t.desc,{html:'<span class="owned">Ada di hotbar</span>'});
-  }).join('')+'</div></section><p class="small muted">Tool muncul otomatis di hotbar saat bermain. Tekan angka slotnya untuk memegang.</p>';
+  return '<section class="invset"><h2>Tool milikmu</h2><p class="small muted">Pilih 1 tool sebagai starter tool. Hanya tool itu yang muncul di hotbar saat bermain. Tool khusus game, seperti di Blox Rails, tetap otomatis.</p><div class="pieces">'+list.map(function(t){
+    var on=!t.obby&&!t.hack&&t.id===st;
+    return pieceRow(t.svg,'Tool'+(t.passive?' · pasif':'')+(on?' · starter':''),t.name,t.obby?'Lompat lebih tinggi dan jatuh lebih pelan saat dipegang.':t.desc,{on:on,html:(t.obby||t.hack)?'<span class="owned">'+(t.hack?'Di punggung':'Aktif di Obby')+'</span>':'<button class="btn'+(on?' on':'')+'" data-act="starter" data-id="'+t.id+'">'+(on?'Starter tool':'Jadikan starter')+'</button>'});
+  }).join('')+'</div></section><p class="small muted">Tool starter muncul di hotbar. Tekan angka slotnya untuk memegang.</p>';
 }
 function pEdit(u){
   var av=u.avatar;
   var cats='<div class="avcats" role="tablist" aria-label="Kategori kustom">'+AV_CATS.map(function(c){return '<button class="btn'+(avCat===c[0]?' on':'')+'" role="tab" aria-selected="'+(avCat===c[0])+'" data-act="avcat" data-c="'+c[0]+'">'+c[1]+'</button>'}).join('')+'</div>';
   var body=avCat==='pakaian'?catPakaian(u):(avCat==='aksesori'?catAksesori(u):(avCat==='tool'?catTool(u):catTubuh(u)));
-  return '<div class="avgrid"><div class="stage"><div class="avprev" id="avprev">'+avSVG(av)+'</div></div><div class="avctl">'+cats+body+
+  return '<div class="avgrid"><div class="stage"><div class="avprev" id="avprev">'+avSVG(av)+'</div></div><div class="avctl">'+cats+body+codeCard(u)+
    '<div class="row"><button class="btn" data-act="randav">Acak</button><button class="btn" data-act="resetav">Atur ulang</button><a class="btn play" style="min-height:42px;font-size:15px;padding:0 20px" href="#game">Coba di game</a></div></div></div>';
 }
 function pMarket(u){
@@ -957,7 +1301,7 @@ function pMarket(u){
   return '<div class="row" style="justify-content:space-between"><div><h2>Marketplace</h2><p class="muted small">Hanya item resmi dari Owner NoxBlox.'+(owner?' Sebagai Owner, kamu punya Noxbux tak terbatas.':'')+'</p></div><span class="row" style="gap:8px"><span class="muted small">Saldo</span>'+noxAmt(have,20)+'</span></div>'+
     '<section><h2>Paket avatar</h2><div class="mlist">'+cards+'</div></section>'+
     '<section><h2>Aksesori kepala <small>'+HATS.filter(function(h){return !h.owner||owner}).length+' item</small></h2><div class="hgrid">'+hats+'</div></section>'+
-    '<section><h2>Tool <small>'+TOOLS_ALL.filter(function(t){return !t.obby&&!t.rails}).length+' item</small></h2><p class="muted small">Tool yang kamu beli muncul di hotbar saat bermain.</p><div class="hgrid">'+TOOLS_ALL.filter(function(t){return !t.obby&&!t.rails}).map(function(t){var own=!!(u.tools&&u.tools[t.id]),short=t.price-have;return '<article class="hcard"><div class="hprev">'+t.svg+'</div><div class="hinfo"><h3>'+esc(t.name)+(own?' <span class="small muted">· dimiliki</span>':'')+'</h3><p class="small muted">'+esc(t.desc)+'</p>'+((!own&&short>0)?'<p class="small muted">Kurang '+short+' Noxbux</p>':'')+'</div>'+(own?'<span class="small muted">Ada di hotbar</span>':'<button class="btn claim" data-act="buytool" data-id="'+t.id+'"'+(short>0?' disabled':'')+'>Beli '+noxAmt(t.price,16)+'</button>')+'</article>'}).join('')+'</div></section>';
+    '<section><h2>Tool <small>'+TOOLS_ALL.filter(function(t){return !t.obby&&!t.rails}).length+' item</small></h2><p class="muted small">Tool yang kamu beli muncul di hotbar saat bermain.</p><div class="hgrid">'+TOOLS_ALL.filter(function(t){return !t.obby&&!t.rails}).map(function(t){var own=!!(u.tools&&u.tools[t.id]),short=t.price-have;return '<article class="hcard"><div class="hprev">'+t.svg+'</div><div class="hinfo"><h3>'+esc(t.name)+(own?' <span class="small muted">· dimiliki</span>':'')+'</h3><p class="small muted">'+esc(t.desc)+'</p>'+((!own&&short>0)?'<p class="small muted">Kurang '+short+' Noxbux</p>':'')+'</div>'+(own?'<span class="small muted">'+(t.hack?'Di punggung':'Ada di hotbar')+'</span>':'<button class="btn claim" data-act="buytool" data-id="'+t.id+'"'+((short>0||(t.hack&&!hackOpen()))?' disabled':'')+'>'+((t.hack&&!hackOpen())?'Dijual 1 Feb – 1 Mar':'Beli '+noxAmt(t.price,16))+'</button>')+'</article>'}).join('')+'</div></section>';
 }
 function pProfile(u){
   var o=isOwner(u);
@@ -979,9 +1323,10 @@ function pSettings(u){
    '<div class="card field"><h2>Kontrol</h2><label for="set-sens">Sensitivitas kamera <span id="sens-v" class="muted">'+s.sens+'</span></label><input type="range" id="set-sens" min="0.3" max="2.5" step="0.1" value="'+s.sens+'"></div>'+
    '<form class="card field" id="pwf" novalidate><h2>'+(u.pass?'Ubah sandi':'Buat sandi')+'</h2>'+(u.pass?'<label for="s-old">Sandi lama</label><input id="s-old" type="password" data-pw="1" autocomplete="current-password">':'<input id="s-old" type="hidden">')+'<label for="s-new" style="margin-top:8px">Sandi baru</label><input id="s-new" type="password" data-pw="1" autocomplete="new-password" placeholder="Minimal 6 karakter"><label for="s-new2" style="margin-top:8px">Ulangi sandi baru</label><input id="s-new2" type="password" data-pw="1" autocomplete="new-password"><label class="showpw"><input type="checkbox" id="s-show"> Tampilkan sandi</label><p class="err" id="s-err" role="alert"></p><div class="row"><button class="btn blue" type="submit">Simpan sandi</button></div></form>'+
    (isOwner(u)?'<div class="card field" id="banp"><h2>Panel Owner: Ban</h2><p class="muted small">Ban Play: pemain hanya bisa di lobi dan tidak bisa bermain game. Ban Account: akun tidak bisa masuk. Di chat dalam game: /banplay Nama, /banacc Nama, /unban Nama. Kamu tidak bisa memban dirimu sendiri.</p><label for="ban-name">Nama pengguna</label><input id="ban-name" type="text" maxlength="20" placeholder="misal Test"><div class="row" style="margin-top:10px"><button class="btn danger" data-ban="banplay">Ban Play</button><button class="btn danger" data-ban="banacc">Ban Account</button><button class="btn" data-ban="unban">Buka ban</button></div><p class="small" id="ban-msg" role="status"></p>'+banListHTML()+'</div>':'')+
+   '<div class="card"><h2>Umur dan mode</h2><p class="muted small">Mode sekarang: <b>'+(u.mode==='kids'?'NoxBlox Kids (umur 1\u20139, chat dimatikan)':'NoxBlox (umur 10\u201318+)')+'</b>. Verifikasi ulang memakai foto wajah.</p><div class="row" style="margin-top:10px"><button class="btn" data-act="reage">Verifikasi ulang umur</button></div></div>'+
    '<div class="card"><h2>Sesi</h2><div class="row" style="margin-top:12px"><button class="btn" data-act="logout">Keluar</button><button class="btn danger" data-act="del" id="delb">Hapus akun</button></div></div></div>';
 }
-var PAGES={beranda:pHome,misi:pMissions,game:function(u){return pGame(u,GAMES[0])},obby:function(u){return pGame(u,GAMES[1])},bloxrails:function(u){return pGame(u,gameOf('bloxrails'))},bencana:function(u){return pGame(u,gameOf('disaster'))},avatar:pAvatar,profil:pProfile,pengaturan:pSettings};
+var PAGES={beranda:pHome,misi:pMissions,game:function(u){return pGame(u,GAMES[0])},obby:function(u){return pGame(u,GAMES[1])},bloxrails:function(u){return pGame(u,gameOf('bloxrails'))},karakter:function(u){return pGame(u,gameOf('custom'))},bencana:function(u){return pGame(u,gameOf('disaster'))},avatar:pAvatar,profil:pProfile,pengaturan:pSettings};
 var memHash=null;
 function route(){var h=memHash!==null?memHash:location.hash.slice(1);return PAGES[h]?h:'beranda'}
 function navTo(h){memHash=h;try{history.replaceState(null,'','#'+h)}catch(e){try{location.hash='#'+h}catch(e2){}}renderApp();try{window.scrollTo(0,0)}catch(e3){}}
@@ -990,7 +1335,7 @@ function renderPage(){
   var u=cur();if(!u||!$('#page'))return;
   var r=route();
   $('#page').innerHTML=(isBanned(u,'play')?'<div class="card" role="alert" style="border-color:#7a1620"><b>Kamu diban bermain.</b><p class="muted small">Kamu hanya bisa berada di lobi. Game tidak bisa dimainkan.</p></div>':'')+PAGES[r](u);
-  document.querySelectorAll('[data-r]').forEach(function(a){if(a.dataset.r===r||((r==='game'||r==='obby'||r==='bloxrails'||r==='bencana')&&a.dataset.r==='beranda'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  document.querySelectorAll('[data-r]').forEach(function(a){if(a.dataset.r===r||((r==='game'||r==='obby'||r==='bloxrails'||r==='bencana'||r==='karakter')&&a.dataset.r==='beranda'))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
 }
 function renderApp(){
   var u=cur();
@@ -999,6 +1344,8 @@ function renderApp(){
   if(!u){app.innerHTML=authHTML();shellBuilt=false;return}
   if(!shellBuilt){app.innerHTML=shellHTML(u);shellBuilt=true;try{document.body.classList.toggle('menu-open',localStorage.getItem('noxblox.menu')==='1')}catch(e){}var hb0=document.getElementById('hamb');if(hb0)hb0.setAttribute('aria-expanded',String(document.body.classList.contains('menu-open')))}
   track('login',1);balUpd();
+  if(!u.mode){if(isOwner(u)){u.mode='regular';save()}else ageDialog(true)}
+  applyMode();
   renderPage();
 }
 window.addEventListener('hashchange',function(){memHash=null;renderApp();window.scrollTo(0,0)});
@@ -1016,11 +1363,16 @@ app.addEventListener('click',function(e){
   if(a==='avcat'){avCat=b.dataset.c;renderPage();return}
   if(a==='buytool'){
     var tl=toolOf(b.dataset.id);if(!tl)return;
+    if(tl.hack&&!hackOpen()){toast('Tool Hacker hanya dijual 1 Februari sampai 1 Maret');renderPage();return}
     if(!b.dataset.ok){openBuy({img:tl.svg,name:tl.name,kind:'Tool',desc:tl.desc,price:tl.price,onBuy:function(){b.dataset.ok='1';b.click()}});return}
     clearTimeout(buyT);
-    if((isOwner(u)||(u.nox|0)>=tl.price)&&!(u.tools&&u.tools[tl.id])){if(!isOwner(u))u.nox=(u.nox|0)-tl.price;u.tools=u.tools||{};u.tools[tl.id]=1;save();balUpd();toast(tl.name+' dibeli');askUseTool(tl)}
+    if((isOwner(u)||(u.nox|0)>=tl.price)&&!(u.tools&&u.tools[tl.id])){if(!isOwner(u))u.nox=(u.nox|0)-tl.price;u.tools=u.tools||{};u.tools[tl.id]=1;save();balUpd();toast(tl.name+(tl.hack?' dibeli. Terpasang di punggungmu':' dibeli'));if(!tl.hack)askUseTool(tl)}
     renderPage();return;
   }
+  if(a==='starter'){var stt=TOOLS_ALL.filter(function(t){return t.id===b.dataset.id&&!t.rails&&!t.obby&&!t.hack&&u.tools&&u.tools[t.id]})[0];if(stt){u.starter=stt.id;save();toast(stt.name+' jadi starter tool');renderPage()}return}
+  if(a==='gift'){openRedeem();return}
+  if(a==='codechk'){cusCheck();return}
+  if(a==='codego'){cusGo(u);return}
   if(a==='buy'){
     var it=itemOf(b.dataset.id);if(!it)return;
     if(!stockOpen(it,u)&&!(u.inv&&u.inv[it.id])){toast('Stok habis');renderPage();return}
@@ -1049,6 +1401,7 @@ app.addEventListener('click',function(e){
   else if(a==='randav'){var r=function(){return COLORS[Math.floor(Math.random()*COLORS.length)]};
     u.avatar={head:r(),torso:r(),armL:r(),armR:r(),legL:r(),legR:r(),face:FACES[Math.floor(Math.random()*4)][0],acc:ACCS[Math.floor(Math.random()*4)][0],slots:u.avatar.slots};save();renderPage();$('#chip').innerHTML=chipHTML(u)}
   else if(a==='resetav'){var sl0=u.avatar.slots;u.avatar=newUser(u.name).avatar;if(sl0)u.avatar.slots=sl0;save();renderPage();$('#chip').innerHTML=chipHTML(u);toast('Avatar diatur ulang')}
+  else if(a==='reage'){ageDialog(false)}
   else if(a==='logout'){S.cur=null;save();shellBuilt=false;navTo('beranda')}
   else if(a==='del'){
     if(b.dataset.arm){DELU[S.cur]=1;delete S.users[S.cur];S.cur=null;save();shellBuilt=false;navTo('beranda')}
@@ -1157,7 +1510,7 @@ var RAIL_CLASS='';
 function startGame(gid){
   var u=cur();if(!u||G)return;
   if(isBanned(u,'play')){toast('Kamu diban bermain, hanya bisa di lobi');return}
-  var game=gameOf(gid),obby=game.id==='obby',ob=obby?obbyOf(u):null,noxb=game.id==='noxbux',rails=game.id==='bloxrun',lobby=game.id==='bloxrails',dis=game.id==='disaster',isBase=game.id==='baseplate',hasNpc=noxb||game.id==='baseplate',fq=fnOf(u);
+  var game=gameOf(gid),obby=game.id==='obby',ob=obby?obbyOf(u):null,noxb=game.id==='noxbux',rails=game.id==='bloxrun',lobby=game.id==='bloxrails',dis=game.id==='disaster',isBase=game.id==='baseplate',cus=game.id==='custom',hasNpc=noxb||game.id==='baseplate',fq=fnOf(u);
   save();
   var ov=document.createElement('div');ov.id='game';
   var touch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
@@ -1168,7 +1521,7 @@ function startGame(gid){
    '<div class="hud-tl"><button class="hcirc" data-g="menu" aria-label="Menu" title="Menu">N</button><button class="hchat" data-g="chat" aria-label="Chat" title="Chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff"/><circle cx="8" cy="11" r="1.4" fill="#222"/><circle cx="12" cy="11" r="1.4" fill="#222"/><circle cx="16" cy="11" r="1.4" fill="#222"/></svg></button><span class="hbal" id="hbal"></span>'+(obby?'<button class="hbtn" data-g="shop">Toko</button>':'')+'</div>'+
    (obby?'<div class="stagehud"><b id="stxt"></b><div class="meter gold"><i id="sbar"></i></div></div><button class="hbtn skipb" id="gskip" data-g="skip" hidden>Lompati</button>':'')+
    (noxb?'<div class="qhud" id="qhud"></div>':'')+(rails?'<div class="rhud" id="rhud"></div><div class="rtop" id="rtop"></div><div class="rdrive" id="rdrive" hidden></div><button class="talkb" id="grail" data-g="rail" hidden></button>':'')+(lobby?'<button class="talkb" id="grail" data-g="rail" hidden></button>':'')+(hasNpc?'<button class="talkb" id="gtalk" data-g="talk" hidden>Bicara</button><div class="pause" id="gnpc" hidden><div class="pbox npcbox" id="npcbox"></div></div>':'')+
-   '<div class="hotbar" id="ghot"></div><button class="usebtn" id="guse" data-g="use" hidden>Pakai</button>'+
+   (hackOn(u,obby,rails,noxb)?'<button class="hkb" id="ghk" data-g="hack" aria-label="Panel Hacker" aria-expanded="false">&gt;_ Hacker</button><div class="hkp" id="ghp" hidden><b>Hacker</b>'+[['fly','Terbang'],['noclip','Noclip'],['god','Kebal'],['speed','Lari cepat'],['jump','Lompat tinggi']].map(function(q){return '<button class="hkt" data-g="hk" data-v="'+q[0]+'" aria-pressed="false"><i></i>'+q[1]+'</button>'}).join('')+'</div>':'')+'<div class="hotbar" id="ghot"></div><button class="usebtn" id="guse" data-g="use" hidden>Pakai</button>'+
    '<div class="gtoast" id="gtoast" role="status"></div>'+
    '<div class="fps" id="gfps" hidden></div>'+
    '<div class="chat" id="gchat"><div class="msgs" id="gmsgs"></div><input id="gci" type="text" maxlength="120" placeholder="Tulis pesan lalu Enter" autocomplete="off" aria-label="Pesan chat"></div>'+
@@ -1191,6 +1544,8 @@ function startGame(gid){
   G={stop:stop,toast:function(m){gt.textContent=m;gt.classList.add('show');clearTimeout(gtt);gtt=setTimeout(function(){gt.classList.remove('show')},3200)}};
   balUpd();track('play',1);
   ov.addEventListener('click',function(e){var b=e.target.closest('[data-g]');if(!b)return;var a=b.dataset.g;
+    if(a==='hack'){var hp=$('#ghp',ov);hp.hidden=!hp.hidden;b.setAttribute('aria-expanded',String(!hp.hidden));return}
+    if(a==='hk'){hkSet(b.dataset.v);return}
     if(a==='leave')stopGame();
     else if(a==='resume')setPause(false);
     else if(a==='menu')setPause(true);
@@ -1377,7 +1732,7 @@ function startGame(gid){
       return false;
     }
     function topAt(x,z){var t=0;for(var i=0;i<solids.length;i++){var b=solids[i];if(b.y1>t&&b.y1<45&&x>b.x0&&x<b.x1&&z>b.z0&&z<b.z1)t=b.y1}return t}
-    function dmg(n){D.hp-=n;D.hitT=0;D.flash=1}
+    function dmg(n){if(HK.god)return;D.hp-=n;D.hitT=0;D.flash=1}
     var vig=document.createElement('div');vig.style.cssText='position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 140px 40px rgba(255,40,40,0.75);opacity:0;transition:opacity .25s;z-index:3';ov.appendChild(vig);
     var hud=document.createElement('div');hud.id='dhud';hud.className='dhud';ov.appendChild(hud);
     hud.addEventListener('pointerdown',function(e){e.stopPropagation()});
@@ -1668,6 +2023,88 @@ function startGame(gid){
     vCar.addEventListener('click',function(e){e.stopPropagation();carBtn()});vCar.addEventListener('pointerdown',function(e){e.stopPropagation()});
     ov.appendChild(vCar);}
   }
+
+  /* ---- Custom Character: ruang pamer + panel kustomisasi ---- */
+  function buildCust(){
+    var tc=document.createElement('canvas');tc.width=tc.height=128;
+    var tx=tc.getContext('2d');tx.fillStyle='#232838';tx.fillRect(0,0,128,128);tx.fillStyle='#2b3147';tx.fillRect(0,0,64,64);tx.fillRect(64,64,64,64);
+    var ft=new THREE.CanvasTexture(tc);ft.wrapS=ft.wrapT=THREE.RepeatWrapping;ft.repeat.set(30,30);
+    var side=new THREE.MeshLambertMaterial({color:0x1a1e2b});
+    addPlat(0,0,0,150,150,2,[side,side,new THREE.MeshLambertMaterial({map:ft}),side,side,side]);
+    var pm=new THREE.MeshLambertMaterial({color:0x2f7bff});
+    addPlat(0,0.7,-6,16,16,0.7,[pm,pm,pm,pm,pm,pm]);
+    for(var i=0;i<6;i++){var a=i/6*Math.PI*2,pl=mesh(1.2,10,1.2,[0xff5a5f,0xffc83d,0x22c26e,0x26c6da,0x7e57c2,0xec407a][i]);pl.position.set(Math.sin(a)*12,5,-6+Math.cos(a)*12);scene.add(pl)}
+    var sc=document.createElement('canvas');sc.width=512;sc.height=160;var sx=sc.getContext('2d');
+    sx.fillStyle='#141824';sx.fillRect(0,0,512,160);sx.strokeStyle='#2f7bff';sx.lineWidth=8;sx.strokeRect(6,6,500,148);
+    sx.font='700 54px "Chakra Petch",sans-serif';sx.textAlign='center';sx.fillStyle='#fff';sx.fillText('CUSTOM',256,76);sx.fillStyle='#ffc83d';sx.fillText('CHARACTER',256,134);
+    var sg=new THREE.Mesh(new THREE.PlaneGeometry(28,8.75),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(sc)}));sg.position.set(0,14,-30);scene.add(sg);
+    var pad=new THREE.Mesh(new THREE.PlaneGeometry(6,6),new THREE.MeshBasicMaterial({color:0x22c26e}));pad.rotation.x=-Math.PI/2;pad.position.set(0,1.45,-6);scene.add(pad);
+    seatList([[-18,0,10,0,-6],[18,0,10,0,-6],[-26,0,-4,0,-6,'chair'],[26,0,-4,0,-6,'chair']]);
+    return {spawn:function(){return {x:0,y:0,z:16}},update:function(){},deadly:function(){return false},killY:-60,killDelay:0.6,sky:null};
+  }
+  var cusD=null,cusTab='tubuh',cusPart='head',cusEl=null,cusCodeS='',cusMsg='',cusBusy=0;
+  function cusPrice(){return cusNeed(cusD,u)}
+  function cusHTML(){
+    var nd=cusPrice(),h='<div class="cpbar"><b>Custom Character</b><button class="btn" data-k="close" aria-label="Tutup">Tutup</button></div>';
+    h+='<div class="cpmain"><div class="cpprev">'+avSVG(cusAvOf(cusD))+'</div><div class="cpctl"><div class="avcats">'+[['tubuh','Tubuh'],['pakaian','Pakaian'],['aksesori','Aksesori'],['wajah','Wajah']].map(function(t){return '<button class="btn'+(cusTab===t[0]?' on':'')+'" data-k="tab" data-v="'+t[0]+'">'+t[1]+'</button>'}).join('')+'</div><div class="cpbody">';
+    if(cusTab==='tubuh'){
+      h+='<div class="chips">'+PARTS.map(function(p){return '<button class="btn'+(cusPart===p[0]?' on':'')+'" data-k="part" data-v="'+p[0]+'">'+p[1]+'</button>'}).join('')+'</div><div class="cpsws">'+COLORS.map(function(c){return '<button class="cpsw'+(cusD.c[cusPart]===c?' on':'')+'" data-k="col" data-v="'+c+'" style="background:'+c+'" aria-label="Warna '+c+'"></button>'}).join('')+'</div>'+
+       '<div class="row"><button class="btn" data-k="colall" data-v="'+cusD.c[cusPart]+'">Samakan semua bagian</button></div>'+(cusD.s[cusPart]?'<p class="small muted">Bagian ini sedang tertutup item pakaian, lepas dulu untuk melihat warnanya.</p>':'');
+    }else if(cusTab==='pakaian'){
+      h+=ITEMS.filter(function(it){return it.kind!=='hat'&&!it.owner}).map(function(it){
+        var own=isOwner(u)||!!(u.inv&&u.inv[it.id]),all=it.parts.every(function(p){return cusD.s[p.slot]===it.id});
+        return '<section class="cpit"><div class="row" style="justify-content:space-between"><div><b>'+esc(it.name)+'</b><div class="small muted">'+(own?'Sudah kamu punya':((it.price|0).toLocaleString('id-ID')+' Noxbux'))+'</div></div><button class="btn'+(all?' on':'')+'" data-k="'+(all?'unall':'wearall')+'" data-id="'+it.id+'">'+(all?'Lepas semua':'Pakai semua')+'</button></div><div class="chips">'+
+         it.parts.map(function(p){var on=cusD.s[p.slot]===it.id;return '<button class="btn'+(on?' on':'')+'" data-k="wear" data-id="'+it.id+'" data-s="'+p.slot+'">'+esc(p.label)+'</button>'}).join('')+'</div></section>';
+      }).join('');
+    }else if(cusTab==='aksesori'){
+      h+='<div class="chips"><button class="btn'+(!cusD.s.hat?' on':'')+'" data-k="nohat">Tanpa aksesori</button></div>'+HATS.filter(function(x){return !x.owner}).map(function(x){
+        var own=isOwner(u)||!!(u.inv&&u.inv[x.id]),on=cusD.s.hat===x.id;
+        return '<section class="cpit"><div class="row" style="justify-content:space-between"><div><b>'+esc(x.name)+'</b><div class="small muted">'+(own?'Sudah kamu punya':((x.price|0).toLocaleString('id-ID')+' Noxbux'))+(x.fx?(' &middot; '+esc(x.fx)):'')+'</div></div><button class="btn'+(on?' on':'')+'" data-k="wear" data-id="'+x.id+'" data-s="hat">'+(on?'Lepas':'Coba')+'</button></div></section>';
+      }).join('');
+    }else{
+      h+='<div class="chips">'+FACES.map(function(f){return '<button class="btn'+(cusD.f===f[0]?' on':'')+'" data-k="face" data-v="'+f[0]+'">'+f[1]+'</button>'}).join('')+'</div><div class="chips">'+ACCS.map(function(a){return '<button class="btn'+(cusD.a===a[0]?' on':'')+'" data-k="acc" data-v="'+a[0]+'">'+a[1]+'</button>'}).join('')+'</div><p class="small muted">Aksesori gratis tertutup saat kepala atau aksesori kepala memakai item.</p>';
+    }
+    h+='</div></div></div><div class="cpfoot"><p class="small" style="margin:0">'+(nd.list.length?('Item dipakai: '+nd.list.length+' &middot; belum kamu punya: <b>'+nd.total.toLocaleString('id-ID')+' Noxbux</b>'):'Belum ada item berbayar yang dipakai.')+' Semua ini hanya dicoba di game ini.</p>';
+    if(cusCodeS)h+='<div class="cpcode"><span>Kode kamu</span><b>'+esc(cusCodeS)+'</b><button class="btn" data-k="copy">Salin</button></div><p class="small muted" style="margin:0">'+esc(cusMsg)+' Masukkan kode ini di Avatar &gt; Kode avatar.</p>';
+    h+='<div class="row"><button class="btn play" data-k="apply">Lihat di 3D</button><button class="btn blue" data-k="pub"'+(cusBusy?' disabled':'')+'>'+(cusBusy?'Membuat kode...':'Publikasikan (buat kode)')+'</button><button class="btn" data-k="reset">Samakan dengan avatarku</button></div></div>';
+    return h;
+  }
+  function cusDraw(){if(!cusEl)return;var b=cusEl.querySelector('.cpbody'),st=b?b.scrollTop:0;cusEl.querySelector('.cpbox').innerHTML=cusHTML();b=cusEl.querySelector('.cpbody');if(b)b.scrollTop=st}
+  function cusClose(){if(!cusEl)return;cusEl.remove();cusEl=null;paused=false}
+  function cusOpen(){
+    if(cusEl)return;cusD=cusDraft(u);paused=true;unlock();keys={};jumpHeld=false;
+    cusEl=document.createElement('div');cusEl.className='buyd cpwrap';cusEl.setAttribute('role','dialog');cusEl.setAttribute('aria-modal','true');cusEl.setAttribute('aria-label','Custom Character');
+    cusEl.innerHTML='<div class="cpbox"></div>';document.body.appendChild(cusEl);cusDraw();
+    cusEl.addEventListener('keydown',function(e){if(e.key==='Escape'){e.stopPropagation();cusClose()}});
+    cusEl.addEventListener('click',function(e){
+      var b=e.target.closest&&e.target.closest('[data-k]');if(!b){if(e.target===cusEl)cusClose();return}
+      var k=b.dataset.k,v=b.dataset.v,id=b.dataset.id,it=id?itemOf(id):null;
+      if(k==='close'){cusClose();return}
+      if(k==='tab')cusTab=v;else if(k==='part')cusPart=v;
+      else if(k==='col')cusD.c[cusPart]=v;
+      else if(k==='colall')CUS_P.forEach(function(p){cusD.c[p]=v});
+      else if(k==='wear'&&it){var s=b.dataset.s;if(cusD.s[s]===id)delete cusD.s[s];else cusD.s[s]=id}
+      else if(k==='wearall'&&it)it.parts.forEach(function(p){cusD.s[p.slot]=id});
+      else if(k==='unall'&&it)it.parts.forEach(function(p){if(cusD.s[p.slot]===id)delete cusD.s[p.slot]});
+      else if(k==='nohat')delete cusD.s.hat;
+      else if(k==='face')cusD.f=v;else if(k==='acc')cusD.a=v;
+      else if(k==='reset'){var d=cusFromAv(u.avatar);CUSD[u.name]=d;cusD=d;cusCodeS=''}
+      else if(k==='copy'){try{navigator.clipboard.writeText(cusCodeS).then(function(){G.toast('Kode disalin')},function(){G.toast('Salin manual: '+cusCodeS)})}catch(er){G.toast('Salin manual: '+cusCodeS)}return}
+      else if(k==='apply'){cusStore(u);cusClose();stopGame();setTimeout(function(){startGame('custom')},80);return}
+      else if(k==='pub'){
+        if(cusBusy)return;cusBusy=1;cusStore(u);cusDraw();
+        cusPublish(cusD,u.display||u.name).then(function(r){cusBusy=0;cusCodeS=r.code;cusMsg=r.shared?'Kode ini bisa dipakai pemain lain.':'Kode tersimpan di perangkat ini.';cusDraw()},function(){cusBusy=0;cusMsg='Gagal membuat kode.';cusDraw()});return}
+      if(k!=='tab'&&k!=='part')cusCodeS='';
+      cusStore(u);cusDraw();
+    });
+    var f=cusEl.querySelector('[data-k=close]');if(f)f.focus();
+  }
+  if(cus){
+    var cb=document.createElement('button');cb.className='cpopen';cb.type='button';cb.id='cpopen';cb.textContent='Ganti pakaian';cb.setAttribute('aria-label','Buka panel Custom Character');
+    cb.addEventListener('click',cusOpen);ov.appendChild(cb);
+    setTimeout(function(){if(G&&G.toast&&document.body.contains(ov))G.toast('Coba semua pakaian dan warna di sini. Perubahan hanya berlaku di game ini.')},1200);
+  }
+
   function buildBase(){
     var tc=document.createElement('canvas');tc.width=tc.height=64;
     var tx=tc.getContext('2d');tx.fillStyle='#5d6068';tx.fillRect(0,0,64,64);
@@ -2339,11 +2776,11 @@ function startGame(gid){
       deadly:function(){return false},killY:-34,killDelay:0.5,sky:null
     };
   }
-  var world=obby?buildObby():(noxb?buildNoxbux():(rails?buildRails():(lobby?buildLobby():(dis?buildDis():buildBase()))));
+  var world=obby?buildObby():(noxb?buildNoxbux():(rails?buildRails():(lobby?buildLobby():(dis?buildDis():(cus?buildCust():buildBase())))));
   if(rails||lobby){scene.background=new THREE.Color(0xe99a5b);scene.fog=new THREE.Fog(0xe99a5b,lobby?110:70,lobby?520:320)}
 
   /* ---- karakter ---- */
-  var av=u.avatar;
+  var av=cus?cusAv(u):u.avatar;
   function mat(c){return new THREE.MeshLambertMaterial({color:c})}
   function mesh(w,h,d,c){var m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat(c));m.castShadow=true;return m}
   function faceTex(){
@@ -2403,6 +2840,7 @@ function startGame(gid){
     flamehead:[[1.2,0.5,1.2,0xff5a13,0,5.4,0],[0.9,0.6,0.9,0xff7a1a,0,5.85,0],[0.65,0.6,0.65,0xffa02e,0,6.3,0],[0.4,0.55,0.4,0xffc83d,0,6.75,0],[0.2,0.5,0.2,0xfff0a0,0,7.2,0],[0.35,0.7,0.35,0xff7a1a,-0.5,5.9,0.2],[0.35,0.6,0.35,0xff7a1a,0.5,5.9,-0.2]],
     ownercrown:[[1.3,0.3,1.3,0xffd21f,0,5.35,0],[0.3,0.7,0.3,0xffd21f,-0.5,5.8,-0.5],[0.3,0.7,0.3,0xffd21f,0.5,5.8,-0.5],[0.3,0.7,0.3,0xffd21f,-0.5,5.8,0.5],[0.3,0.7,0.3,0xffd21f,0.5,5.8,0.5],[0.3,1.05,0.3,0xffd21f,0,5.98,0],[1.34,0.12,1.34,0xe0a800,0,5.22,0],[0.22,0.22,0.1,0xfff6b0,0,5.38,0.66]]
   };
+  if(hackOn(u,obby,rails,noxb)){[[1.5,1.9,0.34,0x1b1f2a,0,3.0,-0.68],[1.2,0.2,0.05,0x2bff88,0,3.65,-0.88],[1.2,0.14,0.05,0x3a4256,0,3.2,-0.88],[1.2,0.14,0.05,0x3a4256,0,2.9,-0.88],[1.2,0.14,0.05,0x3a4256,0,2.6,-0.88],[0.12,1.3,0.12,0x2bff88,0.55,4.2,-0.68],[0.12,0.8,0.12,0x2bff88,-0.55,3.95,-0.68]].forEach(function(r){var bm=r[3]===0x2bff88?new THREE.Mesh(new THREE.BoxGeometry(r[0],r[1],r[2]),new THREE.MeshBasicMaterial({color:r[3]})):mesh(r[0],r[1],r[2],r[3]);bm.position.set(r[4],r[5],r[6]);player.add(bm)})}
   var flameM=[];
   if(SL.hat&&HAT3D[SL.hat])HAT3D[SL.hat].forEach(function(r){var hm2=mesh(r[0],r[1],r[2],r[3]);hm2.position.set(r[4],r[5],r[6]);player.add(hm2);if(SL.hat==='flamehead'){hm2.userData.by=r[5];flameM.push(hm2)}});
   fpHide=fpHide.concat(player.children.slice(fpFrom));
@@ -2441,9 +2879,18 @@ function startGame(gid){
   }
   /* ---- state ---- */
   var p=new THREE.Vector3(0,0,0),vx=0,vz=0,vy=0,onG=false,ground=null,face=0,anim=0,swing=0,gtime=0;
+  HK.fly=HK.noclip=HK.god=HK.speed=HK.jump=0;
   var flying=false,yaw=Math.PI,pitch=0.35,dist=14,tdist=14,sens=st.sens||1,paused=false,keys={},joy={x:0,y:0},jumpHeld=false,dead=0,coyote=0,usedDbl=false,jq=false,finished=false,fpOn=false;
   function perk(id){return obby&&ob.own[id]}
   var spGrace=0,spY=0;
+  function hkSet(k){
+    if(!(k in HK)||(R&&R.driving)||V.mode)return;
+    HK[k]=HK[k]?0:1;
+    if(k==='fly'){flying=!!HK.fly;vy=0;if(!HK.fly&&HK.noclip){HK.noclip=0}}
+    if(k==='noclip'){if(HK.noclip){HK.fly=1;flying=true;vy=0}else if(!HK.fly){flying=false}}
+    ov.querySelectorAll('.hkt').forEach(function(e){e.setAttribute('aria-pressed',String(!!HK[e.dataset.v]))});
+    G.toast(({fly:'Terbang',noclip:'Noclip',god:'Kebal',speed:'Lari cepat',jump:'Lompat tinggi'})[k]+(HK[k]?' aktif':' mati')+(k==='noclip'&&HK.noclip?' (terbang ikut aktif)':''));
+  }
   function respawn(){
     var sp=world.spawn(obby?ob.cp:0);
     if(V.mode==='drive')tdist=V.td||14;V.mode=null;
@@ -2526,7 +2973,7 @@ function startGame(gid){
     msgs.appendChild(d);while(msgs.children.length>40)msgs.firstChild.remove();msgs.scrollTop=1e9;
     setTimeout(function(){d.classList.add('old')},9000);
   }
-  function openChat(v){chatOpen=v;chatEl.classList.toggle('open',v);if(v){keys={};chatIn.focus()}else chatIn.blur()}
+  function openChat(v){if(v&&kidsOn()){notify('Chat dimatikan di NoxBlox Kids');return}chatOpen=v;chatEl.classList.toggle('open',v);if(v){keys={};chatIn.focus()}else chatIn.blur()}
   addMsg('Sistem','Selamat datang di '+game.name+', '+u.display+'!',false);
 
   /* ---- NPC dan misi Free Noxbux ---- */
@@ -2659,7 +3106,7 @@ function startGame(gid){
   if(noxb){updHud()}
 
   /* ---- Hotbar dan tool ---- */
-  function ownedTools(){var ob2=obbyOf(u);return TOOLS_ALL.filter(function(t){return t.rails?(rails&&(!t.cls||t.cls===CLS)):(rails?false:(t.obby?!!(ob2.own&&ob2.own[t.id]):!!(u.tools&&u.tools[t.id])))})}
+  function ownedTools(){var ob2=obbyOf(u);return TOOLS_ALL.filter(function(t){return t.hack?false:t.rails?(rails&&(!t.cls||t.cls===CLS)):(rails?false:(t.obby?!!(ob2.own&&ob2.own[t.id]):(!!(u.tools&&u.tools[t.id])&&starterOf(u)===t.id)))})}
   var TOOLS=ownedTools();
   function coilHeld(){return toolEq>=0&&TOOLS[toolEq]&&TOOLS[toolEq].id==='coil'}
   function syncTools(){var cid=toolEq>=0&&TOOLS[toolEq]?TOOLS[toolEq].id:null;TOOLS=ownedTools();toolEq=-1;for(var i=0;i<TOOLS.length;i++)if(TOOLS[i].id===cid)toolEq=i;renderHot()}
@@ -3430,7 +3877,7 @@ function startGame(gid){
     pe.last=now;
     if(m.t==='pos'){
       if(typeof m.x==='number'&&isFinite(m.x)&&isFinite(m.y)&&isFinite(m.z)){pe.tx=m.x;pe.ty=m.y;pe.tz=m.z;pe.tf=+m.f||0;pe.mv=m.m?1:0}
-    }else if(m.t==='chat'){
+    }else if(m.t==='chat'&&!kidsOn()){
       addMsg(pe.disp||'Pemain',String(m.text||'').slice(0,120),!!pe.verified);
     }
   }
@@ -3530,7 +3977,7 @@ function startGame(gid){
           else addMsg('Sistem',banDo(cm0.slice(1),cmA[1]),false);
           return}
         if(isFnCmd(t)){if(noxb)G.toast('Kamu sudah berada di Free Noxbux');else{addMsg('Sistem','Teleport ke Free Noxbux...',false);setTimeout(function(){stopGame();setTimeout(function(){startGame('noxbux')},60)},450)}return}
-        if(t){addMsg(u.display,t,isOwner(u)||nxTag(u));showBubble(t);mpTx({t:'chat',text:t.slice(0,120)});track('chat',1)}}
+        if(t&&!kidsOn()){addMsg(u.display,t,isOwner(u)||nxTag(u));showBubble(t);mpTx({t:'chat',text:t.slice(0,120)});track('chat',1)}}
       else if(e.key==='Escape')openChat(false);
       return;
     }
@@ -3603,11 +4050,11 @@ function startGame(gid){
     }
   }
   function sub(h){
-    p.x+=vx*h;collideAxis(0);
-    p.z+=vz*h;collideAxis(1);
+    p.x+=vx*h;if(!HK.noclip)collideAxis(0);
+    p.z+=vz*h;if(!HK.noclip)collideAxis(1);
     if(!flying){vy-=GRAV*(coilHeld()&&vy<0?0.4:1)*h;if(coilHeld()&&vy<-24)vy=-24}var py=p.y;p.y+=vy*h;
     onG=false;ground=null;
-    for(var i=0;i<solids.length;i++){var b=solids[i];
+    for(var i=0;i<solids.length&&!HK.noclip;i++){var b=solids[i];
       if(!b.on)continue;
       if(p.x+HW<=b.x0||p.x-HW>=b.x1||p.z+HW<=b.z0||p.z-HW>=b.z1)continue;
       if(vy<=0&&py>=b.y1-0.05&&p.y<=b.y1){p.y=b.y1;vy=0;onG=true;ground=b}
@@ -3625,10 +4072,10 @@ function startGame(gid){
     var ix=(keys.d?1:0)-(keys.a?1:0)+joy.x,iz=(keys.w?1:0)-(keys.s?1:0)+joy.y;
     if(rails&&R){R.thIn=R.driving?Math.max(-1,Math.min(1,iz)):0;if(R.driving){ix=0;iz=0}}
     var len=Math.hypot(ix,iz);if(len>1){ix/=len;iz/=len}
-    var spd=16*(perk('speed')?1.35:1)*(rails&&R?(R.cls==='super'?R.sps:1)*(R.mount?R.msp:1):1),s=Math.sin(yaw),c=Math.cos(yaw);
+    var spd=16*(HK.speed?2.6:1)*(perk('speed')?1.35:1)*(rails&&R?(R.cls==='super'?R.sps:1)*(R.mount?R.msp:1):1),s=Math.sin(yaw),c=Math.cos(yaw);
     var tx2=(ix*c-iz*s)*spd,tz2=(-ix*s-iz*c)*spd,a=Math.min(1,dt*12);
     vx+=(tx2-vx)*a;vz+=(tz2-vz)*a;
-    if(flying){var cpf=Math.cos(pitch),fs=(rails&&R&&R.cls==='super'&&R.clv>=3?60:50),fxv=-s*cpf,fyv=-Math.sin(pitch),fzv=-c*cpf;
+    if(flying){var cpf=Math.cos(pitch),fs=(rails&&R&&R.cls==='super'&&R.clv>=3?60:50)*(HK.speed?2:1),fxv=-s*cpf,fyv=-Math.sin(pitch),fzv=-c*cpf;
       var tvx=(ix*c+iz*fxv)*fs,tvz=(-ix*s+iz*fzv)*fs,tvy=iz*fyv*fs+((keys.j||jumpHeld)?fs*0.6:0);
       vx+=(tvx-vx)*a;vz+=(tvz-vz)*a;vy+=(tvy-vy)*a}
     gtime+=dt;
@@ -3667,7 +4114,7 @@ function startGame(gid){
 
     if(flying)face=yaw+Math.PI;
     coyote=onG?0.12:Math.max(0,coyote-dt);
-    var JV=coilHeld()?66:50;
+    var JV=HK.jump?(coilHeld()?150:120):(coilHeld()?66:50);
     var jnow=!!(keys.j||jumpHeld);
     if(rails&&R&&!R.end&&jnow&&!step._jp&&(R.mount||R.driving)){if(R.mount)monDismount();else railToggleDrive()}
     step._jp=jnow;
@@ -3679,7 +4126,7 @@ function startGame(gid){
     var n=Math.max(1,Math.ceil(dt/0.0125)),h=dt/n;
     for(var i=0;i<n;i++)sub(h);
 
-    if(world.deadly(p)){die();return}
+    if(world.deadly(p)&&!HK.god&&!HK.noclip){die();return}
     if(p.y<world.killY){dead+=dt;if(dead>=world.killDelay){die();return}}else dead=0;
     if(obby&&ground&&ground.cp!==undefined)reach(ground.cp);
 
